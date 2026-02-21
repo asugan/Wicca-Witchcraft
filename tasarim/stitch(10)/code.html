@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Full Moon Ritual Details - Mystic Grimoire</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f4d125",
+              "background-light": "#f8f8f5",
+              "background-dark": "#1a180e", /* Slightly warmer deep charcoal for the 'occult' vibe */
+              "surface-dark": "#2c281b", /* Lighter dark for cards */
+            },
+            fontFamily: {
+              "display": ["Newsreader", "serif"],
+              "body": ["Newsreader", "serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            backgroundImage: {
+               'gold-gradient': 'linear-gradient(135deg, #f4d125 0%, #bf9f10 100%)',
+               'shimmer': 'linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 60%)'
+            }
+          },
+        },
+      }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a180e; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #443f2a; 
+            border-radius: 3px;
+        }
+        
+        /* Subtle texture overlay */
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        /* Gold text shine effect */
+        .text-gold-shine {
+            background: linear-gradient(to right, #f4d125 20%, #fff8cc 50%, #f4d125 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen relative overflow-x-hidden">
+<!-- Texture Overlay for "Grimoire" feel -->
+<div class="fixed inset-0 w-full h-full z-0 texture-overlay opacity-50 mix-blend-overlay"></div>
+<div class="relative z-10 flex flex-col w-full max-w-md mx-auto min-h-screen shadow-2xl shadow-black">
+<!-- Header / Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 text-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]">arrow_back</span>
+</button>
+<div class="flex gap-2">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 text-primary transition-colors group">
+<span class="material-symbols-outlined text-[24px] group-hover:fill-1 transition-all">bookmark</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">share</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<div class="relative w-full h-64 overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="Full moon rising over dark rippling ocean water" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1B4WDK7mjaaHao13IbybrG_YEPnYBPkCNAOEtY86LNuTL8QRDzw-9C8E2SgrAo6CN283Vu49WBKzM1tKzztV40WiG6NxxHgXaFfHMpp8shSseyeR7XfJDS2sntYJ8hPpKHDzJwarz5B2qfUw2ZQFoEEVgcd6vS4WoxIu3NXz8HGdFacuq9A-rc5HDL0KNvpS0SQjPkVteQsUWvvZzVSQdz1UqrB8selMkpg5v_fNkzkp5iX-ShsOQeAOn0_l3u6UurZwdFrIx7DGS');"></div>
+<!-- Floating Title over Image -->
+<div class="absolute bottom-4 left-0 right-0 px-6 z-20 text-center">
+<p class="text-primary/80 text-sm uppercase tracking-[0.2em] mb-2 font-medium">Celestial Rituals</p>
+<h1 class="text-4xl font-display font-bold italic leading-tight text-gold-shine drop-shadow-lg">
+                    Full Moon Release
+                </h1>
+</div>
+</div>
+<!-- Scrollable Content -->
+<main class="flex-1 px-6 pb-24 pt-6">
+<!-- Description -->
+<p class="text-lg leading-relaxed text-slate-300/90 font-light text-center mb-8">
+                Harness the powerful energy of the full moon to release what no longer serves you. This ritual cleanses the spirit and opens the path for new beginnings.
+            </p>
+<!-- Ingredients Section -->
+<div class="mb-10">
+<div class="flex items-center gap-4 mb-6">
+<div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+<h2 class="text-primary text-xl font-bold tracking-wide uppercase text-center shrink-0 drop-shadow-[0_0_8px_rgba(244,209,37,0.3)]">Ingredients</h2>
+<div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+</div>
+<div class="bg-surface-dark/50 border border-primary/10 rounded-xl p-5 space-y-4 backdrop-blur-sm">
+<!-- Item 1 -->
+<label class="group flex items-center gap-4 cursor-pointer select-none">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input class="peer appearance-none w-5 h-5 border border-primary/40 rounded bg-transparent checked:bg-primary checked:border-primary transition-all cursor-pointer focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-background-dark text-[16px] opacity-0 peer-checked:opacity-100 pointer-events-none font-bold">check</span>
+</div>
+<div class="flex items-center gap-3 flex-1">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">wb_twilight</span>
+</div>
+<span class="text-slate-200 text-lg group-hover:text-primary transition-colors">White Candle</span>
+</div>
+</label>
+<!-- Item 2 -->
+<label class="group flex items-center gap-4 cursor-pointer select-none">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input class="peer appearance-none w-5 h-5 border border-primary/40 rounded bg-transparent checked:bg-primary checked:border-primary transition-all cursor-pointer focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-background-dark text-[16px] opacity-0 peer-checked:opacity-100 pointer-events-none font-bold">check</span>
+</div>
+<div class="flex items-center gap-3 flex-1">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">grass</span>
+</div>
+<span class="text-slate-200 text-lg group-hover:text-primary transition-colors">Dried Sage Bundle</span>
+</div>
+</label>
+<!-- Item 3 -->
+<label class="group flex items-center gap-4 cursor-pointer select-none">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input class="peer appearance-none w-5 h-5 border border-primary/40 rounded bg-transparent checked:bg-primary checked:border-primary transition-all cursor-pointer focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-background-dark text-[16px] opacity-0 peer-checked:opacity-100 pointer-events-none font-bold">check</span>
+</div>
+<div class="flex items-center gap-3 flex-1">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+</div>
+<span class="text-slate-200 text-lg group-hover:text-primary transition-colors">Bowl of Water</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Ritual Steps -->
+<div class="space-y-8">
+<div class="flex items-center gap-4 mb-2">
+<div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+<h2 class="text-primary text-xl font-bold tracking-wide uppercase text-center shrink-0 drop-shadow-[0_0_8px_rgba(244,209,37,0.3)]">The Ritual</h2>
+<div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+</div>
+<!-- Step 1 -->
+<article class="relative pl-6 border-l border-primary/20">
+<div class="absolute -left-[9px] top-0 w-[18px] h-[18px] rounded-full border-2 border-primary bg-background-dark text-primary flex items-center justify-center text-[10px] font-bold shadow-[0_0_10px_rgba(244,209,37,0.4)]">I</div>
+<h3 class="text-2xl font-bold text-slate-100 mb-2 font-display italic">Cleanse Your Space</h3>
+<p class="text-slate-300 text-lg leading-relaxed font-light">
+                        Begin by lighting the sage. Waft the smoke into the corners of your room, visualizing the heavy, stagnant energy dissipating into the air. Chant softly: <span class="text-primary italic">"I clear this space of all that is not love."</span>
+</p>
+</article>
+<!-- Ornamental Divider -->
+<div class="flex justify-center opacity-40">
+<svg fill="none" height="20" viewbox="0 0 100 20" width="100" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 10H45M55 10H100M50 5L55 10L50 15L45 10L50 5Z" stroke="#f4d125" stroke-width="1"></path>
+</svg>
+</div>
+<!-- Step 2 -->
+<article class="relative pl-6 border-l border-primary/20">
+<div class="absolute -left-[9px] top-0 w-[18px] h-[18px] rounded-full border-2 border-primary bg-background-dark text-primary flex items-center justify-center text-[10px] font-bold shadow-[0_0_10px_rgba(244,209,37,0.4)]">II</div>
+<h3 class="text-2xl font-bold text-slate-100 mb-2 font-display italic">Light the Candle</h3>
+<p class="text-slate-300 text-lg leading-relaxed font-light">
+                        Sit comfortably before your bowl of water. Light the white candle, focusing on its steady flame. This flame represents the light of your intuition guiding you through the darkness.
+                    </p>
+</article>
+<!-- Ornamental Divider -->
+<div class="flex justify-center opacity-40">
+<svg fill="none" height="20" viewbox="0 0 100 20" width="100" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 10H45M55 10H100M50 5L55 10L50 15L45 10L50 5Z" stroke="#f4d125" stroke-width="1"></path>
+</svg>
+</div>
+<!-- Step 3 -->
+<article class="relative pl-6 border-l border-primary/20">
+<div class="absolute -left-[9px] top-0 w-[18px] h-[18px] rounded-full border-2 border-primary bg-background-dark text-primary flex items-center justify-center text-[10px] font-bold shadow-[0_0_10px_rgba(244,209,37,0.4)]">III</div>
+<h3 class="text-2xl font-bold text-slate-100 mb-2 font-display italic">Release &amp; Let Go</h3>
+<p class="text-slate-300 text-lg leading-relaxed font-light">
+                        Dip your fingers into the water. As you touch the cool surface, imagine your worries flowing out from your fingertips and being neutralized by the water. Speak aloud what you wish to release.
+                    </p>
+</article>
+<!-- Ornamental Divider -->
+<div class="flex justify-center opacity-40">
+<svg fill="none" height="20" viewbox="0 0 100 20" width="100" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 10H45M55 10H100M50 5L55 10L50 15L45 10L50 5Z" stroke="#f4d125" stroke-width="1"></path>
+</svg>
+</div>
+<!-- Step 4 -->
+<article class="relative pl-6 border-l border-primary/20">
+<div class="absolute -left-[9px] top-0 w-[18px] h-[18px] rounded-full border-2 border-primary bg-background-dark text-primary flex items-center justify-center text-[10px] font-bold shadow-[0_0_10px_rgba(244,209,37,0.4)]">IV</div>
+<h3 class="text-2xl font-bold text-slate-100 mb-2 font-display italic">Close the Circle</h3>
+<p class="text-slate-300 text-lg leading-relaxed font-light">
+                        Blow out the candle to signify the end of the ritual. Pour the water outside into the earth to ground the energy.
+                    </p>
+</article>
+</div>
+<div class="mt-12 text-center">
+<p class="text-primary/60 text-sm italic">"As I will it, so mote it be."</p>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-6 left-0 right-0 px-6 z-40 max-w-md mx-auto">
+<button class="w-full bg-gold-gradient h-14 rounded-full text-background-dark font-bold text-lg shadow-[0_0_20px_rgba(244,209,37,0.4)] hover:shadow-[0_0_30px_rgba(244,209,37,0.6)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden">
+<div class="absolute inset-0 bg-shimmer opacity-0 hover:opacity-100 transition-opacity animate-[pulse_2s_infinite]"></div>
+<span class="material-symbols-outlined">play_circle</span>
+<span>Begin Ritual Mode</span>
+</button>
+</div>
+</div>
+</body></html>
