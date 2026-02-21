@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grimoire Category List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&amp;family=Manrope:wght@200..800&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c4a554",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#161512",
+                        "card-dark": "#24231e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                        "cinzel": ["Cinzel", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'texture-grain': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')",
+                        'gold-gradient': "linear-gradient(135deg, #c4a554 0%, #e3d294 50%, #c4a554 100%)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #161512;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #35332c;
+            border-radius: 2px;
+        }
+        
+        /* Subtle shimmer animation for gold elements */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .gold-shimmer {
+            background: linear-gradient(90deg, #c4a554 0%, #f0e6c8 50%, #c4a554 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmer 6s linear infinite;
+        }
+
+        .card-texture {
+            background-image: radial-gradient(circle at center, rgba(196, 165, 84, 0.03) 0%, transparent 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col relative overflow-hidden">
+<!-- Sacred Geometry Background Watermark -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-0 flex items-center justify-center overflow-hidden">
+<!-- Abstract Sacred Geometry SVG -->
+<svg class="animate-[spin_120s_linear_infinite]" height="800" viewbox="0 0 100 100" width="800" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50" cy="50" fill="none" r="48" stroke="currentColor" stroke-width="0.2"></circle>
+<circle cx="50" cy="50" fill="none" r="35" stroke="currentColor" stroke-width="0.2"></circle>
+<path d="M50 2 L91.5 74 H8.5 Z" fill="none" stroke="currentColor" stroke-width="0.2"></path>
+<path d="M50 98 L8.5 26 H91.5 Z" fill="none" stroke="currentColor" stroke-width="0.2"></path>
+<circle cx="50" cy="50" fill="none" r="10" stroke="currentColor" stroke-width="0.1"></circle>
+</svg>
+</div>
+<!-- Main Content Area -->
+<div class="relative z-10 flex-1 flex flex-col pb-24">
+<!-- Header -->
+<header class="sticky top-0 z-20 bg-background-dark/80 backdrop-blur-md border-b border-[#35332c]">
+<!-- Top Bar Actions -->
+<div class="flex items-center justify-between px-4 pt-12 pb-2">
+<button class="flex items-center justify-center w-10 h-10 rounded-full text-slate-100 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full text-primary hover:text-[#e3d294] transition-colors">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+</div>
+<!-- Title Section -->
+<div class="px-6 pb-6 text-center">
+<p class="text-primary text-xs uppercase tracking-[0.2em] mb-2 font-medium">The Grimoire</p>
+<h1 class="text-3xl md:text-4xl font-serif text-slate-100 font-medium tracking-wide gold-shimmer">Book of Shadows</h1>
+<p class="text-slate-400 text-sm mt-2 font-display">Explore your sacred collection of knowledge.</p>
+</div>
+</header>
+<!-- Filter / Tabs (Optional for context) -->
+<div class="px-4 py-4 overflow-x-auto no-scrollbar">
+<div class="flex gap-3 min-w-max px-2">
+<button class="px-4 py-2 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs font-bold uppercase tracking-wider">All Spells</button>
+<button class="px-4 py-2 bg-[#24231e] border border-[#35332c] rounded-full text-slate-400 hover:text-slate-200 hover:border-slate-500 text-xs font-bold uppercase tracking-wider transition-all">Rituals</button>
+<button class="px-4 py-2 bg-[#24231e] border border-[#35332c] rounded-full text-slate-400 hover:text-slate-200 hover:border-slate-500 text-xs font-bold uppercase tracking-wider transition-all">Potions</button>
+<button class="px-4 py-2 bg-[#24231e] border border-[#35332c] rounded-full text-slate-400 hover:text-slate-200 hover:border-slate-500 text-xs font-bold uppercase tracking-wider transition-all">Charms</button>
+</div>
+</div>
+<!-- Grid Content -->
+<main class="px-4 pt-2 pb-8">
+<div class="grid grid-cols-2 gap-4">
+<!-- Card 1: Love Spells -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-card-dark border border-[#35332c] hover:border-primary/50 transition-all duration-300 shadow-lg cursor-pointer">
+<!-- Image Background with Overlay -->
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" data-alt="Dark red roses and thorny stems texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5wt5UQb7O9zfS0xso4ItaAblXqmVB8kLo3nGVwqBD2ZfY8nYhA7kFZ6G_7yb_4BiNfBfj0WJwhD-bqMvvOEzFAUf19i27AOTSK__73-ACwfmSEpoqwJnkqkdJTJfImnPe0qO54DfnbwJJhc0o-ugt2B9ELvnrDvAybNLE-Ok9uBOVxzlwQrcUx1iQy2DAXqNTtQlfRm1In2_HQBqGshd0_0GjFB0A68Js9WMD7opp0Bvn_FV_J2WFksThSHd4VxpqSjOSt81NTY6l');"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-card-dark/20 to-card-dark"></div>
+<!-- Decorative Border Frame -->
+<div class="absolute inset-2 border border-primary/20 rounded-lg pointer-events-none group-hover:border-primary/40 transition-colors"></div>
+<!-- Content -->
+<div class="absolute inset-0 flex flex-col items-center justify-end p-4 text-center z-10">
+<div class="mb-3 p-3 rounded-full bg-black/40 backdrop-blur-sm border border-primary/30 text-primary shadow-[0_0_15px_rgba(196,165,84,0.15)] group-hover:shadow-[0_0_20px_rgba(196,165,84,0.3)] transition-all">
+<span class="material-symbols-outlined text-3xl">favorite</span>
+</div>
+<h3 class="text-slate-100 font-cinzel font-bold text-lg tracking-wide mb-1 group-hover:text-primary transition-colors">Love Spells</h3>
+<p class="text-slate-400 text-[10px] uppercase tracking-wider">Passion &amp; Bonds</p>
+</div>
+</div>
+<!-- Card 2: Protection -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-card-dark border border-[#35332c] hover:border-primary/50 transition-all duration-300 shadow-lg cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" data-alt="Abstract smoke and dark metallic texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkgpWGThLpUvWFnllSGJE4KUoJcY-fajZLtNVD7jDVi3kI1Q-uA0lEKD3uxcDfjPCdK4DD9kplZ01EQm8-lvMI7SBSk4t9H_VFqKRDnszXdLVTxF7vz0gJrkJjr3ovqsKuI36GFWVfjzHykLj-6a1_zR2xT-loJ4GKGDZLeo81QJnd5Ge4Y_IeucWmb0tCx8WdUJ8Rld23NTVaVIux9DzQhPYL_wD9SsT9pwBdRwjx0q1fosj_IvVfJDh08cvsqx1gdU6F69_t4hWE');"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-card-dark/20 to-card-dark"></div>
+<div class="absolute inset-2 border border-primary/20 rounded-lg pointer-events-none group-hover:border-primary/40 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-end p-4 text-center z-10">
+<div class="mb-3 p-3 rounded-full bg-black/40 backdrop-blur-sm border border-primary/30 text-primary shadow-[0_0_15px_rgba(196,165,84,0.15)] group-hover:shadow-[0_0_20px_rgba(196,165,84,0.3)] transition-all">
+<span class="material-symbols-outlined text-3xl">security</span>
+</div>
+<h3 class="text-slate-100 font-cinzel font-bold text-lg tracking-wide mb-1 group-hover:text-primary transition-colors">Protection</h3>
+<p class="text-slate-400 text-[10px] uppercase tracking-wider">Warding &amp; Safety</p>
+</div>
+</div>
+<!-- Card 3: Abundance -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-card-dark border border-[#35332c] hover:border-primary/50 transition-all duration-300 shadow-lg cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" data-alt="Gold coins and wheat texture abstract" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzXhbJvjOU8-qmBr6UkJGGFt_yN1UIW81_RzV78EAfaRRtahHK1fB7lNzcl1BBZM1hnnsoX9z6OlrKhs4wqhAzNbE3rbqfCTGcANyjbuiNcuYn_KuRPCqlFbIbbq7-1ayCBZq9mtZLXJDolSMAtX5yvVvoLvfN3h1QwoOfH7AEkcbcUu90zWjtQWTdqCSCmaj7X6eyJiY2UHyzhqcuDyBfhX2BV-RxJWjlfGxNywtjJim-jIJM9t3ZCymYjc4w94UYn4ebB1sskaYx');"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-card-dark/20 to-card-dark"></div>
+<div class="absolute inset-2 border border-primary/20 rounded-lg pointer-events-none group-hover:border-primary/40 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-end p-4 text-center z-10">
+<div class="mb-3 p-3 rounded-full bg-black/40 backdrop-blur-sm border border-primary/30 text-primary shadow-[0_0_15px_rgba(196,165,84,0.15)] group-hover:shadow-[0_0_20px_rgba(196,165,84,0.3)] transition-all">
+<span class="material-symbols-outlined text-3xl">diamond</span>
+</div>
+<h3 class="text-slate-100 font-cinzel font-bold text-lg tracking-wide mb-1 group-hover:text-primary transition-colors">Abundance</h3>
+<p class="text-slate-400 text-[10px] uppercase tracking-wider">Wealth &amp; Success</p>
+</div>
+</div>
+<!-- Card 4: Healing -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-card-dark border border-[#35332c] hover:border-primary/50 transition-all duration-300 shadow-lg cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" data-alt="Dried herbs and lavender on wood" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMgbaPdS3iMjJaaCKOJoTmoFI2Lyam3N_06a2HQQN1Hpz8CF72eEK-AIiGQGHDGm2Ec58RXdxokTuEYVU-7zx5BGIlTitjJojRrK6NPU2sbDXWuW4RUwYXhJzlclkElK_V7VfqoTqQiDOCMw-7Wp81CFpRdBjkf4-ZTLz_2-eBTNZKrmbDigqBTVFsxtRMiF-3ZowXBFYlwErF5I-CSr7EgAqDb3QxpMEP7FoLm9BtsLR1gMp99dCeofVchDuh2kdgHoIYTxzl9e9W');"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-card-dark/20 to-card-dark"></div>
+<div class="absolute inset-2 border border-primary/20 rounded-lg pointer-events-none group-hover:border-primary/40 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-end p-4 text-center z-10">
+<div class="mb-3 p-3 rounded-full bg-black/40 backdrop-blur-sm border border-primary/30 text-primary shadow-[0_0_15px_rgba(196,165,84,0.15)] group-hover:shadow-[0_0_20px_rgba(196,165,84,0.3)] transition-all">
+<span class="material-symbols-outlined text-3xl">local_florist</span>
+</div>
+<h3 class="text-slate-100 font-cinzel font-bold text-lg tracking-wide mb-1 group-hover:text-primary transition-colors">Healing</h3>
+<p class="text-slate-400 text-[10px] uppercase tracking-wider">Health &amp; Vitality</p>
+</div>
+</div>
+<!-- Card 5: Divination (Extra for layout) -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-card-dark border border-[#35332c] hover:border-primary/50 transition-all duration-300 shadow-lg cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" data-alt="Crystal ball and tarot cards on table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiAcXwdTVMjJ9kTAYvFi5YA1XLPR1wajhdhsXEv8XiChY8dr8a21aN-J2jllYvw0xEFBxjYtWI7RJJ-ZMOoE_Y3AevYWLObkyAOnIDH5QUTpo6LL8G1xLi95ZLz5MZprz3A3DBRRqkWjITIQ9yKIIOdIwKcD7Ay_nGI9b02jy4xReM1JHdJVeOdFrvCQlIH_UqgnoPAbBNBF-42ZJp8ZKnG8s6WVgE-KKH-D5Cz725cRkik5QZn_uB1Tfbw18Tmv1HSjvzm09vGaye');"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-card-dark/20 to-card-dark"></div>
+<div class="absolute inset-2 border border-primary/20 rounded-lg pointer-events-none group-hover:border-primary/40 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-end p-4 text-center z-10">
+<div class="mb-3 p-3 rounded-full bg-black/40 backdrop-blur-sm border border-primary/30 text-primary shadow-[0_0_15px_rgba(196,165,84,0.15)] group-hover:shadow-[0_0_20px_rgba(196,165,84,0.3)] transition-all">
+<span class="material-symbols-outlined text-3xl">visibility</span>
+</div>
+<h3 class="text-slate-100 font-cinzel font-bold text-lg tracking-wide mb-1 group-hover:text-primary transition-colors">Divination</h3>
+<p class="text-slate-400 text-[10px] uppercase tracking-wider">Insight &amp; Future</p>
+</div>
+</div>
+<!-- Card 6: Curses (Extra for layout) -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden bg-card-dark border border-[#35332c] hover:border-primary/50 transition-all duration-300 shadow-lg cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" data-alt="Dark smoke and crow feathers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmt6CIorbrPcu01oA5iSbuZRAPPa-Ut6HZnDcAuAYa5Oij2hqIkkhe7wPCrgDDw4gkUn35qj0r85DnlKy6xFcMfusUMXMPxqA0wayN408WbaoZRMhH-hF71iQuoZeKHTa1_tWEiBw52JdTt0H90HcCmJgjwCwYzgKvZ2z_e27jyNq3p7SprjkIlCB5pHwJeW8tJfHVHUVPdR9sThj4AbvOekdiF5cfi_8MzUQ-0JKYJ4b4knpI-mvP73GFA72cCSrED8lxZ7j6UPrj');"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-card-dark/20 to-card-dark"></div>
+<div class="absolute inset-2 border border-primary/20 rounded-lg pointer-events-none group-hover:border-primary/40 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-end p-4 text-center z-10">
+<div class="mb-3 p-3 rounded-full bg-black/40 backdrop-blur-sm border border-primary/30 text-primary shadow-[0_0_15px_rgba(196,165,84,0.15)] group-hover:shadow-[0_0_20px_rgba(196,165,84,0.3)] transition-all">
+<span class="material-symbols-outlined text-3xl">skull</span>
+</div>
+<h3 class="text-slate-100 font-cinzel font-bold text-lg tracking-wide mb-1 group-hover:text-primary transition-colors">Banishing</h3>
+<p class="text-slate-400 text-[10px] uppercase tracking-wider">Removal &amp; Binding</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 w-full z-30 border-t border-[#35332c] bg-[#161512]/95 backdrop-blur-lg pb-5 pt-3 px-6 shadow-2xl">
+<div class="flex justify-between items-center max-w-lg mx-auto">
+<!-- Active Tab -->
+<a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+<div class="flex items-center justify-center h-8 w-8 text-primary relative">
+<div class="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined relative z-10" style="font-variation-settings: 'FILL' 1, 'wght' 400;">menu_book</span>
+</div>
+<p class="text-primary text-[10px] font-bold tracking-widest uppercase">Grimoire</p>
+</a>
+<a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+<div class="flex items-center justify-center h-8 w-8 text-[#b3aea2] group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<p class="text-[#b3aea2] group-hover:text-primary transition-colors text-[10px] font-medium tracking-widest uppercase">Altar</p>
+</a>
+<!-- Floating Action Button Style Center (Optional - Moon Phase) -->
+<a class="flex flex-col items-center justify-center -mt-8 cursor-pointer" href="#">
+<div class="h-14 w-14 rounded-full bg-gradient-to-br from-[#35332c] to-[#161512] border border-primary/50 shadow-[0_0_15px_rgba(196,165,84,0.2)] flex items-center justify-center text-primary hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl">dark_mode</span>
+</div>
+</a>
+<a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+<div class="flex items-center justify-center h-8 w-8 text-[#b3aea2] group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">stars</span>
+</div>
+<p class="text-[#b3aea2] group-hover:text-primary transition-colors text-[10px] font-medium tracking-widest uppercase">Spells</p>
+</a>
+<a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+<div class="flex items-center justify-center h-8 w-8 text-[#b3aea2] group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<p class="text-[#b3aea2] group-hover:text-primary transition-colors text-[10px] font-medium tracking-widest uppercase">Profile</p>
+</a>
+</div>
+</div>
+</body></html>
