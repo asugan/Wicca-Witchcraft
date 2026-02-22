@@ -200,7 +200,7 @@ Every ritual and every library entity should connect to other relevant entities.
 
 ## Phase 1 (Week 3-5): MVP Core
 - [x] Implement bottom tab navigation
-- [~] Build Home daily modules (moon, tarot, intention, recommendation)
+- [x] Build Home daily modules (moon, tarot, intention, recommendation)
 - [x] Build Grimoire list + ritual detail
 - [x] Build Library basics
 - [x] Build My Space: favorites + simple journal
@@ -264,7 +264,7 @@ Every ritual and every library entity should connect to other relevant entities.
 
 1. Move analytics from console scaffold to production provider and validate event payload quality.
 2. Add notification triggers (daily reminder + moon events) with opt-in controls.
-3. Expand Home daily modules with DB-backed moon + tarot + recommendation logic.
+3. Refine Home personalization with richer recommendation scoring and fresh daily tarot rotation.
 4. Add search/filter depth (moon phase, difficulty, materials) and improve discovery ranking.
 5. Prepare engagement layer: streaks, consistency indicators, and onboarding refinements.
 

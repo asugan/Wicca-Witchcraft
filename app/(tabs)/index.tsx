@@ -1,10 +1,12 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useEffect } from "react";
+import { useRouter } from "expo-router";
+import { useEffect, useMemo } from "react";
 import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Surface, Text } from "react-native-paper";
 
 import { MoonPhaseBadge } from "@/components/mystic/MoonPhaseBadge";
+import { getHomeDailySnapshot } from "@/db/repositories/home-repository";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
@@ -16,16 +18,20 @@ const actions: { id: string; icon: keyof typeof MaterialCommunityIcons.glyphMap;
 ];
 
 export default function HomeScreen() {
+  const router = useRouter();
   const theme = useMysticTheme();
   const styles = makeStyles(theme);
+  const dailySnapshot = useMemo(() => getHomeDailySnapshot(), []);
+  const recommendation = dailySnapshot.recommendation;
 
   useEffect(() => {
     trackEvent("home_viewed", {
       user_id: "local-user",
       tab_name: "home",
+      entity_id: recommendation?.id,
       source: "tab_mount",
     });
-  }, []);
+  }, [recommendation?.id]);
 
   return (
     <SafeAreaView edges={["top"]} style={styles.safe}>
@@ -36,7 +42,9 @@ export default function HomeScreen() {
         <View style={styles.header}>
           <View>
             <Text style={styles.headerLabel}>Astrological Date</Text>
-            <Text style={styles.headerTitle}>October 24 • Scorpio Season</Text>
+            <Text style={styles.headerTitle}>
+              {dailySnapshot.dateLabel} • {dailySnapshot.cosmicLabel}
+            </Text>
           </View>
           <Pressable style={styles.iconButton}>
             <MaterialCommunityIcons color={theme.colors.primary} name="bell-outline" size={22} />
@@ -61,9 +69,9 @@ export default function HomeScreen() {
           </View>
 
           <MoonPhaseBadge
-            description="A powerful time for release, banishing bad habits, and turning inward."
-            illumination="85%"
-            phase="Waning Gibbous"
+            description={dailySnapshot.moon.summary}
+            illumination={dailySnapshot.moon.illumination}
+            phase={dailySnapshot.moon.phase}
           />
         </View>
 
@@ -76,8 +84,16 @@ export default function HomeScreen() {
           ))}
         </ScrollView>
 
+        <Surface style={styles.intentionCard}>
+          <View style={styles.intentionHeader}>
+            <MaterialCommunityIcons color={theme.colors.primary} name="meditation" size={16} />
+            <Text style={styles.intentionLabel}>Daily Intention</Text>
+          </View>
+          <Text style={styles.intentionText}>{dailySnapshot.intention}</Text>
+        </Surface>
+
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Daily Insight</Text>
+          <Text style={styles.sectionTitle}>Daily Tarot</Text>
           <Text style={styles.sectionLink}>View All</Text>
         </View>
 
@@ -98,10 +114,10 @@ export default function HomeScreen() {
           <View style={styles.insightBody}>
             <View style={styles.categoryLine}>
               <MaterialCommunityIcons color={theme.colors.primary} name="star-four-points" size={16} />
-              <Text style={styles.categoryText}>Major Arcana</Text>
+              <Text style={styles.categoryText}>{dailySnapshot.card?.arcana ?? "Daily Draw"}</Text>
             </View>
-            <Text style={styles.cardTitle}>The Star</Text>
-            <Text style={styles.quote}>{'"Hope is the light that guides you through the darkness."'}</Text>
+            <Text style={styles.cardTitle}>{dailySnapshot.card?.cardName ?? "The Star"}</Text>
+            <Text style={styles.quote}>{`"${dailySnapshot.card?.uprightMeaning ?? "Hope is the light that guides you through the darkness."}"`}</Text>
             <Button
               contentStyle={styles.primaryButtonContent}
               mode="contained"
@@ -109,17 +125,45 @@ export default function HomeScreen() {
                 trackEvent("daily_card_drawn", {
                   user_id: "local-user",
                   tab_name: "home",
-                  entity_id: "daily-card-default",
+                  entity_id: dailySnapshot.card?.id ?? "daily-card-default",
                   source: "home_card",
                 });
               }}
               style={styles.primaryButton}
               textColor={theme.colors.onPrimary}
             >
-              View Interpretation
+              Reveal Guidance
             </Button>
           </View>
         </Surface>
+
+        {recommendation ? (
+          <Surface style={styles.recommendationCard}>
+            <View style={styles.recommendationHeader}>
+              <Text style={styles.recommendationLabel}>Recommended Ritual</Text>
+              <Text style={styles.recommendationMeta}>{recommendation.durationMinutes} min</Text>
+            </View>
+            <Text style={styles.recommendationTitle}>{recommendation.title}</Text>
+            <Text style={styles.recommendationSummary}>{recommendation.summary}</Text>
+            <Button
+              mode="outlined"
+              onPress={() => {
+                trackEvent("ritual_opened", {
+                  user_id: "local-user",
+                  tab_name: "home",
+                  entity_id: recommendation.id,
+                  source: "home_recommendation",
+                });
+
+                router.push(`/ritual/${recommendation.slug}` as never);
+              }}
+              style={styles.recommendationButton}
+              textColor={theme.colors.primary}
+            >
+              Open Ritual
+            </Button>
+          </Surface>
+        ) : null}
       </ScrollView>
     </SafeAreaView>
   );
@@ -263,6 +307,32 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       color: theme.colors.onSurface,
       fontWeight: "500",
     },
+    intentionCard: {
+      borderRadius: 14,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}2E`,
+      backgroundColor: `${theme.colors.surface2}BF`,
+      paddingHorizontal: 14,
+      paddingVertical: 12,
+      gap: 8,
+    },
+    intentionHeader: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 6,
+    },
+    intentionLabel: {
+      color: theme.colors.primary,
+      textTransform: "uppercase",
+      letterSpacing: 0.9,
+      fontSize: 11,
+      fontWeight: "700",
+    },
+    intentionText: {
+      color: theme.colors.onSurface,
+      lineHeight: 21,
+      fontSize: 14,
+    },
     sectionHeader: {
       marginTop: 8,
       flexDirection: "row",
@@ -352,5 +422,50 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     primaryButtonContent: {
       height: 46,
+    },
+    recommendationCard: {
+      marginTop: 2,
+      borderRadius: 14,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}30`,
+      backgroundColor: `${theme.colors.surface2}B8`,
+      paddingHorizontal: 14,
+      paddingVertical: 14,
+      gap: 8,
+    },
+    recommendationHeader: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    recommendationLabel: {
+      color: theme.colors.primary,
+      textTransform: "uppercase",
+      letterSpacing: 0.9,
+      fontSize: 11,
+      fontWeight: "700",
+    },
+    recommendationMeta: {
+      color: theme.colors.onSurfaceMuted,
+      fontSize: 11,
+      textTransform: "uppercase",
+      letterSpacing: 0.9,
+    },
+    recommendationTitle: {
+      color: theme.colors.onSurface,
+      fontSize: 24,
+      fontWeight: "700",
+      fontFamily: typefaces.display,
+    },
+    recommendationSummary: {
+      color: theme.colors.onSurfaceMuted,
+      lineHeight: 20,
+    },
+    recommendationButton: {
+      marginTop: 2,
+      alignSelf: "flex-start",
+      borderColor: `${theme.colors.primary}80`,
+      borderRadius: 999,
+      backgroundColor: `${theme.colors.primary}14`,
     },
   });
