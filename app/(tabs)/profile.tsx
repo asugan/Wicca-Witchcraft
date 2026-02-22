@@ -316,8 +316,8 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       backgroundColor: theme.colors.background,
     },
     container: {
-      flex: 1,
       padding: 20,
+      paddingBottom: 124,
       gap: 12,
     },
     title: {
