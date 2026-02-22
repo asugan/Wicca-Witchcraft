@@ -55,7 +55,9 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       gap: 4,
     },
     media: {
+      width: "100%",
       aspectRatio: 1,
+      alignSelf: "center",
       borderRadius: 10,
       overflow: "hidden",
       justifyContent: "center",
