@@ -50,10 +50,13 @@ export default function RitualDetailScreen() {
     setBookmarked(isRitualFavorited(LOCAL_USER_ID, detail.ritual.id));
   }, [detail]);
 
-  const selectedEntry = useMemo(
-    () => detail?.materials.find((material) => material.linkedEntryId === selectedEntryId) ?? null,
-    [detail?.materials, selectedEntryId]
-  );
+  const selectedEntry = useMemo(() => {
+    if (!selectedEntryId) {
+      return null;
+    }
+
+    return detail?.materials.find((material) => material.linkedEntryId === selectedEntryId) ?? null;
+  }, [detail?.materials, selectedEntryId]);
 
   const checkedCount = useMemo(() => Object.values(checked).filter(Boolean).length, [checked]);
 
@@ -217,17 +220,17 @@ export default function RitualDetailScreen() {
         <Dialog
           onDismiss={() => setSelectedEntryId(null)}
           visible={Boolean(selectedEntry)}
-          style={{ backgroundColor: theme.colors.surface1 }}
+          style={styles.previewDialog}
         >
-          <Dialog.Title style={{ color: theme.colors.onSurface }}>{selectedEntry?.linkedEntryTitle}</Dialog.Title>
-          <Dialog.Content>
+          <Dialog.Title style={styles.previewTitle}>{selectedEntry?.linkedEntryTitle}</Dialog.Title>
+          <Dialog.Content style={styles.previewContent}>
             <Text style={styles.previewSummary}>{selectedEntry?.linkedEntrySummary}</Text>
             <Text style={styles.previewMeta}>{selectedEntry?.linkedEntryProperties}</Text>
             <Text style={styles.previewMeta}>{selectedEntry?.linkedEntryCorrespondences}</Text>
             <Text style={styles.previewMeta}>Cleansing: {selectedEntry?.linkedEntryCleansingMethod}</Text>
             <Text style={styles.previewMeta}>Care: {selectedEntry?.linkedEntryCareNote}</Text>
           </Dialog.Content>
-          <Dialog.Actions>
+          <Dialog.Actions style={styles.previewActions}>
             <Button
               onPress={() => {
                 if (selectedEntry?.linkedEntryId) {
@@ -503,6 +506,25 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     beginButtonContent: {
       height: 54,
+    },
+    previewDialog: {
+      backgroundColor: theme.colors.surface1,
+      borderRadius: 28,
+      marginHorizontal: 20,
+      maxHeight: "78%",
+    },
+    previewTitle: {
+      color: theme.colors.onSurface,
+      marginBottom: 6,
+    },
+    previewContent: {
+      paddingTop: 4,
+      paddingBottom: 12,
+    },
+    previewActions: {
+      flexGrow: 0,
+      paddingTop: 0,
+      paddingBottom: 16,
     },
     previewSummary: {
       color: theme.colors.onSurface,
