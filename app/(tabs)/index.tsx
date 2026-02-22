@@ -408,7 +408,7 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       lineHeight: 38,
     },
     quote: {
-      color: "#D0CABD",
+      color: theme.colors.onSurfaceMuted,
       borderLeftWidth: 2,
       borderColor: `${theme.colors.primary}59`,
       paddingLeft: 10,

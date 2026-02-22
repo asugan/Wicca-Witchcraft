@@ -235,14 +235,14 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       fontWeight: "700",
     },
     headerTitle: {
-      color: theme.colors.onSurface,
+      color: theme.mode === "light" ? "#F5EFE2" : theme.colors.onSurface,
       fontFamily: typefaces.display,
       fontSize: 28,
       lineHeight: 34,
       fontWeight: "700",
     },
     headerSubtext: {
-      color: theme.colors.onSurfaceMuted,
+      color: theme.mode === "light" ? "#DFD6C3" : "#CFC6B0",
       lineHeight: 20,
     },
     content: {

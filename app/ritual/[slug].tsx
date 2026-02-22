@@ -323,7 +323,7 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     description: {
       marginTop: 16,
-      color: "#D6CFBF",
+      color: theme.colors.onSurfaceMuted,
       fontSize: 18,
       lineHeight: 28,
       textAlign: "center",
@@ -401,7 +401,7 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderColor: theme.colors.primary,
     },
     ingredientText: {
-      color: "#E9E3D6",
+      color: theme.colors.onSurface,
       fontSize: 17,
     },
     ingredientTextSelected: {
@@ -473,7 +473,7 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     stepContent: {
       marginTop: 6,
-      color: "#D8D2C4",
+      color: theme.colors.onSurfaceMuted,
       fontSize: 17,
       lineHeight: 27,
     },
