@@ -6,12 +6,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Dialog, Portal, Text } from "react-native-paper";
 
 import { IncantationBlock } from "@/components/mystic/IncantationBlock";
+import { isRitualFavorited, toggleRitualFavorite } from "@/db/repositories/my-space-repository";
 import { getRitualDetailBySlug } from "@/db/repositories/ritual-repository";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
 const roman = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const LOCAL_USER_ID = "local-user";
 
 export default function RitualDetailScreen() {
   const router = useRouter();
@@ -38,6 +40,14 @@ export default function RitualDetailScreen() {
       entity_id: detail.ritual.id,
       source: "ritual_detail",
     });
+  }, [detail]);
+
+  useEffect(() => {
+    if (!detail) {
+      return;
+    }
+
+    setBookmarked(isRitualFavorited(LOCAL_USER_ID, detail.ritual.id));
   }, [detail]);
 
   const selectedEntry = useMemo(
@@ -71,7 +81,7 @@ export default function RitualDetailScreen() {
         <View style={styles.headerActions}>
           <Pressable
             onPress={() => {
-              const nextValue = !bookmarked;
+              const nextValue = toggleRitualFavorite(LOCAL_USER_ID, detail.ritual.id);
               setBookmarked(nextValue);
 
               if (nextValue) {

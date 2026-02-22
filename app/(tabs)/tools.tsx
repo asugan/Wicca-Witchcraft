@@ -1,9 +1,10 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Animated, Pressable, StyleSheet, View } from "react-native";
+import { Animated, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Text } from "react-native-paper";
 
+import { listAstroTimeline, listMoonCalendarSections } from "@/db/repositories/tools-repository";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
@@ -37,12 +38,25 @@ export default function ToolsScreen() {
   const styles = makeStyles(theme);
 
   const [revealed, setRevealed] = useState<boolean[]>([false, false, false]);
+  const moonCalendarSections = useMemo(() => listMoonCalendarSections(), []);
+  const astroTimeline = useMemo(() => listAstroTimeline(), []);
 
   const floatOne = useFloating(0);
   const floatTwo = useFloating(320);
   const floatThree = useFloating(620);
 
   const allRevealed = useMemo(() => revealed.every(Boolean), [revealed]);
+  const todayIso = useMemo(() => new Date().toISOString().slice(0, 10), []);
+
+  const visibleTimeline = useMemo(() => {
+    const upcoming = astroTimeline.filter((entry) => entry.rawDate >= todayIso);
+
+    if (upcoming.length) {
+      return upcoming.slice(0, 8);
+    }
+
+    return astroTimeline.slice(0, 8);
+  }, [astroTimeline, todayIso]);
 
   const toggleOne = (index: number) => {
     setRevealed((prev) => prev.map((item, cardIndex) => (cardIndex === index ? !item : item)));
@@ -56,47 +70,104 @@ export default function ToolsScreen() {
       <View style={styles.starThree} />
       <View style={styles.starFour} />
 
-      <View style={styles.header}>
-        <Pressable>
-          <MaterialCommunityIcons color={`${theme.colors.primary}CC`} name="close" size={30} />
-        </Pressable>
-        <Text style={styles.headerTitle}>The Spread</Text>
-        <Pressable>
-          <MaterialCommunityIcons color={`${theme.colors.primary}CC`} name="information-outline" size={28} />
-        </Pressable>
-      </View>
+      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+        <View style={styles.header}>
+          <Text style={styles.headerOverline}>Tools</Text>
+          <Text style={styles.headerTitle}>Oracles and Cosmic Timing</Text>
+          <Text style={styles.headerSubtext}>Track moon phases, plan rituals, and read energetic windows.</Text>
+        </View>
 
-      <View style={styles.body}>
-        <View style={styles.cardsRow}>
-          {[floatOne, floatTwo, floatThree].map((floating, index) => (
-            <Animated.View key={cardSymbols[index]} style={[styles.cardAnimatedWrap, { transform: [{ translateY: floating }] }]}>
-              <Pressable onPress={() => toggleOne(index)} style={styles.cardBack}>
-                <View style={styles.cardInnerBorder} />
-                <MaterialCommunityIcons
-                  color={`${theme.colors.primary}B5`}
-                  name={revealed[index] ? "cards-playing-heart-multiple" : cardSymbols[index]}
-                  size={44}
-                />
-                {revealed[index] ? <Text style={styles.revealedText}>Revealed</Text> : null}
-              </Pressable>
-            </Animated.View>
+        <View style={styles.sectionCard}>
+          <View style={styles.sectionHeaderRow}>
+            <Text style={styles.sectionTitle}>3-Card Tarot Spread</Text>
+            <MaterialCommunityIcons color={theme.colors.primary} name="cards-playing" size={18} />
+          </View>
+
+          <View style={styles.cardsRow}>
+            {[floatOne, floatTwo, floatThree].map((floating, index) => (
+              <Animated.View key={cardSymbols[index]} style={[styles.cardAnimatedWrap, { transform: [{ translateY: floating }] }]}> 
+                <Pressable onPress={() => toggleOne(index)} style={styles.cardBack}>
+                  <View style={styles.cardInnerBorder} />
+                  <MaterialCommunityIcons
+                    color={`${theme.colors.primary}B5`}
+                    name={revealed[index] ? "cards-playing-heart-multiple" : cardSymbols[index]}
+                    size={36}
+                  />
+                  <Text style={styles.cardLabel}>{index === 0 ? "Past" : index === 1 ? "Present" : "Future"}</Text>
+                  {revealed[index] ? <Text style={styles.revealedText}>Revealed</Text> : null}
+                </Pressable>
+              </Animated.View>
+            ))}
+          </View>
+
+          <Text style={styles.promptText}>{'"Focus on your question and tap each card"'}</Text>
+
+          <View style={styles.buttonRow}>
+            <Button
+              mode="outlined"
+              onPress={() => setRevealed([true, true, true])}
+              style={[styles.secondaryButton, allRevealed && styles.secondaryButtonDone]}
+              textColor={theme.colors.primary}
+            >
+              {allRevealed ? "All Revealed" : "Reveal All"}
+            </Button>
+            <Button mode="text" onPress={() => setRevealed([false, false, false])} textColor={theme.colors.onSurfaceMuted}>
+              Reset
+            </Button>
+          </View>
+        </View>
+
+        <View style={styles.sectionCard}>
+          <View style={styles.sectionHeaderRow}>
+            <Text style={styles.sectionTitle}>Moon Calendar</Text>
+            <MaterialCommunityIcons color={theme.colors.primary} name="moon-waning-gibbous" size={18} />
+          </View>
+
+          {moonCalendarSections.map((section) => (
+            <View key={section.key} style={styles.monthBlock}>
+              <Text style={styles.monthLabel}>{section.label}</Text>
+              {section.events.map((event) => (
+                <View key={event.id} style={styles.calendarEventRow}>
+                  <View style={styles.calendarDateBadge}>
+                    <Text style={styles.calendarDay}>{new Date(`${event.eventDate}T00:00:00`).getDate()}</Text>
+                  </View>
+                  <View style={styles.calendarEventBody}>
+                    <Text style={styles.calendarEventTitle}>{event.phase}</Text>
+                    <Text style={styles.calendarEventMeta}>{event.zodiacSign}</Text>
+                  </View>
+                </View>
+              ))}
+            </View>
           ))}
         </View>
 
-        <View style={styles.promptWrap}>
-          <Text style={styles.promptText}>{'"Focus on your question and tap to draw"'}</Text>
-          <View style={styles.promptLine} />
-        </View>
+        <View style={styles.sectionCard}>
+          <View style={styles.sectionHeaderRow}>
+            <Text style={styles.sectionTitle}>Astro Timeline</Text>
+            <MaterialCommunityIcons color={theme.colors.primary} name="timeline-clock-outline" size={18} />
+          </View>
 
-        <Button
-          mode="outlined"
-          onPress={() => setRevealed([true, true, true])}
-          style={[styles.secondaryButton, allRevealed && styles.secondaryButtonDone]}
-          textColor={theme.colors.primary}
-        >
-          {allRevealed ? "All Cards Revealed" : "Reveal All"}
-        </Button>
-      </View>
+          {visibleTimeline.map((entry) => (
+            <View key={entry.id} style={styles.timelineRow}>
+              <View
+                style={[
+                  styles.timelineDot,
+                  entry.kind === "peak"
+                    ? styles.timelineDotPeak
+                    : entry.kind === "preparation"
+                      ? styles.timelineDotPrep
+                      : styles.timelineDotIntegration,
+                ]}
+              />
+              <View style={styles.timelineBody}>
+                <Text style={styles.timelineDate}>{entry.dateLabel}</Text>
+                <Text style={styles.timelineTitle}>{entry.title}</Text>
+                <Text style={styles.timelineSummary}>{entry.summary}</Text>
+              </View>
+            </View>
+          ))}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -153,31 +224,55 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       backgroundColor: `${theme.colors.primary}66`,
     },
     header: {
+      marginTop: 8,
+      gap: 4,
+    },
+    headerOverline: {
+      color: `${theme.colors.primary}D9`,
+      fontSize: 11,
+      textTransform: "uppercase",
+      letterSpacing: 1,
+      fontWeight: "700",
+    },
+    headerTitle: {
+      color: theme.colors.onSurface,
+      fontFamily: typefaces.display,
+      fontSize: 28,
+      lineHeight: 34,
+      fontWeight: "700",
+    },
+    headerSubtext: {
+      color: theme.colors.onSurfaceMuted,
+      lineHeight: 20,
+    },
+    content: {
+      paddingHorizontal: 20,
+      paddingBottom: 120,
+      gap: 14,
+    },
+    sectionCard: {
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}40`,
+      backgroundColor: `${theme.colors.surface1}D9`,
+      padding: 14,
+      gap: 12,
+    },
+    sectionHeaderRow: {
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
-      paddingHorizontal: 20,
-      paddingTop: 8,
     },
-    headerTitle: {
-      color: theme.colors.primary,
-      textTransform: "uppercase",
-      letterSpacing: 2.4,
-      fontSize: 18,
-      fontWeight: "600",
-    },
-    body: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      paddingHorizontal: 20,
-      paddingBottom: 90,
+    sectionTitle: {
+      color: theme.colors.onSurface,
+      fontFamily: typefaces.display,
+      fontSize: 19,
+      fontWeight: "700",
     },
     cardsRow: {
       width: "100%",
       flexDirection: "row",
       gap: 8,
-      marginBottom: 36,
     },
     cardAnimatedWrap: {
       flex: 1,
@@ -187,10 +282,10 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       backgroundColor: "#171717",
       borderWidth: 1,
       borderColor: `${theme.colors.primary}73`,
-      height: 224,
+      height: 176,
       alignItems: "center",
       justifyContent: "center",
-      gap: 8,
+      gap: 6,
     },
     cardInnerBorder: {
       position: "absolute",
@@ -199,6 +294,12 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderWidth: 1,
       borderColor: `${theme.colors.primary}40`,
     },
+    cardLabel: {
+      color: `${theme.colors.onSurfaceMuted}D9`,
+      fontSize: 11,
+      textTransform: "uppercase",
+      letterSpacing: 0.8,
+    },
     revealedText: {
       color: theme.colors.primary,
       fontSize: 10,
@@ -206,24 +307,18 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       letterSpacing: 1,
       fontWeight: "700",
     },
-    promptWrap: {
-      alignItems: "center",
-      marginBottom: 24,
-      gap: 8,
-    },
     promptText: {
       color: `${theme.colors.primary}E5`,
-      textAlign: "center",
       fontFamily: typefaces.display,
-      fontSize: 20,
+      fontSize: 18,
       fontStyle: "italic",
-      maxWidth: 280,
-      lineHeight: 30,
+      lineHeight: 26,
+      textAlign: "center",
     },
-    promptLine: {
-      width: 82,
-      height: 1,
-      backgroundColor: `${theme.colors.primary}7F`,
+    buttonRow: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
     },
     secondaryButton: {
       borderColor: `${theme.colors.primary}59`,
@@ -232,5 +327,101 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     secondaryButtonDone: {
       backgroundColor: `${theme.colors.primary}2E`,
+    },
+    monthBlock: {
+      gap: 8,
+      marginBottom: 4,
+    },
+    monthLabel: {
+      color: theme.colors.primary,
+      fontSize: 11,
+      textTransform: "uppercase",
+      letterSpacing: 1,
+      fontWeight: "700",
+    },
+    calendarEventRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 10,
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}26`,
+      backgroundColor: `${theme.colors.surface2}8C`,
+      paddingHorizontal: 10,
+      paddingVertical: 8,
+    },
+    calendarDateBadge: {
+      width: 34,
+      height: 34,
+      borderRadius: 17,
+      alignItems: "center",
+      justifyContent: "center",
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}66`,
+      backgroundColor: `${theme.colors.primary}2B`,
+    },
+    calendarDay: {
+      color: theme.colors.primary,
+      fontWeight: "700",
+      fontSize: 14,
+    },
+    calendarEventBody: {
+      flex: 1,
+    },
+    calendarEventTitle: {
+      color: theme.colors.onSurface,
+      fontSize: 14,
+      fontWeight: "700",
+    },
+    calendarEventMeta: {
+      color: theme.colors.onSurfaceMuted,
+      fontSize: 12,
+      marginTop: 2,
+    },
+    timelineRow: {
+      flexDirection: "row",
+      alignItems: "flex-start",
+      gap: 10,
+    },
+    timelineDot: {
+      width: 10,
+      height: 10,
+      borderRadius: 5,
+      marginTop: 6,
+    },
+    timelineDotPrep: {
+      backgroundColor: theme.colors.info,
+    },
+    timelineDotPeak: {
+      backgroundColor: theme.colors.primary,
+    },
+    timelineDotIntegration: {
+      backgroundColor: theme.colors.success,
+    },
+    timelineBody: {
+      flex: 1,
+      borderLeftWidth: 1,
+      borderColor: `${theme.colors.primary}33`,
+      paddingLeft: 10,
+      paddingBottom: 10,
+    },
+    timelineDate: {
+      color: theme.colors.primary,
+      fontSize: 10,
+      textTransform: "uppercase",
+      letterSpacing: 0.9,
+      fontWeight: "700",
+      marginBottom: 2,
+    },
+    timelineTitle: {
+      color: theme.colors.onSurface,
+      fontSize: 14,
+      fontWeight: "700",
+      marginBottom: 2,
+    },
+    timelineSummary: {
+      color: theme.colors.onSurfaceMuted,
+      fontSize: 12,
+      lineHeight: 18,
     },
   });

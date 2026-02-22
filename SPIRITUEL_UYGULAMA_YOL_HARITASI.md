@@ -48,12 +48,19 @@ This document is a practical roadmap for building a beautiful, high-retention my
   - Grimoire list
   - Ritual detail (`Full Moon Release`)
   - Tools tarot spread screen
-- Library and My Space tabs are scaffolded with base UI.
+- Drizzle + `expo-sqlite` local-first foundation is active with schema, migration runner, and repository scaffolding.
+- Seeded local content is connected to screens (20+ rituals, 30+ library entries, moon events, cross-links).
+- Ritual material cross-link modal flow is live (ritual -> linked library mini preview).
+- Tools tab now includes Moon Calendar + Astro Timeline backed by `moon_events`.
+- My Space tab is DB-connected with favorites persistence and Book of Shadows journal CRUD.
+- Ritual bookmark action is persisted to `favorites` and reflected in My Space.
 - Semantic theming layer is implemented with light/dark modes (`surface1`, `surface2`, `onSurface`, `onPrimary`, etc.).
 - `react-native-paper` is integrated at root provider level with custom MD3 theme mapping.
 - Reusable UI components are started:
   - `RitualCard`
+  - `LibraryChip`
   - `MoonPhaseBadge`
+  - `IncantationBlock`
 
 ### In progress / recently started (high priority)
 - [x] Drizzle + `expo-sqlite` schema and first migration runner.
@@ -199,9 +206,9 @@ Every ritual and every library entity should connect to other relevant entities.
 - [x] Build My Space: favorites + simple journal
 
 ## Phase 2 (Week 6-8): Interactive Tools
-- [ ] Moon calendar module
-- [~] 3-card tarot spread experience (first UI pass complete)
-- [ ] Astrological events timeline
+- [x] Moon calendar module
+- [x] 3-card tarot spread experience
+- [x] Astrological events timeline
 - [ ] Notification triggers (daily reminder, moon events)
 
 ## Phase 3 (Week 9-10): Engagement and Premium
@@ -255,11 +262,11 @@ Every ritual and every library entity should connect to other relevant entities.
 
 ## 12) Updated Next Sprint Focus (Recommended)
 
-1. Data layer foundation: Drizzle schema + migrations + repository layer scaffolding.
-2. Seed content and connect screens to local data instead of static constants.
-3. Implement cross-link modal flow from ritual materials to library entries.
-4. Instrument analytics events for tab views and core interactions.
-5. Expand reusable component set (`LibraryChip`, `IncantationBlock`, ritual step primitives).
+1. Move analytics from console scaffold to production provider and validate event payload quality.
+2. Add notification triggers (daily reminder + moon events) with opt-in controls.
+3. Expand Home daily modules with DB-backed moon + tarot + recommendation logic.
+4. Add search/filter depth (moon phase, difficulty, materials) and improve discovery ranking.
+5. Prepare engagement layer: streaks, consistency indicators, and onboarding refinements.
 
 ---
 
