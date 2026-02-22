@@ -39,6 +39,28 @@ This document is a practical roadmap for building a beautiful, high-retention my
 - Background sync can be added later if cloud features are required
 - Repository layer between UI and database to keep business logic clean
 
+## 2.1) Current Implementation Snapshot (Feb 2026)
+
+### Completed in codebase
+- Expo Router app shell with 5-tab bottom navigation is implemented.
+- Design-driven first pass screens are implemented from `tasarim/stitch(8-11)` references:
+  - Home (moon + daily insight)
+  - Grimoire list
+  - Ritual detail (`Full Moon Release`)
+  - Tools tarot spread screen
+- Library and My Space tabs are scaffolded with base UI.
+- Semantic theming layer is implemented with light/dark modes (`surface1`, `surface2`, `onSurface`, `onPrimary`, etc.).
+- `react-native-paper` is integrated at root provider level with custom MD3 theme mapping.
+- Reusable UI components are started:
+  - `RitualCard`
+  - `MoonPhaseBadge`
+
+### Not started yet (high priority)
+- Drizzle + `expo-sqlite` schema and migrations.
+- Seeded content pipeline (20+ rituals, 30+ library entries).
+- Cross-linking (`entity_links`) and inline entity preview modal.
+- Analytics instrumentation for core events.
+
 ## 3) Information Architecture (5-Tab Bottom Navigation)
 
 ## 3.1 Home (Daily Summary)
@@ -164,23 +186,23 @@ Every ritual and every library entity should connect to other relevant entities.
 ## 8) Delivery Plan: MVP to V1
 
 ## Phase 0 (Week 1-2): Foundation
-- Finalize IA and wireframes for all 5 tabs
-- Define Drizzle schema and migrations
-- Create theme system with `react-native-paper`
-- Prepare initial seeded content model
+- [x] Finalize IA and wireframes for all 5 tabs
+- [ ] Define Drizzle schema and migrations
+- [x] Create theme system with `react-native-paper`
+- [ ] Prepare initial seeded content model
 
 ## Phase 1 (Week 3-5): MVP Core
-- Implement bottom tab navigation
-- Build Home daily modules (moon, tarot, intention, recommendation)
-- Build Grimoire list + ritual detail
-- Build Library basics
-- Build My Space: favorites + simple journal
+- [x] Implement bottom tab navigation
+- [~] Build Home daily modules (moon, tarot, intention, recommendation)
+- [x] Build Grimoire list + ritual detail
+- [x] Build Library basics
+- [x] Build My Space: favorites + simple journal
 
 ## Phase 2 (Week 6-8): Interactive Tools
-- Moon calendar module
-- 3-card tarot spread experience
-- Astrological events timeline
-- Notification triggers (daily reminder, moon events)
+- [ ] Moon calendar module
+- [~] 3-card tarot spread experience (first UI pass complete)
+- [ ] Astrological events timeline
+- [ ] Notification triggers (daily reminder, moon events)
 
 ## Phase 3 (Week 9-10): Engagement and Premium
 - Streak and consistency indicators
@@ -223,13 +245,21 @@ Every ritual and every library entity should connect to other relevant entities.
 
 ## 11) First 2-Week Action Plan (Start Now)
 
-1. Lock the 5-tab IA and user flows.
-2. Implement base app shell with `react-native-paper` bottom navigation.
-3. Create Drizzle schema on top of `expo-sqlite` and run first migrations.
-4. Build Home, Grimoire list, and Ritual Detail low-fi versions.
-5. Seed initial content: at least 20 rituals and 30 library entries.
-6. Implement cross-linking via `entity_links` + modal preview.
-7. Add analytics hooks to all primary actions.
+1. [x] Lock the 5-tab IA and user flows.
+2. [x] Implement base app shell with `react-native-paper` bottom navigation.
+3. [ ] Create Drizzle schema on top of `expo-sqlite` and run first migrations.
+4. [x] Build Home, Grimoire list, and Ritual Detail low-fi versions.
+5. [ ] Seed initial content: at least 20 rituals and 30 library entries.
+6. [ ] Implement cross-linking via `entity_links` + modal preview.
+7. [ ] Add analytics hooks to all primary actions.
+
+## 12) Updated Next Sprint Focus (Recommended)
+
+1. Data layer foundation: Drizzle schema + migrations + repository layer scaffolding.
+2. Seed content and connect screens to local data instead of static constants.
+3. Implement cross-link modal flow from ritual materials to library entries.
+4. Instrument analytics events for tab views and core interactions.
+5. Expand reusable component set (`LibraryChip`, `IncantationBlock`, ritual step primitives).
 
 ---
 
