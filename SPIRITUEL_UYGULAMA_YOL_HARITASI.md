@@ -209,7 +209,7 @@ Every ritual and every library entity should connect to other relevant entities.
 - [x] Moon calendar module
 - [x] 3-card tarot spread experience
 - [x] Astrological events timeline
-- [ ] Notification triggers (daily reminder, moon events)
+- [x] Notification triggers (daily reminder, moon events)
 
 ## Phase 3 (Week 9-10): Engagement and Premium
 - Streak and consistency indicators
@@ -263,7 +263,7 @@ Every ritual and every library entity should connect to other relevant entities.
 ## 12) Updated Next Sprint Focus (Recommended)
 
 1. Move analytics from console scaffold to production provider and validate event payload quality.
-2. Add notification triggers (daily reminder + moon events) with opt-in controls.
+2. Improve notification quality (timing experiments, copy tests, and reminder personalization).
 3. Refine Home personalization with richer recommendation scoring and fresh daily tarot rotation.
 4. Add search/filter depth (moon phase, difficulty, materials) and improve discovery ranking.
 5. Prepare engagement layer: streaks, consistency indicators, and onboarding refinements.

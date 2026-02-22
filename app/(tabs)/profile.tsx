@@ -14,7 +14,9 @@ import {
   removeRitualFavorite,
   updateJournalEntry,
 } from "@/db/repositories/my-space-repository";
+import { getNotificationsEnabled, setNotificationsEnabled } from "@/db/repositories/settings-repository";
 import { trackEvent } from "@/lib/analytics";
+import { disableMysticNotifications, enableMysticNotifications } from "@/lib/notifications";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
@@ -33,10 +35,14 @@ export default function ProfileScreen() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [mood, setMood] = useState("");
+  const [notificationsEnabled, setNotificationsEnabledState] = useState<boolean>(true);
+  const [isUpdatingNotifications, setIsUpdatingNotifications] = useState(false);
+  const [notificationStatusText, setNotificationStatusText] = useState<string>("");
 
   const refreshData = useCallback(() => {
     setFavorites(listFavoriteRituals(LOCAL_USER_ID));
     setJournalEntries(listJournalEntries(LOCAL_USER_ID));
+    setNotificationsEnabledState(getNotificationsEnabled(LOCAL_USER_ID));
   }, []);
 
   useEffect(() => {
@@ -81,6 +87,39 @@ export default function ProfileScreen() {
 
     resetForm();
     refreshData();
+  };
+
+  const onToggleNotifications = async () => {
+    if (isUpdatingNotifications) {
+      return;
+    }
+
+    const nextValue = !notificationsEnabled;
+
+    setIsUpdatingNotifications(true);
+    setNotificationStatusText("");
+
+    try {
+      if (nextValue) {
+        const result = await enableMysticNotifications();
+
+        setNotificationsEnabledState(result.enabled);
+        setNotificationsEnabled(LOCAL_USER_ID, result.enabled);
+
+        if (!result.enabled) {
+          setNotificationStatusText("Permission was not granted. You can enable reminders from device settings.");
+        } else {
+          setNotificationStatusText("Daily and moon event reminders are now active.");
+        }
+      } else {
+        await disableMysticNotifications();
+        setNotificationsEnabledState(false);
+        setNotificationsEnabled(LOCAL_USER_ID, false);
+        setNotificationStatusText("Reminders are turned off.");
+      }
+    } finally {
+      setIsUpdatingNotifications(false);
+    }
   };
 
   return (
@@ -238,6 +277,33 @@ export default function ProfileScreen() {
             </View>
           ) : null}
         </View>
+
+        <View style={styles.panel}>
+          <View style={styles.panelHeader}>
+            <Text style={styles.panelTitle}>Settings</Text>
+            <Text style={styles.panelMeta}>Personal</Text>
+          </View>
+
+          <View style={styles.settingRow}>
+            <View style={styles.settingTextWrap}>
+              <Text style={styles.settingTitle}>Daily and Moon Reminders</Text>
+              <Text style={styles.settingDescription}>Receive a daily ritual nudge and upcoming moon event alerts.</Text>
+            </View>
+
+            <Pressable disabled={isUpdatingNotifications} onPress={onToggleNotifications} style={styles.switchTapArea}>
+              <View style={[styles.switchPill, notificationsEnabled && styles.switchPillOn, isUpdatingNotifications && styles.switchPillBusy]}>
+                <View style={[styles.switchKnob, notificationsEnabled && styles.switchKnobOn]} />
+              </View>
+            </Pressable>
+          </View>
+
+          <Text style={styles.settingMetaLine}>
+            {notificationStatusText ||
+              (notificationsEnabled
+                ? "Active: daily reminder at 20:30 and moon events at 09:00."
+                : "Inactive: reminders are currently turned off.")}
+          </Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -394,5 +460,61 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       color: theme.colors.onSurfaceMuted,
       fontSize: 12,
       flex: 1,
+    },
+    settingRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      gap: 12,
+    },
+    settingTextWrap: {
+      flex: 1,
+      gap: 2,
+    },
+    settingTitle: {
+      color: theme.colors.onSurface,
+      fontSize: 14,
+      fontWeight: "700",
+    },
+    settingDescription: {
+      color: theme.colors.onSurfaceMuted,
+      fontSize: 12,
+      lineHeight: 18,
+    },
+    switchTapArea: {
+      paddingVertical: 4,
+      paddingHorizontal: 2,
+    },
+    switchPill: {
+      width: 52,
+      height: 30,
+      borderRadius: 999,
+      borderWidth: 1,
+      borderColor: `${theme.colors.outline}80`,
+      backgroundColor: `${theme.colors.surface2}CC`,
+      justifyContent: "center",
+      paddingHorizontal: 3,
+    },
+    switchPillOn: {
+      borderColor: `${theme.colors.primary}99`,
+      backgroundColor: `${theme.colors.primary}38`,
+    },
+    switchPillBusy: {
+      opacity: 0.6,
+    },
+    switchKnob: {
+      width: 22,
+      height: 22,
+      borderRadius: 11,
+      backgroundColor: theme.colors.onSurfaceMuted,
+    },
+    switchKnobOn: {
+      marginLeft: 23,
+      backgroundColor: theme.colors.primary,
+    },
+    settingMetaLine: {
+      color: theme.colors.onSurfaceMuted,
+      fontSize: 11,
+      lineHeight: 18,
     },
   });
