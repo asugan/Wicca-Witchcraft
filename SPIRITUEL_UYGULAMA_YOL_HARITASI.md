@@ -66,7 +66,7 @@ This document is a practical roadmap for building a beautiful, high-retention my
 - [x] Drizzle + `expo-sqlite` schema and first migration runner.
 - [x] Seeded content pipeline (20+ rituals, 30+ library entries).
 - [x] Cross-linking (`entity_links`) and inline entity preview modal.
-- [~] Analytics instrumentation for core events (console-based tracking scaffold).
+- [x] Analytics instrumentation moved to Aptabase (`@aptabase/react-native`) for production-ready event delivery.
 
 ## 3) Information Architecture (5-Tab Bottom Navigation)
 
@@ -225,7 +225,15 @@ Every ritual and every library entity should connect to other relevant entities.
 
 ## 9) Analytics Event Taxonomy
 
+### Analytics provider and setup
+- Provider: Aptabase React Native SDK (`@aptabase/react-native`)
+- App key source: `EXPO_PUBLIC_APTABASE_APP_KEY`
+- SDK should be initialized at app startup in root layout before user flows are tracked
+- Android requirement: `android.permission.INTERNET`
+- Property contract: custom event properties must be strings or numbers
+
 ### Core events
+- `app_started` (health-check event, once per app launch)
 - `home_viewed`
 - `daily_card_drawn`
 - `ritual_opened`
@@ -243,6 +251,13 @@ Every ritual and every library entity should connect to other relevant entities.
 - `entity_id`
 - `source`
 
+### Naming guide (dashboard consistency)
+- Event names: snake_case + past-tense intent (`app_started`, `ritual_opened`, `journal_entry_created`)
+- Property names: snake_case only (`user_id`, `tab_name`, `entity_id`, `source`, `timestamp`)
+- `tab_name` fixed enum: `home`, `grimoire`, `library`, `tools`, `profile`, `system`
+- `source` format: short snake_case context (`app_boot`, `ritual_grid`, `home_recommendation`, `my_space_form`)
+- `entity_id` rule: always send stable local DB id when entity exists; omit instead of sending placeholders
+
 ## 10) Risks and Mitigations
 
 - Content quality risk -> Editorial review workflow and source policy
@@ -258,11 +273,11 @@ Every ritual and every library entity should connect to other relevant entities.
 4. [x] Build Home, Grimoire list, and Ritual Detail low-fi versions.
 5. [x] Seed initial content: at least 20 rituals and 30 library entries.
 6. [x] Implement cross-linking via `entity_links` + modal preview.
-7. [~] Add analytics hooks to all primary actions.
+7. [x] Add analytics hooks to all primary actions.
 
 ## 12) Updated Next Sprint Focus (Recommended)
 
-1. Move analytics from console scaffold to production provider and validate event payload quality.
+1. Validate Aptabase event payload quality and dashboard naming consistency.
 2. Improve notification quality (timing experiments, copy tests, and reminder personalization).
 3. Refine Home personalization with richer recommendation scoring and fresh daily tarot rotation.
 4. Add search/filter depth (moon phase, difficulty, materials) and improve discovery ranking.
