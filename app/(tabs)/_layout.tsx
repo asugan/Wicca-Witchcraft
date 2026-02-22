@@ -1,65 +1,54 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
 type TabIconProps = {
   name: keyof typeof MaterialCommunityIcons.glyphMap;
-  label: string;
   color: string;
   focused: boolean;
   surfaceColor: string;
   borderColor: string;
 };
 
-function TabIcon({ name, label, color, focused, surfaceColor, borderColor }: TabIconProps) {
+function TabIcon({ name, color, focused, surfaceColor, borderColor }: TabIconProps) {
   return (
-    <View style={styles.iconWrap}>
-      <View
-        style={{
-          minWidth: 52,
-          borderRadius: 14,
-          paddingHorizontal: 14,
-          paddingVertical: 6,
-          backgroundColor: focused ? surfaceColor : "transparent",
-          borderWidth: focused ? 1 : 0,
+    <View
+      style={[
+        styles.iconWrap,
+        focused && {
+          backgroundColor: surfaceColor,
+          borderWidth: 1,
           borderColor,
-          alignItems: "center",
-        }}
-      >
-        <MaterialCommunityIcons color={color} name={name} size={22} />
-      </View>
-      <Text
-        style={{
-          fontSize: 10,
-          letterSpacing: 0.7,
-          color,
-          fontWeight: focused ? "700" : "500",
-          textTransform: "uppercase",
-        }}
-      >
-        {label}
-      </Text>
+        },
+      ]}
+    >
+      <MaterialCommunityIcons color={color} name={name} size={22} />
     </View>
   );
 }
 
 export default function TabsLayout() {
   const theme = useMysticTheme();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: `${theme.colors.background}F5`,
+          backgroundColor: theme.colors.background,
           borderTopColor: "rgba(255,255,255,0.06)",
-          height: 86,
-          paddingTop: 8,
-          paddingBottom: 8,
+          height: 62 + insets.bottom,
+          paddingTop: 6,
+          paddingBottom: Math.max(6, insets.bottom - 2),
         },
-        tabBarShowLabel: false,
+        tabBarLabelPosition: "below-icon",
+        tabBarShowLabel: true,
+        tabBarIconStyle: styles.tabBarIcon,
+        tabBarLabelStyle: styles.tabBarLabel,
         tabBarActiveTintColor: theme.colors.primary,
         tabBarInactiveTintColor: theme.colors.onSurfaceMuted,
       }}
@@ -67,12 +56,12 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
+          title: "Moon",
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}
               color={color}
               focused={focused}
-              label="Moon"
               name="moon-waning-gibbous"
               surfaceColor={`${theme.colors.primary}2D`}
             />
@@ -82,12 +71,12 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="grimoire"
         options={{
+          title: "Grimoire",
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}
               color={color}
               focused={focused}
-              label="Grimoire"
               name="book-open-page-variant"
               surfaceColor={`${theme.colors.primary}2D`}
             />
@@ -97,12 +86,12 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="library"
         options={{
+          title: "Library",
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}
               color={color}
               focused={focused}
-              label="Library"
               name="diamond-stone"
               surfaceColor={`${theme.colors.primary}2D`}
             />
@@ -112,12 +101,12 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="tools"
         options={{
+          title: "Tools",
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}
               color={color}
               focused={focused}
-              label="Tools"
               name="cards-playing"
               surfaceColor={`${theme.colors.primary}2D`}
             />
@@ -127,12 +116,12 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="profile"
         options={{
+          title: "Profile",
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}
               color={color}
               focused={focused}
-              label="Profile"
               name="account-circle-outline"
               surfaceColor={`${theme.colors.primary}2D`}
             />
@@ -144,8 +133,20 @@ export default function TabsLayout() {
 }
 
 const styles = StyleSheet.create({
+  tabBarIcon: {
+    marginBottom: 1,
+  },
+  tabBarLabel: {
+    fontSize: 10,
+    lineHeight: 12,
+    fontWeight: "600",
+    marginTop: 2,
+  },
   iconWrap: {
+    width: 52,
+    height: 34,
+    borderRadius: 14,
     alignItems: "center",
-    gap: 2,
+    justifyContent: "center",
   },
 });
