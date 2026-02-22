@@ -56,6 +56,7 @@ This document is a practical roadmap for building a beautiful, high-retention my
 - Ritual bookmark action is persisted to `favorites` and reflected in My Space.
 - Semantic theming layer is implemented with light/dark modes (`surface1`, `surface2`, `onSurface`, `onPrimary`, etc.).
 - `react-native-paper` is integrated at root provider level with custom MD3 theme mapping.
+- Grimoire search/discovery now supports weighted relevance ranking with difficulty, moon phase, and material filters.
 - Reusable UI components are started:
   - `RitualCard`
   - `LibraryChip`
@@ -280,7 +281,7 @@ Every ritual and every library entity should connect to other relevant entities.
 1. Validate Aptabase event payload quality and dashboard naming consistency.
 2. Improve notification quality (timing experiments, copy tests, and reminder personalization).
 3. Refine Home personalization with richer recommendation scoring and fresh daily tarot rotation.
-4. Add search/filter depth (moon phase, difficulty, materials) and improve discovery ranking.
+4. [x] Add search/filter depth (moon phase, difficulty, materials) and improve discovery ranking.
 5. Prepare engagement layer: streaks, consistency indicators, and onboarding refinements.
 
 ---

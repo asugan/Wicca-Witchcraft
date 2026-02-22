@@ -1,4 +1,5 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { memo } from "react";
 import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper";
 
@@ -13,7 +14,7 @@ type RitualCardProps = {
   onPress?: () => void;
 };
 
-export function RitualCard({ title, subtitle, image, icon, onPress }: RitualCardProps) {
+function RitualCardComponent({ title, subtitle, image, icon, onPress }: RitualCardProps) {
   const theme = useMysticTheme();
   const styles = makeStyles(theme);
 
@@ -32,6 +33,15 @@ export function RitualCard({ title, subtitle, image, icon, onPress }: RitualCard
     </Pressable>
   );
 }
+
+export const RitualCard = memo(RitualCardComponent, (prevProps, nextProps) => {
+  return (
+    prevProps.title === nextProps.title &&
+    prevProps.subtitle === nextProps.subtitle &&
+    prevProps.image === nextProps.image &&
+    prevProps.icon === nextProps.icon
+  );
+});
 
 const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
   StyleSheet.create({

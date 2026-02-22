@@ -13,12 +13,13 @@ export type RitualListItem = {
   moonPhase: string;
   durationMinutes: number;
   coverImage: string;
+  materials: string[];
 };
 
 export function listRituals(limit?: number): RitualListItem[] {
   ensureDatabaseInitialized();
 
-  const rows = db
+  const ritualRows = db
     .select({
       id: rituals.id,
       slug: rituals.slug,
@@ -33,6 +34,33 @@ export function listRituals(limit?: number): RitualListItem[] {
     .from(rituals)
     .orderBy(asc(rituals.createdAt))
     .all();
+
+  const ritualMaterialRows = db
+    .select({
+      ritualId: ritualMaterials.ritualId,
+      materialName: materials.name,
+    })
+    .from(ritualMaterials)
+    .innerJoin(materials, eq(ritualMaterials.materialId, materials.id))
+    .all();
+
+  const materialsByRitual = new Map<string, string[]>();
+
+  for (const row of ritualMaterialRows) {
+    const existingMaterials = materialsByRitual.get(row.ritualId);
+
+    if (existingMaterials) {
+      existingMaterials.push(row.materialName);
+      continue;
+    }
+
+    materialsByRitual.set(row.ritualId, [row.materialName]);
+  }
+
+  const rows = ritualRows.map((row) => ({
+    ...row,
+    materials: materialsByRitual.get(row.id) ?? [],
+  }));
 
   if (!limit) {
     return rows;
