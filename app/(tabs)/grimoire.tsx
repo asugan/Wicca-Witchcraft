@@ -1,78 +1,51 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ImageBackground, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Searchbar, Text } from "react-native-paper";
 
 import { RitualCard } from "@/components/mystic/RitualCard";
+import { listRituals } from "@/db/repositories/ritual-repository";
+import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
-type Category = {
-  id: string;
-  title: string;
-  subtitle: string;
-  image: string;
-  icon: keyof typeof MaterialCommunityIcons.glyphMap;
+const categoryIcons: Record<string, keyof typeof MaterialCommunityIcons.glyphMap> = {
+  love: "heart",
+  protection: "shield",
+  abundance: "cash",
+  healing: "leaf",
+  moon: "moon-waning-gibbous",
+  ritual: "book-open-page-variant",
+  beginner: "star-four-points",
 };
-
-const categories: Category[] = [
-  {
-    id: "love",
-    title: "Love Spells",
-    subtitle: "Attract romance, self-love, and strengthen bonds.",
-    image:
-      "https://images.unsplash.com/photo-1518893494013-481c1d8ed3fd?q=80&w=1200&auto=format&fit=crop",
-    icon: "heart",
-  },
-  {
-    id: "protection",
-    title: "Protection",
-    subtitle: "Wards, shielding, and defensive magic.",
-    image:
-      "https://images.unsplash.com/photo-1565514020179-026b92b2d5f5?q=80&w=1200&auto=format&fit=crop",
-    icon: "shield",
-  },
-  {
-    id: "abundance",
-    title: "Abundance",
-    subtitle: "Wealth, prosperity, and career success.",
-    image:
-      "https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=1200&auto=format&fit=crop",
-    icon: "cash",
-  },
-  {
-    id: "healing",
-    title: "Healing",
-    subtitle: "Physical, emotional, and spiritual balance.",
-    image:
-      "https://images.unsplash.com/photo-1593487568720-92097fb460fb?q=80&w=1200&auto=format&fit=crop",
-    icon: "leaf",
-  },
-  {
-    id: "divination",
-    title: "Divination",
-    subtitle: "Tarot, scrying, and hidden knowledge.",
-    image:
-      "https://images.unsplash.com/photo-1556702571-3e11dd2b1a92?q=80&w=1200&auto=format&fit=crop",
-    icon: "eye",
-  },
-  {
-    id: "rituals",
-    title: "Rituals",
-    subtitle: "Moon cycles and seasonal ceremonies.",
-    image:
-      "https://images.unsplash.com/photo-1520256862855-398228c41684?q=80&w=1200&auto=format&fit=crop",
-    icon: "moon-waning-gibbous",
-  },
-];
 
 export default function GrimoireScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
   const styles = makeStyles(theme);
   const [query, setQuery] = useState("");
+
+  const rituals = useMemo(() => listRituals(20), []);
+
+  const filteredRituals = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+
+    if (!normalizedQuery) {
+      return rituals;
+    }
+
+    return rituals.filter((ritual) => {
+      return (
+        ritual.title.toLowerCase().includes(normalizedQuery) ||
+        ritual.summary.toLowerCase().includes(normalizedQuery) ||
+        ritual.category.toLowerCase().includes(normalizedQuery)
+      );
+    });
+  }, [query, rituals]);
+
+  const featuredRitual = filteredRituals[0] ?? rituals[0];
 
   return (
     <SafeAreaView edges={["top"]} style={styles.safe}>
@@ -98,36 +71,40 @@ export default function GrimoireScreen() {
         />
 
         <View>
-          <Text style={styles.overline}>Current Phase</Text>
-          <ImageBackground
-            imageStyle={styles.featuredImage}
-            source={{
-              uri: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?q=80&w=1887&auto=format&fit=crop",
-            }}
-            style={styles.featuredCard}
-          >
-            <View style={styles.featuredOverlay} />
-            <Text style={styles.featuredTag}>Waxing Gibbous</Text>
-            <Text style={styles.featuredTitle}>Moon Rituals</Text>
-            <Text style={styles.featuredDescription}>
-              Harness the growing energy for manifestation and attraction.
-            </Text>
-          </ImageBackground>
+          <Text style={styles.overline}>Current Focus</Text>
+          {featuredRitual ? (
+            <ImageBackground imageStyle={styles.featuredImage} source={{ uri: featuredRitual.coverImage }} style={styles.featuredCard}>
+              <View style={styles.featuredOverlay} />
+              <Text style={styles.featuredTag}>{featuredRitual.moonPhase.replaceAll("-", " ")}</Text>
+              <Text style={styles.featuredTitle}>{featuredRitual.title}</Text>
+              <Text style={styles.featuredDescription}>{featuredRitual.summary}</Text>
+            </ImageBackground>
+          ) : null}
         </View>
 
         <View>
           <Text style={styles.overline}>Grimoire Chapters</Text>
           <View style={styles.grid}>
-            {categories.map((category) => (
+            {filteredRituals.map((ritual) => (
               <RitualCard
-                icon={category.icon}
-                image={category.image}
-                key={category.id}
-                onPress={() => router.push("/ritual/full-moon-release")}
-                subtitle={category.subtitle}
-                title={category.title}
+                icon={categoryIcons[ritual.category] ?? "book-open-page-variant"}
+                image={ritual.coverImage}
+                key={ritual.id}
+                onPress={() => {
+                  trackEvent("ritual_opened", {
+                    user_id: "local-user",
+                    tab_name: "grimoire",
+                    entity_id: ritual.id,
+                    source: "ritual_grid",
+                  });
+
+                  router.push(`/ritual/${ritual.slug}` as never);
+                }}
+                subtitle={ritual.summary}
+                title={ritual.title}
               />
             ))}
+            {!filteredRituals.length ? <Text style={styles.emptyLabel}>No rituals match this search.</Text> : null}
           </View>
         </View>
       </ScrollView>
@@ -236,5 +213,10 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       flexDirection: "row",
       flexWrap: "wrap",
       gap: 12,
+    },
+    emptyLabel: {
+      color: theme.colors.onSurfaceMuted,
+      fontSize: 14,
+      marginTop: 10,
     },
   });

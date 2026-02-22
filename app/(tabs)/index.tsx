@@ -1,9 +1,11 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useEffect } from "react";
 import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Surface, Text } from "react-native-paper";
 
 import { MoonPhaseBadge } from "@/components/mystic/MoonPhaseBadge";
+import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
@@ -16,6 +18,14 @@ const actions: { id: string; icon: keyof typeof MaterialCommunityIcons.glyphMap;
 export default function HomeScreen() {
   const theme = useMysticTheme();
   const styles = makeStyles(theme);
+
+  useEffect(() => {
+    trackEvent("home_viewed", {
+      user_id: "local-user",
+      tab_name: "home",
+      source: "tab_mount",
+    });
+  }, []);
 
   return (
     <SafeAreaView edges={["top"]} style={styles.safe}>
@@ -95,6 +105,14 @@ export default function HomeScreen() {
             <Button
               contentStyle={styles.primaryButtonContent}
               mode="contained"
+              onPress={() => {
+                trackEvent("daily_card_drawn", {
+                  user_id: "local-user",
+                  tab_name: "home",
+                  entity_id: "daily-card-default",
+                  source: "home_card",
+                });
+              }}
               style={styles.primaryButton}
               textColor={theme.colors.onPrimary}
             >

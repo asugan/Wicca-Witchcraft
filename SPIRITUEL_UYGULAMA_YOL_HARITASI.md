@@ -55,11 +55,11 @@ This document is a practical roadmap for building a beautiful, high-retention my
   - `RitualCard`
   - `MoonPhaseBadge`
 
-### Not started yet (high priority)
-- Drizzle + `expo-sqlite` schema and migrations.
-- Seeded content pipeline (20+ rituals, 30+ library entries).
-- Cross-linking (`entity_links`) and inline entity preview modal.
-- Analytics instrumentation for core events.
+### In progress / recently started (high priority)
+- [x] Drizzle + `expo-sqlite` schema and first migration runner.
+- [x] Seeded content pipeline (20+ rituals, 30+ library entries).
+- [x] Cross-linking (`entity_links`) and inline entity preview modal.
+- [~] Analytics instrumentation for core events (console-based tracking scaffold).
 
 ## 3) Information Architecture (5-Tab Bottom Navigation)
 
@@ -187,9 +187,9 @@ Every ritual and every library entity should connect to other relevant entities.
 
 ## Phase 0 (Week 1-2): Foundation
 - [x] Finalize IA and wireframes for all 5 tabs
-- [ ] Define Drizzle schema and migrations
+- [x] Define Drizzle schema and migrations
 - [x] Create theme system with `react-native-paper`
-- [ ] Prepare initial seeded content model
+- [x] Prepare initial seeded content model
 
 ## Phase 1 (Week 3-5): MVP Core
 - [x] Implement bottom tab navigation
@@ -247,11 +247,11 @@ Every ritual and every library entity should connect to other relevant entities.
 
 1. [x] Lock the 5-tab IA and user flows.
 2. [x] Implement base app shell with `react-native-paper` bottom navigation.
-3. [ ] Create Drizzle schema on top of `expo-sqlite` and run first migrations.
+3. [x] Create Drizzle schema on top of `expo-sqlite` and run first migrations.
 4. [x] Build Home, Grimoire list, and Ritual Detail low-fi versions.
-5. [ ] Seed initial content: at least 20 rituals and 30 library entries.
-6. [ ] Implement cross-linking via `entity_links` + modal preview.
-7. [ ] Add analytics hooks to all primary actions.
+5. [x] Seed initial content: at least 20 rituals and 30 library entries.
+6. [x] Implement cross-linking via `entity_links` + modal preview.
+7. [~] Add analytics hooks to all primary actions.
 
 ## 12) Updated Next Sprint Focus (Recommended)
 
