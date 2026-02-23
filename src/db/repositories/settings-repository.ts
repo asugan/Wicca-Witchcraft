@@ -4,7 +4,9 @@ import { db, ensureDatabaseInitialized } from "@/db/client";
 import { appSettings } from "@/db/schema";
 import { type AppLanguage, getDeviceAppLanguage } from "@/i18n/config";
 
-const DEFAULT_THEME_MODE = "system";
+export type ThemeMode = "system" | "light" | "dark";
+
+const DEFAULT_THEME_MODE: ThemeMode = "system";
 
 function createSettingsId(userId: string) {
   return `${userId}-settings`;
@@ -94,6 +96,50 @@ export function setNotificationsEnabled(userId: string, notificationsEnabled: bo
       userId,
       themeMode: DEFAULT_THEME_MODE,
       notificationsEnabled,
+      premiumActive: false,
+    })
+    .run();
+}
+
+export function getThemeMode(userId: string): ThemeMode {
+  ensureDatabaseInitialized();
+
+  const row = db
+    .select({ themeMode: appSettings.themeMode })
+    .from(appSettings)
+    .where(eq(appSettings.userId, userId))
+    .limit(1)
+    .get();
+
+  if (row && row.themeMode) {
+    return row.themeMode as ThemeMode;
+  }
+
+  return DEFAULT_THEME_MODE;
+}
+
+export function setThemeMode(userId: string, themeMode: ThemeMode): void {
+  ensureDatabaseInitialized();
+
+  const existing = db
+    .select({ id: appSettings.id })
+    .from(appSettings)
+    .where(eq(appSettings.userId, userId))
+    .limit(1)
+    .get();
+
+  if (existing) {
+    db.update(appSettings).set({ themeMode }).where(eq(appSettings.id, existing.id)).run();
+
+    return;
+  }
+
+  db.insert(appSettings)
+    .values({
+      id: createSettingsId(userId),
+      userId,
+      themeMode,
+      notificationsEnabled: false,
       premiumActive: false,
     })
     .run();

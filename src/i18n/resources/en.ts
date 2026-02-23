@@ -132,6 +132,12 @@ export type Translations = {
     languagePortuguese: string;
     languageSavedMessage: string;
     saveErrorMessage: string;
+    themeLabel: string;
+    themeHint: string;
+    themeSystem: string;
+    themeLight: string;
+    themeDark: string;
+    themeSavedMessage: string;
     premiumTitle: string;
     premiumHint: string;
     premiumActiveHint: string;
@@ -364,6 +370,12 @@ export const enTranslations: Translations = {
     languagePortuguese: "Português",
     languageSavedMessage: "Language saved to {{language}}",
     saveErrorMessage: "Could not save language preference",
+    themeLabel: "Appearance",
+    themeHint: "Choose your preferred theme",
+    themeSystem: "System",
+    themeLight: "Light",
+    themeDark: "Dark",
+    themeSavedMessage: "Theme changed to {{theme}}",
     premiumTitle: "Premium",
     premiumHint: "Unlock exclusive rituals and advanced features",
     premiumActiveHint: "You have full access to all premium features",

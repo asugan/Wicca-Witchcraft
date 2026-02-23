@@ -1,11 +1,11 @@
-import { useColorScheme } from "react-native";
+import { useThemeContext, type AppMode } from "@/context/theme-context";
+import { appThemes } from "@/theme/tokens";
 
-import { appThemes, type AppMode } from "@/theme/tokens";
+export type { AppMode };
 
 export function useAppMode(): AppMode {
-  const preferred = useColorScheme();
-
-  return preferred === "light" ? "light" : "dark";
+  const { appMode } = useThemeContext();
+  return appMode;
 }
 
 export function useMysticTheme() {

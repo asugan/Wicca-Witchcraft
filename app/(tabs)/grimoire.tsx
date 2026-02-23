@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 
 import { RitualCard } from "@/components/mystic/RitualCard";
 import { listRituals } from "@/db/repositories/ritual-repository";
-import { hasProAccess } from "@/db/repositories/subscription-repository";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";

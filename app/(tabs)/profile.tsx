@@ -8,6 +8,8 @@ import { Button, Modal, Portal, RadioButton, Text, TextInput } from "react-nativ
 import { useTranslation } from "react-i18next";
 
 import { FREE_JOURNAL_LIMIT } from "@/config/premium";
+import { useThemeContext, type ThemeMode } from "@/context/theme-context";
+import { useToast } from "@/context/toast-context";
 import {
   canCreateJournalEntry,
   createJournalEntry,
@@ -31,7 +33,6 @@ import { trackEvent } from "@/lib/analytics";
 import { disableMysticNotifications, enableMysticNotifications } from "@/lib/notifications";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
-import { useToast } from "@/context/toast-context";
 
 const LOCAL_USER_ID = "local-user";
 
@@ -47,12 +48,21 @@ const LANGUAGE_OPTIONS: LanguageOption[] = [
   { code: "pt", labelKey: "settings.languagePortuguese" },
 ];
 
+type ThemeOption = { code: ThemeMode; labelKey: string; icon: "theme-light-dark" | "weather-sunny" | "moon-waning-crescent" };
+
+const THEME_OPTIONS: ThemeOption[] = [
+  { code: "system", labelKey: "settings.themeSystem", icon: "theme-light-dark" },
+  { code: "light", labelKey: "settings.themeLight", icon: "weather-sunny" },
+  { code: "dark", labelKey: "settings.themeDark", icon: "moon-waning-crescent" },
+];
+
 export default function ProfileScreen() {
   const router = useRouter();
   const isFocused = useIsFocused();
   const theme = useMysticTheme();
   const { t } = useTranslation();
   const { showToast } = useToast();
+  const { themeMode, setThemeMode } = useThemeContext();
   const styles = makeStyles(theme);
 
   const [favorites, setFavorites] = useState<ReturnType<typeof listFavoriteRituals>>([]);
@@ -69,6 +79,7 @@ export default function ProfileScreen() {
   const [notificationStatusText, setNotificationStatusText] = useState<string>("");
   const [languageModalVisible, setLanguageModalVisible] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<AppLanguage>("en");
+  const [themeModalVisible, setThemeModalVisible] = useState(false);
 
   const refreshData = useCallback(() => {
     setFavorites(listFavoriteRituals(LOCAL_USER_ID));
@@ -92,7 +103,7 @@ export default function ProfileScreen() {
   }, [isFocused, refreshData]);
 
   const isEditing = useMemo(() => Boolean(editingEntryId), [editingEntryId]);
-  const canAddEntry = useMemo(() => canCreateJournalEntry(LOCAL_USER_ID, isProActive), [isProActive, journalEntryCount]);
+  const canAddEntry = useMemo(() => canCreateJournalEntry(LOCAL_USER_ID, isProActive), [isProActive]);
   const journalLimitReached = useMemo(() => !isProActive && journalEntryCount >= FREE_JOURNAL_LIMIT, [isProActive, journalEntryCount]);
   const remainingEntries = useMemo(() => isProActive ? -1 : Math.max(0, FREE_JOURNAL_LIMIT - journalEntryCount), [isProActive, journalEntryCount]);
 
@@ -175,6 +186,15 @@ export default function ProfileScreen() {
     showToast(fixedT("settings.languageSavedMessage" as string, { language: languageName }), "success");
   };
 
+  const handleThemeSelect = (mode: ThemeMode) => {
+    setThemeMode(mode);
+    setThemeModalVisible(false);
+
+    const themeOption = THEME_OPTIONS.find((opt) => opt.code === mode);
+    const themeName = themeOption ? t(themeOption.labelKey as string) : mode;
+    showToast(t("settings.themeSavedMessage" as string, { theme: themeName }), "success");
+  };
+
   return (
     <SafeAreaView edges={["top"]} style={styles.safe}>
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
@@ -218,6 +238,27 @@ export default function ProfileScreen() {
                 {LANGUAGE_OPTIONS.find((opt) => opt.code === selectedLanguage)
                   ? t(LANGUAGE_OPTIONS.find((opt) => opt.code === selectedLanguage)!.labelKey as string)
                   : selectedLanguage.toUpperCase()}
+              </Text>
+              <MaterialCommunityIcons color={theme.colors.primary} name="chevron-right" size={16} />
+            </Pressable>
+          </View>
+
+          <View style={styles.settingRow}>
+            <View style={styles.settingTextWrap}>
+              <Text style={styles.settingTitle}>{t("settings.themeLabel")}</Text>
+              <Text style={styles.settingDescription}>{t("settings.themeHint")}</Text>
+            </View>
+
+            <Pressable onPress={() => setThemeModalVisible(true)} style={styles.languageButton}>
+              <MaterialCommunityIcons
+                color={theme.colors.primary}
+                name={THEME_OPTIONS.find((opt) => opt.code === themeMode)?.icon ?? "theme-light-dark"}
+                size={16}
+              />
+              <Text style={styles.languageButtonText}>
+                {THEME_OPTIONS.find((opt) => opt.code === themeMode)
+                  ? t(THEME_OPTIONS.find((opt) => opt.code === themeMode)!.labelKey as string)
+                  : themeMode}
               </Text>
               <MaterialCommunityIcons color={theme.colors.primary} name="chevron-right" size={16} />
             </Pressable>
@@ -445,6 +486,30 @@ export default function ProfileScreen() {
             ))}
           </RadioButton.Group>
           <Button mode="text" onPress={() => setLanguageModalVisible(false)} textColor={theme.colors.onSurfaceMuted}>
+            {t("common.close")}
+          </Button>
+        </Modal>
+
+        <Modal
+          contentContainerStyle={styles.languageModal}
+          onDismiss={() => setThemeModalVisible(false)}
+          visible={themeModalVisible}
+        >
+          <Text style={styles.languageModalTitle}>{t("settings.themeLabel")}</Text>
+          <RadioButton.Group onValueChange={(val) => handleThemeSelect(val as ThemeMode)} value={themeMode}>
+            {THEME_OPTIONS.map((option) => (
+              <Pressable
+                key={option.code}
+                onPress={() => handleThemeSelect(option.code)}
+                style={styles.languageOption}
+              >
+                <RadioButton color={theme.colors.primary} value={option.code} />
+                <MaterialCommunityIcons color={theme.colors.onSurface} name={option.icon} size={20} />
+                <Text style={styles.languageOptionText}>{t(option.labelKey as string)}</Text>
+              </Pressable>
+            ))}
+          </RadioButton.Group>
+          <Button mode="text" onPress={() => setThemeModalVisible(false)} textColor={theme.colors.onSurfaceMuted}>
             {t("common.close")}
           </Button>
         </Modal>

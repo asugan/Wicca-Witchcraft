@@ -52,39 +52,6 @@ const SPREAD_LABELS: Record<SpreadType, string> = {
   career: "tools.spreadCareer",
 };
 
-const SPREAD_POSITION_LABELS: Record<SpreadType, string[]> = {
-  daily: ["tools.cardDaily"],
-  three_card: ["tools.cardPast", "tools.cardPresent", "tools.cardFuture"],
-  celtic_cross: [
-    "tools.celticPresent",
-    "tools.celticChallenge",
-    "tools.celticPast",
-    "tools.celticFuture",
-    "tools.celticAbove",
-    "tools.celticBelow",
-    "tools.celticAdvice",
-    "tools.celticExternal",
-    "tools.celticHopes",
-    "tools.celticOutcome",
-  ],
-  relationship: [
-    "tools.relationshipYou",
-    "tools.relationshipPartner",
-    "tools.relationshipConnection",
-    "tools.relationshipChallenge",
-    "tools.relationshipAdvice",
-    "tools.relationshipNearFuture",
-    "tools.relationshipOutcome",
-  ],
-  career: [
-    "tools.careerCurrent",
-    "tools.careerObstacles",
-    "tools.careerHidden",
-    "tools.careerAdvice",
-    "tools.careerOutcome",
-  ],
-};
-
 export default function ToolsScreen() {
   const theme = useMysticTheme();
   const { t } = useTranslation();

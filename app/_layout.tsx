@@ -3,6 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import { PaperProvider } from "react-native-paper";
 
+import { ThemeProvider } from "@/context/theme-context";
+import { ToastProvider } from "@/context/toast-context";
 import { getLanguagePreference, getNotificationsEnabled } from "@/db/repositories/settings-repository";
 import { initRevenueCat } from "@/features/subscription/revenuecat";
 import i18n from "@/i18n";
@@ -10,13 +12,12 @@ import { initAnalytics, trackAppStarted } from "@/lib/analytics";
 import { syncMysticNotifications } from "@/lib/notifications";
 import { getPaperTheme } from "@/theme/paper-theme";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
-import { ToastProvider } from "@/context/toast-context";
 
 const LOCAL_USER_ID = "local-user";
 
 initAnalytics();
 
-export default function RootLayout() {
+function RootLayoutContent() {
   const theme = useMysticTheme();
 
   useEffect(() => {
@@ -45,5 +46,13 @@ export default function RootLayout() {
         />
       </ToastProvider>
     </PaperProvider>
+  );
+}
+
+export default function RootLayout() {
+  return (
+    <ThemeProvider>
+      <RootLayoutContent />
+    </ThemeProvider>
   );
 }
