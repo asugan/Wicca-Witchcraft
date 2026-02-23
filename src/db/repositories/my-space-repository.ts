@@ -5,6 +5,7 @@ import { db, ensureDatabaseInitialized } from "@/db/client";
 import { favorites, journalEntries, rituals } from "@/db/schema";
 
 const RITUAL_ENTITY_TYPE = "ritual";
+const LIBRARY_ENTRY_ENTITY_TYPE = "library_entry";
 
 function createId(prefix: string) {
   return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
@@ -85,6 +86,50 @@ export function removeRitualFavorite(userId: string, ritualId: string) {
   db.delete(favorites)
     .where(and(eq(favorites.userId, userId), eq(favorites.entityType, RITUAL_ENTITY_TYPE), eq(favorites.entityId, ritualId)))
     .run();
+}
+
+export function isLibraryEntryFavorited(userId: string, entryId: string) {
+  ensureDatabaseInitialized();
+
+  const row = db
+    .select({ id: favorites.id })
+    .from(favorites)
+    .where(and(eq(favorites.userId, userId), eq(favorites.entityType, LIBRARY_ENTRY_ENTITY_TYPE), eq(favorites.entityId, entryId)))
+    .limit(1)
+    .get();
+
+  return Boolean(row);
+}
+
+export function toggleLibraryEntryFavorite(userId: string, entryId: string) {
+  ensureDatabaseInitialized();
+
+  const existing = db
+    .select({ id: favorites.id })
+    .from(favorites)
+    .where(and(eq(favorites.userId, userId), eq(favorites.entityType, LIBRARY_ENTRY_ENTITY_TYPE), eq(favorites.entityId, entryId)))
+    .limit(1)
+    .get();
+
+  if (existing) {
+    db.delete(favorites)
+      .where(and(eq(favorites.userId, userId), eq(favorites.entityType, LIBRARY_ENTRY_ENTITY_TYPE), eq(favorites.entityId, entryId)))
+      .run();
+
+    return false;
+  }
+
+  db.insert(favorites)
+    .values({
+      id: createId("favorite"),
+      userId,
+      entityType: LIBRARY_ENTRY_ENTITY_TYPE,
+      entityId: entryId,
+      createdAt: Date.now(),
+    })
+    .run();
+
+  return true;
 }
 
 export function listJournalEntries(userId: string) {

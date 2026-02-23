@@ -12,6 +12,8 @@ export type AnalyticsEventName =
   | "ritual_opened"
   | "material_link_clicked"
   | "library_entry_viewed"
+  | "library_entry_opened"
+  | "library_entry_favorited"
   | "ritual_favorited"
   | "journal_entry_created"
   | "premium_paywall_viewed"

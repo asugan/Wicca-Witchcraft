@@ -1,7 +1,13 @@
-import { asc } from "drizzle-orm";
+import { asc, eq } from "drizzle-orm";
 
 import { db, ensureDatabaseInitialized } from "@/db/client";
 import { libraryEntries } from "@/db/schema";
+
+export function getLibraryEntryBySlug(slug: string) {
+  ensureDatabaseInitialized();
+
+  return db.select().from(libraryEntries).where(eq(libraryEntries.slug, slug)).get();
+}
 
 export function listLibraryEntries() {
   ensureDatabaseInitialized();

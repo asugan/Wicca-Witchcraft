@@ -69,6 +69,40 @@ export type Translations = {
     typeSymbol: string;
     typeDeity: string;
   };
+  libraryDetail: {
+    notFound: string;
+    goBack: string;
+    energy: string;
+    timing: string;
+    ritualUsage: string;
+    associatedWith: string;
+    premiumContent: string;
+    unlockWithPremium: string;
+    usageCleanse: string;
+    usageProgram: string;
+    usageProgramContent: string;
+    usageCarry: string;
+    usagePrepare: string;
+    usagePrepareHerbContent: string;
+    usageBurn: string;
+    usageStore: string;
+    usageSetAltar: string;
+    usageSetAltarContent: string;
+    usageIgnite: string;
+    usageIgniteContent: string;
+    usageStudy: string;
+    usageStudyContent: string;
+    usageDraw: string;
+    usageDrawContent: string;
+    usageMeditate: string;
+    usageMeditateContent: string;
+    usageResearch: string;
+    usageResearchContent: string;
+    usageOffering: string;
+    usageOfferingContent: string;
+    usageInvoke: string;
+    usageInvokeContent: string;
+  };
   tools: {
     overline: string;
     title: string;
@@ -306,6 +340,40 @@ export const enTranslations: Translations = {
     typeCandle: "Candle",
     typeSymbol: "Symbol",
     typeDeity: "Deity",
+  },
+  libraryDetail: {
+    notFound: "Entry not found",
+    goBack: "Go Back",
+    energy: "Energy",
+    timing: "Timing",
+    ritualUsage: "Ritual Usage",
+    associatedWith: "Associated With",
+    premiumContent: "Premium Content",
+    unlockWithPremium: "Unlock with Premium",
+    usageCleanse: "Cleanse & Prepare",
+    usageProgram: "Program Intention",
+    usageProgramContent: "Hold the item and visualize your intention flowing into it. State your purpose clearly.",
+    usageCarry: "Carry or Place",
+    usagePrepare: "Prepare the Herb",
+    usagePrepareHerbContent: "Dry or bundle the herb according to your ritual needs. Handle with intention.",
+    usageBurn: "Burn or Infuse",
+    usageStore: "Store Properly",
+    usageSetAltar: "Set the Altar",
+    usageSetAltarContent: "Place on a fire-safe dish. Surround with salt or crystals for amplification.",
+    usageIgnite: "Ignite & Focus",
+    usageIgniteContent: "Light the flame. Visualize your intention manifesting as the candle burns.",
+    usageStudy: "Study the Symbol",
+    usageStudyContent: "Learn the history and meaning of this sacred symbol through meditation.",
+    usageDraw: "Draw or Inscribe",
+    usageDrawContent: "Trace the symbol in the air, on paper, or carve it into candles.",
+    usageMeditate: "Meditate Upon",
+    usageMeditateContent: "Focus on the symbol during meditation to absorb its energy.",
+    usageResearch: "Research & Honor",
+    usageResearchContent: "Learn the mythology, symbols, and offerings associated with this deity.",
+    usageOffering: "Prepare Offering",
+    usageOfferingContent: "Set up an altar with appropriate offerings and devotional items.",
+    usageInvoke: "Invoke with Respect",
+    usageInvokeContent: "Call upon the deity with reverence, stating your intention clearly.",
   },
   tools: {
     overline: "Tools",

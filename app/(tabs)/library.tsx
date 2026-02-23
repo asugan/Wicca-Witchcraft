@@ -1,4 +1,5 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import { useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -29,6 +30,7 @@ const ENTITY_TYPE_KEYS: Record<string, string> = {
 };
 
 export default function LibraryScreen() {
+  const router = useRouter();
   const theme = useMysticTheme();
   const { t } = useTranslation();
   const styles = makeStyles(theme);
@@ -89,6 +91,7 @@ export default function LibraryScreen() {
                     entity_id: entry.id,
                     source: selectedType,
                   });
+                  router.push({ pathname: "/library/[slug]", params: { slug: entry.slug } });
                 }}
                 style={styles.row}
               >
