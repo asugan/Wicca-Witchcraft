@@ -32,6 +32,7 @@ export const trTranslations: Translations = {
   grimoire: {
     title: "Gölgeler Kitabı",
     searchPlaceholder: "Büyü, kristal, bitki ara...",
+    filters: "Filtreler",
     filterDifficulty: "Zorluk",
     filterAllLevels: "Tüm Seviyeler",
     filterBeginner: "Başlangıç",

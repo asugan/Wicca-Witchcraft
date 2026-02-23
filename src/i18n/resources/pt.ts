@@ -32,6 +32,7 @@ export const ptTranslations: Translations = {
   grimoire: {
     title: "Livro das Sombras",
     searchPlaceholder: "Pesquisar feitiços, cristais, ervas...",
+    filters: "Filtros",
     filterDifficulty: "Dificuldade",
     filterAllLevels: "Todos os Níveis",
     filterBeginner: "Iniciante",

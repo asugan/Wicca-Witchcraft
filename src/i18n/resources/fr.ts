@@ -32,6 +32,7 @@ export const frTranslations: Translations = {
   grimoire: {
     title: "Livre des Ombres",
     searchPlaceholder: "Rechercher sorts, cristaux, herbes...",
+    filters: "Filtres",
     filterDifficulty: "Difficulté",
     filterAllLevels: "Tous les Niveaux",
     filterBeginner: "Débutant",

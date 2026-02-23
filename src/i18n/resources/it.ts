@@ -32,6 +32,7 @@ export const itTranslations: Translations = {
   grimoire: {
     title: "Libro delle Ombre",
     searchPlaceholder: "Cerca incantesimi, cristalli, erbe...",
+    filters: "Filtri",
     filterDifficulty: "Difficoltà",
     filterAllLevels: "Tutti i Livelli",
     filterBeginner: "Principiante",

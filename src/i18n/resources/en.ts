@@ -30,6 +30,7 @@ export type Translations = {
   grimoire: {
     title: string;
     searchPlaceholder: string;
+    filters: string;
     filterDifficulty: string;
     filterAllLevels: string;
     filterBeginner: string;
@@ -247,6 +248,7 @@ export const enTranslations: Translations = {
   grimoire: {
     title: "Book of Shadows",
     searchPlaceholder: "Search spells, crystals, herbs...",
+    filters: "Filters",
     filterDifficulty: "Difficulty",
     filterAllLevels: "All Levels",
     filterBeginner: "Beginner",

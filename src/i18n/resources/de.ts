@@ -32,6 +32,7 @@ export const deTranslations: Translations = {
   grimoire: {
     title: "Buch der Schatten",
     searchPlaceholder: "Zauber, Kristalle, Kräuter suchen...",
+    filters: "Filter",
     filterDifficulty: "Schwierigkeit",
     filterAllLevels: "Alle Stufen",
     filterBeginner: "Anfänger",

@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { useDeferredValue, useMemo, useState } from "react";
-import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { ImageBackground, LayoutAnimation, Platform, Pressable, ScrollView, StyleSheet, UIManager, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Searchbar, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -51,6 +51,10 @@ const moonPhaseOrder: Record<string, number> = {
   "waning-moon": 8,
   "waning-crescent": 9,
 };
+
+if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 
 function getRitualSearchScore(
@@ -110,7 +114,19 @@ export default function GrimoireScreen() {
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>("all");
   const [selectedMoonPhase, setSelectedMoonPhase] = useState<string>("all");
   const [selectedMaterial, setSelectedMaterial] = useState<string>("all");
+  const [filtersExpanded, setFiltersExpanded] = useState(false);
   const deferredQuery = useDeferredValue(query);
+
+  const toggleFilters = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    setFiltersExpanded((prev) => !prev);
+  };
+
+  const activeFilterCount = [
+    selectedDifficulty !== "all" ? 1 : 0,
+    selectedMoonPhase !== "all" ? 1 : 0,
+    selectedMaterial !== "all" ? 1 : 0,
+  ].reduce((a, b) => a + b, 0);
 
   const difficultyOptions = useMemo(
     () => [
@@ -210,78 +226,101 @@ export default function GrimoireScreen() {
         />
 
         <View style={styles.filtersCard}>
-          <View style={styles.filterGroup}>
-            <Text style={styles.filterTitle}>{t("grimoire.filterDifficulty")}</Text>
-            <ScrollView contentContainerStyle={styles.filterRow} horizontal showsHorizontalScrollIndicator={false}>
-              {difficultyOptions.map((option) => {
-                const isSelected = selectedDifficulty === option.value;
+          <Pressable onPress={toggleFilters} style={styles.filtersHeader}>
+            <View style={styles.filtersHeaderLeft}>
+              <MaterialCommunityIcons color={theme.colors.primary} name="filter-variant" size={20} />
+              <Text style={styles.filtersHeaderTitle}>{t("grimoire.filters")}</Text>
+              {activeFilterCount > 0 && (
+                <View style={styles.filterBadge}>
+                  <Text style={styles.filterBadgeText}>{activeFilterCount}</Text>
+                </View>
+              )}
+            </View>
+            <MaterialCommunityIcons
+              color={theme.colors.onSurfaceMuted}
+              name={filtersExpanded ? "chevron-up" : "chevron-down"}
+              size={24}
+            />
+          </Pressable>
 
-                return (
+          {filtersExpanded && (
+            <View style={styles.filtersContent}>
+              <View style={styles.filterGroup}>
+                <Text style={styles.filterTitle}>{t("grimoire.filterDifficulty")}</Text>
+                <ScrollView contentContainerStyle={styles.filterRow} horizontal showsHorizontalScrollIndicator={false}>
+                  {difficultyOptions.map((option) => {
+                    const isSelected = selectedDifficulty === option.value;
+
+                    return (
+                      <Pressable
+                        key={option.value}
+                        onPress={() => setSelectedDifficulty(option.value)}
+                        style={[styles.filterChip, isSelected ? styles.filterChipActive : null]}
+                      >
+                        <Text style={[styles.filterChipLabel, isSelected ? styles.filterChipLabelActive : null]}>{option.label}</Text>
+                      </Pressable>
+                    );
+                  })}
+                </ScrollView>
+              </View>
+
+              <View style={styles.filterGroup}>
+                <Text style={styles.filterTitle}>{t("grimoire.filterMoonPhase")}</Text>
+                <ScrollView contentContainerStyle={styles.filterRow} horizontal showsHorizontalScrollIndicator={false}>
                   <Pressable
-                    key={option.value}
-                    onPress={() => setSelectedDifficulty(option.value)}
-                    style={[styles.filterChip, isSelected ? styles.filterChipActive : null]}
+                    onPress={() => setSelectedMoonPhase("all")}
+                    style={[styles.filterChip, selectedMoonPhase === "all" ? styles.filterChipActive : null]}
                   >
-                    <Text style={[styles.filterChipLabel, isSelected ? styles.filterChipLabelActive : null]}>{option.label}</Text>
+                    <Text style={[styles.filterChipLabel, selectedMoonPhase === "all" ? styles.filterChipLabelActive : null]}>{t("grimoire.filterAllPhases")}</Text>
                   </Pressable>
-                );
-              })}
-            </ScrollView>
-          </View>
+                  {moonPhaseOptions.map((phase) => {
+                    const isSelected = selectedMoonPhase === phase;
 
-          <View style={styles.filterGroup}>
-            <Text style={styles.filterTitle}>{t("grimoire.filterMoonPhase")}</Text>
-            <ScrollView contentContainerStyle={styles.filterRow} horizontal showsHorizontalScrollIndicator={false}>
-              <Pressable
-                onPress={() => setSelectedMoonPhase("all")}
-                style={[styles.filterChip, selectedMoonPhase === "all" ? styles.filterChipActive : null]}
-              >
-                <Text style={[styles.filterChipLabel, selectedMoonPhase === "all" ? styles.filterChipLabelActive : null]}>{t("grimoire.filterAllPhases")}</Text>
-              </Pressable>
-              {moonPhaseOptions.map((phase) => {
-                const isSelected = selectedMoonPhase === phase;
+                    return (
+                      <Pressable
+                        key={phase}
+                        onPress={() => setSelectedMoonPhase(phase)}
+                        style={[styles.filterChip, isSelected ? styles.filterChipActive : null]}
+                      >
+                        <Text style={[styles.filterChipLabel, isSelected ? styles.filterChipLabelActive : null]}>
+                          {getMoonPhaseLabel(phase, t)}
+                        </Text>
+                      </Pressable>
+                    );
+                  })}
+                </ScrollView>
+              </View>
 
-                return (
+              <View style={styles.filterGroup}>
+                <Text style={styles.filterTitle}>{t("grimoire.filterMaterial")}</Text>
+                <ScrollView contentContainerStyle={styles.filterRow} horizontal showsHorizontalScrollIndicator={false}>
                   <Pressable
-                    key={phase}
-                    onPress={() => setSelectedMoonPhase(phase)}
-                    style={[styles.filterChip, isSelected ? styles.filterChipActive : null]}
+                    onPress={() => setSelectedMaterial("all")}
+                    style={[styles.filterChip, selectedMaterial === "all" ? styles.filterChipActive : null]}
                   >
-                    <Text style={[styles.filterChipLabel, isSelected ? styles.filterChipLabelActive : null]}>
-                      {getMoonPhaseLabel(phase, t)}
-                    </Text>
+                    <Text style={[styles.filterChipLabel, selectedMaterial === "all" ? styles.filterChipLabelActive : null]}>{t("grimoire.filterAllMaterials")}</Text>
                   </Pressable>
-                );
-              })}
-            </ScrollView>
-          </View>
+                  {materialOptions.map((material) => {
+                    const isSelected = selectedMaterial === material;
 
-          <View style={styles.filterGroup}>
-            <Text style={styles.filterTitle}>{t("grimoire.filterMaterial")}</Text>
-            <ScrollView contentContainerStyle={styles.filterRow} horizontal showsHorizontalScrollIndicator={false}>
-              <Pressable
-                onPress={() => setSelectedMaterial("all")}
-                style={[styles.filterChip, selectedMaterial === "all" ? styles.filterChipActive : null]}
-              >
-                <Text style={[styles.filterChipLabel, selectedMaterial === "all" ? styles.filterChipLabelActive : null]}>{t("grimoire.filterAllMaterials")}</Text>
-              </Pressable>
-              {materialOptions.map((material) => {
-                const isSelected = selectedMaterial === material;
+                    return (
+                      <Pressable
+                        key={material}
+                        onPress={() => setSelectedMaterial(material)}
+                        style={[styles.filterChip, isSelected ? styles.filterChipActive : null]}
+                      >
+                        <Text style={[styles.filterChipLabel, isSelected ? styles.filterChipLabelActive : null]}>{material}</Text>
+                      </Pressable>
+                    );
+                  })}
+                </ScrollView>
+              </View>
+            </View>
+          )}
 
-                return (
-                  <Pressable
-                    key={material}
-                    onPress={() => setSelectedMaterial(material)}
-                    style={[styles.filterChip, isSelected ? styles.filterChipActive : null]}
-                  >
-                    <Text style={[styles.filterChipLabel, isSelected ? styles.filterChipLabelActive : null]}>{material}</Text>
-                  </Pressable>
-                );
-              })}
-            </ScrollView>
-          </View>
-
-          <Text style={styles.resultMeta}>{t("grimoire.ritualsFound", { count: filteredRituals.length })}</Text>
+          <Text style={[styles.resultMeta, filtersExpanded && styles.resultMetaExpanded]}>
+            {t("grimoire.ritualsFound", { count: filteredRituals.length })}
+          </Text>
         </View>
 
         <View>
@@ -386,8 +425,40 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderRadius: 14,
       backgroundColor: theme.colors.surface1,
       paddingHorizontal: 12,
-      paddingTop: 12,
-      paddingBottom: 10,
+      paddingVertical: 10,
+      overflow: "hidden",
+    },
+    filtersHeader: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
+    filtersHeaderLeft: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 8,
+    },
+    filtersHeaderTitle: {
+      color: theme.colors.onSurface,
+      fontSize: 14,
+      fontWeight: "600",
+    },
+    filterBadge: {
+      backgroundColor: theme.colors.primary,
+      borderRadius: 10,
+      minWidth: 20,
+      height: 20,
+      alignItems: "center",
+      justifyContent: "center",
+      paddingHorizontal: 6,
+    },
+    filterBadgeText: {
+      color: theme.colors.onPrimary,
+      fontSize: 11,
+      fontWeight: "700",
+    },
+    filtersContent: {
+      marginTop: 12,
       gap: 10,
     },
     filterGroup: {
@@ -428,7 +499,10 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       color: theme.colors.onSurfaceMuted,
       fontSize: 12,
       fontWeight: "600",
-      marginTop: 2,
+      marginTop: 8,
+    },
+    resultMetaExpanded: {
+      marginTop: 12,
     },
     overline: {
       color: `${theme.colors.primary}E0`,
