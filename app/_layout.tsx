@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { PaperProvider } from "react-native-paper";
 
 import { getLanguagePreference, getNotificationsEnabled } from "@/db/repositories/settings-repository";
+import { initRevenueCat } from "@/features/subscription/revenuecat";
 import i18n from "@/i18n";
 import { initAnalytics, trackAppStarted } from "@/lib/analytics";
 import { syncMysticNotifications } from "@/lib/notifications";
@@ -28,6 +29,8 @@ export default function RootLayout() {
     if (i18n.language !== savedLanguage) {
       void i18n.changeLanguage(savedLanguage);
     }
+
+    void initRevenueCat();
   }, []);
 
   return (

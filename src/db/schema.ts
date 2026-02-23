@@ -258,6 +258,13 @@ export const libraryEntryRelations = relations(libraryEntries, ({ many }) => ({
   materialRefs: many(materials),
 }));
 
+export const subscriptionCache = sqliteTable("subscription_cache", {
+  entitlement: text("entitlement").primaryKey(),
+  isActive: integer("is_active", { mode: "boolean" }).notNull(),
+  updatedAt: text("updated_at").notNull(),
+  expiresAt: text("expires_at"),
+});
+
 export type RitualRecord = typeof rituals.$inferSelect;
 export type RitualStepRecord = typeof ritualSteps.$inferSelect;
 export type MaterialRecord = typeof materials.$inferSelect;

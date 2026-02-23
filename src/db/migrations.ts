@@ -165,6 +165,17 @@ const migrations: Migration[] = [
       CREATE INDEX IF NOT EXISTS tarot_readings_user_date_idx ON tarot_readings(user_id, reading_date);
     `,
   },
+  {
+    id: "0004_add_subscription_cache",
+    sql: `
+      CREATE TABLE IF NOT EXISTS subscription_cache (
+        entitlement TEXT PRIMARY KEY NOT NULL,
+        is_active INTEGER NOT NULL,
+        updated_at TEXT NOT NULL,
+        expires_at TEXT
+      );
+    `,
+  },
 ];
 
 export function runMigrations(database: SQLiteDatabase) {

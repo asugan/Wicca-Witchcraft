@@ -144,6 +144,70 @@ export type Translations = {
     journalSaved: string;
     info: string;
   };
+  subscription: {
+    header: string;
+    heroTitleTop: string;
+    heroTitleBottom: string;
+    heroBody: string;
+    oneTimePayment: string;
+    billedYearly: string;
+    billedMonthly: string;
+    proPlanTitle: string;
+    planYearly: string;
+    planMonthly: string;
+    planOneTime: string;
+    recommended: string;
+    loadingPlans: string;
+    basicPlan: string;
+    free: string;
+    premiumActive: string;
+    unlockAllFeatures: string;
+    purchasesNotConfigured: string;
+    restoring: string;
+    restorePurchase: string;
+    terms: string;
+    privacy: string;
+    note: string;
+    noteIos: string;
+    noteAndroid: string;
+    trust: {
+      cancelAnytime: string;
+      billedByStore: string;
+      secureCheckout: string;
+      cancelAnytimeIos: string;
+      billedByStoreIos: string;
+      secureCheckoutIos: string;
+      cancelAnytimeAndroid: string;
+      billedByStoreAndroid: string;
+      secureCheckoutAndroid: string;
+    };
+    proFeatures: {
+      exclusiveRituals: string;
+      advancedTarot: string;
+      fullLibraryAccess: string;
+      unlimitedJournal: string;
+    };
+    freeFeatures: {
+      basicRituals: string;
+      dailyTarot: string;
+      advancedFeaturesLocked: string;
+    };
+    alerts: {
+      purchasesUnavailableBody: string;
+      purchaseSuccessTitle: string;
+      purchaseSuccessBody: string;
+      noSubscriptionTitle: string;
+      noSubscriptionBody: string;
+      restoreSuccessTitle: string;
+      restoreSuccessBody: string;
+      tryAgainBody: string;
+      termsUnavailableTitle: string;
+      privacyUnavailableTitle: string;
+      setEnvBody: string;
+      invalidUrlBody: string;
+      linkOpenFailedBody: string;
+    };
+  };
 };
 
 export const enTranslations: Translations = {
@@ -291,5 +355,69 @@ export const enTranslations: Translations = {
     saveToJournal: "Save to Journal",
     journalSaved: "Saved to your Book of Shadows",
     info: "Info",
+  },
+  subscription: {
+    header: "PREMIUM ACCESS",
+    heroTitleTop: "Unlock Your",
+    heroTitleBottom: "Inner Magic",
+    heroBody: "Access exclusive rituals, advanced tarot spreads, and the full mystic library with Premium.",
+    oneTimePayment: "One-time payment",
+    billedYearly: "Billed yearly",
+    billedMonthly: "Billed monthly",
+    proPlanTitle: "Mystic Premium",
+    planYearly: "Yearly",
+    planMonthly: "Monthly",
+    planOneTime: "Lifetime",
+    recommended: "Recommended",
+    loadingPlans: "Loading plans...",
+    basicPlan: "Basic Plan",
+    free: "Free",
+    premiumActive: "Premium Active",
+    unlockAllFeatures: "Unlock All Features",
+    purchasesNotConfigured: "Purchases are not configured in this build.",
+    restoring: "Restoring...",
+    restorePurchase: "Restore Purchase",
+    terms: "Terms",
+    privacy: "Privacy",
+    note: "Payment is billed via your App Store / Google Play account. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel anytime from your store account settings.",
+    noteIos: "Payment will be charged to your Apple ID account at confirmation of purchase. Subscription automatically renews unless cancelled at least 24 hours before the end of the current period. You can manage and cancel your subscription in your App Store account settings.",
+    noteAndroid: "Payment will be charged to your Google Play account at confirmation of purchase. Subscription automatically renews unless cancelled at least 24 hours before the end of the current period. You can manage and cancel your subscription in your Google Play account settings.",
+    trust: {
+      cancelAnytime: "Cancel anytime from App Store / Google Play settings",
+      billedByStore: "Billing is handled securely through your app store account",
+      secureCheckout: "No manual credit card entry required in the app",
+      cancelAnytimeIos: "Cancel anytime from App Store account settings",
+      billedByStoreIos: "Billing is handled securely through your Apple ID account",
+      secureCheckoutIos: "No manual credit card entry required in the app",
+      cancelAnytimeAndroid: "Cancel anytime from Google Play account settings",
+      billedByStoreAndroid: "Billing is handled securely through your Google Play account",
+      secureCheckoutAndroid: "No manual credit card entry required in the app",
+    },
+    proFeatures: {
+      exclusiveRituals: "Exclusive Ritual Packs",
+      advancedTarot: "Advanced Tarot Spreads",
+      fullLibraryAccess: "Full Library Access",
+      unlimitedJournal: "Unlimited Journal Entries",
+    },
+    freeFeatures: {
+      basicRituals: "Basic Rituals and Spells",
+      dailyTarot: "Daily Tarot Draw",
+      advancedFeaturesLocked: "Advanced Features (locked)",
+    },
+    alerts: {
+      purchasesUnavailableBody: "RevenueCat keys are missing. Add EXPO_PUBLIC_REVENUECAT_IOS_API_KEY and EXPO_PUBLIC_REVENUECAT_ANDROID_API_KEY.",
+      purchaseSuccessTitle: "Purchase successful",
+      purchaseSuccessBody: "Your Premium access is now active. Blessed be!",
+      noSubscriptionTitle: "No subscription found",
+      noSubscriptionBody: "No active Premium entitlement was found for this account.",
+      restoreSuccessTitle: "Purchase restored",
+      restoreSuccessBody: "Your previous Premium purchase has been restored.",
+      tryAgainBody: "Please try again.",
+      termsUnavailableTitle: "Terms unavailable",
+      privacyUnavailableTitle: "Privacy unavailable",
+      setEnvBody: "Set {{envKey}} in .env for this build.",
+      invalidUrlBody: "Please provide a valid https URL.",
+      linkOpenFailedBody: "This link could not be opened.",
+    },
   },
 };
