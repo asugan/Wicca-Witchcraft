@@ -8,6 +8,7 @@ import { initAnalytics, trackAppStarted } from "@/lib/analytics";
 import { syncMysticNotifications } from "@/lib/notifications";
 import { getPaperTheme } from "@/theme/paper-theme";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
+import { ToastProvider } from "@/context/toast-context";
 
 const LOCAL_USER_ID = "local-user";
 
@@ -26,13 +27,15 @@ export default function RootLayout() {
 
   return (
     <PaperProvider theme={getPaperTheme(theme.mode)}>
-      <StatusBar style={theme.mode === "dark" ? "light" : "dark"} />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: theme.colors.background },
-        }}
-      />
+      <ToastProvider>
+        <StatusBar style={theme.mode === "dark" ? "light" : "dark"} />
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: theme.colors.background },
+          }}
+        />
+      </ToastProvider>
     </PaperProvider>
   );
 }
