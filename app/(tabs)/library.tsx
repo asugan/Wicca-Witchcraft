@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 
 import { LibraryChip } from "@/components/mystic/LibraryChip";
 import { listLibraryCategoryCounts, listLibraryEntries } from "@/db/repositories/library-repository";
+import { usePremiumGate } from "@/hooks/use-premium-gate";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
@@ -31,6 +32,7 @@ export default function LibraryScreen() {
   const theme = useMysticTheme();
   const { t } = useTranslation();
   const styles = makeStyles(theme);
+  const { isPremium, showUpgradePrompt } = usePremiumGate();
 
   const [selectedType, setSelectedType] = useState<string>("all");
   const entries = useMemo(() => listLibraryEntries(), []);
@@ -67,26 +69,48 @@ export default function LibraryScreen() {
         </View>
 
         <View style={styles.card}>
-          {filteredEntries.map((entry) => (
-            <Pressable
-              key={entry.id}
-              onPress={() => {
-                trackEvent("library_entry_viewed", {
-                  user_id: "local-user",
-                  tab_name: "library",
-                  entity_id: entry.id,
-                  source: selectedType,
-                });
-              }}
-              style={styles.row}
-            >
-              <MaterialCommunityIcons color={theme.colors.primary} name={categoryIcons[entry.entityType] ?? "star-four-points"} size={16} />
-              <View style={styles.rowTextWrap}>
-                <Text style={styles.rowText}>{entry.title}</Text>
-                <Text style={styles.rowSubtext}>{entry.summary}</Text>
-              </View>
-            </Pressable>
-          ))}
+          {filteredEntries.map((entry) => {
+            const isLocked = entry.isPremium && !isPremium;
+            const displaySummary = isLocked
+              ? entry.summary.slice(0, 60) + (entry.summary.length > 60 ? "..." : "")
+              : entry.summary;
+
+            return (
+              <Pressable
+                key={entry.id}
+                onPress={() => {
+                  if (isLocked) {
+                    showUpgradePrompt("library_premium");
+                    return;
+                  }
+                  trackEvent("library_entry_viewed", {
+                    user_id: "local-user",
+                    tab_name: "library",
+                    entity_id: entry.id,
+                    source: selectedType,
+                  });
+                }}
+                style={styles.row}
+              >
+                <MaterialCommunityIcons color={theme.colors.primary} name={categoryIcons[entry.entityType] ?? "star-four-points"} size={16} />
+                <View style={styles.rowTextWrap}>
+                  <View style={styles.rowTitleWrap}>
+                    <Text style={styles.rowText}>{entry.title}</Text>
+                    {entry.isPremium && (
+                      <View style={[styles.premiumTag, isLocked && styles.premiumTagLocked]}>
+                        <MaterialCommunityIcons
+                          color={isLocked ? theme.colors.onSurfaceMuted : theme.colors.primary}
+                          name={isLocked ? "lock" : "star-four-points"}
+                          size={10}
+                        />
+                      </View>
+                    )}
+                  </View>
+                  <Text style={[styles.rowSubtext, isLocked && styles.rowSubtextLocked]}>{displaySummary}</Text>
+                </View>
+              </Pressable>
+            );
+          })}
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -146,5 +170,24 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       color: theme.colors.onSurfaceMuted,
       fontSize: 12,
       lineHeight: 18,
+    },
+    rowTitleWrap: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 6,
+    },
+    premiumTag: {
+      width: 16,
+      height: 16,
+      borderRadius: 8,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: `${theme.colors.primary}26`,
+    },
+    premiumTagLocked: {
+      backgroundColor: `${theme.colors.onSurfaceMuted}26`,
+    },
+    rowSubtextLocked: {
+      fontStyle: "italic",
     },
   });

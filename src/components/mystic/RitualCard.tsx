@@ -11,10 +11,12 @@ type RitualCardProps = {
   subtitle: string;
   image: string;
   icon: keyof typeof MaterialCommunityIcons.glyphMap;
+  isPremium?: boolean;
+  premiumLabel?: string;
   onPress?: () => void;
 };
 
-function RitualCardComponent({ title, subtitle, image, icon, onPress }: RitualCardProps) {
+function RitualCardComponent({ title, subtitle, image, icon, isPremium, premiumLabel, onPress }: RitualCardProps) {
   const theme = useMysticTheme();
   const styles = makeStyles(theme);
 
@@ -22,6 +24,12 @@ function RitualCardComponent({ title, subtitle, image, icon, onPress }: RitualCa
     <Pressable onPress={onPress} style={styles.card}>
       <ImageBackground imageStyle={styles.mediaImage} source={{ uri: image }} style={styles.media}>
         <View style={styles.mediaOverlay} />
+        {isPremium && (
+          <View style={styles.premiumBadge}>
+            <MaterialCommunityIcons color={theme.colors.onPrimary} name="star-four-points" size={10} />
+            <Text style={styles.premiumBadgeText}>{premiumLabel || "Premium"}</Text>
+          </View>
+        )}
         <View style={styles.iconWrap}>
           <MaterialCommunityIcons color={theme.colors.primary} name={icon} size={24} />
         </View>
@@ -39,7 +47,8 @@ export const RitualCard = memo(RitualCardComponent, (prevProps, nextProps) => {
     prevProps.title === nextProps.title &&
     prevProps.subtitle === nextProps.subtitle &&
     prevProps.image === nextProps.image &&
-    prevProps.icon === nextProps.icon
+    prevProps.icon === nextProps.icon &&
+    prevProps.isPremium === nextProps.isPremium
   );
 });
 
@@ -89,5 +98,24 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       color: theme.colors.onSurfaceMuted,
       fontSize: 12,
       lineHeight: 18,
+    },
+    premiumBadge: {
+      position: "absolute",
+      top: 6,
+      right: 6,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 3,
+      backgroundColor: theme.colors.primary,
+      borderRadius: 999,
+      paddingHorizontal: 6,
+      paddingVertical: 3,
+    },
+    premiumBadgeText: {
+      color: theme.colors.onPrimary,
+      fontSize: 9,
+      fontWeight: "700",
+      textTransform: "uppercase",
+      letterSpacing: 0.5,
     },
   });

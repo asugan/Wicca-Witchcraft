@@ -1,5 +1,6 @@
-import { and, desc, eq } from "drizzle-orm";
+import { and, count, desc, eq } from "drizzle-orm";
 
+import { FREE_JOURNAL_LIMIT } from "@/config/premium";
 import { db, ensureDatabaseInitialized } from "@/db/client";
 import { favorites, journalEntries, rituals } from "@/db/schema";
 
@@ -141,4 +142,34 @@ export function deleteJournalEntry(userId: string, entryId: string) {
   db.delete(journalEntries)
     .where(and(eq(journalEntries.userId, userId), eq(journalEntries.id, entryId)))
     .run();
+}
+
+export function getJournalEntryCount(userId: string): number {
+  ensureDatabaseInitialized();
+
+  const result = db
+    .select({ value: count() })
+    .from(journalEntries)
+    .where(eq(journalEntries.userId, userId))
+    .get();
+
+  return result?.value ?? 0;
+}
+
+export function canCreateJournalEntry(userId: string, isPremium: boolean): boolean {
+  if (isPremium) {
+    return true;
+  }
+
+  const currentCount = getJournalEntryCount(userId);
+  return currentCount < FREE_JOURNAL_LIMIT;
+}
+
+export function getJournalRemainingCount(userId: string, isPremium: boolean): number {
+  if (isPremium) {
+    return -1; // Unlimited
+  }
+
+  const currentCount = getJournalEntryCount(userId);
+  return Math.max(0, FREE_JOURNAL_LIMIT - currentCount);
 }

@@ -1,5 +1,6 @@
 import { and, eq, sql } from "drizzle-orm";
 
+import { PREMIUM_SPREAD_TYPES, SPREAD_CONFIGS, type SpreadType } from "@/config/premium";
 import { db, ensureDatabaseInitialized } from "@/db/client";
 import { tarotCards, tarotReadings } from "@/db/schema";
 import type { TarotCardRecord } from "@/db/schema";
@@ -211,4 +212,66 @@ function hashDateToIndex(input: string, mod: number): number {
     hash = (hash * 31 + input.charCodeAt(i)) | 0;
   }
   return ((hash % mod) + mod) % mod;
+}
+
+/**
+ * Check if a spread type requires premium access.
+ */
+export function isSpreadPremium(spreadType: SpreadType): boolean {
+  return PREMIUM_SPREAD_TYPES.includes(spreadType);
+}
+
+/**
+ * Get the spread configuration for a given type.
+ */
+export function getSpreadConfig(spreadType: SpreadType) {
+  return SPREAD_CONFIGS[spreadType];
+}
+
+/**
+ * Draw a generic spread of any type.
+ * Creates a new reading with the specified spread type.
+ */
+export function drawSpread(userId: string, spreadType: SpreadType): TarotReadingResult {
+  ensureDatabaseInitialized();
+
+  const config = SPREAD_CONFIGS[spreadType];
+  const allCards = getAllTarotCards();
+  const picked = pickRandomCards(allCards, config.cardCount);
+
+  const drawnCards: DrawnCard[] = picked.map((card, index) => ({
+    ...card,
+    position: config.positions[index],
+  }));
+
+  const readingId = `${spreadType}-${generateId()}`;
+  const todayIso = toIsoDate(new Date());
+
+  db.insert(tarotReadings)
+    .values({
+      id: readingId,
+      userId,
+      spreadType,
+      cardsJson: JSON.stringify(drawnCards),
+      createdAt: Date.now(),
+      readingDate: todayIso,
+    })
+    .run();
+
+  return hydrateReading(
+    db.select().from(tarotReadings).where(eq(tarotReadings.id, readingId)).get()!
+  );
+}
+
+/**
+ * Get available spread types with their premium status.
+ */
+export function getAvailableSpreads(): { type: SpreadType; isPremium: boolean; cardCount: number }[] {
+  return (Object.keys(SPREAD_CONFIGS) as SpreadType[])
+    .filter((type) => type !== "daily") // Exclude daily from the spread picker
+    .map((type) => ({
+      type,
+      isPremium: isSpreadPremium(type),
+      cardCount: SPREAD_CONFIGS[type].cardCount,
+    }));
 }

@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { IncantationBlock } from "@/components/mystic/IncantationBlock";
 import { isRitualFavorited, toggleRitualFavorite } from "@/db/repositories/my-space-repository";
 import { getRitualDetailBySlug } from "@/db/repositories/ritual-repository";
+import { usePremiumGate } from "@/hooks/use-premium-gate";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
@@ -21,11 +22,14 @@ export default function RitualDetailScreen() {
   const theme = useMysticTheme();
   const { t } = useTranslation();
   const styles = makeStyles(theme);
+  const { isPremium, showUpgradePrompt } = usePremiumGate();
 
   const { slug } = useLocalSearchParams<{ slug?: string | string[] }>();
   const normalizedSlug = Array.isArray(slug) ? slug[0] : (slug ?? "full-moon-release");
 
   const detail = useMemo(() => getRitualDetailBySlug(normalizedSlug), [normalizedSlug]);
+  const isRitualPremium = detail?.ritual.isPremium ?? false;
+  const showPremiumGate = isRitualPremium && !isPremium;
 
   const [bookmarked, setBookmarked] = useState(false);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
@@ -187,7 +191,7 @@ export default function RitualDetailScreen() {
         </View>
 
         <View style={styles.stepsWrap}>
-          {detail.steps.map((step, index) => (
+          {detail.steps.slice(0, showPremiumGate ? 2 : detail.steps.length).map((step, index) => (
             <View key={step.id} style={styles.stepRow}>
               <View style={styles.stepMarker}>
                 <Text style={styles.stepMarkerText}>{roman[index] ?? `${step.stepOrder}`}</Text>
@@ -196,9 +200,29 @@ export default function RitualDetailScreen() {
                 <Text style={styles.stepTitle}>{step.title}</Text>
                 <Text style={styles.stepContent}>{step.content}</Text>
               </View>
-              {index !== detail.steps.length - 1 ? <View style={styles.stepDivider} /> : null}
+              {index !== (showPremiumGate ? 1 : detail.steps.length - 1) ? <View style={styles.stepDivider} /> : null}
             </View>
           ))}
+
+          {showPremiumGate && (
+            <View style={styles.premiumGateWrap}>
+              <View style={styles.premiumGateBlur} />
+              <View style={styles.premiumGateContent}>
+                <MaterialCommunityIcons color={theme.colors.primary} name="lock" size={32} />
+                <Text style={styles.premiumGateTitle}>{t("ritual.premiumContent" as string)}</Text>
+                <Text style={styles.premiumGateSubtitle}>{t("ritual.premiumContentHint" as string)}</Text>
+                <Button
+                  mode="contained"
+                  onPress={() => showUpgradePrompt("ritual_premium")}
+                  style={styles.premiumGateButton}
+                  textColor={theme.colors.onPrimary}
+                  icon="star-four-points"
+                >
+                  {t("ritual.unlockWithPremium" as string)}
+                </Button>
+              </View>
+            </View>
+          )}
         </View>
 
         <IncantationBlock text={detail.ritual.incantation} />
@@ -207,24 +231,37 @@ export default function RitualDetailScreen() {
       </ScrollView>
 
       <View style={styles.bottomBar}>
-        <Button
-          contentStyle={styles.beginButtonContent}
-          icon="play-circle-outline"
-          mode="contained"
-          onPress={() => {
-            trackEvent("ritual_mode_started", {
-              user_id: LOCAL_USER_ID,
-              tab_name: "grimoire",
-              entity_id: detail.ritual.id,
-              source: "ritual_detail",
-            });
-            router.push({ pathname: "/ritual/active", params: { slug: normalizedSlug } });
-          }}
-          style={styles.beginButton}
-          textColor={theme.colors.onPrimary}
-        >
-          {t("ritual.beginRitualMode")}
-        </Button>
+        {showPremiumGate ? (
+          <Button
+            contentStyle={styles.beginButtonContent}
+            icon="star-four-points"
+            mode="contained"
+            onPress={() => showUpgradePrompt("ritual_premium")}
+            style={styles.beginButton}
+            textColor={theme.colors.onPrimary}
+          >
+            {t("ritual.unlockWithPremium" as string)}
+          </Button>
+        ) : (
+          <Button
+            contentStyle={styles.beginButtonContent}
+            icon="play-circle-outline"
+            mode="contained"
+            onPress={() => {
+              trackEvent("ritual_mode_started", {
+                user_id: LOCAL_USER_ID,
+                tab_name: "grimoire",
+                entity_id: detail.ritual.id,
+                source: "ritual_detail",
+              });
+              router.push({ pathname: "/ritual/active", params: { slug: normalizedSlug } });
+            }}
+            style={styles.beginButton}
+            textColor={theme.colors.onPrimary}
+          >
+            {t("ritual.beginRitualMode")}
+          </Button>
+        )}
       </View>
 
       <Portal>
@@ -559,5 +596,39 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       fontFamily: typefaces.display,
       fontSize: 28,
       textAlign: "center",
+    },
+    premiumGateWrap: {
+      marginTop: 20,
+      borderRadius: 16,
+      overflow: "hidden",
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}4D`,
+    },
+    premiumGateBlur: {
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: `${theme.colors.backgroundElevated}F2`,
+    },
+    premiumGateContent: {
+      alignItems: "center",
+      padding: 24,
+      gap: 8,
+    },
+    premiumGateTitle: {
+      color: theme.colors.onSurface,
+      fontFamily: typefaces.display,
+      fontSize: 20,
+      fontWeight: "700",
+      marginTop: 8,
+    },
+    premiumGateSubtitle: {
+      color: theme.colors.onSurfaceMuted,
+      fontSize: 14,
+      textAlign: "center",
+      lineHeight: 20,
+      marginBottom: 8,
+    },
+    premiumGateButton: {
+      borderRadius: 999,
+      backgroundColor: theme.colors.primary,
     },
   });

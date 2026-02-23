@@ -7,9 +7,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Modal, Portal, RadioButton, Text, TextInput } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
+import { FREE_JOURNAL_LIMIT } from "@/config/premium";
 import {
+  canCreateJournalEntry,
   createJournalEntry,
   deleteJournalEntry,
+  getJournalEntryCount,
   listFavoriteRituals,
   listJournalEntries,
   removeRitualFavorite,
@@ -54,6 +57,7 @@ export default function ProfileScreen() {
 
   const [favorites, setFavorites] = useState<ReturnType<typeof listFavoriteRituals>>([]);
   const [journalEntries, setJournalEntries] = useState<ReturnType<typeof listJournalEntries>>([]);
+  const [journalEntryCount, setJournalEntryCount] = useState(0);
 
   const [editingEntryId, setEditingEntryId] = useState<string | null>(null);
   const [title, setTitle] = useState("");
@@ -69,6 +73,7 @@ export default function ProfileScreen() {
   const refreshData = useCallback(() => {
     setFavorites(listFavoriteRituals(LOCAL_USER_ID));
     setJournalEntries(listJournalEntries(LOCAL_USER_ID));
+    setJournalEntryCount(getJournalEntryCount(LOCAL_USER_ID));
     setIsProActive(hasProAccess());
     setNotificationsEnabledState(getNotificationsEnabled(LOCAL_USER_ID));
     setSelectedLanguage(getLanguagePreference(LOCAL_USER_ID));
@@ -87,6 +92,9 @@ export default function ProfileScreen() {
   }, [isFocused, refreshData]);
 
   const isEditing = useMemo(() => Boolean(editingEntryId), [editingEntryId]);
+  const canAddEntry = useMemo(() => canCreateJournalEntry(LOCAL_USER_ID, isProActive), [isProActive, journalEntryCount]);
+  const journalLimitReached = useMemo(() => !isProActive && journalEntryCount >= FREE_JOURNAL_LIMIT, [isProActive, journalEntryCount]);
+  const remainingEntries = useMemo(() => isProActive ? -1 : Math.max(0, FREE_JOURNAL_LIMIT - journalEntryCount), [isProActive, journalEntryCount]);
 
   const resetForm = () => {
     setEditingEntryId(null);
@@ -106,6 +114,10 @@ export default function ProfileScreen() {
     if (editingEntryId) {
       updateJournalEntry(LOCAL_USER_ID, editingEntryId, trimmedTitle, trimmedContent, mood);
     } else {
+      if (!canAddEntry) {
+        router.push("/subscription");
+        return;
+      }
       createJournalEntry(LOCAL_USER_ID, trimmedTitle, trimmedContent, mood);
       trackEvent("journal_entry_created", {
         user_id: LOCAL_USER_ID,
@@ -287,11 +299,29 @@ export default function ProfileScreen() {
         <View style={styles.panel}>
           <View style={styles.panelHeader}>
             <Text style={styles.panelTitle}>{t("profile.bookOfShadows")}</Text>
-            <Text style={styles.panelMeta}>{t("profile.entriesCount", { count: journalEntries.length })}</Text>
+            <View style={styles.journalMetaWrap}>
+              <Text style={styles.panelMeta}>{t("profile.entriesCount", { count: journalEntries.length })}</Text>
+              {!isProActive && (
+                <Text style={[styles.panelMeta, journalLimitReached && styles.limitReachedText]}>
+                  {journalLimitReached
+                    ? t("profile.journalLimitReached" as string)
+                    : t("profile.journalLimit" as string, { remaining: remainingEntries, total: FREE_JOURNAL_LIMIT })}
+                </Text>
+              )}
+            </View>
           </View>
 
-          <View style={styles.formWrap}>
+          {journalLimitReached && (
+            <Pressable onPress={() => router.push("/subscription")} style={styles.upgradePrompt}>
+              <MaterialCommunityIcons color={theme.colors.primary} name="star-four-points" size={16} />
+              <Text style={styles.upgradePromptText}>{t("premium.upgradeForUnlimited" as string)}</Text>
+              <MaterialCommunityIcons color={theme.colors.primary} name="chevron-right" size={16} />
+            </Pressable>
+          )}
+
+          <View style={[styles.formWrap, journalLimitReached && !isEditing && styles.formDisabled]}>
             <TextInput
+              disabled={journalLimitReached && !isEditing}
               mode="outlined"
               onChangeText={setTitle}
               outlineColor={`${theme.colors.primary}4D`}
@@ -302,6 +332,7 @@ export default function ProfileScreen() {
               value={title}
             />
             <TextInput
+              disabled={journalLimitReached && !isEditing}
               mode="outlined"
               onChangeText={setMood}
               outlineColor={`${theme.colors.primary}4D`}
@@ -312,6 +343,7 @@ export default function ProfileScreen() {
               value={mood}
             />
             <TextInput
+              disabled={journalLimitReached && !isEditing}
               mode="outlined"
               multiline
               numberOfLines={4}
@@ -325,7 +357,13 @@ export default function ProfileScreen() {
             />
 
             <View style={styles.formActions}>
-              <Button mode="contained" onPress={submitEntry} style={styles.primaryAction} textColor={theme.colors.onPrimary}>
+              <Button
+                disabled={journalLimitReached && !isEditing}
+                mode="contained"
+                onPress={submitEntry}
+                style={[styles.primaryAction, journalLimitReached && !isEditing && styles.buttonDisabled]}
+                textColor={theme.colors.onPrimary}
+              >
                 {isEditing ? t("profile.updateEntry") : t("profile.addEntry")}
               </Button>
               {isEditing ? (
@@ -706,5 +744,35 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       color: theme.colors.onPrimary,
       fontSize: 12,
       fontWeight: "700",
+    },
+    journalMetaWrap: {
+      alignItems: "flex-end",
+      gap: 2,
+    },
+    limitReachedText: {
+      color: theme.colors.danger,
+    },
+    upgradePrompt: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 8,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}4D`,
+      borderRadius: 10,
+      paddingHorizontal: 12,
+      paddingVertical: 10,
+      backgroundColor: `${theme.colors.primary}14`,
+    },
+    upgradePromptText: {
+      flex: 1,
+      color: theme.colors.primary,
+      fontSize: 13,
+      fontWeight: "600",
+    },
+    formDisabled: {
+      opacity: 0.5,
+    },
+    buttonDisabled: {
+      backgroundColor: theme.colors.onSurfaceMuted,
     },
   });

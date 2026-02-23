@@ -11,6 +11,10 @@ export const trTranslations: Translations = {
     tools: "Araçlar",
     profile: "Profil",
   },
+  premium: {
+    badge: "Premium",
+    upgradeForUnlimited: "Sınırsız giriş için yükseltin",
+  },
   home: {
     astrologicalDate: "Astrolojik Tarih",
     dailyIntention: "Günlük Niyet",
@@ -55,6 +59,7 @@ export const trTranslations: Translations = {
     moonPhaseThirdQuarter: "Son Çeyrek",
     moonPhaseWaningMoon: "Azalan Ay",
     moonPhaseWaningCrescent: "Son Hilal",
+    premiumBadge: "Premium",
   },
   library: {
     title: "Mistik Kütüphane",
@@ -85,6 +90,10 @@ export const trTranslations: Translations = {
     reversed: "Ters",
     moonCalendar: "Ay Takvimi",
     astroTimeline: "Astro Zaman Çizelgesi",
+    spreadDaily: "Günlük",
+    spreadCelticCross: "Kelt Haçı",
+    spreadRelationship: "İlişki",
+    spreadCareer: "Kariyer",
   },
   profile: {
     title: "Benim Alanım",
@@ -101,6 +110,8 @@ export const trTranslations: Translations = {
     updateEntry: "Girişi Güncelle",
     cancelEdit: "Düzenlemeyi İptal Et",
     emptyJournal: "İlk günlük girişiniz Gölgeler Kitabınızı başlatır.",
+    journalLimit: "{{remaining}}/{{total}} giriş kaldı",
+    journalLimitReached: "Günlük limiti doldu",
   },
   settings: {
     title: "Ayarlar",
@@ -151,6 +162,9 @@ export const trTranslations: Translations = {
     saveToJournal: "Günlüğe Kaydet",
     journalSaved: "Gölgeler Kitabı'na kaydedildi",
     info: "Bilgi",
+    premiumContent: "Premium İçerik",
+    premiumContentHint: "Bu ritüeli ve tüm premium içeriği abonelikle açın.",
+    unlockWithPremium: "Premium ile Aç",
   },
   subscription: {
     header: "PREMIUM ERISIM",

@@ -14,6 +14,7 @@ export function listLibraryEntries() {
       entityType: libraryEntries.entityType,
       summary: libraryEntries.summary,
       correspondences: libraryEntries.correspondences,
+      isPremium: libraryEntries.isPremium,
     })
     .from(libraryEntries)
     .orderBy(asc(libraryEntries.entityType), asc(libraryEntries.title))

@@ -9,6 +9,10 @@ export type Translations = {
     tools: string;
     profile: string;
   };
+  premium: {
+    badge: string;
+    upgradeForUnlimited: string;
+  };
   home: {
     astrologicalDate: string;
     dailyIntention: string;
@@ -53,6 +57,7 @@ export type Translations = {
     moonPhaseThirdQuarter: string;
     moonPhaseWaningMoon: string;
     moonPhaseWaningCrescent: string;
+    premiumBadge: string;
   };
   library: {
     title: string;
@@ -83,6 +88,10 @@ export type Translations = {
     reversed: string;
     moonCalendar: string;
     astroTimeline: string;
+    spreadDaily: string;
+    spreadCelticCross: string;
+    spreadRelationship: string;
+    spreadCareer: string;
   };
   profile: {
     title: string;
@@ -99,6 +108,8 @@ export type Translations = {
     updateEntry: string;
     cancelEdit: string;
     emptyJournal: string;
+    journalLimit: string;
+    journalLimitReached: string;
   };
   settings: {
     title: string;
@@ -149,6 +160,9 @@ export type Translations = {
     saveToJournal: string;
     journalSaved: string;
     info: string;
+    premiumContent: string;
+    premiumContentHint: string;
+    unlockWithPremium: string;
   };
   subscription: {
     header: string;
@@ -227,6 +241,10 @@ export const enTranslations: Translations = {
     tools: "Tools",
     profile: "Profile",
   },
+  premium: {
+    badge: "Premium",
+    upgradeForUnlimited: "Upgrade to unlock unlimited entries",
+  },
   home: {
     astrologicalDate: "Astrological Date",
     dailyIntention: "Daily Intention",
@@ -271,6 +289,7 @@ export const enTranslations: Translations = {
     moonPhaseThirdQuarter: "Third Quarter",
     moonPhaseWaningMoon: "Waning Moon",
     moonPhaseWaningCrescent: "Waning Crescent",
+    premiumBadge: "Premium",
   },
   library: {
     title: "Mystic Library",
@@ -301,6 +320,10 @@ export const enTranslations: Translations = {
     reversed: "Reversed",
     moonCalendar: "Moon Calendar",
     astroTimeline: "Astro Timeline",
+    spreadDaily: "Daily",
+    spreadCelticCross: "Celtic Cross",
+    spreadRelationship: "Relationship",
+    spreadCareer: "Career",
   },
   profile: {
     title: "My Space",
@@ -317,6 +340,8 @@ export const enTranslations: Translations = {
     updateEntry: "Update Entry",
     cancelEdit: "Cancel Edit",
     emptyJournal: "Your first journal entry starts your Book of Shadows.",
+    journalLimit: "{{remaining}}/{{total}} entries left",
+    journalLimitReached: "Journal limit reached",
   },
   settings: {
     title: "Settings",
@@ -367,6 +392,9 @@ export const enTranslations: Translations = {
     saveToJournal: "Save to Journal",
     journalSaved: "Saved to your Book of Shadows",
     info: "Info",
+    premiumContent: "Premium Content",
+    premiumContentHint: "Unlock this ritual and all premium content with a subscription.",
+    unlockWithPremium: "Unlock with Premium",
   },
   subscription: {
     header: "PREMIUM ACCESS",

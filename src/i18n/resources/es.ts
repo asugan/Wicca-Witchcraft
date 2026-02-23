@@ -11,6 +11,10 @@ export const esTranslations: Translations = {
     tools: "Herramientas",
     profile: "Perfil",
   },
+  premium: {
+    badge: "Premium",
+    upgradeForUnlimited: "Actualiza para entradas ilimitadas",
+  },
   home: {
     astrologicalDate: "Fecha Astrológica",
     dailyIntention: "Intención Diaria",
@@ -55,6 +59,7 @@ export const esTranslations: Translations = {
     moonPhaseThirdQuarter: "Cuarto Menguante",
     moonPhaseWaningMoon: "Luna Menguante",
     moonPhaseWaningCrescent: "Luna Menguante Final",
+    premiumBadge: "Premium",
   },
   library: {
     title: "Biblioteca Mística",
@@ -85,6 +90,10 @@ export const esTranslations: Translations = {
     reversed: "Invertida",
     moonCalendar: "Calendario Lunar",
     astroTimeline: "Línea de Tiempo Astro",
+    spreadDaily: "Diario",
+    spreadCelticCross: "Cruz Celta",
+    spreadRelationship: "Relación",
+    spreadCareer: "Carrera",
   },
   profile: {
     title: "Mi Espacio",
@@ -101,6 +110,8 @@ export const esTranslations: Translations = {
     updateEntry: "Actualizar Entrada",
     cancelEdit: "Cancelar Edición",
     emptyJournal: "Tu primera entrada de diario inicia tu Libro de las Sombras.",
+    journalLimit: "{{remaining}}/{{total}} entradas restantes",
+    journalLimitReached: "Límite del diario alcanzado",
   },
   settings: {
     title: "Configuración",
@@ -151,6 +162,9 @@ export const esTranslations: Translations = {
     saveToJournal: "Guardar en Diario",
     journalSaved: "Guardado en tu Libro de las Sombras",
     info: "Info",
+    premiumContent: "Contenido Premium",
+    premiumContentHint: "Desbloquea este ritual y todo el contenido premium con una suscripción.",
+    unlockWithPremium: "Desbloquear con Premium",
   },
   subscription: {
     header: "ACCESO PREMIUM",

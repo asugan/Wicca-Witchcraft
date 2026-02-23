@@ -10,6 +10,7 @@ type RitualBlueprint = {
   coverImage: string;
   focus: string;
   materials: string[];
+  isPremium?: boolean;
 };
 
 type LibraryEntrySeed = {
@@ -22,6 +23,7 @@ type LibraryEntrySeed = {
   correspondences: string;
   cleansingMethod: string;
   careNote: string;
+  isPremium?: boolean;
 };
 
 export const MATERIAL_SEEDS = [
@@ -101,6 +103,7 @@ const ritualBlueprints: RitualBlueprint[] = [
     coverImage: "https://images.unsplash.com/photo-1565514020179-026b92b2d5f5?q=80&w=1200&auto=format&fit=crop",
     focus: "home protection and grounded safety",
     materials: ["black-candle", "rosemary", "sea-salt"],
+    isPremium: true,
   },
   {
     id: "dream-clarity-tea",
@@ -140,6 +143,7 @@ const ritualBlueprints: RitualBlueprint[] = [
     coverImage: "https://images.unsplash.com/photo-1556702571-3e11dd2b1a92?q=80&w=1200&auto=format&fit=crop",
     focus: "energetic boundary restoration",
     materials: ["black-candle", "small-mirror", "obsidian"],
+    isPremium: true,
   },
   {
     id: "confidence-solar-rise",
@@ -166,6 +170,7 @@ const ritualBlueprints: RitualBlueprint[] = [
     coverImage: "https://images.unsplash.com/photo-1495584816685-4bdbf1b5057e?q=80&w=1200&auto=format&fit=crop",
     focus: "ancestral gratitude and guidance",
     materials: ["white-candle", "frankincense", "myrrh"],
+    isPremium: true,
   },
   {
     id: "creative-spark",
@@ -244,6 +249,7 @@ const ritualBlueprints: RitualBlueprint[] = [
     coverImage: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop",
     focus: "mutual understanding",
     materials: ["pink-candle", "lavender", "rose-quartz"],
+    isPremium: true,
   },
   {
     id: "winter-grounding",
@@ -309,6 +315,7 @@ const ritualBlueprints: RitualBlueprint[] = [
     coverImage: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1200&auto=format&fit=crop",
     focus: "career direction",
     materials: ["blue-candle", "journal", "clear-quartz"],
+    isPremium: true,
   },
   {
     id: "gratitude-closing",
@@ -338,6 +345,7 @@ export const RITUAL_SEEDS = ritualBlueprints.map((ritual, index) => ({
   incantation: `With focused breath and steady heart, I now call in ${ritual.focus}. As I will it, so mote it be.`,
   safetyNote: "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
   createdAt: Date.now() + index,
+  isPremium: ritual.isPremium ?? false,
 }));
 
 export const RITUAL_STEP_SEEDS = ritualBlueprints.flatMap((ritual) => [
@@ -446,6 +454,7 @@ export const LIBRARY_ENTRY_SEEDS: LibraryEntrySeed[] = [
     correspondences: "Chakra: Solar Plexus | Element: Fire",
     cleansingMethod: "Smoke cleanse or visualization",
     careNote: "Place near workspace for motivation.",
+    isPremium: true,
   },
   {
     id: "labradorite",
@@ -457,6 +466,7 @@ export const LIBRARY_ENTRY_SEEDS: LibraryEntrySeed[] = [
     correspondences: "Chakra: Third Eye | Element: Wind",
     cleansingMethod: "Smoke or moonlight",
     careNote: "Carry during times of change.",
+    isPremium: true,
   },
   {
     id: "black-tourmaline",
@@ -468,6 +478,7 @@ export const LIBRARY_ENTRY_SEEDS: LibraryEntrySeed[] = [
     correspondences: "Chakra: Root | Element: Earth",
     cleansingMethod: "Smoke or salt bed nearby",
     careNote: "Set near entryways for protective support.",
+    isPremium: true,
   },
   {
     id: "rosemary",
@@ -633,6 +644,7 @@ export const LIBRARY_ENTRY_SEEDS: LibraryEntrySeed[] = [
     correspondences: "Element: Spirit",
     cleansingMethod: "Trace with smoke or moon water",
     careNote: "Use on journals for protection.",
+    isPremium: true,
   },
   {
     id: "pentacle",
@@ -655,6 +667,7 @@ export const LIBRARY_ENTRY_SEEDS: LibraryEntrySeed[] = [
     correspondences: "Element: Air",
     cleansingMethod: "Sound cleansing",
     careNote: "Use during healing meditations.",
+    isPremium: true,
   },
   {
     id: "spiral",
@@ -677,6 +690,7 @@ export const LIBRARY_ENTRY_SEEDS: LibraryEntrySeed[] = [
     correspondences: "Season: Imbolc | Element: Fire",
     cleansingMethod: "Offer clean water and candlelight",
     careNote: "Approach with gratitude and service-minded intent.",
+    isPremium: true,
   },
   {
     id: "hekate",
@@ -688,6 +702,7 @@ export const LIBRARY_ENTRY_SEEDS: LibraryEntrySeed[] = [
     correspondences: "Moon phase: Dark moon | Element: Spirit",
     cleansingMethod: "Crossroads prayer and smoke",
     careNote: "Use respectful boundary-based petitions.",
+    isPremium: true,
   },
   {
     id: "freya",
@@ -699,6 +714,7 @@ export const LIBRARY_ENTRY_SEEDS: LibraryEntrySeed[] = [
     correspondences: "Day: Friday | Element: Fire",
     cleansingMethod: "Rosewater and song",
     careNote: "Ask for empowered love, not attachment.",
+    isPremium: true,
   },
   {
     id: "thoth",
@@ -710,6 +726,7 @@ export const LIBRARY_ENTRY_SEEDS: LibraryEntrySeed[] = [
     correspondences: "Planet: Mercury | Element: Air",
     cleansingMethod: "Ink blessing and incense",
     careNote: "Excellent for study and writing rituals.",
+    isPremium: true,
   },
 ];
 

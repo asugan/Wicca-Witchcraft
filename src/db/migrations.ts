@@ -176,6 +176,55 @@ const migrations: Migration[] = [
       );
     `,
   },
+  {
+    id: "0005_add_premium_fields",
+    sql: `
+      ALTER TABLE rituals ADD COLUMN is_premium INTEGER NOT NULL DEFAULT 0;
+      ALTER TABLE library_entries ADD COLUMN is_premium INTEGER NOT NULL DEFAULT 0;
+
+      UPDATE rituals SET is_premium = 1 WHERE slug IN (
+        'cord-cutting-boundary',
+        'career-path-divination',
+        'ancestor-gratitude',
+        'hearth-protection-circle',
+        'relationship-harmony'
+      );
+
+      UPDATE library_entries SET is_premium = 1 WHERE slug IN (
+        'labradorite',
+        'black-tourmaline',
+        'citrine',
+        'brigid',
+        'hekate',
+        'freya',
+        'thoth',
+        'ankh',
+        'triquetra'
+      );
+    `,
+  },
+  {
+    id: "0006_expand_tarot_spread_types",
+    sql: `
+      CREATE TABLE IF NOT EXISTS tarot_readings_new (
+        id TEXT PRIMARY KEY NOT NULL,
+        user_id TEXT NOT NULL,
+        spread_type TEXT NOT NULL,
+        cards_json TEXT NOT NULL,
+        created_at INTEGER NOT NULL,
+        reading_date TEXT NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+      );
+
+      INSERT INTO tarot_readings_new SELECT * FROM tarot_readings;
+
+      DROP TABLE tarot_readings;
+
+      ALTER TABLE tarot_readings_new RENAME TO tarot_readings;
+
+      CREATE INDEX IF NOT EXISTS tarot_readings_user_date_idx ON tarot_readings(user_id, reading_date);
+    `,
+  },
 ];
 
 export function runMigrations(database: SQLiteDatabase) {

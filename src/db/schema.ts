@@ -22,6 +22,7 @@ export const rituals = sqliteTable(
     incantation: text("incantation").notNull(),
     safetyNote: text("safety_note").notNull(),
     createdAt: integer("created_at").notNull(),
+    isPremium: integer("is_premium", { mode: "boolean" }).notNull().default(false),
   },
   (table) => ({
     slugUnique: uniqueIndex("rituals_slug_unique").on(table.slug),
@@ -57,6 +58,7 @@ export const libraryEntries = sqliteTable(
     correspondences: text("correspondences").notNull(),
     cleansingMethod: text("cleansing_method").notNull(),
     careNote: text("care_note").notNull(),
+    isPremium: integer("is_premium", { mode: "boolean" }).notNull().default(false),
   },
   (table) => ({
     slugUnique: uniqueIndex("library_entries_slug_unique").on(table.slug),

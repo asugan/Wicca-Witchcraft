@@ -5,8 +5,16 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
+import type { SpreadType } from "@/config/premium";
 import { listAstroTimeline, listMoonCalendarSections } from "@/db/repositories/tools-repository";
-import { drawThreeCardSpread, type TarotReadingResult } from "@/db/repositories/tarot-repository";
+import {
+  drawSpread,
+  drawThreeCardSpread,
+  getAvailableSpreads,
+  isSpreadPremium,
+  type TarotReadingResult,
+} from "@/db/repositories/tarot-repository";
+import { usePremiumGate } from "@/hooks/use-premium-gate";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
@@ -36,31 +44,95 @@ function useFloating(delay: number) {
   return value;
 }
 
+const SPREAD_LABELS: Record<SpreadType, string> = {
+  daily: "tools.spreadDaily",
+  three_card: "tools.tarotSpread",
+  celtic_cross: "tools.spreadCelticCross",
+  relationship: "tools.spreadRelationship",
+  career: "tools.spreadCareer",
+};
+
+const SPREAD_POSITION_LABELS: Record<SpreadType, string[]> = {
+  daily: ["tools.cardDaily"],
+  three_card: ["tools.cardPast", "tools.cardPresent", "tools.cardFuture"],
+  celtic_cross: [
+    "tools.celticPresent",
+    "tools.celticChallenge",
+    "tools.celticPast",
+    "tools.celticFuture",
+    "tools.celticAbove",
+    "tools.celticBelow",
+    "tools.celticAdvice",
+    "tools.celticExternal",
+    "tools.celticHopes",
+    "tools.celticOutcome",
+  ],
+  relationship: [
+    "tools.relationshipYou",
+    "tools.relationshipPartner",
+    "tools.relationshipConnection",
+    "tools.relationshipChallenge",
+    "tools.relationshipAdvice",
+    "tools.relationshipNearFuture",
+    "tools.relationshipOutcome",
+  ],
+  career: [
+    "tools.careerCurrent",
+    "tools.careerObstacles",
+    "tools.careerHidden",
+    "tools.careerAdvice",
+    "tools.careerOutcome",
+  ],
+};
+
 export default function ToolsScreen() {
   const theme = useMysticTheme();
   const { t } = useTranslation();
   const styles = makeStyles(theme);
+  const { isPremium, requirePremium } = usePremiumGate();
 
-  const [revealed, setRevealed] = useState<boolean[]>([false, false, false]);
+  const [selectedSpread, setSelectedSpread] = useState<SpreadType>("three_card");
+  const [revealed, setRevealed] = useState<boolean[]>([]);
   const [currentReading, setCurrentReading] = useState<TarotReadingResult | null>(null);
   const moonCalendarSections = useMemo(() => listMoonCalendarSections(), []);
   const astroTimeline = useMemo(() => listAstroTimeline(), []);
+  const availableSpreads = useMemo(() => getAvailableSpreads(), []);
+
+  const handleSelectSpread = useCallback(
+    (spreadType: SpreadType) => {
+      if (isSpreadPremium(spreadType) && !isPremium) {
+        const featureKey = `tarot_${spreadType}` as const;
+        requirePremium(featureKey as "tarot_celtic_cross" | "tarot_relationship" | "tarot_career");
+        return;
+      }
+      setSelectedSpread(spreadType);
+    },
+    [isPremium, requirePremium]
+  );
 
   const handleDrawSpread = useCallback(() => {
-    const reading = drawThreeCardSpread("local-user");
+    if (isSpreadPremium(selectedSpread) && !isPremium) {
+      const featureKey = `tarot_${selectedSpread}` as const;
+      requirePremium(featureKey as "tarot_celtic_cross" | "tarot_relationship" | "tarot_career");
+      return;
+    }
+
+    const reading = selectedSpread === "three_card"
+      ? drawThreeCardSpread("local-user")
+      : drawSpread("local-user", selectedSpread);
     setCurrentReading(reading);
-    setRevealed([false, false, false]);
+    setRevealed(new Array(reading.cards.length).fill(false));
     trackEvent("tarot_spread_drawn", {
       user_id: "local-user",
       tab_name: "tools",
       entity_id: reading.id,
-      source: "tarot_spread",
+      source: selectedSpread,
     });
-  }, []);
+  }, [selectedSpread, isPremium, requirePremium]);
 
   const handleReset = useCallback(() => {
     setCurrentReading(null);
-    setRevealed([false, false, false]);
+    setRevealed([]);
   }, []);
 
   const floatOne = useFloating(0);
@@ -101,9 +173,38 @@ export default function ToolsScreen() {
 
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeaderRow}>
-            <Text style={styles.sectionTitle}>{t("tools.tarotSpread")}</Text>
+            <Text style={styles.sectionTitle}>{t(SPREAD_LABELS[selectedSpread] as string)}</Text>
             <MaterialCommunityIcons color={theme.colors.primary} name="cards-playing" size={18} />
           </View>
+
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.spreadChipsRow}>
+            {availableSpreads.map((spread) => {
+              const isSelected = selectedSpread === spread.type;
+              const isLocked = spread.isPremium && !isPremium;
+
+              return (
+                <Pressable
+                  key={spread.type}
+                  onPress={() => handleSelectSpread(spread.type)}
+                  style={[styles.spreadChip, isSelected && styles.spreadChipSelected]}
+                >
+                  {isLocked && (
+                    <MaterialCommunityIcons
+                      color={isSelected ? theme.colors.onPrimary : theme.colors.primary}
+                      name="lock"
+                      size={12}
+                    />
+                  )}
+                  <Text style={[styles.spreadChipText, isSelected && styles.spreadChipTextSelected]}>
+                    {t(SPREAD_LABELS[spread.type] as string)}
+                  </Text>
+                  <Text style={[styles.spreadChipCount, isSelected && styles.spreadChipCountSelected]}>
+                    {spread.cardCount}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </ScrollView>
 
           {!currentReading ? (
             <>
@@ -612,5 +713,41 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       fontSize: 10,
       fontWeight: "600",
       textTransform: "capitalize",
+    },
+    spreadChipsRow: {
+      flexDirection: "row",
+      gap: 8,
+      paddingVertical: 4,
+    },
+    spreadChip: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 4,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}4D`,
+      borderRadius: 999,
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+      backgroundColor: `${theme.colors.primary}14`,
+    },
+    spreadChipSelected: {
+      backgroundColor: theme.colors.primary,
+      borderColor: theme.colors.primary,
+    },
+    spreadChipText: {
+      color: theme.colors.primary,
+      fontSize: 12,
+      fontWeight: "600",
+    },
+    spreadChipTextSelected: {
+      color: theme.colors.onPrimary,
+    },
+    spreadChipCount: {
+      color: `${theme.colors.primary}99`,
+      fontSize: 10,
+      fontWeight: "700",
+    },
+    spreadChipCountSelected: {
+      color: `${theme.colors.onPrimary}CC`,
     },
   });

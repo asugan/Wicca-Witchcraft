@@ -16,6 +16,7 @@ export type AnalyticsEventName =
   | "journal_entry_created"
   | "premium_paywall_viewed"
   | "premium_started"
+  | "premium_gate_shown"
   | "ritual_mode_started"
   | "ritual_mode_completed"
   | "ritual_journal_saved"

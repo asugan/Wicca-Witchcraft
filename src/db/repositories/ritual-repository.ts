@@ -14,6 +14,7 @@ export type RitualListItem = {
   durationMinutes: number;
   coverImage: string;
   materials: string[];
+  isPremium: boolean;
 };
 
 export function listRituals(limit?: number): RitualListItem[] {
@@ -30,6 +31,7 @@ export function listRituals(limit?: number): RitualListItem[] {
       moonPhase: rituals.moonPhase,
       durationMinutes: rituals.durationMinutes,
       coverImage: rituals.coverImage,
+      isPremium: rituals.isPremium,
     })
     .from(rituals)
     .orderBy(asc(rituals.createdAt))
@@ -59,6 +61,7 @@ export function listRituals(limit?: number): RitualListItem[] {
 
   const rows = ritualRows.map((row) => ({
     ...row,
+    isPremium: row.isPremium ?? false,
     materials: materialsByRitual.get(row.id) ?? [],
   }));
 

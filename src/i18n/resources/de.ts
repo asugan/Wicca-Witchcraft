@@ -11,6 +11,10 @@ export const deTranslations: Translations = {
     tools: "Werkzeuge",
     profile: "Profil",
   },
+  premium: {
+    badge: "Premium",
+    upgradeForUnlimited: "Für unbegrenzte Einträge upgraden",
+  },
   home: {
     astrologicalDate: "Astrologisches Datum",
     dailyIntention: "Tägliche Intention",
@@ -55,6 +59,7 @@ export const deTranslations: Translations = {
     moonPhaseThirdQuarter: "Letztes Viertel",
     moonPhaseWaningMoon: "Abnehmender Mond",
     moonPhaseWaningCrescent: "Abnehmende Sichel",
+    premiumBadge: "Premium",
   },
   library: {
     title: "Mystische Bibliothek",
@@ -85,6 +90,10 @@ export const deTranslations: Translations = {
     reversed: "Umgekehrt",
     moonCalendar: "Mondkalender",
     astroTimeline: "Astro-Zeitlinie",
+    spreadDaily: "Täglich",
+    spreadCelticCross: "Keltisches Kreuz",
+    spreadRelationship: "Beziehung",
+    spreadCareer: "Karriere",
   },
   profile: {
     title: "Mein Bereich",
@@ -101,6 +110,8 @@ export const deTranslations: Translations = {
     updateEntry: "Eintrag aktualisieren",
     cancelEdit: "Bearbeitung abbrechen",
     emptyJournal: "Ihr erster Tagebucheintrag beginnt Ihr Buch der Schatten.",
+    journalLimit: "{{remaining}}/{{total}} Einträge übrig",
+    journalLimitReached: "Tagebuchlimit erreicht",
   },
   settings: {
     title: "Einstellungen",
@@ -151,6 +162,9 @@ export const deTranslations: Translations = {
     saveToJournal: "Im Tagebuch speichern",
     journalSaved: "Im Buch der Schatten gespeichert",
     info: "Info",
+    premiumContent: "Premium-Inhalt",
+    premiumContentHint: "Schalte dieses Ritual und alle Premium-Inhalte mit einem Abo frei.",
+    unlockWithPremium: "Mit Premium freischalten",
   },
   subscription: {
     header: "PREMIUM-ZUGANG",
