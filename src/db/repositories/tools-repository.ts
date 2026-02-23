@@ -1,7 +1,4 @@
-import { asc } from "drizzle-orm";
-
-import { db, ensureDatabaseInitialized } from "@/db/client";
-import { moonEvents } from "@/db/schema";
+import { generateMoonEvents } from "@/lib/moon";
 
 type TimelineKind = "preparation" | "peak" | "integration";
 
@@ -34,19 +31,13 @@ function asTimelineSummary(phase: string, zodiacSign: string, kind: TimelineKind
 }
 
 export function listMoonEvents() {
-  ensureDatabaseInitialized();
+  const now = new Date();
+  const start = new Date(now);
+  start.setDate(start.getDate() - 30);
+  const end = new Date(now);
+  end.setDate(end.getDate() + 180);
 
-  return db
-    .select({
-      id: moonEvents.id,
-      eventDate: moonEvents.eventDate,
-      phase: moonEvents.phase,
-      zodiacSign: moonEvents.zodiacSign,
-      summary: moonEvents.summary,
-    })
-    .from(moonEvents)
-    .orderBy(asc(moonEvents.eventDate))
-    .all();
+  return generateMoonEvents(start, end);
 }
 
 export function listMoonCalendarSections() {

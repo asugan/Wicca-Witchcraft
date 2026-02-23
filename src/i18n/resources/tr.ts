@@ -50,6 +50,7 @@ export const trTranslations: Translations = {
     moonPhaseWaxingGibbous: "Büyüyen Dolunay",
     moonPhaseFull: "Dolunay",
     moonPhaseWaningGibbous: "Azalan Büyük Ay",
+    moonPhaseThirdQuarter: "Son Çeyrek",
     moonPhaseWaningMoon: "Azalan Ay",
     moonPhaseWaningCrescent: "Son Hilal",
   },

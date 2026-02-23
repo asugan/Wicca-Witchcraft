@@ -1,7 +1,8 @@
 import { asc, eq } from "drizzle-orm";
 
 import { db, ensureDatabaseInitialized } from "@/db/client";
-import { dailyCards, moonEvents, rituals } from "@/db/schema";
+import { dailyCards, rituals } from "@/db/schema";
+import { getCurrentMoonInfo } from "@/lib/moon";
 
 const weekdayIntentions = [
   "I soften my pace and listen to what my intuition already knows.",
@@ -15,19 +16,6 @@ const weekdayIntentions = [
 
 const weekdayCategoryBias = ["healing", "protection", "abundance", "ritual", "love", "moon", "beginner"] as const;
 
-const phaseIlluminationByKey: Record<string, string> = {
-  new: "5%",
-  "waxing-crescent": "28%",
-  "first-quarter": "50%",
-  "waxing-gibbous": "72%",
-  full: "100%",
-  "waning-gibbous": "84%",
-  "waning-crescent": "22%",
-  "waning-moon": "14%",
-  "waxing-moon": "66%",
-  any: "50%",
-};
-
 const fallbackMoonSummaryByKey: Record<string, string> = {
   new: "Quiet beginnings support intention setting and inner listening.",
   "waxing-crescent": "Build momentum with small, consistent ritual actions.",
@@ -35,6 +23,7 @@ const fallbackMoonSummaryByKey: Record<string, string> = {
   "waxing-gibbous": "Refine details and prepare for visible energetic results.",
   full: "Peak lunar energy favors release, clarity, and emotional truth.",
   "waning-gibbous": "Integrate what you learned and share wisdom thoughtfully.",
+  "third-quarter": "Reassess priorities and release habits that have run their course.",
   "waning-crescent": "Rest, cleanse, and release what no longer serves you.",
   "waning-moon": "Close energetic loops and protect your boundaries.",
   "waxing-moon": "Nurture growth with patience, devotion, and aligned effort.",
@@ -69,10 +58,6 @@ export type HomeDailySnapshot = {
 
 function toIsoDate(value: Date) {
   return value.toISOString().slice(0, 10);
-}
-
-function toDateValue(isoDate: string) {
-  return new Date(`${isoDate}T00:00:00Z`).getTime();
 }
 
 function normalizeMoonPhaseKey(phase: string) {
@@ -129,39 +114,9 @@ export function getHomeDailySnapshot(date = new Date()): HomeDailySnapshot {
   ensureDatabaseInitialized();
 
   const todayIso = toIsoDate(date);
-  const todayDateValue = toDateValue(todayIso);
 
-  const moonRows = db
-    .select({
-      eventDate: moonEvents.eventDate,
-      phase: moonEvents.phase,
-      zodiacSign: moonEvents.zodiacSign,
-      summary: moonEvents.summary,
-    })
-    .from(moonEvents)
-    .orderBy(asc(moonEvents.eventDate))
-    .all();
-
-  const closestMoonRow = moonRows.reduce<(typeof moonRows)[number] | null>((closest, row) => {
-    if (!closest) {
-      return row;
-    }
-
-    const distance = Math.abs(toDateValue(row.eventDate) - todayDateValue);
-    const closestDistance = Math.abs(toDateValue(closest.eventDate) - todayDateValue);
-
-    if (distance < closestDistance) {
-      return row;
-    }
-
-    if (distance === closestDistance && row.eventDate >= todayIso && closest.eventDate < todayIso) {
-      return row;
-    }
-
-    return closest;
-  }, null);
-
-  const moonPhaseKey = normalizeMoonPhaseKey(closestMoonRow?.phase ?? "any");
+  const moonInfo = getCurrentMoonInfo(date);
+  const moonPhaseKey = normalizeMoonPhaseKey(moonInfo.phaseKey);
 
   const dailyCard =
     db
@@ -219,13 +174,13 @@ export function getHomeDailySnapshot(date = new Date()): HomeDailySnapshot {
       month: "long",
       day: "numeric",
     }),
-    cosmicLabel: closestMoonRow ? `${closestMoonRow.zodiacSign} Moon` : "Mystic Cycle",
+    cosmicLabel: `${moonInfo.zodiacSign} Moon`,
     intention: weekdayIntentions[date.getDay()],
     moon: {
-      phase: closestMoonRow?.phase ?? "Lunar Flow",
+      phase: moonInfo.phaseName,
       phaseKey: moonPhaseKey,
-      illumination: phaseIlluminationByKey[moonPhaseKey] ?? phaseIlluminationByKey.any,
-      summary: closestMoonRow?.summary ?? fallbackMoonSummaryByKey[moonPhaseKey] ?? fallbackMoonSummaryByKey.any,
+      illumination: `${moonInfo.illuminationPercent}%`,
+      summary: moonInfo.summary ?? fallbackMoonSummaryByKey[moonPhaseKey] ?? fallbackMoonSummaryByKey.any,
     },
     card: dailyCard,
     recommendation,

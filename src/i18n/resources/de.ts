@@ -50,6 +50,7 @@ export const deTranslations: Translations = {
     moonPhaseWaxingGibbous: "Zunehmender Mond",
     moonPhaseFull: "Vollmond",
     moonPhaseWaningGibbous: "Abnehmender Mond",
+    moonPhaseThirdQuarter: "Letztes Viertel",
     moonPhaseWaningMoon: "Abnehmender Mond",
     moonPhaseWaningCrescent: "Abnehmende Sichel",
   },

@@ -50,6 +50,7 @@ export const esTranslations: Translations = {
     moonPhaseWaxingGibbous: "Gibosa Creciente",
     moonPhaseFull: "Luna Llena",
     moonPhaseWaningGibbous: "Gibosa Menguante",
+    moonPhaseThirdQuarter: "Cuarto Menguante",
     moonPhaseWaningMoon: "Luna Menguante",
     moonPhaseWaningCrescent: "Luna Menguante Final",
   },

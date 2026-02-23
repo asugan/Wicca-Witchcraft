@@ -168,6 +168,49 @@ export default function ProfileScreen() {
 
         <View style={styles.panel}>
           <View style={styles.panelHeader}>
+            <Text style={styles.panelTitle}>{t("settings.title")}</Text>
+            <Text style={styles.panelMeta}>{t("settings.personal")}</Text>
+          </View>
+
+          <View style={styles.settingRow}>
+            <View style={styles.settingTextWrap}>
+              <Text style={styles.settingTitle}>{t("settings.remindersTitle")}</Text>
+              <Text style={styles.settingDescription}>{t("settings.remindersDescription")}</Text>
+            </View>
+
+            <Pressable disabled={isUpdatingNotifications} onPress={onToggleNotifications} style={styles.switchTapArea}>
+              <View style={[styles.switchPill, notificationsEnabled && styles.switchPillOn, isUpdatingNotifications && styles.switchPillBusy]}>
+                <View style={[styles.switchKnob, notificationsEnabled && styles.switchKnobOn]} />
+              </View>
+            </Pressable>
+          </View>
+
+          <Text style={styles.settingMetaLine}>
+            {notificationStatusText ||
+              (notificationsEnabled
+                ? t("settings.activeReminder")
+                : t("settings.inactiveReminder"))}
+          </Text>
+
+          <View style={styles.settingRow}>
+            <View style={styles.settingTextWrap}>
+              <Text style={styles.settingTitle}>{t("settings.languageLabel")}</Text>
+              <Text style={styles.settingDescription}>{t("settings.languageHint")}</Text>
+            </View>
+
+            <Pressable onPress={() => setLanguageModalVisible(true)} style={styles.languageButton}>
+              <Text style={styles.languageButtonText}>
+                {LANGUAGE_OPTIONS.find((opt) => opt.code === selectedLanguage)
+                  ? t(LANGUAGE_OPTIONS.find((opt) => opt.code === selectedLanguage)!.labelKey as string)
+                  : selectedLanguage.toUpperCase()}
+              </Text>
+              <MaterialCommunityIcons color={theme.colors.primary} name="chevron-right" size={16} />
+            </Pressable>
+          </View>
+        </View>
+
+        <View style={styles.panel}>
+          <View style={styles.panelHeader}>
             <Text style={styles.panelTitle}>{t("profile.favorites")}</Text>
             <Text style={styles.panelMeta}>{t("profile.savedCount", { count: favorites.length })}</Text>
           </View>
@@ -314,49 +357,6 @@ export default function ProfileScreen() {
               <Text style={styles.emptyText}>{t("profile.emptyJournal")}</Text>
             </View>
           ) : null}
-        </View>
-
-        <View style={styles.panel}>
-          <View style={styles.panelHeader}>
-            <Text style={styles.panelTitle}>{t("settings.title")}</Text>
-            <Text style={styles.panelMeta}>{t("settings.personal")}</Text>
-          </View>
-
-          <View style={styles.settingRow}>
-            <View style={styles.settingTextWrap}>
-              <Text style={styles.settingTitle}>{t("settings.remindersTitle")}</Text>
-              <Text style={styles.settingDescription}>{t("settings.remindersDescription")}</Text>
-            </View>
-
-            <Pressable disabled={isUpdatingNotifications} onPress={onToggleNotifications} style={styles.switchTapArea}>
-              <View style={[styles.switchPill, notificationsEnabled && styles.switchPillOn, isUpdatingNotifications && styles.switchPillBusy]}>
-                <View style={[styles.switchKnob, notificationsEnabled && styles.switchKnobOn]} />
-              </View>
-            </Pressable>
-          </View>
-
-          <Text style={styles.settingMetaLine}>
-            {notificationStatusText ||
-              (notificationsEnabled
-                ? t("settings.activeReminder")
-                : t("settings.inactiveReminder"))}
-          </Text>
-
-          <View style={styles.settingRow}>
-            <View style={styles.settingTextWrap}>
-              <Text style={styles.settingTitle}>{t("settings.languageLabel")}</Text>
-              <Text style={styles.settingDescription}>{t("settings.languageHint")}</Text>
-            </View>
-
-            <Pressable onPress={() => setLanguageModalVisible(true)} style={styles.languageButton}>
-              <Text style={styles.languageButtonText}>
-                {LANGUAGE_OPTIONS.find((opt) => opt.code === selectedLanguage)
-                  ? t(LANGUAGE_OPTIONS.find((opt) => opt.code === selectedLanguage)!.labelKey as string)
-                  : selectedLanguage.toUpperCase()}
-              </Text>
-              <MaterialCommunityIcons color={theme.colors.primary} name="chevron-right" size={16} />
-            </Pressable>
-          </View>
         </View>
       </ScrollView>
 

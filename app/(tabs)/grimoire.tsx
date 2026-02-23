@@ -29,6 +29,7 @@ const MOON_PHASE_KEYS: Record<string, string> = {
   "waxing-gibbous": "grimoire.moonPhaseWaxingGibbous",
   full: "grimoire.moonPhaseFull",
   "waning-gibbous": "grimoire.moonPhaseWaningGibbous",
+  "third-quarter": "grimoire.moonPhaseThirdQuarter",
   "waning-moon": "grimoire.moonPhaseWaningMoon",
   "waning-crescent": "grimoire.moonPhaseWaningCrescent",
 };
@@ -46,8 +47,9 @@ const moonPhaseOrder: Record<string, number> = {
   "waxing-gibbous": 4,
   full: 5,
   "waning-gibbous": 6,
-  "waning-moon": 7,
-  "waning-crescent": 8,
+  "third-quarter": 7,
+  "waning-moon": 8,
+  "waning-crescent": 9,
 };
 
 

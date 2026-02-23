@@ -9,7 +9,6 @@ import {
   ENTITY_LINK_SEEDS,
   LIBRARY_ENTRY_SEEDS,
   MATERIAL_SEEDS,
-  MOON_EVENT_SEEDS,
   RITUAL_MATERIAL_SEEDS,
   RITUAL_SEEDS,
   RITUAL_STEP_SEEDS,
@@ -20,7 +19,6 @@ import {
   entityLinks,
   libraryEntries,
   materials,
-  moonEvents,
   ritualMaterials,
   rituals,
   ritualSteps,
@@ -50,7 +48,6 @@ function seedIfNeeded() {
   db.insert(ritualMaterials).values(RITUAL_MATERIAL_SEEDS).run();
   db.insert(entityLinks).values(ENTITY_LINK_SEEDS).run();
   db.insert(dailyCards).values(DAILY_CARD_SEEDS).run();
-  db.insert(moonEvents).values(MOON_EVENT_SEEDS).run();
 }
 
 export function ensureDatabaseInitialized() {

@@ -50,6 +50,7 @@ export const ptTranslations: Translations = {
     moonPhaseWaxingGibbous: "Crescente Convexa",
     moonPhaseFull: "Lua Cheia",
     moonPhaseWaningGibbous: "Minguante Convexa",
+    moonPhaseThirdQuarter: "Último Quarto",
     moonPhaseWaningMoon: "Lua Minguante",
     moonPhaseWaningCrescent: "Quarto Minguante",
   },

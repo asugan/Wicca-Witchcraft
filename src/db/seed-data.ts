@@ -743,29 +743,7 @@ export const DAILY_CARD_SEEDS = [
   },
 ];
 
-export const MOON_EVENT_SEEDS = [
-  {
-    id: "moon-event-1",
-    eventDate: "2026-03-14",
-    phase: "Full Moon",
-    zodiacSign: "Virgo",
-    summary: "Grounding full moon ideal for decluttering rituals.",
-  },
-  {
-    id: "moon-event-2",
-    eventDate: "2026-03-29",
-    phase: "New Moon",
-    zodiacSign: "Aries",
-    summary: "Fresh cycle for confidence and initiative intentions.",
-  },
-  {
-    id: "moon-event-3",
-    eventDate: "2026-04-13",
-    phase: "Full Moon",
-    zodiacSign: "Libra",
-    summary: "Balance-focused lunation supporting relationship clarity.",
-  },
-];
+export const MOON_EVENT_SEEDS: never[] = [];
 
 export const DEFAULT_USER_SEED = {
   id: "local-user",

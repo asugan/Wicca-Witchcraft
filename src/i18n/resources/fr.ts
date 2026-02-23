@@ -50,6 +50,7 @@ export const frTranslations: Translations = {
     moonPhaseWaxingGibbous: "Gibbeuse Croissante",
     moonPhaseFull: "Pleine Lune",
     moonPhaseWaningGibbous: "Gibbeuse Décroissante",
+    moonPhaseThirdQuarter: "Dernier Quartier",
     moonPhaseWaningMoon: "Lune Décroissante",
     moonPhaseWaningCrescent: "Croissant Décroissant",
   },

@@ -48,6 +48,7 @@ export type Translations = {
     moonPhaseWaxingGibbous: string;
     moonPhaseFull: string;
     moonPhaseWaningGibbous: string;
+    moonPhaseThirdQuarter: string;
     moonPhaseWaningMoon: string;
     moonPhaseWaningCrescent: string;
   };
@@ -180,6 +181,7 @@ export const enTranslations: Translations = {
     moonPhaseWaxingGibbous: "Waxing Gibbous",
     moonPhaseFull: "Full",
     moonPhaseWaningGibbous: "Waning Gibbous",
+    moonPhaseThirdQuarter: "Third Quarter",
     moonPhaseWaningMoon: "Waning Moon",
     moonPhaseWaningCrescent: "Waning Crescent",
   },

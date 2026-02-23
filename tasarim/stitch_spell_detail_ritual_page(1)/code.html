@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ritual Complete - Mystic Grimoire</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#1A1025", // Deep velvety midnight purple
+                        "accent-purple": "#2D1B3E",
+                        "silver-border": "rgba(255,255,255,0.3)",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    backgroundImage: {
+                        'celestial-gradient': 'radial-gradient(circle at center, #2D1B3E 0%, #1A1025 70%, #0F0816 100%)',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px 5px rgba(242, 185, 13, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom particle effect using simple radial gradients for stars */
+        .stars-overlay {
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, #f2b90d, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 160px 120px, #f2b90d, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 200px 80px, #ffffff, rgba(0,0,0,0));
+            background-size: 300px 300px;
+            opacity: 0.5;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f2b90d 0%, #FFE58F 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Background Layers -->
+<div class="absolute inset-0 bg-celestial-gradient z-0"></div>
+<div class="absolute inset-0 stars-overlay z-0 pointer-events-none"></div>
+<!-- Burst Effect behind Sigil -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] w-64 h-64 bg-primary/20 blur-[60px] rounded-full z-0"></div>
+<!-- Main Content Container -->
+<main class="relative z-10 w-full max-w-md h-full flex flex-col justify-between p-6 min-h-[600px]">
+<!-- Header / Navigation Placeholder -->
+<div class="w-full flex justify-between items-center py-4 opacity-70">
+<span class="material-symbols-outlined text-white/60">close</span>
+<span class="material-symbols-outlined text-white/60">more_horiz</span>
+</div>
+<!-- Center Content: Sigil & Title -->
+<div class="flex-1 flex flex-col items-center justify-center text-center -mt-10">
+<!-- Sigil Graphic -->
+<div class="relative mb-8 group">
+<!-- Outer Ring Glow -->
+<div class="absolute inset-0 rounded-full bg-primary/20 blur-xl scale-110"></div>
+<!-- Sigil Image -->
+<div class="w-48 h-48 relative flex items-center justify-center">
+<!-- Using a symbolic image for the sigil -->
+<img class="w-full h-full object-cover rounded-full opacity-90 mix-blend-screen shadow-glow" data-alt="Golden glowing esoteric sigil on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTqtWOlZdrqPKccFO1MiPpHtflY2d3ZEQOlM4YZ0L3Oqxfqs4xqS8K3m80WUHg7KC65QKu8xWHHP0nzUGrZNbQRLOECP_s5-b1nwn7Qr8HP5_DNvDcFJ4NclQBWtiN6HNggzpCm2cI2UGJ1olBSXjjqII9AvRXAtYo5mj7nqETNiZJSxTn8lsDC6IlybBVCKFfGyhp5hGy5nvgPuB_W_N_93rDz2aHkkzznKjxrLB9jnH4EnBUC_eB_CwWHUFDEYGT0M4Mi9QVvlxP" style="mask-image: radial-gradient(circle, black 60%, transparent 100%); -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);"/>
+<!-- Overlay Icon for cleaner look if image is messy -->
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-8xl drop-shadow-[0_0_15px_rgba(242,185,13,0.8)]" style="font-size: 8rem; font-weight: 200;">
+                            auto_awesome
+                        </span>
+</div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="space-y-4 max-w-xs mx-auto">
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight gold-gradient-text drop-shadow-sm">
+                    Ritual Complete
+                </h1>
+<div class="h-px w-16 bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto"></div>
+<p class="text-white/80 text-lg md:text-xl font-normal italic leading-relaxed tracking-wide">
+                    "The intentions have been set, the energy is aligned."
+                </p>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="w-full space-y-4 pb-8 pt-4">
+<!-- Primary Action -->
+<button class="relative w-full group overflow-hidden rounded-xl bg-gradient-to-r from-[#D4A00B] via-[#f2b90d] to-[#D4A00B] p-[1px] shadow-[0_4px_20px_rgba(242,185,13,0.25)] transition-transform active:scale-[0.99]">
+<div class="relative flex h-14 w-full items-center justify-center rounded-xl bg-[#f2b90d] px-6 transition-all group-hover:bg-opacity-90">
+<span class="mr-2 material-symbols-outlined text-[#181611]">verified</span>
+<span class="text-[#181611] text-lg font-bold tracking-wide uppercase">Blessed Be</span>
+</div>
+<!-- Shimmer effect -->
+<div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+</button>
+<!-- Secondary Action -->
+<button class="w-full flex h-14 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 text-white transition-colors hover:bg-white/10 active:bg-white/5 backdrop-blur-sm">
+<span class="mr-2 material-symbols-outlined text-white/70">book</span>
+<span class="text-base font-semibold tracking-wide">Save to Journal</span>
+</button>
+</div>
+</main>
+</body></html>
