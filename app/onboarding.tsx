@@ -23,20 +23,14 @@ import { useMysticTheme } from "@/theme/use-mystic-theme";
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 const LOCAL_USER_ID = "local-user";
 
-// Image URLs from the design
+// Local onboarding images
 const SLIDE_IMAGES = {
-  zodiacWheel:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDih7EH7vz_ZqcONg5Yr3cE4Ux_Bg1kuLjlmLRsuD5piV7TZCmKmVO_gJgjnJ_nYJ5HM9Y5DpM_bQTFkmyoA9gCJNvXD1iONdGLDx3CSsov6GqGl2uWGvEvGf4zpjVf6MenuB9k310xPfBIwBedfbEKb1W5e7I-BS8_0bcxlVHccEza-7sCYlj28X4PM1OfUcJHhQ3LF8YbRycqBc5JLynFehPLvYE6QiepqOe2xUwEdeYuHVg9M404ef6vodD0j-aA72eCyi-CPyuu",
-  sunMoon:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBk5VsiMlOMFA_XjM0yTd8gP0YqQ6YsuxWqZXo4vGuxjUEkxx7zreq1Dq55wQl-b1o7u4elOHLOhW4wb2aeKaqhU-WUNYh0IagopeZ4GgxhxUiR4NC8OdqjKXqQOgjueNo9gNoK2UzYoPj3oX2_PTkUY5KaS4AfU3B33eO9k54au_LjAnK9mvwlc-CegD4GzDdmaeZ53VJoGSaVgSp2bx4qG1KmKjKlPfMwbv6s7pwgE8rJ-oNXp0Ekn6bqE01AQxu_kZfxu_IbnDFP",
-  grimoire:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDRJE2jYp39Am96bShyjSFX-SGCcKwE9SSL54sqqmbHjR7KnWq2kNE_oilqq96FjM9rQjXQNz-qsd7Gdy5SQIBGcGMgK9W8JnhbGfv-vrsuF8ympBzLGCUdf6VbzINFh9bYQvYr86b6Feq6zcju30HiXGLxuFnr4bUz3-q0jAyQH79xzCnHUgpUuF3P4C6re2TdrKTJ3n48pUPeTgeTgJKuKnsJ3-lMB7wX6DIPB5PUcq_6dzOmhIEOduO5-xNKczIRXRlOu4O6nGuQ",
-  tarotMoon:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAYbgZCtGX-OKbD6SjV0rHYDFZNuuiZilIhU0FRZi-9yXGpBR06Rx5PKvyyMeH0dIMvzt5ZnWvppirgag02A0XG5S-YFX3N486yj7WNC5iZD7IoKxR2SfNtxRwNrJ2LylneBrM7MbG8sF3TjDrhjzXycZmrh0Fq3E2i3R4Ytl7OOKL4sk--ygDIGbMfMJkfNCp2cK2gGVUkGtkSG-cdoqV1BK862G1CNTJ1HXX7z1ZS2VU-3b8UNsChgQDCHih-ZjpO-qaPn-AUbdhu",
-  tarotPriestess:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDoPDDdZ4Pl76q6V7Qb2fVmg6QIqu6bj_iZKlLHW_xO-JfWL3tiGG7JZ4j9sq8vOQmryAAyjJupks6AbcYh51CfYp2_hQ8vJsPFXT54V2_Bodkh69bjBCa7lvSC26CxzQLrdkgFZm2WRTohzslpSYbW7XeMe1i0SdOtSUC4oAXyv1SYzEXGEI86oxX1NS_jj7jQjrXdOcHNAzi-30Ay36mfaTN0sWmAXfT4Q1dT0H6qcfg5lVSUJsNs3qHoe02zX2F4l2sPjeDpuM5C",
-  tarotMagician:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuB_oFzUEmtbUU9a5ke4I2Cjj60OgyOB39GfUg7nk6euM_ETahj0IlFTI4Abv8yEnq1VSq_FQURZvgAwPiAwO9wINFHNwxyXU9Hoqjp7hwfD0xKmirtGyTPY6_lBq_iWmzJKns9aktomYD2NJ2kUS_LB0fxgkCHRdiJyuKqbZg-LlUKm3GqgCmH-vA0riFVwgmGpDoDu78vOSUlXNSNNgUhWz2FcCz_XiwLADeUp0YRiLjXy0FOQyTWlo3-EgrDbopKwmDxQDHDrSF67",
+  zodiacWheel: require("../assets/images/onboarding/zodiac-wheel.png"),
+  sunMoon: require("../assets/images/onboarding/sun-moon.png"),
+  grimoire: require("../assets/images/onboarding/grimoire.png"),
+  tarotMoon: require("../assets/images/onboarding/tarot-moon.png"),
+  tarotPriestess: require("../assets/images/onboarding/tarot-priestess.png"),
+  tarotMagician: require("../assets/images/onboarding/tarot-magician.png"),
 };
 
 // Slide background colors matching the design
@@ -130,7 +124,7 @@ function Slide1Visual(_props: { theme: ReturnType<typeof useMysticTheme> }) {
         ]}
       >
         <Image
-          source={{ uri: SLIDE_IMAGES.zodiacWheel }}
+          source={SLIDE_IMAGES.zodiacWheel}
           style={styles.zodiacWheel}
           resizeMode="contain"
         />
@@ -144,7 +138,7 @@ function Slide1Visual(_props: { theme: ReturnType<typeof useMysticTheme> }) {
       {/* Sun Moon Image */}
       <View style={styles.mainImageContainer}>
         <Image
-          source={{ uri: SLIDE_IMAGES.sunMoon }}
+          source={SLIDE_IMAGES.sunMoon}
           style={styles.mainImage}
           resizeMode="contain"
         />
@@ -218,7 +212,7 @@ function Slide2Visual(_props: { theme: ReturnType<typeof useMysticTheme> }) {
       >
         <View style={styles.grimoireGlow} />
         <Image
-          source={{ uri: SLIDE_IMAGES.grimoire }}
+          source={SLIDE_IMAGES.grimoire}
           style={styles.grimoireImage}
           resizeMode="contain"
         />
@@ -285,7 +279,7 @@ function Slide3Visual(_props: { theme: ReturnType<typeof useMysticTheme> }) {
           ]}
         >
           <Image
-            source={{ uri: SLIDE_IMAGES.tarotMoon }}
+            source={SLIDE_IMAGES.tarotMoon}
             style={styles.tarotCardImage}
             resizeMode="cover"
           />
@@ -303,7 +297,7 @@ function Slide3Visual(_props: { theme: ReturnType<typeof useMysticTheme> }) {
           ]}
         >
           <Image
-            source={{ uri: SLIDE_IMAGES.tarotMagician }}
+            source={SLIDE_IMAGES.tarotMagician}
             style={styles.tarotCardImage}
             resizeMode="cover"
           />
@@ -322,7 +316,7 @@ function Slide3Visual(_props: { theme: ReturnType<typeof useMysticTheme> }) {
           ]}
         >
           <Image
-            source={{ uri: SLIDE_IMAGES.tarotPriestess }}
+            source={SLIDE_IMAGES.tarotPriestess}
             style={styles.tarotCardImage}
             resizeMode="cover"
           />
