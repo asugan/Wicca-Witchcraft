@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mystic Element Detail Modal V2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Material+Icons+Round&amp;display=swap" rel="stylesheet"/>
+<style>.tattered-edge-top {
+            clip-path: polygon(
+                0% 10px, 5% 0px, 10% 8px, 15% 0px, 20% 5px, 
+                25% 0px, 30% 8px, 35% 2px, 40% 10px, 45% 0px, 
+                50% 6px, 55% 0px, 60% 8px, 65% 2px, 70% 10px, 
+                75% 0px, 80% 6px, 85% 0px, 90% 8px, 95% 2px, 100% 10px,
+                100% 100%, 0% 100%
+            );
+        }
+        .tattered-edge-bottom {
+            clip-path: polygon(
+                0% 0%, 100% 0%, 
+                100% calc(100% - 10px), 95% 100%, 90% calc(100% - 8px), 85% 100%, 
+                80% calc(100% - 6px), 75% 100%, 70% calc(100% - 10px), 65% 100%, 
+                60% calc(100% - 8px), 55% 100%, 50% calc(100% - 6px), 45% 100%, 
+                40% calc(100% - 10px), 35% 100%, 30% calc(100% - 8px), 25% 100%, 
+                20% calc(100% - 5px), 15% 100%, 10% calc(100% - 8px), 5% 100%, 0% calc(100% - 10px)
+            );
+        }.bg-parchment {
+            background-color: #F3EAD3;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+        }
+        .bg-parchment-dark {
+            background-color: #2D241E;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-lora { font-family: 'Lora', serif; }
+    </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B5E3C","background-light": "#FAF7F2",
+                        "background-dark": "#1A1614",
+                        "parchment-light": "#F3EAD3",
+                        "parchment-dark": "#2D241E",
+                        "text-light": "#2D241E",
+                        "text-dark": "#E5DCCA",
+                        "accent": "#D4AF37",},
+                    fontFamily: {
+                        display: ["Cinzel", "serif"],
+                        body: ["Lora", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(212, 175, 55, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body min-h-screen flex flex-col relative overflow-hidden">
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-accent opacity-10 blur-3xl rounded-full"></div>
+<div class="absolute top-40 -left-20 w-48 h-48 bg-primary opacity-5 blur-3xl rounded-full"></div>
+<div class="absolute bottom-20 right-0 w-80 h-80 bg-primary opacity-5 blur-3xl rounded-full"></div>
+</div>
+<div class="relative z-10 px-6 pt-12 pb-4 flex justify-between items-center">
+<button class="p-2 rounded-full bg-parchment-light/50 dark:bg-parchment-dark/50 backdrop-blur-sm hover:bg-parchment-light dark:hover:bg-parchment-dark transition-colors">
+<span class="material-icons-round text-primary dark:text-accent">arrow_back</span>
+</button>
+<div class="flex space-x-4">
+<button class="p-2 rounded-full bg-parchment-light/50 dark:bg-parchment-dark/50 backdrop-blur-sm hover:bg-parchment-light dark:hover:bg-parchment-dark transition-colors">
+<span class="material-icons-round text-primary dark:text-accent">bookmark_border</span>
+</button>
+<button class="p-2 rounded-full bg-parchment-light/50 dark:bg-parchment-dark/50 backdrop-blur-sm hover:bg-parchment-light dark:hover:bg-parchment-dark transition-colors">
+<span class="material-icons-round text-primary dark:text-accent">share</span>
+</button>
+</div>
+</div>
+<main class="relative z-10 flex-1 px-4 pb-24 overflow-y-auto">
+<div class="w-full relative shadow-2xl drop-shadow-2xl mb-8 transform transition-transform duration-500">
+<div class="h-4 w-full bg-parchment bg-parchment dark:bg-parchment-dark tattered-edge-top absolute -top-3 left-0 z-20"></div>
+<div class="bg-parchment dark:bg-parchment-dark px-6 py-6 min-h-[600px] relative">
+<div class="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary/30 dark:border-accent/30 rounded-tl-lg"></div>
+<div class="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-primary/30 dark:border-accent/30 rounded-tr-lg"></div>
+<div class="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-primary/30 dark:border-accent/30 rounded-bl-lg"></div>
+<div class="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary/30 dark:border-accent/30 rounded-br-lg"></div>
+<div class="flex flex-col items-center mb-6">
+<div class="w-24 h-24 mb-4 relative flex items-center justify-center">
+<div class="absolute inset-0 bg-accent/20 blur-xl rounded-full"></div>
+<img alt="Burning black candle with herbs" class="w-full h-full object-cover rounded-full border-2 border-primary dark:border-accent shadow-md mix-blend-multiply dark:mix-blend-normal sepia-[.4] dark:sepia-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-wh9gDFBo2kWyvbgF8ldOerjSqXybLkbQzMpbokxXSnEmQeH-CL2KPSTxk7uH-_jnZzL9BUTTD5Ud7HUdVhU2WxzvKnCU-dA12QgKwxFkt08mImz-h6TKX3npSa8GuCyhVR-oEROu9khJyy61I2vd8FYdqbnqOuAuBNc0LfEEQiSh5lE9sHKXG_dtw1pzLFTHU20qFStsV41FCJ-dqZs7BMvStglPVwSaiYQ1KCvqqVt13I9RHtTnEiwDG7WBtsHRaAqZYbq3pCjz"/>
+</div>
+<h1 class="font-display text-3xl text-center text-primary dark:text-accent font-bold mb-1">Black Candle</h1>
+<p class="font-lora italic text-sm text-gray-600 dark:text-gray-400 text-center">Protective &amp; Banishing</p>
+</div>
+<div class="flex items-center justify-center mb-6 opacity-60">
+<div class="h-px w-12 bg-primary dark:bg-accent"></div>
+<span class="mx-2 text-xs text-primary dark:text-accent">✦</span>
+<div class="h-px w-12 bg-primary dark:bg-accent"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex flex-col items-center p-3 rounded-lg border border-primary/10 dark:border-accent/10 bg-white/30 dark:bg-black/20">
+<span class="material-icons-round text-primary dark:text-accent mb-1 text-2xl">local_fire_department</span>
+<span class="font-display text-xs uppercase tracking-widest text-primary dark:text-accent mb-1">Energy</span>
+<span class="text-sm font-semibold text-center">Saturnian, Earth</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-lg border border-primary/10 dark:border-accent/10 bg-white/30 dark:bg-black/20">
+<span class="material-icons-round text-primary dark:text-accent mb-1 text-2xl">dark_mode</span>
+<span class="font-display text-xs uppercase tracking-widest text-primary dark:text-accent mb-1">Timing</span>
+<span class="text-sm font-semibold text-center">Waning Moon, Saturday</span>
+</div>
+</div>
+<div class="prose prose-sm font-lora text-justify text-gray-800 dark:text-gray-300 leading-relaxed mb-8">
+<p>
+                        The <span class="text-primary dark:text-accent font-bold">Black Candle</span> is a powerful tool in any witch's arsenal. Often misunderstood, it is not used for malevolence but for absorption of negativity. It acts as a spiritual vacuum, clearing stagnant energy, banishing bad habits, and creating boundaries of steel.
+                    </p>
+</div>
+<div class="mb-4">
+<h3 class="font-display text-lg text-primary dark:text-accent border-b border-primary/20 dark:border-accent/20 pb-2 mb-4 flex items-center">
+<span class="material-icons-round mr-2 text-base">auto_awesome</span>
+                        Ritual Usage
+                    </h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent flex items-center justify-center text-xs font-bold mt-0.5 mr-3 border border-primary/20 dark:border-accent/20">1</span>
+<div>
+<span class="block font-bold text-sm mb-1 text-gray-900 dark:text-gray-100">Cleanse &amp; Anoint</span>
+<p class="text-xs text-gray-700 dark:text-gray-400">Cleanse the candle with smoke. Carve your intention into the wax. Anoint with protection oil from top to bottom (away from you) to banish.</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent flex items-center justify-center text-xs font-bold mt-0.5 mr-3 border border-primary/20 dark:border-accent/20">2</span>
+<div>
+<span class="block font-bold text-sm mb-1 text-gray-900 dark:text-gray-100">Set the Alter</span>
+<p class="text-xs text-gray-700 dark:text-gray-400">Place on a fire-safe dish. Surround with salt or tourmaline crystals for amplification.</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent flex items-center justify-center text-xs font-bold mt-0.5 mr-3 border border-primary/20 dark:border-accent/20">3</span>
+<div>
+<span class="block font-bold text-sm mb-1 text-gray-900 dark:text-gray-100">Ignite &amp; Focus</span>
+<p class="text-xs text-gray-700 dark:text-gray-400">Light the flame. Visualize the black wax absorbing the negativity in your life as it melts away. Let it burn completely.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-primary/10 dark:border-accent/10">
+<h4 class="font-display text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-3 text-center">Associated With</h4>
+<div class="flex flex-wrap justify-center gap-2">
+<span class="px-3 py-1 rounded-full border border-gray-400/30 text-xs text-gray-600 dark:text-gray-300 bg-white/40 dark:bg-black/30">Protection</span>
+<span class="px-3 py-1 rounded-full border border-gray-400/30 text-xs text-gray-600 dark:text-gray-300 bg-white/40 dark:bg-black/30">Banishing</span>
+<span class="px-3 py-1 rounded-full border border-gray-400/30 text-xs text-gray-600 dark:text-gray-300 bg-white/40 dark:bg-black/30">Ending Cycles</span>
+<span class="px-3 py-1 rounded-full border border-gray-400/30 text-xs text-gray-600 dark:text-gray-300 bg-white/40 dark:bg-black/30">Safety</span>
+</div>
+</div>
+</div>
+<div class="h-4 w-full bg-parchment dark:bg-parchment-dark tattered-edge-bottom absolute -bottom-3 left-0 z-20"></div>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full bg-background-light dark:bg-background-dark border-t border-primary/10 dark:border-accent/10 pb-6 pt-2 px-6 z-50">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<button class="flex flex-col items-center group">
+<span class="material-icons-round text-gray-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-accent transition-colors">bedtime</span>
+<span class="text-[10px] mt-1 text-gray-400 dark:text-gray-500 font-display uppercase tracking-wider group-hover:text-primary dark:group-hover:text-accent">Moon</span>
+</button>
+<button class="flex flex-col items-center group">
+<span class="material-icons-round text-gray-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-accent transition-colors">menu_book</span>
+<span class="text-[10px] mt-1 text-gray-400 dark:text-gray-500 font-display uppercase tracking-wider group-hover:text-primary dark:group-hover:text-accent">Grimoire</span>
+</button>
+<button class="flex flex-col items-center group relative -top-5">
+<div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/40 border-4 border-background-light dark:border-background-dark transform transition-transform group-hover:scale-110">
+<span class="material-icons-round text-2xl">diamond</span>
+</div>
+<span class="text-[10px] mt-1 text-primary dark:text-accent font-display uppercase tracking-wider font-bold">Library</span>
+</button>
+<button class="flex flex-col items-center group">
+<span class="material-icons-round text-gray-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-accent transition-colors">style</span>
+<span class="text-[10px] mt-1 text-gray-400 dark:text-gray-500 font-display uppercase tracking-wider group-hover:text-primary dark:group-hover:text-accent">Tools</span>
+</button>
+<button class="flex flex-col items-center group">
+<span class="material-icons-round text-gray-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-accent transition-colors">account_circle</span>
+<span class="text-[10px] mt-1 text-gray-400 dark:text-gray-500 font-display uppercase tracking-wider group-hover:text-primary dark:group-hover:text-accent">Profile</span>
+</button>
+</div>
+</nav>
+
+</body></html>
