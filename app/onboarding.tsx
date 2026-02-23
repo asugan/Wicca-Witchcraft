@@ -355,11 +355,6 @@ export default function OnboardingScreen() {
     itemVisiblePercentThreshold: 50,
   }).current;
 
-  const handleSkip = useCallback(() => {
-    setOnboardingCompleted(LOCAL_USER_ID, true);
-    router.replace("/(tabs)");
-  }, [router]);
-
   const handleNext = useCallback(() => {
     if (currentIndex < SLIDES.length - 1) {
       flatListRef.current?.scrollToIndex({
@@ -400,11 +395,10 @@ export default function OnboardingScreen() {
           {/* Text Content */}
           <View style={styles.textContent}>
             {index === 0 ? (
-              <Text style={styles.title}>
+              <View style={styles.titleBlock}>
                 <Text style={styles.titleGold}>{firstTwoParts}</Text>
-                {"\n"}
                 <Text style={styles.titleWhite}>{restParts}</Text>
-              </Text>
+              </View>
             ) : index === 1 ? (
               <Text style={styles.titleGradient}>{title}</Text>
             ) : (
@@ -422,16 +416,6 @@ export default function OnboardingScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
-      {/* Skip Button - Only show on first two slides */}
-      {!isLastSlide && (
-        <Pressable
-          style={[styles.skipButton, { top: insets.top + 12 }]}
-          onPress={handleSkip}
-        >
-          <Text style={styles.skipText}>{t("onboarding.skip")}</Text>
-        </Pressable>
-      )}
-
       {/* Slides */}
       <FlatList
         ref={flatListRef}
@@ -453,8 +437,6 @@ export default function OnboardingScreen() {
         <View style={styles.pagination}>
           {SLIDES.map((_, index) => {
             const isActive = index === currentIndex;
-            // For slide 2, use elongated active dot
-            const isSlide2Active = currentIndex === 1 && isActive;
 
             return (
               <View
@@ -462,7 +444,6 @@ export default function OnboardingScreen() {
                 style={[
                   styles.dot,
                   isActive && styles.dotActive,
-                  isSlide2Active && styles.dotElongated,
                 ]}
               />
             );
@@ -505,20 +486,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: SLIDE_BACKGROUNDS.slide1,
-  },
-  skipButton: {
-    position: "absolute",
-    right: 20,
-    zIndex: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-  },
-  skipText: {
-    color: "rgba(255,255,255,0.6)",
-    fontSize: 14,
-    fontWeight: "500",
-    textTransform: "uppercase",
-    letterSpacing: 1,
   },
   slide: {
     width: SCREEN_WIDTH,
@@ -727,7 +694,6 @@ const styles = StyleSheet.create({
   textContent: {
     paddingHorizontal: 32,
     paddingBottom: 180,
-    alignItems: "center",
     gap: 16,
   },
   title: {
@@ -736,14 +702,27 @@ const styles = StyleSheet.create({
     textAlign: "center",
     lineHeight: 42,
     fontFamily: typefaces.display,
+    width: "100%",
+  },
+  titleBlock: {
+    width: "100%",
   },
   titleGold: {
-    color: PRIMARY_GOLD,
+    fontSize: 36,
+    fontWeight: "700",
     fontStyle: "italic",
+    textAlign: "center",
+    lineHeight: 42,
+    color: PRIMARY_GOLD,
+    fontFamily: typefaces.display,
   },
   titleWhite: {
-    color: "#f0f0f0",
+    fontSize: 36,
     fontWeight: "400",
+    textAlign: "center",
+    lineHeight: 42,
+    color: "#f0f0f0",
+    fontFamily: typefaces.display,
   },
   titleGradient: {
     fontSize: 36,
@@ -752,6 +731,7 @@ const styles = StyleSheet.create({
     lineHeight: 42,
     color: PRIMARY_GOLD,
     fontFamily: typefaces.display,
+    width: "100%",
   },
   titleLight: {
     fontSize: 32,
@@ -760,6 +740,7 @@ const styles = StyleSheet.create({
     lineHeight: 40,
     color: "#f0f0f0",
     fontFamily: typefaces.display,
+    width: "100%",
   },
   subtitle: {
     fontSize: 17,
@@ -796,10 +777,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.6,
     shadowRadius: 8,
-  },
-  dotElongated: {
-    width: 28,
-    borderRadius: 4,
   },
   actionButton: {
     width: "100%",
