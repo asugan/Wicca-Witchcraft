@@ -22,6 +22,7 @@ export type Translations = {
     defaultCardTitle: string;
     defaultCardQuote: string;
     revealGuidance: string;
+    cardRevealed: string;
     recommendedRitual: string;
     openRitual: string;
     duration: string;
@@ -75,6 +76,10 @@ export type Translations = {
     revealAll: string;
     allRevealed: string;
     reset: string;
+    drawCards: string;
+    tapToReveal: string;
+    newReading: string;
+    reversed: string;
     moonCalendar: string;
     astroTimeline: string;
   };
@@ -165,6 +170,7 @@ export const enTranslations: Translations = {
     defaultCardTitle: "The Star",
     defaultCardQuote: "Hope is the light that guides you through the darkness.",
     revealGuidance: "Reveal Guidance",
+    cardRevealed: "Card Revealed",
     recommendedRitual: "Recommended Ritual",
     openRitual: "Open Ritual",
     duration: "{{durationMinutes}} min",
@@ -218,6 +224,10 @@ export const enTranslations: Translations = {
     revealAll: "Reveal All",
     allRevealed: "All Revealed",
     reset: "Reset",
+    drawCards: "Draw Cards",
+    tapToReveal: "Tap each card to reveal its meaning",
+    newReading: "New Reading",
+    reversed: "Reversed",
     moonCalendar: "Moon Calendar",
     astroTimeline: "Astro Timeline",
   },

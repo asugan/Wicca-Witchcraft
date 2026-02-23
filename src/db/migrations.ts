@@ -136,6 +136,35 @@ const migrations: Migration[] = [
     id: "0002_add_language_to_settings",
     sql: `ALTER TABLE app_settings ADD COLUMN language TEXT NOT NULL DEFAULT '';`,
   },
+  {
+    id: "0003_add_tarot_tables",
+    sql: `
+      CREATE TABLE IF NOT EXISTS tarot_cards (
+        id TEXT PRIMARY KEY NOT NULL,
+        name TEXT NOT NULL,
+        arcana TEXT NOT NULL CHECK (arcana IN ('major', 'minor')),
+        suit TEXT,
+        rank INTEGER NOT NULL,
+        upright_meaning TEXT NOT NULL,
+        reversed_meaning TEXT NOT NULL,
+        keywords TEXT NOT NULL,
+        description TEXT NOT NULL
+      );
+      CREATE INDEX IF NOT EXISTS tarot_cards_arcana_idx ON tarot_cards(arcana);
+      CREATE INDEX IF NOT EXISTS tarot_cards_suit_idx ON tarot_cards(suit);
+
+      CREATE TABLE IF NOT EXISTS tarot_readings (
+        id TEXT PRIMARY KEY NOT NULL,
+        user_id TEXT NOT NULL,
+        spread_type TEXT NOT NULL CHECK (spread_type IN ('daily', 'three_card')),
+        cards_json TEXT NOT NULL,
+        created_at INTEGER NOT NULL,
+        reading_date TEXT NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+      );
+      CREATE INDEX IF NOT EXISTS tarot_readings_user_date_idx ON tarot_readings(user_id, reading_date);
+    `,
+  },
 ];
 
 export function runMigrations(database: SQLiteDatabase) {

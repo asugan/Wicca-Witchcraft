@@ -1,11 +1,13 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
 import { listAstroTimeline, listMoonCalendarSections } from "@/db/repositories/tools-repository";
+import { drawThreeCardSpread, type TarotReadingResult } from "@/db/repositories/tarot-repository";
+import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
@@ -40,8 +42,26 @@ export default function ToolsScreen() {
   const styles = makeStyles(theme);
 
   const [revealed, setRevealed] = useState<boolean[]>([false, false, false]);
+  const [currentReading, setCurrentReading] = useState<TarotReadingResult | null>(null);
   const moonCalendarSections = useMemo(() => listMoonCalendarSections(), []);
   const astroTimeline = useMemo(() => listAstroTimeline(), []);
+
+  const handleDrawSpread = useCallback(() => {
+    const reading = drawThreeCardSpread("local-user");
+    setCurrentReading(reading);
+    setRevealed([false, false, false]);
+    trackEvent("tarot_spread_drawn", {
+      user_id: "local-user",
+      tab_name: "tools",
+      entity_id: reading.id,
+      source: "tarot_spread",
+    });
+  }, []);
+
+  const handleReset = useCallback(() => {
+    setCurrentReading(null);
+    setRevealed([false, false, false]);
+  }, []);
 
   const floatOne = useFloating(0);
   const floatTwo = useFloating(320);
@@ -85,38 +105,120 @@ export default function ToolsScreen() {
             <MaterialCommunityIcons color={theme.colors.primary} name="cards-playing" size={18} />
           </View>
 
-          <View style={styles.cardsRow}>
-            {[floatOne, floatTwo, floatThree].map((floating, index) => (
-              <Animated.View key={cardSymbols[index]} style={[styles.cardAnimatedWrap, { transform: [{ translateY: floating }] }]}> 
-                <Pressable onPress={() => toggleOne(index)} style={styles.cardBack}>
-                  <View style={styles.cardInnerBorder} />
-                  <MaterialCommunityIcons
-                    color={`${theme.colors.primary}B5`}
-                    name={revealed[index] ? "cards-playing-heart-multiple" : cardSymbols[index]}
-                    size={36}
-                  />
-                  <Text style={styles.cardLabel}>{index === 0 ? t("tools.cardPast") : index === 1 ? t("tools.cardPresent") : t("tools.cardFuture")}</Text>
-                  {revealed[index] ? <Text style={styles.revealedText}>{t("tools.cardRevealed")}</Text> : null}
-                </Pressable>
-              </Animated.View>
-            ))}
-          </View>
+          {!currentReading ? (
+            <>
+              <Text style={styles.promptText}>{t("tools.tarotPrompt")}</Text>
+              <View style={styles.cardsRow}>
+                {[floatOne, floatTwo, floatThree].map((floating, index) => (
+                  <Animated.View key={cardSymbols[index]} style={[styles.cardAnimatedWrap, { transform: [{ translateY: floating }] }]}>
+                    <Pressable onPress={handleDrawSpread} style={styles.cardBack}>
+                      <View style={styles.cardInnerBorder} />
+                      <MaterialCommunityIcons
+                        color={`${theme.colors.primary}B5`}
+                        name={cardSymbols[index]}
+                        size={36}
+                      />
+                      <Text style={styles.cardLabel}>{index === 0 ? t("tools.cardPast") : index === 1 ? t("tools.cardPresent") : t("tools.cardFuture")}</Text>
+                    </Pressable>
+                  </Animated.View>
+                ))}
+              </View>
+              <Button
+                mode="outlined"
+                onPress={handleDrawSpread}
+                style={styles.secondaryButton}
+                textColor={theme.colors.primary}
+              >
+                {t("tools.drawCards")}
+              </Button>
+            </>
+          ) : (
+            <>
+              <View style={styles.cardsRow}>
+                {currentReading.cards.map((card, index) => {
+                  const floating = [floatOne, floatTwo, floatThree][index];
+                  const isRevealed = revealed[index];
+                  const positionLabel = index === 0 ? t("tools.cardPast") : index === 1 ? t("tools.cardPresent") : t("tools.cardFuture");
 
-          <Text style={styles.promptText}>{t("tools.tarotPrompt")}</Text>
+                  return (
+                    <Animated.View key={card.id} style={[styles.cardAnimatedWrap, { transform: [{ translateY: floating }] }]}>
+                      <Pressable onPress={() => toggleOne(index)} style={[styles.cardBack, isRevealed && styles.cardRevealed]}>
+                        <View style={styles.cardInnerBorder} />
+                        {isRevealed ? (
+                          <>
+                            <Text style={styles.revealedCardName}>{card.name}</Text>
+                            {card.isReversed ? <Text style={styles.reversedBadge}>{t("tools.reversed")}</Text> : null}
+                          </>
+                        ) : (
+                          <MaterialCommunityIcons
+                            color={`${theme.colors.primary}B5`}
+                            name={cardSymbols[index]}
+                            size={36}
+                          />
+                        )}
+                        <Text style={styles.cardLabel}>{positionLabel}</Text>
+                        {isRevealed ? <Text style={styles.revealedText}>{t("tools.cardRevealed")}</Text> : null}
+                      </Pressable>
+                    </Animated.View>
+                  );
+                })}
+              </View>
 
-          <View style={styles.buttonRow}>
-            <Button
-              mode="outlined"
-              onPress={() => setRevealed([true, true, true])}
-              style={[styles.secondaryButton, allRevealed && styles.secondaryButtonDone]}
-              textColor={theme.colors.primary}
-            >
-              {allRevealed ? t("tools.allRevealed") : t("tools.revealAll")}
-            </Button>
-            <Button mode="text" onPress={() => setRevealed([false, false, false])} textColor={theme.colors.onSurfaceMuted}>
-              {t("tools.reset")}
-            </Button>
-          </View>
+              {allRevealed ? (
+                <View style={styles.readingDetails}>
+                  {currentReading.cards.map((card, index) => {
+                    const positionLabel = index === 0 ? t("tools.cardPast") : index === 1 ? t("tools.cardPresent") : t("tools.cardFuture");
+                    return (
+                      <View key={card.id} style={styles.readingCardDetail}>
+                        <View style={styles.readingCardHeader}>
+                          <Text style={styles.readingPosition}>{positionLabel}</Text>
+                          <Text style={styles.readingCardName}>
+                            {card.name}{card.isReversed ? ` (${t("tools.reversed")})` : ""}
+                          </Text>
+                        </View>
+                        <Text style={styles.readingMeaning}>
+                          {card.isReversed ? card.reversedMeaning : card.uprightMeaning}
+                        </Text>
+                        <View style={styles.readingKeywords}>
+                          {card.keywords.split(", ").map((kw) => (
+                            <View key={kw} style={styles.readingKeywordChip}>
+                              <Text style={styles.readingKeywordText}>{kw}</Text>
+                            </View>
+                          ))}
+                        </View>
+                      </View>
+                    );
+                  })}
+                </View>
+              ) : (
+                <Text style={styles.promptText}>{t("tools.tapToReveal")}</Text>
+              )}
+
+              <View style={styles.buttonColumn}>
+                <View style={styles.buttonPrimaryRow}>
+                  <Button
+                    mode="outlined"
+                    onPress={() => setRevealed([true, true, true])}
+                    style={[styles.secondaryButton, styles.buttonFlex, allRevealed && styles.secondaryButtonDone]}
+                    textColor={theme.colors.primary}
+                  >
+                    {allRevealed ? t("tools.allRevealed") : t("tools.revealAll")}
+                  </Button>
+                  <Button
+                    mode="outlined"
+                    onPress={handleDrawSpread}
+                    style={[styles.secondaryButton, styles.buttonFlex]}
+                    textColor={theme.colors.primary}
+                  >
+                    {t("tools.newReading")}
+                  </Button>
+                </View>
+                <Button mode="text" onPress={handleReset} textColor={theme.colors.onSurfaceMuted}>
+                  {t("tools.reset")}
+                </Button>
+              </View>
+            </>
+          )}
         </View>
 
         <View style={styles.sectionCard}>
@@ -322,6 +424,18 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       justifyContent: "space-between",
       alignItems: "center",
     },
+    buttonColumn: {
+      gap: 8,
+      alignItems: "center",
+    },
+    buttonPrimaryRow: {
+      flexDirection: "row",
+      gap: 10,
+      width: "100%",
+    },
+    buttonFlex: {
+      flex: 1,
+    },
     secondaryButton: {
       borderColor: `${theme.colors.primary}59`,
       borderRadius: 999,
@@ -425,5 +539,78 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       color: theme.colors.onSurfaceMuted,
       fontSize: 12,
       lineHeight: 18,
+    },
+    cardRevealed: {
+      backgroundColor: `${theme.colors.primary}1A`,
+      borderColor: theme.colors.primary,
+    },
+    revealedCardName: {
+      color: theme.colors.onSurface,
+      fontFamily: typefaces.display,
+      fontSize: 14,
+      fontWeight: "700",
+      textAlign: "center",
+      paddingHorizontal: 4,
+    },
+    reversedBadge: {
+      color: theme.colors.danger ?? "#E57373",
+      fontSize: 9,
+      textTransform: "uppercase",
+      letterSpacing: 0.8,
+      fontWeight: "700",
+    },
+    readingDetails: {
+      gap: 12,
+    },
+    readingCardDetail: {
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}33`,
+      backgroundColor: `${theme.colors.surface2}8C`,
+      padding: 12,
+      gap: 8,
+    },
+    readingCardHeader: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    readingPosition: {
+      color: theme.colors.primary,
+      fontSize: 10,
+      textTransform: "uppercase",
+      letterSpacing: 1,
+      fontWeight: "700",
+    },
+    readingCardName: {
+      color: theme.colors.onSurface,
+      fontFamily: typefaces.display,
+      fontSize: 15,
+      fontWeight: "700",
+    },
+    readingMeaning: {
+      color: theme.colors.onSurfaceMuted,
+      fontSize: 13,
+      lineHeight: 20,
+      fontStyle: "italic",
+    },
+    readingKeywords: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: 5,
+    },
+    readingKeywordChip: {
+      borderRadius: 6,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}40`,
+      backgroundColor: `${theme.colors.primary}14`,
+      paddingHorizontal: 8,
+      paddingVertical: 3,
+    },
+    readingKeywordText: {
+      color: theme.colors.primary,
+      fontSize: 10,
+      fontWeight: "600",
+      textTransform: "capitalize",
     },
   });

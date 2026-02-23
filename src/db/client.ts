@@ -13,6 +13,7 @@ import {
   RITUAL_SEEDS,
   RITUAL_STEP_SEEDS,
 } from "@/db/seed-data";
+import { TAROT_CARD_SEEDS } from "@/db/tarot-seed-data";
 import {
   appSettings,
   dailyCards,
@@ -22,6 +23,7 @@ import {
   ritualMaterials,
   rituals,
   ritualSteps,
+  tarotCards,
   users,
 } from "@/db/schema";
 
@@ -48,6 +50,7 @@ function seedIfNeeded() {
   db.insert(ritualMaterials).values(RITUAL_MATERIAL_SEEDS).run();
   db.insert(entityLinks).values(ENTITY_LINK_SEEDS).run();
   db.insert(dailyCards).values(DAILY_CARD_SEEDS).run();
+  db.insert(tarotCards).values(TAROT_CARD_SEEDS).run();
 }
 
 export function ensureDatabaseInitialized() {

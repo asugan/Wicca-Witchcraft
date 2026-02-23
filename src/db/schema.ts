@@ -125,6 +125,42 @@ export const dailyCards = sqliteTable(
   })
 );
 
+export const tarotCards = sqliteTable(
+  "tarot_cards",
+  {
+    id: text("id").primaryKey(),
+    name: text("name").notNull(),
+    arcana: text("arcana").notNull(),
+    suit: text("suit"),
+    rank: integer("rank").notNull(),
+    uprightMeaning: text("upright_meaning").notNull(),
+    reversedMeaning: text("reversed_meaning").notNull(),
+    keywords: text("keywords").notNull(),
+    description: text("description").notNull(),
+  },
+  (table) => ({
+    arcanaIndex: index("tarot_cards_arcana_idx").on(table.arcana),
+    suitIndex: index("tarot_cards_suit_idx").on(table.suit),
+  })
+);
+
+export const tarotReadings = sqliteTable(
+  "tarot_readings",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    spreadType: text("spread_type").notNull(),
+    cardsJson: text("cards_json").notNull(),
+    createdAt: integer("created_at").notNull(),
+    readingDate: text("reading_date").notNull(),
+  },
+  (table) => ({
+    userDateIndex: index("tarot_readings_user_date_idx").on(table.userId, table.readingDate),
+  })
+);
+
 export const moonEvents = sqliteTable(
   "moon_events",
   {
@@ -226,3 +262,5 @@ export type RitualRecord = typeof rituals.$inferSelect;
 export type RitualStepRecord = typeof ritualSteps.$inferSelect;
 export type MaterialRecord = typeof materials.$inferSelect;
 export type LibraryEntryRecord = typeof libraryEntries.$inferSelect;
+export type TarotCardRecord = typeof tarotCards.$inferSelect;
+export type TarotReadingRecord = typeof tarotReadings.$inferSelect;

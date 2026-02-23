@@ -18,7 +18,8 @@ export type AnalyticsEventName =
   | "premium_started"
   | "ritual_mode_started"
   | "ritual_mode_completed"
-  | "ritual_journal_saved";
+  | "ritual_journal_saved"
+  | "tarot_spread_drawn";
 
 type AnalyticsPropertyValue = string | number;
 

@@ -1,6 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Surface, Text } from "react-native-paper";
@@ -19,6 +19,8 @@ export default function HomeScreen() {
   const styles = makeStyles(theme);
   const dailySnapshot = useMemo(() => getHomeDailySnapshot(), []);
   const recommendation = dailySnapshot.recommendation;
+  const [cardRevealed, setCardRevealed] = useState(false);
+  const card = dailySnapshot.card;
 
   const actions = useMemo(
     () => [
@@ -119,25 +121,45 @@ export default function HomeScreen() {
           <View style={styles.insightBody}>
             <View style={styles.categoryLine}>
               <MaterialCommunityIcons color={theme.colors.primary} name="star-four-points" size={16} />
-              <Text style={styles.categoryText}>{dailySnapshot.card?.arcana ?? t("home.dailyDraw")}</Text>
+              <Text style={styles.categoryText}>
+                {card ? `${card.arcana} arcana${card.isReversed ? " • reversed" : ""}` : t("home.dailyDraw")}
+              </Text>
             </View>
-            <Text style={styles.cardTitle}>{dailySnapshot.card?.cardName ?? t("home.defaultCardTitle")}</Text>
-            <Text style={styles.quote}>{`"${dailySnapshot.card?.uprightMeaning ?? t("home.defaultCardQuote")}"`}</Text>
+            <Text style={styles.cardTitle}>{card?.cardName ?? t("home.defaultCardTitle")}</Text>
+
+            {cardRevealed && card ? (
+              <View style={styles.revealedCardBody}>
+                <Text style={styles.quote}>
+                  {`"${card.isReversed ? card.reversedMeaning : card.uprightMeaning}"`}
+                </Text>
+                <View style={styles.keywordsRow}>
+                  {card.keywords.split(", ").map((kw) => (
+                    <View key={kw} style={styles.keywordChip}>
+                      <Text style={styles.keywordText}>{kw}</Text>
+                    </View>
+                  ))}
+                </View>
+              </View>
+            ) : (
+              <Text style={styles.quote}>{`"${card?.uprightMeaning ?? t("home.defaultCardQuote")}"`}</Text>
+            )}
+
             <Button
               contentStyle={styles.primaryButtonContent}
               mode="contained"
               onPress={() => {
+                setCardRevealed(true);
                 trackEvent("daily_card_drawn", {
                   user_id: "local-user",
                   tab_name: "home",
-                  entity_id: dailySnapshot.card?.id ?? "daily-card-default",
+                  entity_id: card?.id ?? "daily-card-default",
                   source: "home_card",
                 });
               }}
               style={styles.primaryButton}
               textColor={theme.colors.onPrimary}
             >
-              {t("home.revealGuidance")}
+              {cardRevealed ? t("home.cardRevealed") : t("home.revealGuidance")}
             </Button>
           </View>
         </Surface>
@@ -472,5 +494,27 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderColor: `${theme.colors.primary}80`,
       borderRadius: 999,
       backgroundColor: `${theme.colors.primary}14`,
+    },
+    revealedCardBody: {
+      gap: 10,
+    },
+    keywordsRow: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      gap: 6,
+    },
+    keywordChip: {
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}40`,
+      backgroundColor: `${theme.colors.primary}14`,
+      paddingHorizontal: 10,
+      paddingVertical: 4,
+    },
+    keywordText: {
+      color: theme.colors.primary,
+      fontSize: 11,
+      fontWeight: "600",
+      textTransform: "capitalize",
     },
   });

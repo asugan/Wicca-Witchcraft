@@ -1,7 +1,8 @@
-import { asc, eq } from "drizzle-orm";
+import { asc } from "drizzle-orm";
 
 import { db, ensureDatabaseInitialized } from "@/db/client";
-import { dailyCards, rituals } from "@/db/schema";
+import { rituals } from "@/db/schema";
+import { getDailyCard } from "@/db/repositories/tarot-repository";
 import { getCurrentMoonInfo } from "@/lib/moon";
 
 const weekdayIntentions = [
@@ -45,6 +46,9 @@ export type HomeDailySnapshot = {
     cardName: string;
     arcana: string;
     uprightMeaning: string;
+    reversedMeaning: string;
+    keywords: string;
+    isReversed: boolean;
   } | null;
   recommendation: {
     id: string;
@@ -55,10 +59,6 @@ export type HomeDailySnapshot = {
     durationMinutes: number;
   } | null;
 };
-
-function toIsoDate(value: Date) {
-  return value.toISOString().slice(0, 10);
-}
 
 function normalizeMoonPhaseKey(phase: string) {
   const normalized = phase
@@ -113,35 +113,27 @@ function scoreRitual(
 export function getHomeDailySnapshot(date = new Date()): HomeDailySnapshot {
   ensureDatabaseInitialized();
 
-  const todayIso = toIsoDate(date);
-
   const moonInfo = getCurrentMoonInfo(date);
   const moonPhaseKey = normalizeMoonPhaseKey(moonInfo.phaseKey);
 
-  const dailyCard =
-    db
-      .select({
-        id: dailyCards.id,
-        cardName: dailyCards.cardName,
-        arcana: dailyCards.arcana,
-        uprightMeaning: dailyCards.uprightMeaning,
-      })
-      .from(dailyCards)
-      .where(eq(dailyCards.drawDate, todayIso))
-      .limit(1)
-      .get() ??
-    db
-      .select({
-        id: dailyCards.id,
-        cardName: dailyCards.cardName,
-        arcana: dailyCards.arcana,
-        uprightMeaning: dailyCards.uprightMeaning,
-      })
-      .from(dailyCards)
-      .where(eq(dailyCards.drawDate, "default"))
-      .limit(1)
-      .get() ??
-    null;
+  let dailyCard: HomeDailySnapshot["card"] = null;
+  try {
+    const reading = getDailyCard("local-user", date);
+    const firstCard = reading.cards[0];
+    if (firstCard) {
+      dailyCard = {
+        id: firstCard.id,
+        cardName: firstCard.name,
+        arcana: firstCard.arcana,
+        uprightMeaning: firstCard.uprightMeaning,
+        reversedMeaning: firstCard.reversedMeaning,
+        keywords: firstCard.keywords,
+        isReversed: firstCard.isReversed,
+      };
+    }
+  } catch {
+    dailyCard = null;
+  }
 
   const ritualRows = db
     .select({
