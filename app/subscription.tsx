@@ -60,6 +60,8 @@ export default function SubscriptionScreen() {
   const [selectedCycle, setSelectedCycle] = useState<BillingCycle | null>(null);
   const [statusModalType, setStatusModalType] = useState<StatusModalType | null>(null);
   const modalAnim = useRef(new Animated.Value(0)).current;
+  const pulseAnim = useRef(new Animated.Value(1)).current;
+  const rotateAnim = useRef(new Animated.Value(0)).current;
 
   useFocusEffect(
     useCallback(() => {
@@ -188,6 +190,42 @@ export default function SubscriptionScreen() {
   const statusModalIcon = statusModalType === "purchaseSuccess" ? "party-popper" : "backup-restore";
 
   useEffect(() => {
+    const pulse = Animated.loop(
+      Animated.sequence([
+        Animated.timing(pulseAnim, {
+          toValue: 1.09,
+          duration: 2400,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+        Animated.timing(pulseAnim, {
+          toValue: 1,
+          duration: 2400,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+      ]),
+    );
+
+    const rotate = Animated.loop(
+      Animated.timing(rotateAnim, {
+        toValue: 1,
+        duration: 22000,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      }),
+    );
+
+    pulse.start();
+    rotate.start();
+
+    return () => {
+      pulse.stop();
+      rotate.stop();
+    };
+  }, [pulseAnim, rotateAnim]);
+
+  useEffect(() => {
     if (!statusModalType) {
       return;
     }
@@ -301,6 +339,8 @@ export default function SubscriptionScreen() {
     [t, showToast],
   );
 
+  const heroSpin = rotateAnim.interpolate({ inputRange: [0, 1], outputRange: ["0deg", "360deg"] });
+
   const s = makeStyles(theme);
 
   return (
@@ -316,25 +356,60 @@ export default function SubscriptionScreen() {
 
         <ScrollView contentContainerStyle={s.content} showsVerticalScrollIndicator={false}>
           <View style={s.hero}>
-            <Surface
-              style={[
-                s.heroIconCircle,
-                {
-                  borderColor: `${theme.colors.primary}9E`,
-                  backgroundColor: `${theme.colors.primary}2B`,
-                },
-              ]}
-              elevation={0}
-            >
-              <View
+            <View style={s.orbContainer}>
+              {/* Yavaş dönen dashed dış halka */}
+              <Animated.View
                 style={[
-                  s.heroIconInner,
-                  { backgroundColor: `${theme.colors.primary}57` },
+                  s.orbOuterRing,
+                  { borderColor: `${theme.colors.primary}52` },
+                  { transform: [{ rotate: heroSpin }] },
                 ]}
+              />
+              {/* Nabız atan orta halka */}
+              <Animated.View
+                style={[
+                  s.orbPulseRing,
+                  {
+                    borderColor: `${theme.colors.primary}33`,
+                    backgroundColor: `${theme.colors.primary}09`,
+                  },
+                  { transform: [{ scale: pulseAnim }] },
+                ]}
+              />
+              {/* Ana daire */}
+              <Surface
+                style={[
+                  s.heroIconCircle,
+                  {
+                    borderColor: `${theme.colors.primary}9E`,
+                    backgroundColor: `${theme.colors.primary}2B`,
+                  },
+                ]}
+                elevation={0}
               >
-                <Icon source="star-four-points" size={40} color={theme.colors.primary} />
+                <View
+                  style={[
+                    s.heroIconInner,
+                    { backgroundColor: `${theme.colors.primary}57` },
+                  ]}
+                >
+                  <Icon source="star-four-points" size={44} color={theme.colors.primary} />
+                </View>
+              </Surface>
+              {/* Dekoratif küçük yıldızlar — 4 yön */}
+              <View style={[s.cardinalStar, { top: 4, left: 103 }]}>
+                <Icon source="star-four-points" size={14} color={`${theme.colors.primary}CC`} />
               </View>
-            </Surface>
+              <View style={[s.cardinalStar, { top: 105, right: 4 }]}>
+                <Icon source="star-four-points" size={9} color={`${theme.colors.primary}88`} />
+              </View>
+              <View style={[s.cardinalStar, { bottom: 4, left: 105 }]}>
+                <Icon source="star-four-points" size={11} color={`${theme.colors.primary}AA`} />
+              </View>
+              <View style={[s.cardinalStar, { top: 105, left: 4 }]}>
+                <Icon source="star-four-points" size={9} color={`${theme.colors.primary}88`} />
+              </View>
+            </View>
 
             <Text variant="displaySmall" style={[s.heroTitleTop, { color: theme.colors.onSurface }]}>
               {t("subscription.heroTitleTop")}
@@ -642,13 +717,34 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       alignItems: "center",
       gap: 8,
     },
+    orbContainer: {
+      width: 220,
+      height: 220,
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: 14,
+    },
+    orbOuterRing: {
+      position: "absolute",
+      width: 212,
+      height: 212,
+      borderRadius: 106,
+      borderWidth: 1,
+      borderStyle: "dashed",
+    },
+    orbPulseRing: {
+      position: "absolute",
+      width: 192,
+      height: 192,
+      borderRadius: 96,
+      borderWidth: 1,
+    },
     heroIconCircle: {
       width: 170,
       height: 170,
       borderRadius: 85,
       justifyContent: "center",
       alignItems: "center",
-      marginBottom: 14,
       borderWidth: 1,
       overflow: "hidden",
     },
@@ -658,6 +754,9 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderRadius: 43,
       justifyContent: "center",
       alignItems: "center",
+    },
+    cardinalStar: {
+      position: "absolute",
     },
     heroTitleTop: {
       textAlign: "center",
