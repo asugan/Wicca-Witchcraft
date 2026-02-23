@@ -63,6 +63,32 @@ export default function HomeScreen() {
 
   const heroSpin = rotateAnim.interpolate({ inputRange: [0, 1], outputRange: ["0deg", "360deg"] });
 
+  // Calculate moon shadow position based on actual phase
+  const moonShadowStyle = useMemo(() => {
+    const { phaseKey, illuminationPercent } = dailySnapshot.moon;
+    const moonDiameter = 220;
+    const maxOffset = moonDiameter * 1.1; // Push shadow completely off when full
+
+    // Determine if waxing (light grows from right) or waning (light shrinks from right)
+    const isWaxing = phaseKey.includes("waxing") || phaseKey === "first-quarter" || phaseKey === "new";
+
+    // Calculate shadow offset: 0% illumination = centered, 100% = fully off
+    const offsetRatio = illuminationPercent / 100;
+    const translateX = isWaxing
+      ? offsetRatio * maxOffset // Waxing: shadow moves right (revealing left-lit moon)
+      : -offsetRatio * maxOffset; // Waning: shadow moves left (revealing right-lit moon)
+
+    // Shadow opacity: slightly more visible for crescent phases
+    const opacity = illuminationPercent < 15 || illuminationPercent > 85
+      ? 0.65
+      : 0.48;
+
+    return {
+      transform: [{ translateX }],
+      backgroundColor: `rgba(0,0,0,${opacity})`,
+    };
+  }, [dailySnapshot.moon]);
+
   const actions = useMemo(
     () => [
       { id: "log", icon: "notebook-edit-outline" as keyof typeof MaterialCommunityIcons.glyphMap, label: t("home.logRitual") },
@@ -122,7 +148,7 @@ export default function HomeScreen() {
                 }}
                 style={styles.moonSurface}
               >
-                <View style={styles.moonShade} />
+                <View style={[styles.moonShade, moonShadowStyle]} />
               </ImageBackground>
             </View>
           </View>
@@ -352,29 +378,24 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       width: 198,
       height: 198,
       borderRadius: 99,
-      backgroundColor: theme.colors.surface1,
       alignItems: "center",
       justifyContent: "center",
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.14)",
     },
     moonSurface: {
-      width: 164,
-      height: 164,
-      borderRadius: 82,
+      width: 220,
+      height: 220,
+      borderRadius: 110,
       overflow: "hidden",
       justifyContent: "center",
       alignItems: "center",
     },
     moonImage: {
-      borderRadius: 82,
+      borderRadius: 110,
     },
     moonShade: {
-      width: 146,
-      height: 146,
-      borderRadius: 73,
-      backgroundColor: "rgba(0,0,0,0.48)",
-      transform: [{ translateX: 21 }],
+      width: 200,
+      height: 200,
+      borderRadius: 100,
     },
     actionScroll: {
       marginTop: 2,

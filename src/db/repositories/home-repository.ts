@@ -39,6 +39,7 @@ export type HomeDailySnapshot = {
     phase: string;
     phaseKey: string;
     illumination: string;
+    illuminationPercent: number;
     summary: string;
   };
   card: {
@@ -172,6 +173,7 @@ export function getHomeDailySnapshot(date = new Date()): HomeDailySnapshot {
       phase: moonInfo.phaseName,
       phaseKey: moonPhaseKey,
       illumination: `${moonInfo.illuminationPercent}%`,
+      illuminationPercent: moonInfo.illuminationPercent,
       summary: moonInfo.summary ?? fallbackMoonSummaryByKey[moonPhaseKey] ?? fallbackMoonSummaryByKey.any,
     },
     card: dailyCard,
