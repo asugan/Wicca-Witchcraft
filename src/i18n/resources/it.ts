@@ -122,6 +122,11 @@ export const itTranslations: Translations = {
     languagePortuguese: "Português",
     languageSavedMessage: "Lingua salvata in {{language}}",
     saveErrorMessage: "Impossibile salvare la preferenza della lingua",
+    premiumTitle: "Premium",
+    premiumHint: "Sblocca rituali esclusivi e funzionalità avanzate",
+    premiumActiveHint: "Hai accesso completo a tutte le funzionalità premium",
+    premiumActive: "Attivo",
+    upgradeToPro: "Aggiorna",
   },
   ritual: {
     notFound: "Rituale non trovato",

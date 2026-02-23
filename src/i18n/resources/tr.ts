@@ -122,6 +122,11 @@ export const trTranslations: Translations = {
     languagePortuguese: "Português",
     languageSavedMessage: "Dil {{language}} olarak kaydedildi",
     saveErrorMessage: "Dil tercihi kaydedilemedi",
+    premiumTitle: "Premium",
+    premiumHint: "Özel ritüellere ve gelişmiş özelliklere erişin",
+    premiumActiveHint: "Tüm premium özelliklere tam erişiminiz var",
+    premiumActive: "Aktif",
+    upgradeToPro: "Yükselt",
   },
   ritual: {
     notFound: "Ritüel bulunamadı",

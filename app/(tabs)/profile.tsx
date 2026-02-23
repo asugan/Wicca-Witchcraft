@@ -15,6 +15,7 @@ import {
   removeRitualFavorite,
   updateJournalEntry,
 } from "@/db/repositories/my-space-repository";
+import { hasProAccess } from "@/db/repositories/subscription-repository";
 import {
   getLanguagePreference,
   getNotificationsEnabled,
@@ -58,6 +59,7 @@ export default function ProfileScreen() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [mood, setMood] = useState("");
+  const [isProActive, setIsProActive] = useState<boolean>(false);
   const [notificationsEnabled, setNotificationsEnabledState] = useState<boolean>(true);
   const [isUpdatingNotifications, setIsUpdatingNotifications] = useState(false);
   const [notificationStatusText, setNotificationStatusText] = useState<string>("");
@@ -67,6 +69,7 @@ export default function ProfileScreen() {
   const refreshData = useCallback(() => {
     setFavorites(listFavoriteRituals(LOCAL_USER_ID));
     setJournalEntries(listJournalEntries(LOCAL_USER_ID));
+    setIsProActive(hasProAccess());
     setNotificationsEnabledState(getNotificationsEnabled(LOCAL_USER_ID));
     setSelectedLanguage(getLanguagePreference(LOCAL_USER_ID));
   }, []);
@@ -206,6 +209,30 @@ export default function ProfileScreen() {
               </Text>
               <MaterialCommunityIcons color={theme.colors.primary} name="chevron-right" size={16} />
             </Pressable>
+          </View>
+
+          <View style={styles.premiumRow}>
+            <View style={styles.settingTextWrap}>
+              <View style={styles.premiumTitleRow}>
+                <MaterialCommunityIcons color={theme.colors.primary} name="star-four-points" size={18} />
+                <Text style={styles.settingTitle}>{t("settings.premiumTitle")}</Text>
+              </View>
+              <Text style={styles.settingDescription}>
+                {isProActive ? t("settings.premiumActiveHint") : t("settings.premiumHint")}
+              </Text>
+            </View>
+
+            {isProActive ? (
+              <View style={styles.premiumBadge}>
+                <MaterialCommunityIcons color={theme.colors.primary} name="check-circle" size={14} />
+                <Text style={styles.premiumBadgeText}>{t("settings.premiumActive")}</Text>
+              </View>
+            ) : (
+              <Pressable onPress={() => router.push("/subscription")} style={styles.upgradeButton}>
+                <Text style={styles.upgradeButtonText}>{t("settings.upgradeToPro")}</Text>
+                <MaterialCommunityIcons color={theme.colors.onPrimary} name="arrow-right" size={14} />
+              </Pressable>
+            )}
           </View>
         </View>
 
@@ -635,5 +662,49 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     languageOptionText: {
       color: theme.colors.onSurface,
       fontSize: 15,
+    },
+    premiumRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      gap: 12,
+      borderTopWidth: 1,
+      borderTopColor: `${theme.colors.primary}1A`,
+      paddingTop: 12,
+    },
+    premiumTitleRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 6,
+    },
+    premiumBadge: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 4,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}66`,
+      borderRadius: 8,
+      paddingHorizontal: 10,
+      paddingVertical: 6,
+      backgroundColor: `${theme.colors.primary}1A`,
+    },
+    premiumBadgeText: {
+      color: theme.colors.primary,
+      fontSize: 12,
+      fontWeight: "700",
+    },
+    upgradeButton: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 4,
+      borderRadius: 8,
+      paddingHorizontal: 12,
+      paddingVertical: 8,
+      backgroundColor: theme.colors.primary,
+    },
+    upgradeButtonText: {
+      color: theme.colors.onPrimary,
+      fontSize: 12,
+      fontWeight: "700",
     },
   });

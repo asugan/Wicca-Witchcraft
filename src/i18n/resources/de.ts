@@ -122,6 +122,11 @@ export const deTranslations: Translations = {
     languagePortuguese: "Português",
     languageSavedMessage: "Sprache auf {{language}} gespeichert",
     saveErrorMessage: "Spracheinstellung konnte nicht gespeichert werden",
+    premiumTitle: "Premium",
+    premiumHint: "Exklusive Rituale und erweiterte Funktionen freischalten",
+    premiumActiveHint: "Sie haben vollen Zugriff auf alle Premium-Funktionen",
+    premiumActive: "Aktiv",
+    upgradeToPro: "Upgrade",
   },
   ritual: {
     notFound: "Ritual nicht gefunden",

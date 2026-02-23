@@ -120,6 +120,11 @@ export type Translations = {
     languagePortuguese: string;
     languageSavedMessage: string;
     saveErrorMessage: string;
+    premiumTitle: string;
+    premiumHint: string;
+    premiumActiveHint: string;
+    premiumActive: string;
+    upgradeToPro: string;
   };
   ritual: {
     notFound: string;
@@ -332,6 +337,11 @@ export const enTranslations: Translations = {
     languagePortuguese: "Português",
     languageSavedMessage: "Language saved to {{language}}",
     saveErrorMessage: "Could not save language preference",
+    premiumTitle: "Premium",
+    premiumHint: "Unlock exclusive rituals and advanced features",
+    premiumActiveHint: "You have full access to all premium features",
+    premiumActive: "Active",
+    upgradeToPro: "Upgrade",
   },
   ritual: {
     notFound: "Ritual not found",
