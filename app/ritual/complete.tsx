@@ -85,7 +85,11 @@ export default function RitualCompleteScreen() {
 
   const handleBlessedBe = useCallback(() => {
     // Navigate back to the ritual detail or home
-    router.dismissAll();
+    if (router.canDismiss()) {
+      router.dismissAll();
+    } else {
+      router.replace("/");
+    }
   }, [router]);
 
   const handleSaveToJournal = useCallback(() => {
@@ -108,18 +112,18 @@ export default function RitualCompleteScreen() {
   return (
     <View style={styles.container}>
       {/* Celestial layered background */}
-      <View style={styles.bgBase} />
-      <View style={styles.bgCenterGlow} />
+      <View pointerEvents="none" style={styles.bgBase} />
+      <View pointerEvents="none" style={styles.bgCenterGlow} />
 
       {/* Star particles */}
-      <Animated.View style={[styles.star, styles.star1, { opacity: twinkle1 }]} />
-      <Animated.View style={[styles.star, styles.star2, { opacity: twinkle2 }]} />
-      <Animated.View style={[styles.star, styles.star3, { opacity: twinkle3 }]} />
-      <Animated.View style={[styles.starGold, styles.star4, { opacity: twinkle2 }]} />
-      <Animated.View style={[styles.star, styles.star5, { opacity: twinkle1 }]} />
-      <Animated.View style={[styles.starGold, styles.star6, { opacity: twinkle3 }]} />
-      <Animated.View style={[styles.star, styles.star7, { opacity: twinkle2 }]} />
-      <Animated.View style={[styles.star, styles.star8, { opacity: twinkle1 }]} />
+      <Animated.View pointerEvents="none" style={[styles.star, styles.star1, { opacity: twinkle1 }]} />
+      <Animated.View pointerEvents="none" style={[styles.star, styles.star2, { opacity: twinkle2 }]} />
+      <Animated.View pointerEvents="none" style={[styles.star, styles.star3, { opacity: twinkle3 }]} />
+      <Animated.View pointerEvents="none" style={[styles.starGold, styles.star4, { opacity: twinkle2 }]} />
+      <Animated.View pointerEvents="none" style={[styles.star, styles.star5, { opacity: twinkle1 }]} />
+      <Animated.View pointerEvents="none" style={[styles.starGold, styles.star6, { opacity: twinkle3 }]} />
+      <Animated.View pointerEvents="none" style={[styles.star, styles.star7, { opacity: twinkle2 }]} />
+      <Animated.View pointerEvents="none" style={[styles.star, styles.star8, { opacity: twinkle1 }]} />
 
       <SafeAreaView edges={["top", "bottom"]} style={styles.safe}>
         {/* Header */}

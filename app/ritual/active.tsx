@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Animated, Easing, Pressable, StyleSheet, View } from "react-native";
+import { Animated, Easing, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -133,7 +133,12 @@ export default function ActiveRitualScreen() {
       <Text style={styles.stepLabel}>{t("ritual.activeStepLabel", { current: currentStep + 1 })}</Text>
 
       {/* Main Content */}
-      <View style={styles.mainContent}>
+      <ScrollView
+        style={styles.mainScroll}
+        contentContainerStyle={styles.mainContent}
+        showsVerticalScrollIndicator={false}
+        bounces={false}
+      >
         {/* Candle */}
         <View style={styles.candleWrap}>
           {/* Flame aura */}
@@ -162,7 +167,7 @@ export default function ActiveRitualScreen() {
           <MaterialCommunityIcons color={`${theme.colors.primary}CC`} name="timer-sand" size={18} />
           <Text style={styles.timeBadgeText}>{t("ritual.takeYourTime")}</Text>
         </View>
-      </View>
+      </ScrollView>
 
       {/* Footer Actions */}
       <View style={styles.footer}>
@@ -308,12 +313,16 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
 
     // Main content
-    mainContent: {
+    mainScroll: {
       flex: 1,
+      zIndex: 10,
+    },
+    mainContent: {
+      flexGrow: 1,
       alignItems: "center",
       justifyContent: "center",
       paddingHorizontal: 24,
-      zIndex: 10,
+      paddingVertical: 16,
     },
 
     // Candle
