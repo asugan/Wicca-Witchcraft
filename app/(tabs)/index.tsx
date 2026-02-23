@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useEffect, useMemo, useState } from "react";
-import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Animated, Easing, ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Surface, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -21,6 +21,47 @@ export default function HomeScreen() {
   const recommendation = dailySnapshot.recommendation;
   const [cardRevealed, setCardRevealed] = useState(false);
   const card = dailySnapshot.card;
+
+  const pulseAnim = useRef(new Animated.Value(1)).current;
+  const rotateAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    const pulse = Animated.loop(
+      Animated.sequence([
+        Animated.timing(pulseAnim, {
+          toValue: 1.06,
+          duration: 2400,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+        Animated.timing(pulseAnim, {
+          toValue: 1,
+          duration: 2400,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+      ]),
+    );
+
+    const rotate = Animated.loop(
+      Animated.timing(rotateAnim, {
+        toValue: 1,
+        duration: 30000,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      }),
+    );
+
+    pulse.start();
+    rotate.start();
+
+    return () => {
+      pulse.stop();
+      rotate.stop();
+    };
+  }, [pulseAnim, rotateAnim]);
+
+  const heroSpin = rotateAnim.interpolate({ inputRange: [0, 1], outputRange: ["0deg", "360deg"] });
 
   const actions = useMemo(
     () => [
@@ -61,7 +102,18 @@ export default function HomeScreen() {
 
         <View style={styles.heroWrap}>
           <View style={styles.zodiacRingOuter}>
-            <View style={styles.zodiacRingInner} />
+            <Animated.View
+              style={[
+                styles.zodiacRingInner,
+                { transform: [{ rotate: heroSpin }] },
+              ]}
+            />
+            <Animated.View
+              style={[
+                styles.zodiacRingPulse,
+                { transform: [{ scale: pulseAnim }] },
+              ]}
+            />
             <View style={styles.moonOrb}>
               <ImageBackground
                 imageStyle={styles.moonImage}
@@ -286,6 +338,15 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderWidth: 1,
       borderStyle: "dashed",
       borderColor: `${theme.colors.primary}40`,
+    },
+    zodiacRingPulse: {
+      position: "absolute",
+      width: 260,
+      height: 260,
+      borderRadius: 130,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}33`,
+      backgroundColor: `${theme.colors.primary}09`,
     },
     moonOrb: {
       width: 198,
