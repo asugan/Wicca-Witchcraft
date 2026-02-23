@@ -15,7 +15,10 @@ export type AnalyticsEventName =
   | "ritual_favorited"
   | "journal_entry_created"
   | "premium_paywall_viewed"
-  | "premium_started";
+  | "premium_started"
+  | "ritual_mode_started"
+  | "ritual_mode_completed"
+  | "ritual_journal_saved";
 
 type AnalyticsPropertyValue = string | number;
 

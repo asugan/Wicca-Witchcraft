@@ -128,6 +128,16 @@ export type Translations = {
     close: string;
     cleansing: string;
     care: string;
+    activeStepLabel: string;
+    takeYourTime: string;
+    nextStep: string;
+    endRitual: string;
+    ritualComplete: string;
+    ritualCompleteQuote: string;
+    blessedBe: string;
+    saveToJournal: string;
+    journalSaved: string;
+    info: string;
   };
 };
 
@@ -261,5 +271,15 @@ export const enTranslations: Translations = {
     close: "Close",
     cleansing: "Cleansing: {{value}}",
     care: "Care: {{value}}",
+    activeStepLabel: "Step {{current}}",
+    takeYourTime: "Take your time",
+    nextStep: "Next Step",
+    endRitual: "End Ritual",
+    ritualComplete: "Ritual Complete",
+    ritualCompleteQuote: "The intentions have been set, the energy is aligned.",
+    blessedBe: "Blessed Be",
+    saveToJournal: "Save to Journal",
+    journalSaved: "Saved to your Book of Shadows",
+    info: "Info",
   },
 };

@@ -211,6 +211,15 @@ export default function RitualDetailScreen() {
           contentStyle={styles.beginButtonContent}
           icon="play-circle-outline"
           mode="contained"
+          onPress={() => {
+            trackEvent("ritual_mode_started", {
+              user_id: LOCAL_USER_ID,
+              tab_name: "grimoire",
+              entity_id: detail.ritual.id,
+              source: "ritual_detail",
+            });
+            router.push({ pathname: "/ritual/active", params: { slug: normalizedSlug } });
+          }}
           style={styles.beginButton}
           textColor={theme.colors.onPrimary}
         >
