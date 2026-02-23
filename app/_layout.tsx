@@ -3,7 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import { PaperProvider } from "react-native-paper";
 
-import { getNotificationsEnabled } from "@/db/repositories/settings-repository";
+import { getLanguagePreference, getNotificationsEnabled } from "@/db/repositories/settings-repository";
+import i18n from "@/i18n";
 import { initAnalytics, trackAppStarted } from "@/lib/analytics";
 import { syncMysticNotifications } from "@/lib/notifications";
 import { getPaperTheme } from "@/theme/paper-theme";
@@ -21,8 +22,12 @@ export default function RootLayout() {
     trackAppStarted(LOCAL_USER_ID);
 
     const notificationsEnabled = getNotificationsEnabled(LOCAL_USER_ID);
-
     void syncMysticNotifications(notificationsEnabled);
+
+    const savedLanguage = getLanguagePreference(LOCAL_USER_ID);
+    if (i18n.language !== savedLanguage) {
+      void i18n.changeLanguage(savedLanguage);
+    }
   }, []);
 
   return (

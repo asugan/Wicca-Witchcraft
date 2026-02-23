@@ -779,4 +779,5 @@ export const DEFAULT_SETTINGS_SEED = {
   themeMode: "system",
   notificationsEnabled: false,
   premiumActive: false,
+  language: "",
 };

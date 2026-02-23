@@ -1,5 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -33,6 +34,7 @@ function TabIcon({ name, color, focused, surfaceColor, borderColor }: TabIconPro
 export default function TabsLayout() {
   const theme = useMysticTheme();
   const insets = useSafeAreaInsets();
+  const { t } = useTranslation();
 
   return (
     <Tabs
@@ -56,7 +58,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Moon",
+          title: t("nav.moon"),
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}
@@ -71,7 +73,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="grimoire"
         options={{
-          title: "Grimoire",
+          title: t("nav.grimoire"),
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}
@@ -86,7 +88,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="library"
         options={{
-          title: "Library",
+          title: t("nav.library"),
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}
@@ -101,7 +103,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="tools"
         options={{
-          title: "Tools",
+          title: t("nav.tools"),
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}
@@ -116,7 +118,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          title: "Profile",
+          title: t("nav.profile"),
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
               borderColor={`${theme.colors.primary}33`}

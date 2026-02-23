@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text } from "react-native-paper";
+import { useTranslation } from "react-i18next";
 
 import { LibraryChip } from "@/components/mystic/LibraryChip";
 import { listLibraryCategoryCounts, listLibraryEntries } from "@/db/repositories/library-repository";
@@ -18,8 +19,17 @@ const categoryIcons: Record<string, keyof typeof MaterialCommunityIcons.glyphMap
   deity: "account-star",
 };
 
+const ENTITY_TYPE_KEYS: Record<string, string> = {
+  crystal: "library.typeCrystal",
+  herb: "library.typeHerb",
+  candle: "library.typeCandle",
+  symbol: "library.typeSymbol",
+  deity: "library.typeDeity",
+};
+
 export default function LibraryScreen() {
   const theme = useMysticTheme();
+  const { t } = useTranslation();
   const styles = makeStyles(theme);
 
   const [selectedType, setSelectedType] = useState<string>("all");
@@ -37,19 +47,23 @@ export default function LibraryScreen() {
   return (
     <SafeAreaView edges={["top"]} style={styles.safe}>
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
-        <Text style={styles.title}>Mystic Library</Text>
-        <Text style={styles.subtitle}>Explore cross-linked entries to deepen your ritual practice.</Text>
+        <Text style={styles.title}>{t("library.title")}</Text>
+        <Text style={styles.subtitle}>{t("library.subtitle")}</Text>
 
         <View style={styles.chipsWrap}>
-          <LibraryChip icon="shape-outline" label="All" onPress={() => setSelectedType("all")} />
-          {categoryCounts.map((category) => (
+          <LibraryChip icon="shape-outline" label={t("library.filterAll")} onPress={() => setSelectedType("all")} />
+          {categoryCounts.map((category) => {
+            const typeKey = ENTITY_TYPE_KEYS[category.entityType];
+            const typeLabel = typeKey ? t(typeKey as string) : category.entityType;
+            return (
             <LibraryChip
               icon={categoryIcons[category.entityType] ?? "book-open-page-variant"}
               key={category.entityType}
-              label={`${category.entityType} (${category.count})`}
+              label={`${typeLabel} (${category.count})`}
               onPress={() => setSelectedType(category.entityType)}
             />
-          ))}
+          );
+          })}
         </View>
 
         <View style={styles.card}>

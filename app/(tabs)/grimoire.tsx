@@ -4,6 +4,7 @@ import { useDeferredValue, useMemo, useState } from "react";
 import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Searchbar, Text } from "react-native-paper";
+import { useTranslation } from "react-i18next";
 
 import { RitualCard } from "@/components/mystic/RitualCard";
 import { listRituals } from "@/db/repositories/ritual-repository";
@@ -21,12 +22,21 @@ const categoryIcons: Record<string, keyof typeof MaterialCommunityIcons.glyphMap
   beginner: "star-four-points",
 };
 
-const difficultyOptions = [
-  { value: "all", label: "All Levels" },
-  { value: "beginner", label: "Beginner" },
-  { value: "intermediate", label: "Intermediate" },
-  { value: "advanced", label: "Advanced" },
-] as const;
+const MOON_PHASE_KEYS: Record<string, string> = {
+  new: "grimoire.moonPhaseNew",
+  "waxing-crescent": "grimoire.moonPhaseWaxingCrescent",
+  "first-quarter": "grimoire.moonPhaseFirstQuarter",
+  "waxing-gibbous": "grimoire.moonPhaseWaxingGibbous",
+  full: "grimoire.moonPhaseFull",
+  "waning-gibbous": "grimoire.moonPhaseWaningGibbous",
+  "waning-moon": "grimoire.moonPhaseWaningMoon",
+  "waning-crescent": "grimoire.moonPhaseWaningCrescent",
+};
+
+function getMoonPhaseLabel(phase: string, t: (key: string) => string): string {
+  const key = MOON_PHASE_KEYS[phase];
+  return key ? t(key) : phase.replace(/-/g, " ");
+}
 
 const moonPhaseOrder: Record<string, number> = {
   any: 0,
@@ -40,12 +50,6 @@ const moonPhaseOrder: Record<string, number> = {
   "waning-crescent": 8,
 };
 
-function formatPhaseLabel(value: string) {
-  return value
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-}
 
 function getRitualSearchScore(
   ritual: ReturnType<typeof listRituals>[number],
@@ -98,12 +102,23 @@ function getRitualSearchScore(
 export default function GrimoireScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
+  const { t } = useTranslation();
   const styles = makeStyles(theme);
   const [query, setQuery] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>("all");
   const [selectedMoonPhase, setSelectedMoonPhase] = useState<string>("all");
   const [selectedMaterial, setSelectedMaterial] = useState<string>("all");
   const deferredQuery = useDeferredValue(query);
+
+  const difficultyOptions = useMemo(
+    () => [
+      { value: "all", label: t("grimoire.filterAllLevels") },
+      { value: "beginner", label: t("grimoire.filterBeginner") },
+      { value: "intermediate", label: t("grimoire.filterIntermediate") },
+      { value: "advanced", label: t("grimoire.filterAdvanced") },
+    ],
+    [t]
+  );
 
   const rituals = useMemo(() => listRituals(), []);
 
@@ -176,7 +191,7 @@ export default function GrimoireScreen() {
       <View style={styles.header}>
         <View style={styles.headerTitleWrap}>
           <MaterialCommunityIcons color={theme.colors.primary} name="book-open-page-variant" size={30} />
-          <Text style={styles.headerTitle}>Book of Shadows</Text>
+          <Text style={styles.headerTitle}>{t("grimoire.title")}</Text>
         </View>
         <MaterialCommunityIcons color={theme.colors.onSurfaceMuted} name="account-circle-outline" size={26} />
       </View>
@@ -186,7 +201,7 @@ export default function GrimoireScreen() {
           onChangeText={setQuery}
           iconColor={`${theme.colors.primary}BF`}
           inputStyle={styles.searchInputStyle}
-          placeholder="Search spells, crystals, herbs..."
+          placeholder={t("grimoire.searchPlaceholder")}
           placeholderTextColor={`${theme.colors.onSurfaceMuted}B3`}
           style={styles.searchWrap}
           value={query}
@@ -194,7 +209,7 @@ export default function GrimoireScreen() {
 
         <View style={styles.filtersCard}>
           <View style={styles.filterGroup}>
-            <Text style={styles.filterTitle}>Difficulty</Text>
+            <Text style={styles.filterTitle}>{t("grimoire.filterDifficulty")}</Text>
             <ScrollView contentContainerStyle={styles.filterRow} horizontal showsHorizontalScrollIndicator={false}>
               {difficultyOptions.map((option) => {
                 const isSelected = selectedDifficulty === option.value;
@@ -213,13 +228,13 @@ export default function GrimoireScreen() {
           </View>
 
           <View style={styles.filterGroup}>
-            <Text style={styles.filterTitle}>Moon Phase</Text>
+            <Text style={styles.filterTitle}>{t("grimoire.filterMoonPhase")}</Text>
             <ScrollView contentContainerStyle={styles.filterRow} horizontal showsHorizontalScrollIndicator={false}>
               <Pressable
                 onPress={() => setSelectedMoonPhase("all")}
                 style={[styles.filterChip, selectedMoonPhase === "all" ? styles.filterChipActive : null]}
               >
-                <Text style={[styles.filterChipLabel, selectedMoonPhase === "all" ? styles.filterChipLabelActive : null]}>All Phases</Text>
+                <Text style={[styles.filterChipLabel, selectedMoonPhase === "all" ? styles.filterChipLabelActive : null]}>{t("grimoire.filterAllPhases")}</Text>
               </Pressable>
               {moonPhaseOptions.map((phase) => {
                 const isSelected = selectedMoonPhase === phase;
@@ -231,7 +246,7 @@ export default function GrimoireScreen() {
                     style={[styles.filterChip, isSelected ? styles.filterChipActive : null]}
                   >
                     <Text style={[styles.filterChipLabel, isSelected ? styles.filterChipLabelActive : null]}>
-                      {formatPhaseLabel(phase)}
+                      {getMoonPhaseLabel(phase, t)}
                     </Text>
                   </Pressable>
                 );
@@ -240,13 +255,13 @@ export default function GrimoireScreen() {
           </View>
 
           <View style={styles.filterGroup}>
-            <Text style={styles.filterTitle}>Material</Text>
+            <Text style={styles.filterTitle}>{t("grimoire.filterMaterial")}</Text>
             <ScrollView contentContainerStyle={styles.filterRow} horizontal showsHorizontalScrollIndicator={false}>
               <Pressable
                 onPress={() => setSelectedMaterial("all")}
                 style={[styles.filterChip, selectedMaterial === "all" ? styles.filterChipActive : null]}
               >
-                <Text style={[styles.filterChipLabel, selectedMaterial === "all" ? styles.filterChipLabelActive : null]}>All Materials</Text>
+                <Text style={[styles.filterChipLabel, selectedMaterial === "all" ? styles.filterChipLabelActive : null]}>{t("grimoire.filterAllMaterials")}</Text>
               </Pressable>
               {materialOptions.map((material) => {
                 const isSelected = selectedMaterial === material;
@@ -264,15 +279,15 @@ export default function GrimoireScreen() {
             </ScrollView>
           </View>
 
-          <Text style={styles.resultMeta}>{filteredRituals.length} rituals found</Text>
+          <Text style={styles.resultMeta}>{t("grimoire.ritualsFound", { count: filteredRituals.length })}</Text>
         </View>
 
         <View>
-          <Text style={styles.overline}>Current Focus</Text>
+          <Text style={styles.overline}>{t("grimoire.currentFocus")}</Text>
           {featuredRitual ? (
             <ImageBackground imageStyle={styles.featuredImage} source={{ uri: featuredRitual.coverImage }} style={styles.featuredCard}>
               <View style={styles.featuredOverlay} />
-              <Text style={styles.featuredTag}>{featuredRitual.moonPhase.replaceAll("-", " ")}</Text>
+              <Text style={styles.featuredTag}>{getMoonPhaseLabel(featuredRitual.moonPhase, t)}</Text>
               <Text style={styles.featuredTitle}>{featuredRitual.title}</Text>
               <Text style={styles.featuredDescription}>{featuredRitual.summary}</Text>
             </ImageBackground>
@@ -280,7 +295,7 @@ export default function GrimoireScreen() {
         </View>
 
         <View>
-          <Text style={styles.overline}>Grimoire Chapters</Text>
+          <Text style={styles.overline}>{t("grimoire.chapters")}</Text>
           <View style={styles.grid}>
             {filteredRituals.map((ritual) => (
               <RitualCard
@@ -301,7 +316,7 @@ export default function GrimoireScreen() {
                 title={ritual.title}
               />
             ))}
-            {!filteredRituals.length ? <Text style={styles.emptyLabel}>No rituals match your current filters.</Text> : null}
+            {!filteredRituals.length ? <Text style={styles.emptyLabel}>{t("grimoire.noRitualsMatch")}</Text> : null}
           </View>
         </View>
       </ScrollView>

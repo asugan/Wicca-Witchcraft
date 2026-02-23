@@ -180,6 +180,7 @@ export const appSettings = sqliteTable(
     themeMode: text("theme_mode").notNull(),
     notificationsEnabled: integer("notifications_enabled", { mode: "boolean" }).notNull(),
     premiumActive: integer("premium_active", { mode: "boolean" }).notNull(),
+    language: text("language").notNull().default(""),
   },
   (table) => ({
     userSettingIndex: uniqueIndex("app_settings_user_unique").on(table.userId),

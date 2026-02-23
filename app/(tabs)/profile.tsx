@@ -4,7 +4,8 @@ import { useRouter } from "expo-router";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Button, Text, TextInput } from "react-native-paper";
+import { Button, Modal, Portal, RadioButton, Text, TextInput } from "react-native-paper";
+import { useTranslation } from "react-i18next";
 
 import {
   createJournalEntry,
@@ -14,18 +15,40 @@ import {
   removeRitualFavorite,
   updateJournalEntry,
 } from "@/db/repositories/my-space-repository";
-import { getNotificationsEnabled, setNotificationsEnabled } from "@/db/repositories/settings-repository";
+import {
+  getLanguagePreference,
+  getNotificationsEnabled,
+  setLanguagePreference,
+  setNotificationsEnabled,
+} from "@/db/repositories/settings-repository";
+import i18n from "@/i18n";
+import type { AppLanguage } from "@/i18n/config";
 import { trackEvent } from "@/lib/analytics";
 import { disableMysticNotifications, enableMysticNotifications } from "@/lib/notifications";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
+import { useToast } from "@/context/toast-context";
 
 const LOCAL_USER_ID = "local-user";
+
+type LanguageOption = { code: AppLanguage; labelKey: string };
+
+const LANGUAGE_OPTIONS: LanguageOption[] = [
+  { code: "en", labelKey: "settings.languageEnglish" },
+  { code: "tr", labelKey: "settings.languageTurkish" },
+  { code: "de", labelKey: "settings.languageGerman" },
+  { code: "es", labelKey: "settings.languageSpanish" },
+  { code: "fr", labelKey: "settings.languageFrench" },
+  { code: "it", labelKey: "settings.languageItalian" },
+  { code: "pt", labelKey: "settings.languagePortuguese" },
+];
 
 export default function ProfileScreen() {
   const router = useRouter();
   const isFocused = useIsFocused();
   const theme = useMysticTheme();
+  const { t } = useTranslation();
+  const { showToast } = useToast();
   const styles = makeStyles(theme);
 
   const [favorites, setFavorites] = useState<ReturnType<typeof listFavoriteRituals>>([]);
@@ -38,11 +61,14 @@ export default function ProfileScreen() {
   const [notificationsEnabled, setNotificationsEnabledState] = useState<boolean>(true);
   const [isUpdatingNotifications, setIsUpdatingNotifications] = useState(false);
   const [notificationStatusText, setNotificationStatusText] = useState<string>("");
+  const [languageModalVisible, setLanguageModalVisible] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<AppLanguage>("en");
 
   const refreshData = useCallback(() => {
     setFavorites(listFavoriteRituals(LOCAL_USER_ID));
     setJournalEntries(listJournalEntries(LOCAL_USER_ID));
     setNotificationsEnabledState(getNotificationsEnabled(LOCAL_USER_ID));
+    setSelectedLanguage(getLanguagePreference(LOCAL_USER_ID));
   }, []);
 
   useEffect(() => {
@@ -107,31 +133,43 @@ export default function ProfileScreen() {
         setNotificationsEnabled(LOCAL_USER_ID, result.enabled);
 
         if (!result.enabled) {
-          setNotificationStatusText("Permission was not granted. You can enable reminders from device settings.");
+          setNotificationStatusText(t("settings.permissionNotGranted"));
         } else {
-          setNotificationStatusText("Daily and moon event reminders are now active.");
+          setNotificationStatusText(t("settings.remindersActive"));
         }
       } else {
         await disableMysticNotifications();
         setNotificationsEnabledState(false);
         setNotificationsEnabled(LOCAL_USER_ID, false);
-        setNotificationStatusText("Reminders are turned off.");
+        setNotificationStatusText(t("settings.remindersOff"));
       }
     } finally {
       setIsUpdatingNotifications(false);
     }
   };
 
+  const handleLanguageSelect = (language: AppLanguage) => {
+    setSelectedLanguage(language);
+    setLanguagePreference(LOCAL_USER_ID, language);
+    void i18n.changeLanguage(language);
+    setLanguageModalVisible(false);
+
+    const fixedT = i18n.getFixedT(language);
+    const langOption = LANGUAGE_OPTIONS.find((opt) => opt.code === language);
+    const languageName = langOption ? fixedT(langOption.labelKey as string) : language;
+    showToast(fixedT("settings.languageSavedMessage" as string, { language: languageName }), "success");
+  };
+
   return (
     <SafeAreaView edges={["top"]} style={styles.safe}>
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
-        <Text style={styles.title}>My Space</Text>
-        <Text style={styles.subtitle}>Your saved rituals and Book of Shadows journal entries.</Text>
+        <Text style={styles.title}>{t("profile.title")}</Text>
+        <Text style={styles.subtitle}>{t("profile.subtitle")}</Text>
 
         <View style={styles.panel}>
           <View style={styles.panelHeader}>
-            <Text style={styles.panelTitle}>Favorites</Text>
-            <Text style={styles.panelMeta}>{favorites.length} saved</Text>
+            <Text style={styles.panelTitle}>{t("profile.favorites")}</Text>
+            <Text style={styles.panelMeta}>{t("profile.savedCount", { count: favorites.length })}</Text>
           </View>
 
           {favorites.map((favorite) => (
@@ -171,15 +209,15 @@ export default function ProfileScreen() {
           {!favorites.length ? (
             <View style={styles.emptyRow}>
               <MaterialCommunityIcons color={theme.colors.onSurfaceMuted} name="bookmark-outline" size={16} />
-              <Text style={styles.emptyText}>No favorites yet. Save rituals from the detail page.</Text>
+              <Text style={styles.emptyText}>{t("profile.noFavorites")}</Text>
             </View>
           ) : null}
         </View>
 
         <View style={styles.panel}>
           <View style={styles.panelHeader}>
-            <Text style={styles.panelTitle}>Book of Shadows</Text>
-            <Text style={styles.panelMeta}>{journalEntries.length} entries</Text>
+            <Text style={styles.panelTitle}>{t("profile.bookOfShadows")}</Text>
+            <Text style={styles.panelMeta}>{t("profile.entriesCount", { count: journalEntries.length })}</Text>
           </View>
 
           <View style={styles.formWrap}>
@@ -187,7 +225,7 @@ export default function ProfileScreen() {
               mode="outlined"
               onChangeText={setTitle}
               outlineColor={`${theme.colors.primary}4D`}
-              placeholder="Entry title"
+              placeholder={t("profile.entryTitlePlaceholder")}
               placeholderTextColor={`${theme.colors.onSurfaceMuted}99`}
               style={styles.input}
               textColor={theme.colors.onSurface}
@@ -197,7 +235,7 @@ export default function ProfileScreen() {
               mode="outlined"
               onChangeText={setMood}
               outlineColor={`${theme.colors.primary}4D`}
-              placeholder="Mood (optional)"
+              placeholder={t("profile.moodPlaceholder")}
               placeholderTextColor={`${theme.colors.onSurfaceMuted}99`}
               style={styles.input}
               textColor={theme.colors.onSurface}
@@ -209,7 +247,7 @@ export default function ProfileScreen() {
               numberOfLines={4}
               onChangeText={setContent}
               outlineColor={`${theme.colors.primary}4D`}
-              placeholder="Write your ritual notes, dreams, or intentions..."
+              placeholder={t("profile.contentPlaceholder")}
               placeholderTextColor={`${theme.colors.onSurfaceMuted}99`}
               style={styles.inputMultiline}
               textColor={theme.colors.onSurface}
@@ -218,11 +256,11 @@ export default function ProfileScreen() {
 
             <View style={styles.formActions}>
               <Button mode="contained" onPress={submitEntry} style={styles.primaryAction} textColor={theme.colors.onPrimary}>
-                {isEditing ? "Update Entry" : "Add Entry"}
+                {isEditing ? t("profile.updateEntry") : t("profile.addEntry")}
               </Button>
               {isEditing ? (
                 <Button mode="text" onPress={resetForm} textColor={theme.colors.onSurfaceMuted}>
-                  Cancel Edit
+                  {t("profile.cancelEdit")}
                 </Button>
               ) : null}
             </View>
@@ -273,21 +311,21 @@ export default function ProfileScreen() {
           {!journalEntries.length ? (
             <View style={styles.emptyRow}>
               <MaterialCommunityIcons color={theme.colors.onSurfaceMuted} name="notebook-outline" size={16} />
-              <Text style={styles.emptyText}>Your first journal entry starts your Book of Shadows.</Text>
+              <Text style={styles.emptyText}>{t("profile.emptyJournal")}</Text>
             </View>
           ) : null}
         </View>
 
         <View style={styles.panel}>
           <View style={styles.panelHeader}>
-            <Text style={styles.panelTitle}>Settings</Text>
-            <Text style={styles.panelMeta}>Personal</Text>
+            <Text style={styles.panelTitle}>{t("settings.title")}</Text>
+            <Text style={styles.panelMeta}>{t("settings.personal")}</Text>
           </View>
 
           <View style={styles.settingRow}>
             <View style={styles.settingTextWrap}>
-              <Text style={styles.settingTitle}>Daily and Moon Reminders</Text>
-              <Text style={styles.settingDescription}>Receive a daily ritual nudge and upcoming moon event alerts.</Text>
+              <Text style={styles.settingTitle}>{t("settings.remindersTitle")}</Text>
+              <Text style={styles.settingDescription}>{t("settings.remindersDescription")}</Text>
             </View>
 
             <Pressable disabled={isUpdatingNotifications} onPress={onToggleNotifications} style={styles.switchTapArea}>
@@ -300,11 +338,52 @@ export default function ProfileScreen() {
           <Text style={styles.settingMetaLine}>
             {notificationStatusText ||
               (notificationsEnabled
-                ? "Active: daily reminder at 20:30 and moon events at 09:00."
-                : "Inactive: reminders are currently turned off.")}
+                ? t("settings.activeReminder")
+                : t("settings.inactiveReminder"))}
           </Text>
+
+          <View style={styles.settingRow}>
+            <View style={styles.settingTextWrap}>
+              <Text style={styles.settingTitle}>{t("settings.languageLabel")}</Text>
+              <Text style={styles.settingDescription}>{t("settings.languageHint")}</Text>
+            </View>
+
+            <Pressable onPress={() => setLanguageModalVisible(true)} style={styles.languageButton}>
+              <Text style={styles.languageButtonText}>
+                {LANGUAGE_OPTIONS.find((opt) => opt.code === selectedLanguage)
+                  ? t(LANGUAGE_OPTIONS.find((opt) => opt.code === selectedLanguage)!.labelKey as string)
+                  : selectedLanguage.toUpperCase()}
+              </Text>
+              <MaterialCommunityIcons color={theme.colors.primary} name="chevron-right" size={16} />
+            </Pressable>
+          </View>
         </View>
       </ScrollView>
+
+      <Portal>
+        <Modal
+          contentContainerStyle={styles.languageModal}
+          onDismiss={() => setLanguageModalVisible(false)}
+          visible={languageModalVisible}
+        >
+          <Text style={styles.languageModalTitle}>{t("settings.languageLabel")}</Text>
+          <RadioButton.Group onValueChange={(val) => handleLanguageSelect(val as AppLanguage)} value={selectedLanguage}>
+            {LANGUAGE_OPTIONS.map((option) => (
+              <Pressable
+                key={option.code}
+                onPress={() => handleLanguageSelect(option.code)}
+                style={styles.languageOption}
+              >
+                <RadioButton color={theme.colors.primary} value={option.code} />
+                <Text style={styles.languageOptionText}>{t(option.labelKey as string)}</Text>
+              </Pressable>
+            ))}
+          </RadioButton.Group>
+          <Button mode="text" onPress={() => setLanguageModalVisible(false)} textColor={theme.colors.onSurfaceMuted}>
+            {t("common.close")}
+          </Button>
+        </Modal>
+      </Portal>
     </SafeAreaView>
   );
 }
@@ -516,5 +595,45 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       color: theme.colors.onSurfaceMuted,
       fontSize: 11,
       lineHeight: 18,
+    },
+    languageButton: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 4,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}4D`,
+      borderRadius: 8,
+      paddingHorizontal: 10,
+      paddingVertical: 6,
+      backgroundColor: `${theme.colors.primary}14`,
+    },
+    languageButtonText: {
+      color: theme.colors.primary,
+      fontSize: 12,
+      fontWeight: "700",
+    },
+    languageModal: {
+      backgroundColor: theme.colors.surface1,
+      borderRadius: 20,
+      marginHorizontal: 24,
+      padding: 20,
+      gap: 8,
+    },
+    languageModalTitle: {
+      color: theme.colors.onSurface,
+      fontFamily: typefaces.display,
+      fontSize: 22,
+      fontWeight: "700",
+      marginBottom: 8,
+    },
+    languageOption: {
+      flexDirection: "row",
+      alignItems: "center",
+      paddingVertical: 6,
+      gap: 4,
+    },
+    languageOptionText: {
+      color: theme.colors.onSurface,
+      fontSize: 15,
     },
   });

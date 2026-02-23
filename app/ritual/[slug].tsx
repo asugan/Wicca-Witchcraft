@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Dialog, Portal, Text } from "react-native-paper";
+import { useTranslation } from "react-i18next";
 
 import { IncantationBlock } from "@/components/mystic/IncantationBlock";
 import { isRitualFavorited, toggleRitualFavorite } from "@/db/repositories/my-space-repository";
@@ -18,6 +19,7 @@ const LOCAL_USER_ID = "local-user";
 export default function RitualDetailScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
+  const { t } = useTranslation();
   const styles = makeStyles(theme);
 
   const { slug } = useLocalSearchParams<{ slug?: string | string[] }>();
@@ -64,9 +66,9 @@ export default function RitualDetailScreen() {
     return (
       <SafeAreaView edges={["top"]} style={styles.safe}>
         <View style={styles.notFoundWrap}>
-          <Text style={styles.notFoundTitle}>Ritual not found</Text>
+          <Text style={styles.notFoundTitle}>{t("ritual.notFound")}</Text>
           <Button mode="outlined" onPress={() => router.back()} textColor={theme.colors.primary}>
-            Go Back
+            {t("ritual.goBack")}
           </Button>
         </View>
       </SafeAreaView>
@@ -120,14 +122,14 @@ export default function RitualDetailScreen() {
         <Text style={styles.description}>{detail.ritual.summary}</Text>
 
         <View style={styles.metadataWrap}>
-          <Text style={styles.metadataText}>Difficulty: {detail.ritual.difficulty}</Text>
-          <Text style={styles.metadataText}>Moon: {detail.ritual.moonPhase.replaceAll("-", " ")}</Text>
-          <Text style={styles.metadataText}>{detail.ritual.durationMinutes} min</Text>
+          <Text style={styles.metadataText}>{t("ritual.difficulty", { value: detail.ritual.difficulty })}</Text>
+          <Text style={styles.metadataText}>{t("ritual.moon", { value: detail.ritual.moonPhase.replaceAll("-", " ") })}</Text>
+          <Text style={styles.metadataText}>{t("home.duration", { durationMinutes: detail.ritual.durationMinutes })}</Text>
         </View>
 
         <View style={styles.sectionTitleWrap}>
           <View style={styles.sectionLine} />
-          <Text style={styles.sectionTitle}>Materials</Text>
+          <Text style={styles.sectionTitle}>{t("ritual.materials")}</Text>
           <View style={styles.sectionLine} />
         </View>
 
@@ -174,13 +176,13 @@ export default function RitualDetailScreen() {
             );
           })}
           <Text style={styles.countLabel}>
-            {checkedCount} / {detail.materials.length} prepared
+            {t("ritual.preparedCount", { checked: checkedCount, total: detail.materials.length })}
           </Text>
         </View>
 
         <View style={styles.sectionTitleWrap}>
           <View style={styles.sectionLine} />
-          <Text style={styles.sectionTitle}>The Ritual</Text>
+          <Text style={styles.sectionTitle}>{t("ritual.theRitual")}</Text>
           <View style={styles.sectionLine} />
         </View>
 
@@ -212,7 +214,7 @@ export default function RitualDetailScreen() {
           style={styles.beginButton}
           textColor={theme.colors.onPrimary}
         >
-          Begin Ritual Mode
+          {t("ritual.beginRitualMode")}
         </Button>
       </View>
 
@@ -227,8 +229,8 @@ export default function RitualDetailScreen() {
             <Text style={styles.previewSummary}>{selectedEntry?.linkedEntrySummary}</Text>
             <Text style={styles.previewMeta}>{selectedEntry?.linkedEntryProperties}</Text>
             <Text style={styles.previewMeta}>{selectedEntry?.linkedEntryCorrespondences}</Text>
-            <Text style={styles.previewMeta}>Cleansing: {selectedEntry?.linkedEntryCleansingMethod}</Text>
-            <Text style={styles.previewMeta}>Care: {selectedEntry?.linkedEntryCareNote}</Text>
+            <Text style={styles.previewMeta}>{t("ritual.cleansing", { value: selectedEntry?.linkedEntryCleansingMethod })}</Text>
+            <Text style={styles.previewMeta}>{t("ritual.care", { value: selectedEntry?.linkedEntryCareNote })}</Text>
           </Dialog.Content>
           <Dialog.Actions style={styles.previewActions}>
             <Button
@@ -246,7 +248,7 @@ export default function RitualDetailScreen() {
               }}
               textColor={theme.colors.primary}
             >
-              Close
+              {t("ritual.close")}
             </Button>
           </Dialog.Actions>
         </Dialog>

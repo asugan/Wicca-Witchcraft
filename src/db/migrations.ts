@@ -132,6 +132,10 @@ const migrations: Migration[] = [
       );
     `,
   },
+  {
+    id: "0002_add_language_to_settings",
+    sql: `ALTER TABLE app_settings ADD COLUMN language TEXT NOT NULL DEFAULT '';`,
+  },
 ];
 
 export function runMigrations(database: SQLiteDatabase) {

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Text } from "react-native-paper";
+import { useTranslation } from "react-i18next";
 
 import { listAstroTimeline, listMoonCalendarSections } from "@/db/repositories/tools-repository";
 import { typefaces } from "@/theme/tokens";
@@ -35,6 +36,7 @@ function useFloating(delay: number) {
 
 export default function ToolsScreen() {
   const theme = useMysticTheme();
+  const { t } = useTranslation();
   const styles = makeStyles(theme);
 
   const [revealed, setRevealed] = useState<boolean[]>([false, false, false]);
@@ -72,14 +74,14 @@ export default function ToolsScreen() {
 
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
-          <Text style={styles.headerOverline}>Tools</Text>
-          <Text style={styles.headerTitle}>Oracles and Cosmic Timing</Text>
-          <Text style={styles.headerSubtext}>Track moon phases, plan rituals, and read energetic windows.</Text>
+          <Text style={styles.headerOverline}>{t("tools.overline")}</Text>
+          <Text style={styles.headerTitle}>{t("tools.title")}</Text>
+          <Text style={styles.headerSubtext}>{t("tools.subtitle")}</Text>
         </View>
 
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeaderRow}>
-            <Text style={styles.sectionTitle}>3-Card Tarot Spread</Text>
+            <Text style={styles.sectionTitle}>{t("tools.tarotSpread")}</Text>
             <MaterialCommunityIcons color={theme.colors.primary} name="cards-playing" size={18} />
           </View>
 
@@ -93,14 +95,14 @@ export default function ToolsScreen() {
                     name={revealed[index] ? "cards-playing-heart-multiple" : cardSymbols[index]}
                     size={36}
                   />
-                  <Text style={styles.cardLabel}>{index === 0 ? "Past" : index === 1 ? "Present" : "Future"}</Text>
-                  {revealed[index] ? <Text style={styles.revealedText}>Revealed</Text> : null}
+                  <Text style={styles.cardLabel}>{index === 0 ? t("tools.cardPast") : index === 1 ? t("tools.cardPresent") : t("tools.cardFuture")}</Text>
+                  {revealed[index] ? <Text style={styles.revealedText}>{t("tools.cardRevealed")}</Text> : null}
                 </Pressable>
               </Animated.View>
             ))}
           </View>
 
-          <Text style={styles.promptText}>{'"Focus on your question and tap each card"'}</Text>
+          <Text style={styles.promptText}>{t("tools.tarotPrompt")}</Text>
 
           <View style={styles.buttonRow}>
             <Button
@@ -109,17 +111,17 @@ export default function ToolsScreen() {
               style={[styles.secondaryButton, allRevealed && styles.secondaryButtonDone]}
               textColor={theme.colors.primary}
             >
-              {allRevealed ? "All Revealed" : "Reveal All"}
+              {allRevealed ? t("tools.allRevealed") : t("tools.revealAll")}
             </Button>
             <Button mode="text" onPress={() => setRevealed([false, false, false])} textColor={theme.colors.onSurfaceMuted}>
-              Reset
+              {t("tools.reset")}
             </Button>
           </View>
         </View>
 
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeaderRow}>
-            <Text style={styles.sectionTitle}>Moon Calendar</Text>
+            <Text style={styles.sectionTitle}>{t("tools.moonCalendar")}</Text>
             <MaterialCommunityIcons color={theme.colors.primary} name="moon-waning-gibbous" size={18} />
           </View>
 
@@ -143,7 +145,7 @@ export default function ToolsScreen() {
 
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeaderRow}>
-            <Text style={styles.sectionTitle}>Astro Timeline</Text>
+            <Text style={styles.sectionTitle}>{t("tools.astroTimeline")}</Text>
             <MaterialCommunityIcons color={theme.colors.primary} name="timeline-clock-outline" size={18} />
           </View>
 

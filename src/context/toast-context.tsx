@@ -1,6 +1,7 @@
-import React, { createContext, useState, useCallback, ReactNode } from "react";
+import React, { createContext, useContext, useState, useCallback, ReactNode } from "react";
 import { StyleSheet, View } from "react-native";
 import { Snackbar, Text } from "react-native-paper";
+import { useTranslation } from "react-i18next";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
 export type ToastType = "success" | "error" | "info";
@@ -12,6 +13,14 @@ export interface ToastContextType {
 
 export const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
+export function useToast(): ToastContextType {
+  const ctx = useContext(ToastContext);
+  if (!ctx) {
+    throw new Error("useToast must be used within ToastProvider");
+  }
+  return ctx;
+}
+
 interface ToastProviderProps {
   children: ReactNode;
 }
@@ -20,7 +29,8 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
   const [type, setType] = useState<ToastType>("info");
-  
+
+  const { t } = useTranslation();
   const theme = useMysticTheme();
 
   const showToast = useCallback((msg: string, toastType: ToastType = "info") => {
@@ -69,7 +79,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
           duration={3000}
           style={styles.snackbar}
           action={{
-            label: "Kapat",
+            label: t("common.close"),
             onPress: hideToast,
             labelStyle: { color: theme.colors.onPrimary },
           }}

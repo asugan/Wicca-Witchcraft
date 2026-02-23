@@ -4,6 +4,7 @@ import { useEffect, useMemo } from "react";
 import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Surface, Text } from "react-native-paper";
+import { useTranslation } from "react-i18next";
 
 import { MoonPhaseBadge } from "@/components/mystic/MoonPhaseBadge";
 import { getHomeDailySnapshot } from "@/db/repositories/home-repository";
@@ -11,18 +12,22 @@ import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
-const actions: { id: string; icon: keyof typeof MaterialCommunityIcons.glyphMap; label: string }[] = [
-  { id: "log", icon: "notebook-edit-outline", label: "Log Ritual" },
-  { id: "horoscope", icon: "star-four-points-outline", label: "Daily Horoscope" },
-  { id: "cleanse", icon: "leaf-circle-outline", label: "Cleanse Space" },
-];
-
 export default function HomeScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
+  const { t } = useTranslation();
   const styles = makeStyles(theme);
   const dailySnapshot = useMemo(() => getHomeDailySnapshot(), []);
   const recommendation = dailySnapshot.recommendation;
+
+  const actions = useMemo(
+    () => [
+      { id: "log", icon: "notebook-edit-outline" as keyof typeof MaterialCommunityIcons.glyphMap, label: t("home.logRitual") },
+      { id: "horoscope", icon: "star-four-points-outline" as keyof typeof MaterialCommunityIcons.glyphMap, label: t("home.dailyHoroscope") },
+      { id: "cleanse", icon: "leaf-circle-outline" as keyof typeof MaterialCommunityIcons.glyphMap, label: t("home.cleanseSpace") },
+    ],
+    [t]
+  );
 
   useEffect(() => {
     trackEvent("home_viewed", {
@@ -41,7 +46,7 @@ export default function HomeScreen() {
 
         <View style={styles.header}>
           <View>
-            <Text style={styles.headerLabel}>Astrological Date</Text>
+            <Text style={styles.headerLabel}>{t("home.astrologicalDate")}</Text>
             <Text style={styles.headerTitle}>
               {dailySnapshot.dateLabel} • {dailySnapshot.cosmicLabel}
             </Text>
@@ -87,14 +92,14 @@ export default function HomeScreen() {
         <Surface style={styles.intentionCard}>
           <View style={styles.intentionHeader}>
             <MaterialCommunityIcons color={theme.colors.primary} name="meditation" size={16} />
-            <Text style={styles.intentionLabel}>Daily Intention</Text>
+            <Text style={styles.intentionLabel}>{t("home.dailyIntention")}</Text>
           </View>
           <Text style={styles.intentionText}>{dailySnapshot.intention}</Text>
         </Surface>
 
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Daily Tarot</Text>
-          <Text style={styles.sectionLink}>View All</Text>
+          <Text style={styles.sectionTitle}>{t("home.dailyTarot")}</Text>
+          <Text style={styles.sectionLink}>{t("home.viewAll")}</Text>
         </View>
 
         <Surface style={styles.insightCard}>
@@ -107,17 +112,17 @@ export default function HomeScreen() {
           >
             <View style={styles.mediaOverlay} />
             <View style={styles.mediaBadge}>
-              <Text style={styles.mediaBadgeText}>Card of the Day</Text>
+              <Text style={styles.mediaBadgeText}>{t("home.cardOfTheDay")}</Text>
             </View>
           </ImageBackground>
 
           <View style={styles.insightBody}>
             <View style={styles.categoryLine}>
               <MaterialCommunityIcons color={theme.colors.primary} name="star-four-points" size={16} />
-              <Text style={styles.categoryText}>{dailySnapshot.card?.arcana ?? "Daily Draw"}</Text>
+              <Text style={styles.categoryText}>{dailySnapshot.card?.arcana ?? t("home.dailyDraw")}</Text>
             </View>
-            <Text style={styles.cardTitle}>{dailySnapshot.card?.cardName ?? "The Star"}</Text>
-            <Text style={styles.quote}>{`"${dailySnapshot.card?.uprightMeaning ?? "Hope is the light that guides you through the darkness."}"`}</Text>
+            <Text style={styles.cardTitle}>{dailySnapshot.card?.cardName ?? t("home.defaultCardTitle")}</Text>
+            <Text style={styles.quote}>{`"${dailySnapshot.card?.uprightMeaning ?? t("home.defaultCardQuote")}"`}</Text>
             <Button
               contentStyle={styles.primaryButtonContent}
               mode="contained"
@@ -132,7 +137,7 @@ export default function HomeScreen() {
               style={styles.primaryButton}
               textColor={theme.colors.onPrimary}
             >
-              Reveal Guidance
+              {t("home.revealGuidance")}
             </Button>
           </View>
         </Surface>
@@ -140,8 +145,8 @@ export default function HomeScreen() {
         {recommendation ? (
           <Surface style={styles.recommendationCard}>
             <View style={styles.recommendationHeader}>
-              <Text style={styles.recommendationLabel}>Recommended Ritual</Text>
-              <Text style={styles.recommendationMeta}>{recommendation.durationMinutes} min</Text>
+              <Text style={styles.recommendationLabel}>{t("home.recommendedRitual")}</Text>
+              <Text style={styles.recommendationMeta}>{t("home.duration", { durationMinutes: recommendation.durationMinutes })}</Text>
             </View>
             <Text style={styles.recommendationTitle}>{recommendation.title}</Text>
             <Text style={styles.recommendationSummary}>{recommendation.summary}</Text>
@@ -160,7 +165,7 @@ export default function HomeScreen() {
               style={styles.recommendationButton}
               textColor={theme.colors.primary}
             >
-              Open Ritual
+              {t("home.openRitual")}
             </Button>
           </Surface>
         ) : null}
