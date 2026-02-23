@@ -775,4 +775,5 @@ export const DEFAULT_SETTINGS_SEED = {
   notificationsEnabled: false,
   premiumActive: false,
   language: "",
+  onboardingCompleted: false,
 };

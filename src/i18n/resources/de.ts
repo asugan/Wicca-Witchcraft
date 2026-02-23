@@ -4,6 +4,17 @@ export const deTranslations: Translations = {
   common: {
     close: "Schließen",
   },
+  onboarding: {
+    skip: "Überspringen",
+    next: "Weiter",
+    beginRitual: "Ritual Beginnen",
+    slide1Title: "Deine himmlische Reise beginnt",
+    slide1Subtitle: "Richte dein Leben nach den Phasen des Mondes und den Bewegungen der Sterne aus.",
+    slide2Title: "Meistere die alten Künste",
+    slide2Subtitle: "Entdecke eine umfangreiche Bibliothek mit Zaubersprüchen, Ritualen und mystischem Wissen für die moderne Hexe.",
+    slide3Title: "Setze deine Intentionen",
+    slide3Subtitle: "Nutze unsere interaktiven Tools und personalisierten Rituale, um deine tiefsten Wünsche zu manifestieren.",
+  },
   nav: {
     moon: "Mond",
     grimoire: "Grimoire",

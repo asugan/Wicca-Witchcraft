@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mystic Grimoire - Onboarding Step 2</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Newsreader -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10", // Using the provided dark theme color, but will overlay green for the specific request
+                        "deep-forest": "#0f1c15", // Custom dark forest green for this specific screen request
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Newsreader", "serif"] // Forcing serif as per design style for "majestic" feel
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for cleaner UI */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Subtle glow animation for the book area */
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+
+        /* Gold shimmer effect */
+        .gold-shimmer {
+            background: linear-gradient(45deg, #d4a00b 0%, #f2b90d 50%, #ffe066 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark antialiased h-screen w-full overflow-hidden">
+<!-- Main Container -->
+<!-- Applying a gradient overlay to simulate the "Dark Forest Green" while respecting the theme base -->
+<div class="relative flex h-full w-full flex-col justify-between bg-background-light dark:bg-deep-forest text-slate-900 dark:text-slate-100 overflow-hidden">
+<!-- Texture Overlay -->
+<div class="absolute inset-0 z-0 opacity-20 bg-noise pointer-events-none mix-blend-overlay"></div>
+<!-- Ambient Background Glow -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
+<!-- Top Navigation / Status Area Placeholder -->
+<div class="relative z-10 w-full pt-12 px-6 flex justify-between items-center opacity-0">
+<!-- Hidden for pure immersive view but keeps spacing correct -->
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+<!-- Main Content Area -->
+<div class="relative z-10 flex flex-col flex-grow items-center justify-center px-6 gap-8">
+<!-- Central Visual: The Grimoire -->
+<div class="relative w-full max-w-[320px] aspect-[3/4] flex items-center justify-center animate-float group">
+<!-- Glowing effect behind book -->
+<div class="absolute inset-4 bg-primary/20 blur-2xl rounded-full scale-90 group-hover:scale-105 transition-transform duration-1000"></div>
+<!-- Book Image Container -->
+<div class="relative w-full h-full bg-center bg-contain bg-no-repeat drop-shadow-2xl transition-transform duration-700 ease-out transform" data-alt="Ancient leather bound grimoire with gold leaf details opening slightly" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRJE2jYp39Am96bShyjSFX-SGCcKwE9SSL54sqqmbHjR7KnWq2kNE_oilqq96FjM9rQjXQNz-qsd7Gdy5SQIBGcGMgK9W8JnhbGfv-vrsuF8ympBzLGCUdf6VbzINFh9bYQvYr86b6Feq6zcju30HiXGLxuFnr4bUz3-q0jAyQH79xzCnHUgpUuF3P4C6re2TdrKTJ3n48pUPeTgeTgJKuKnsJ3-lMB7wX6DIPB5PUcq_6dzOmhIEOduO5-xNKczIRXRlOu4O6nGuQ');">
+<!-- Overlay to darken and tint the image to match the theme better -->
+<div class="absolute inset-0 bg-gradient-to-t from-deep-forest/80 via-transparent to-transparent mix-blend-multiply rounded-lg"></div>
+<!-- Decorative glowing runes overlay (simulated with CSS borders/shapes) -->
+<div class="absolute inset-0 flex items-center justify-center opacity-60">
+<div class="w-3/4 h-3/4 border border-primary/40 rounded-sm"></div>
+<div class="absolute w-2/3 h-2/3 border border-primary/20 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col items-center text-center space-y-4 max-w-sm mx-auto mt-[-20px]">
+<h1 class="text-[36px] leading-[1.1] font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#ffe066] via-primary to-[#b38808] drop-shadow-sm tracking-tight">
+                    Master the<br/>Ancient Arts
+                </h1>
+<p class="text-lg leading-relaxed text-slate-300/90 font-medium px-2">
+                    Discover a vast library of spells, rituals, and mystical knowledge curated for the modern witch.
+                </p>
+</div>
+</div>
+<!-- Footer Controls -->
+<div class="relative z-10 w-full pb-10 pt-4 px-6 flex flex-col items-center gap-8 bg-gradient-to-t from-deep-forest via-deep-forest/90 to-transparent">
+<!-- Page Indicators -->
+<div class="flex flex-row items-center justify-center gap-3">
+<div class="h-2 w-2 rounded-full bg-primary/20 transition-colors duration-300"></div>
+<div class="h-2 w-8 rounded-full bg-primary shadow-[0_0_10px_rgba(242,185,13,0.5)] transition-all duration-300"></div>
+<div class="h-2 w-2 rounded-full bg-primary/20 transition-colors duration-300"></div>
+</div>
+<!-- Next Button -->
+<button class="group relative w-full max-w-[480px] h-14 overflow-hidden rounded-xl bg-primary text-background-dark shadow-[0_4px_20px_rgba(242,185,13,0.3)] transition-all active:scale-[0.98] hover:shadow-[0_4px_25px_rgba(242,185,13,0.5)]">
+<!-- Button shimmer effect -->
+<div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+<div class="relative flex items-center justify-center gap-2 h-full">
+<span class="text-lg font-bold tracking-wide uppercase">Next</span>
+<span class="material-symbols-outlined text-[20px] font-bold">arrow_forward</span>
+</div>
+</button>
+<!-- Bottom Spacer for Home Bar on iOS -->
+<div class="h-1 w-full"></div>
+</div>
+</div>
+<style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</body></html>

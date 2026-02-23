@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mystic Grimoire - Celestial Intro</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    backgroundImage: {
+                        'star-pattern': "radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px), radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px), radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom slow rotation for the zodiac wheel */
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: rotate-slow 60s linear infinite;
+        }
+        
+        /* Subtle twinkling stars background effect */
+        .stars-bg {
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden selection:bg-primary selection:text-background-dark">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Background Elements -->
+<div class="absolute inset-0 z-0 bg-[#0c0b16] dark:bg-[#0c0b16]">
+<!-- Subtle Star Field -->
+<div class="stars-bg absolute inset-0 opacity-40 bg-star-pattern"></div>
+<!-- Atmospheric Glow -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1a160c]/90"></div>
+<!-- Rotating Zodiac Wheel Container -->
+<div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[120%] aspect-square opacity-30 pointer-events-none">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat animate-spin-slow" data-alt="Golden zodiac wheel diagram with astrological symbols arranged in a circle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDih7EH7vz_ZqcONg5Yr3cE4Ux_Bg1kuLjlmLRsuD5piV7TZCmKmVO_gJgjnJ_nYJ5HM9Y5DpM_bQTFkmyoA9gCJNvXD1iONdGLDx3CSsov6GqGl2uWGvEvGf4zpjVf6MenuB9k310xPfBIwBedfbEKb1W5e7I-BS8_0bcxlVHccEza-7sCYlj28X4PM1OfUcJHhQ3LF8YbRycqBc5JLynFehPLvYE6QiepqOe2xUwEdeYuHVg9M404ef6vodD0j-aA72eCyi-CPyuu'); mask-image: radial-gradient(circle, black 40%, transparent 70%); -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);">
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="relative z-10 flex flex-1 flex-col justify-between px-6 pb-8 pt-12 safe-area-inset-top safe-area-inset-bottom">
+<!-- Skip Button (Top Right) -->
+<div class="flex justify-end w-full">
+<button class="text-slate-400 hover:text-primary transition-colors duration-300 text-sm font-medium tracking-wide uppercase px-2 py-2">
+                    Skip
+                </button>
+</div>
+<!-- Central Visual & Text -->
+<div class="flex flex-col items-center justify-center flex-grow -mt-10 gap-8">
+<!-- Main Image/Visual Placeholder for High-Fidelity Render -->
+<div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+<!-- Glow behind main element -->
+<div class="absolute inset-0 bg-primary blur-[80px] opacity-10 rounded-full"></div>
+<div class="relative w-full h-full bg-center bg-contain bg-no-repeat drop-shadow-[0_0_15px_rgba(242,185,13,0.3)]" data-alt="Intricate golden sun and moon illustration intertwining" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBk5VsiMlOMFA_XjM0yTd8gP0YqQ6YsuxWqZXo4vGuxjUEkxx7zreq1Dq55wQl-b1o7u4elOHLOhW4wb2aeKaqhU-WUNYh0IagopeZ4GgxhxUiR4NC8OdqjKXqQOgjueNo9gNoK2UzYoPj3oX2_PTkUY5KaS4AfU3B33eO9k54au_LjAnK9mvwlc-CegD4GzDdmaeZ53VJoGSaVgSp2bx4qG1KmKjKlPfMwbv6s7pwgE8rJ-oNXp0Ekn6bqE01AQxu_kZfxu_IbnDFP');">
+</div>
+</div>
+<div class="text-center max-w-sm space-y-4">
+<h1 class="text-primary text-[36px] md:text-[42px] font-bold leading-[1.1] tracking-tight italic drop-shadow-sm">
+                        Your Celestial <br/> <span class="not-italic font-normal text-slate-100">Journey Begins</span>
+</h1>
+<p class="text-slate-300/90 text-lg font-normal leading-relaxed tracking-wide px-2">
+                        Align your life with the phases of the moon and the movements of the stars.
+                    </p>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="flex flex-col items-center w-full gap-8 mb-4">
+<!-- Pagination Dots -->
+<div class="flex flex-row items-center justify-center gap-3">
+<div class="h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_rgba(242,185,13,0.6)]"></div>
+<div class="h-2 w-2 rounded-full bg-slate-700 dark:bg-slate-700/50"></div>
+<div class="h-2 w-2 rounded-full bg-slate-700 dark:bg-slate-700/50"></div>
+</div>
+<!-- Next Button -->
+<button class="group relative flex w-full max-w-xs cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 bg-primary text-background-dark text-lg font-bold tracking-wide shadow-[0_4px_20px_-5px_rgba(242,185,13,0.4)] transition-all hover:scale-[1.02] active:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="relative z-10 mr-2">Next</span>
+<span class="material-symbols-outlined relative z-10 text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

@@ -225,6 +225,10 @@ const migrations: Migration[] = [
       CREATE INDEX IF NOT EXISTS tarot_readings_user_date_idx ON tarot_readings(user_id, reading_date);
     `,
   },
+  {
+    id: "0007_add_onboarding_completed",
+    sql: `ALTER TABLE app_settings ADD COLUMN onboarding_completed INTEGER NOT NULL DEFAULT 0;`,
+  },
 ];
 
 export function runMigrations(database: SQLiteDatabase) {

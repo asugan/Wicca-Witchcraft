@@ -4,6 +4,17 @@ export const frTranslations: Translations = {
   common: {
     close: "Fermer",
   },
+  onboarding: {
+    skip: "Passer",
+    next: "Suivant",
+    beginRitual: "Commencer le Rituel",
+    slide1Title: "Votre Voyage Céleste Commence",
+    slide1Subtitle: "Alignez votre vie avec les phases de la lune et les mouvements des étoiles.",
+    slide2Title: "Maîtrisez les Arts Anciens",
+    slide2Subtitle: "Découvrez une vaste bibliothèque de sorts, rituels et connaissances mystiques pour la sorcière moderne.",
+    slide3Title: "Lancez Vos Intentions",
+    slide3Subtitle: "Utilisez nos outils interactifs et rituels personnalisés pour manifester vos désirs les plus profonds.",
+  },
   nav: {
     moon: "Lune",
     grimoire: "Grimoire",

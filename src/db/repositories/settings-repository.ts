@@ -144,3 +144,48 @@ export function setThemeMode(userId: string, themeMode: ThemeMode): void {
     })
     .run();
 }
+
+export function getOnboardingCompleted(userId: string): boolean {
+  ensureDatabaseInitialized();
+
+  const row = db
+    .select({ onboardingCompleted: appSettings.onboardingCompleted })
+    .from(appSettings)
+    .where(eq(appSettings.userId, userId))
+    .limit(1)
+    .get();
+
+  if (row) {
+    return row.onboardingCompleted;
+  }
+
+  return false;
+}
+
+export function setOnboardingCompleted(userId: string, completed: boolean): void {
+  ensureDatabaseInitialized();
+
+  const existing = db
+    .select({ id: appSettings.id })
+    .from(appSettings)
+    .where(eq(appSettings.userId, userId))
+    .limit(1)
+    .get();
+
+  if (existing) {
+    db.update(appSettings).set({ onboardingCompleted: completed }).where(eq(appSettings.id, existing.id)).run();
+
+    return;
+  }
+
+  db.insert(appSettings)
+    .values({
+      id: createSettingsId(userId),
+      userId,
+      themeMode: DEFAULT_THEME_MODE,
+      notificationsEnabled: false,
+      premiumActive: false,
+      onboardingCompleted: completed,
+    })
+    .run();
+}

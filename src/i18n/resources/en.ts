@@ -2,6 +2,17 @@ export type Translations = {
   common: {
     close: string;
   };
+  onboarding: {
+    skip: string;
+    next: string;
+    beginRitual: string;
+    slide1Title: string;
+    slide1Subtitle: string;
+    slide2Title: string;
+    slide2Subtitle: string;
+    slide3Title: string;
+    slide3Subtitle: string;
+  };
   nav: {
     moon: string;
     grimoire: string;
@@ -273,6 +284,17 @@ export type Translations = {
 export const enTranslations: Translations = {
   common: {
     close: "Close",
+  },
+  onboarding: {
+    skip: "Skip",
+    next: "Next",
+    beginRitual: "Begin the Ritual",
+    slide1Title: "Your Celestial Journey Begins",
+    slide1Subtitle: "Align your life with the phases of the moon and the movements of the stars.",
+    slide2Title: "Master the Ancient Arts",
+    slide2Subtitle: "Discover a vast library of spells, rituals, and mystical knowledge curated for the modern witch.",
+    slide3Title: "Cast Your Intentions",
+    slide3Subtitle: "Use our interactive tools and personalized rituals to manifest your deepest desires.",
   },
   nav: {
     moon: "Moon",

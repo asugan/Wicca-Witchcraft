@@ -4,6 +4,17 @@ export const trTranslations: Translations = {
   common: {
     close: "Kapat",
   },
+  onboarding: {
+    skip: "Atla",
+    next: "İleri",
+    beginRitual: "Ritüele Başla",
+    slide1Title: "Göksel Yolculuğunuz Başlıyor",
+    slide1Subtitle: "Hayatınızı ayın evreleri ve yıldızların hareketleriyle uyumlu hale getirin.",
+    slide2Title: "Kadim Sanatları Öğrenin",
+    slide2Subtitle: "Modern cadılar için hazırlanmış geniş büyü, ritüel ve mistik bilgi kütüphanesini keşfedin.",
+    slide3Title: "Niyetlerinizi Belirleyin",
+    slide3Subtitle: "En derin arzularınızı gerçekleştirmek için etkileşimli araçlarımızı ve kişiselleştirilmiş ritüellerimizi kullanın.",
+  },
   nav: {
     moon: "Ay",
     grimoire: "Büyü Kitabı",
