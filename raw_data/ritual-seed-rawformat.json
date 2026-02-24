@@ -1,0 +1,48 @@
+{
+  "newMaterials": [
+    {
+      "id": "",
+      "slug": "",
+      "name": "",
+      "linkedEntryId": null
+    }
+  ],
+  "rituals": [
+    {
+      "id": "",
+      "slug": "",
+      "title": "",
+      "summary": "",
+      "category": "",
+      "difficulty": "",
+      "moonPhase": "",
+      "durationMinutes": 0,
+      "coverImage": "",
+      "focus": "",
+      "isPremium": false,
+      "materials": [],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "",
+          "content": ""
+        },
+        {
+          "stepOrder": 2,
+          "title": "",
+          "content": ""
+        },
+        {
+          "stepOrder": 3,
+          "title": "",
+          "content": ""
+        },
+        {
+          "stepOrder": 4,
+          "title": "",
+          "content": ""
+        }
+      ]
+    }
+  ]
+}

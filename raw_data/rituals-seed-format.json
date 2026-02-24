@@ -1,0 +1,278 @@
+{
+  "_readme": {
+    "description": "Bu dosya seed-data.ts'e aktarılacak ritual verilerinin formatını gösterir.",
+    "difficulty_values": ["beginner", "intermediate", "advanced"],
+    "category_values": ["moon", "love", "protection", "healing", "abundance", "ritual", "cleansing", "banishing"],
+    "moonPhase_values": [
+      "new", "waxing-crescent", "first-quarter", "waxing-gibbous",
+      "full", "waning-gibbous", "last-quarter", "waning-crescent",
+      "waning-moon", "waxing-moon", "dark-moon", "any"
+    ],
+    "materials_note": "materials alanına sadece newMaterials veya mevcut MATERIAL_SEEDS ID'leri girin",
+    "existing_material_ids": [
+      "white-candle", "green-candle", "black-candle", "pink-candle", "blue-candle",
+      "rose-quartz", "amethyst", "clear-quartz", "obsidian", "selenite",
+      "rosemary", "lavender", "mugwort", "bay-leaf", "basil",
+      "sea-salt", "moon-water", "cinnamon-stick", "frankincense", "myrrh",
+      "journal", "small-mirror"
+    ]
+  },
+
+  "newMaterials": [
+    {
+      "id": "lemongrass-infusion",
+      "slug": "lemongrass-infusion",
+      "name": "Lemongrass Infusion",
+      "linkedEntryId": null
+    },
+    {
+      "id": "white-vinegar",
+      "slug": "white-vinegar",
+      "name": "White or Rice Vinegar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "florida-water",
+      "slug": "florida-water",
+      "name": "Florida Water",
+      "linkedEntryId": null
+    },
+    {
+      "id": "four-thieves-vinegar",
+      "slug": "four-thieves-vinegar",
+      "name": "Four Thieves Vinegar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "rosemary-essential-oil",
+      "slug": "rosemary-essential-oil",
+      "name": "Rosemary Essential Oil",
+      "linkedEntryId": "rosemary"
+    },
+    {
+      "id": "fiery-wall-powder",
+      "slug": "fiery-wall-powder",
+      "name": "Fiery Wall of Protection Powder",
+      "linkedEntryId": null
+    },
+    {
+      "id": "hyssop",
+      "slug": "hyssop",
+      "name": "Hyssop",
+      "linkedEntryId": null
+    },
+    {
+      "id": "garlic",
+      "slug": "garlic",
+      "name": "Garlic",
+      "linkedEntryId": null
+    },
+    {
+      "id": "coffin-nail",
+      "slug": "coffin-nail",
+      "name": "Coffin Nail",
+      "linkedEntryId": null
+    },
+    {
+      "id": "flat-rock",
+      "slug": "flat-rock",
+      "name": "Flat Rock",
+      "linkedEntryId": null
+    },
+    {
+      "id": "red-mojo-bag",
+      "slug": "red-mojo-bag",
+      "name": "Red Mojo Bag",
+      "linkedEntryId": null
+    },
+    {
+      "id": "crossroads-dirt",
+      "slug": "crossroads-dirt",
+      "name": "Crossroads Dirt",
+      "linkedEntryId": null
+    }
+  ],
+
+  "rituals": [
+    {
+      "id": "broom-space-cleansing",
+      "slug": "broom-space-cleansing",
+      "title": "Broom Space Cleansing Spell",
+      "summary": "Use a lemongrass wash and a dedicated broom to sweep negativity and stagnant energy out of your space.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "waning-moon",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "focus": "removing negativity and stagnant energy from a space",
+      "isPremium": false,
+      "materials": ["lemongrass-infusion", "white-vinegar", "sea-salt"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare the Wash Water",
+          "content": "Brew an infusion of lemongrass and let it cool. Add the infusion and a splash of white or rice vinegar to a bucket filled with water."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Load the Broom",
+          "content": "Dip your broom (one set aside only for cleansing purposes) into the bucket of wash water until it is thoroughly soaked."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Sweep the Space",
+          "content": "Starting from the center of the room, sweep outward toward the doors and exits. Visualize all negative energy being pushed ahead of the bristles and out of your home."
+        },
+        {
+          "stepOrder": 4,
+          "title": "Close and Dispose",
+          "content": "Dump the wash water outside your home, away from the front door. Discard the broom at a crossroads to symbolically send the collected negativity away for good."
+        }
+      ]
+    },
+    {
+      "id": "destroy-all-evil-bath",
+      "slug": "destroy-all-evil-bath",
+      "title": "Destroy All Evil Bath",
+      "summary": "A powerful cleansing bath using Florida Water and protective herbs to dissolve deeply rooted negative energy.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "waning-moon",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "banishing all evil and deep energetic cleansing",
+      "isPremium": false,
+      "materials": ["florida-water", "sea-salt", "four-thieves-vinegar", "rosemary-essential-oil", "clear-quartz"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare the Bath",
+          "content": "Cleanse your bathtub thoroughly. Fill it with water at a comfortable temperature, then add one cup of Florida Water, one cup of sea salt, and a splash of Four Thieves Vinegar."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Add the Final Ingredients",
+          "content": "Just before stepping into the water, add nine drops of rosemary essential oil. Place a large clear quartz crystal into the tub to reinforce the bath's protective and purifying energy."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Soak with Intention",
+          "content": "Enter the bath and submerge as much of your body as possible. Hold the quartz crystal and visualize all evil, negativity, and heavy energy dissolving off your body and into the water."
+        },
+        {
+          "stepOrder": 4,
+          "title": "Close and Ground",
+          "content": "When you feel complete, drain the bathwater and allow the negativity to wash away. Let yourself air-dry to preserve the ritual's effect. Drink a glass of water to ground yourself."
+        }
+      ]
+    },
+    {
+      "id": "fiery-wall-protection-circle",
+      "slug": "fiery-wall-protection-circle",
+      "title": "Fiery Wall of Protection Powder Circle",
+      "summary": "Cast a circle of protective powder around yourself to create an impenetrable boundary against all evil.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "creating an impenetrable energetic boundary",
+      "isPremium": false,
+      "materials": ["fiery-wall-powder"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Find a Quiet Space",
+          "content": "Choose a place where you will not be disturbed. Ensure you have enough room to stand inside a full circle of powder."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Cast the Circle",
+          "content": "Slowly pour an unbroken circle of Fiery Wall of Protection Powder around yourself or around the area needing protection. Do not lift the stream until the circle is fully closed."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Activate the Boundary",
+          "content": "Stand at the center and close your eyes. Envision a ring of enchanted flames rising from the powder, cool and harmless to you but forming an impenetrable burning wall against all evil."
+        },
+        {
+          "stepOrder": 4,
+          "title": "Absorb and Close",
+          "content": "Stay within the circle for as long as you need to feel fully protected. When ready, sweep up the powder and carry a small pinch in a charm bag to maintain the protection throughout the day."
+        }
+      ]
+    },
+    {
+      "id": "botanical-protection-candle",
+      "slug": "botanical-protection-candle",
+      "title": "Botanical Protection Candle Spell",
+      "summary": "Load a candle with protective herbs to burn away threats and build an aura of invulnerability.",
+      "category": "protection",
+      "difficulty": "intermediate",
+      "moonPhase": "full",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "focus": "building a strong personal aura of protection",
+      "isPremium": false,
+      "materials": ["black-candle", "rosemary", "hyssop", "garlic"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare the Candle",
+          "content": "Select a black, blue, or red candle. Using a small knife or pin, carefully hollow out a cavity in the base of the candle large enough to hold your chosen herbs."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Load with Botanicals",
+          "content": "Stuff the hollowed base with a combination of protective botanicals such as rosemary, hyssop, garlic, or sage. As you press each herb in, state its protective purpose aloud."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Secure and Light",
+          "content": "Place the loaded candle firmly in a fire-safe holder. Light the wick and concentrate your intention on creating an aura of absolute invulnerability around yourself or your home."
+        },
+        {
+          "stepOrder": 4,
+          "title": "Let It Burn and Close",
+          "content": "Allow the candle to burn completely down. Once cooled, gather the remnants and dispose of them outside your home, releasing the spell's work into the world."
+        }
+      ]
+    },
+    {
+      "id": "nail-rock-banishing",
+      "slug": "nail-rock-banishing",
+      "title": "Nail and Rock Banishing Spell",
+      "summary": "Use iron, stone, and graveyard dirt to forcefully banish persistent evil or negative forces from your life.",
+      "category": "banishing",
+      "difficulty": "intermediate",
+      "moonPhase": "dark-moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "forcefully banishing persistent evil or negativity",
+      "isPremium": false,
+      "materials": ["coffin-nail", "flat-rock", "red-mojo-bag", "crossroads-dirt"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Gather and Center",
+          "content": "Find a quiet outdoor spot or a space you can clean up afterward. Hold the rusty or coffin nail and the flat rock and take three slow breaths, bringing to mind exactly what you wish to banish."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Score the Rock",
+          "content": "Hold the nail firmly against the face of the flat rock. Using an iron hammer, strike the nail against the stone three times to score it across the face. Do not attempt to pierce the rock — the scoring is the act of breaking the evil."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Visualize the Banishing",
+          "content": "With each hammer strike, strongly visualize the evil, curse, or negativity shattering apart and losing its power over you. Speak your banishment aloud if you feel called to."
+        },
+        {
+          "stepOrder": 4,
+          "title": "Seal and Carry",
+          "content": "Place the nail into the red mojo bag along with a pinch of crossroads dirt or graveyard dirt. Bury the scored stone as far from your home as possible. Carry the mojo bag for ongoing protection against the banished force."
+        }
+      ]
+    }
+  ]
+}

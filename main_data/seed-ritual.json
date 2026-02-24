@@ -1,0 +1,1771 @@
+{
+  "newMaterials": [
+    {
+      "id": "mat-1",
+      "slug": "egg",
+      "name": "Whole Egg",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-2",
+      "slug": "florida-water",
+      "name": "Florida Water",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-3",
+      "slug": "sea-salt",
+      "name": "Sea Salt",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-4",
+      "slug": "four-thieves-vinegar",
+      "name": "Four Thieves Vinegar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-5",
+      "slug": "rosemary-essential-oil",
+      "name": "Rosemary Essential Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-6",
+      "slug": "ocean-water",
+      "name": "Ocean Water",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-7",
+      "slug": "pine-needles",
+      "name": "Pine Needles",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-8",
+      "slug": "juniper-hydrosol",
+      "name": "Juniper Hydrosol",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-9",
+      "slug": "yarrow-hydrosol",
+      "name": "Yarrow Hydrosol",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-10",
+      "slug": "dried-juniper-berries",
+      "name": "Dried Juniper Berries",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-11",
+      "slug": "broom",
+      "name": "Broom",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-12",
+      "slug": "coconut-candle",
+      "name": "Coconut Candle",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-13",
+      "slug": "dried-basil",
+      "name": "Dried Basil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-14",
+      "slug": "frankincense",
+      "name": "Frankincense",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-15",
+      "slug": "rosemary",
+      "name": "Rosemary",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-16",
+      "slug": "rue",
+      "name": "Rue",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-17",
+      "slug": "yarrow",
+      "name": "Yarrow",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-18",
+      "slug": "arrowroot-powder",
+      "name": "Arrowroot Powder",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-19",
+      "slug": "dried-betony",
+      "name": "Dried Betony",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-20",
+      "slug": "birch-bark-twigs",
+      "name": "Birch Bark and Twigs",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-21",
+      "slug": "camphor",
+      "name": "Camphor",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-22",
+      "slug": "cinnamon",
+      "name": "Cinnamon",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-23",
+      "slug": "myrrh",
+      "name": "Myrrh",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-24",
+      "slug": "sandalwood",
+      "name": "Sandalwood",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-25",
+      "slug": "dragons-blood-resin",
+      "name": "Dragon's Blood Resin",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-26",
+      "slug": "garlic-peel",
+      "name": "Garlic Peel",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-27",
+      "slug": "brown-sugar",
+      "name": "Brown Sugar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-28",
+      "slug": "liquidambar",
+      "name": "Liquidambar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-29",
+      "slug": "mastic",
+      "name": "Mastic",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-30",
+      "slug": "silver-bell",
+      "name": "Silver or Iron Bell",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-31",
+      "slug": "singing-bowl",
+      "name": "Singing Bowl",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-32",
+      "slug": "rice-vinegar",
+      "name": "Rice Vinegar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-33",
+      "slug": "glowing-coals",
+      "name": "Glowing Coals",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-34",
+      "slug": "dried-agrimony",
+      "name": "Dried Agrimony",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-35",
+      "slug": "peppermint",
+      "name": "Peppermint",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-36",
+      "slug": "dragons-tears",
+      "name": "Dragon's Tears (Annatto)",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-37",
+      "slug": "cascarilla-powder",
+      "name": "Cascarilla Powder",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-38",
+      "slug": "kelp-powder",
+      "name": "Powdered Kelp",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-39",
+      "slug": "rum",
+      "name": "Rum",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-40",
+      "slug": "whole-coconut",
+      "name": "Whole Coconut",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-41",
+      "slug": "jessamine-petals",
+      "name": "Jessamine Petals",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-42",
+      "slug": "lodestones",
+      "name": "Lodestones",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-43",
+      "slug": "chamomile",
+      "name": "Chamomile",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-44",
+      "slug": "elder",
+      "name": "Elder",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-45",
+      "slug": "mint",
+      "name": "Mint",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-46",
+      "slug": "mugwort",
+      "name": "Mugwort",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-47",
+      "slug": "high-john-root",
+      "name": "High John the Conqueror Root",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-48",
+      "slug": "white-onion",
+      "name": "White Onion",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-49",
+      "slug": "raw-white-rice",
+      "name": "Raw White Rice",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-50",
+      "slug": "white-vinegar",
+      "name": "White Vinegar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-51",
+      "slug": "desert-sage",
+      "name": "Desert Sage",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-52",
+      "slug": "fumitory",
+      "name": "Earth Smoke (Fumitory)",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-53",
+      "slug": "indigo-water",
+      "name": "Indigo Water",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-54",
+      "slug": "blue-eye-beads",
+      "name": "Blue Eye Beads",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-55",
+      "slug": "lavender-essential-oil",
+      "name": "Lavender Essential Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-56",
+      "slug": "lovage-root",
+      "name": "Lovage Root",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-57",
+      "slug": "mandrake-root",
+      "name": "Mandrake Root",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-58",
+      "slug": "mate-tea",
+      "name": "Maté Tea",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-59",
+      "slug": "oak-leaves",
+      "name": "Oak Leaves",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-60",
+      "slug": "parsley",
+      "name": "Parsley",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-61",
+      "slug": "bay-leaves",
+      "name": "Bay Leaves",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-62",
+      "slug": "yucca-root",
+      "name": "Yucca Root",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-63",
+      "slug": "benzoin",
+      "name": "Benzoin",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-64",
+      "slug": "anise-seeds",
+      "name": "Anise Seeds",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-65",
+      "slug": "baking-soda",
+      "name": "Baking Soda",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-66",
+      "slug": "red-roses",
+      "name": "Red Roses",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mat-67",
+      "slug": "lemon-juice",
+      "name": "Lemon Juice",
+      "linkedEntryId": null
+    }
+  ],
+  "rituals": [
+    {
+      "id": "rit-1",
+      "slug": "egg-personal-cleansing",
+      "title": "Egg Personal Cleansing Spell",
+      "summary": "Use a whole egg to absorb negative energy and spiritual debris from your aura.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Waning Moon",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-1"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Cleanse the Body",
+          "content": "Pass a whole raw egg over your body, moving from the top downwards, mentally focusing on eliminating any negative psychic debris."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Dispose of the Egg",
+          "content": "Take the egg outside, far from your home, and smash it on the ground. Return home via a different, circuitous route without looking back."
+        }
+      ]
+    },
+    {
+      "id": "rit-2",
+      "slug": "destroy-all-evil-bath",
+      "title": "Destroy All Evil Bath",
+      "summary": "A powerful bath to destroy evil influences and protect the bather.",
+      "category": "Protection",
+      "difficulty": "Intermediate",
+      "moonPhase": "Any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "Protection",
+      "isPremium": false,
+      "materials": ["mat-2", "mat-3", "mat-4", "mat-5"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare the Water",
+          "content": "Add at least one cup of Florida Water and one cup of sea salt to a tub filled with warm water."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Add Vinegar",
+          "content": "Add a generous splash of Four Thieves Vinegar into the tub."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Add Essential Oil",
+          "content": "Just before you enter the water, add nine drops of essential oil of rosemary."
+        },
+        {
+          "stepOrder": 4,
+          "title": "Bathe",
+          "content": "Submerge yourself completely to destroy all evil influences."
+        }
+      ]
+    },
+    {
+      "id": "rit-3",
+      "slug": "ocean-water-asperging",
+      "title": "Ocean Water Asperging Spell",
+      "summary": "Cleanse your space using the elemental power of the ocean.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-6", "mat-14"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Gather Water",
+          "content": "Carry ocean water to the area to be cleansed in a glass or metal flask."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Asperge",
+          "content": "Asperge the space as needed, ideally using a fresh rosemary wand to flick the water."
+        }
+      ]
+    },
+    {
+      "id": "rit-4",
+      "slug": "pine-asperging-spell",
+      "title": "Pine Asperging Spell",
+      "summary": "A simple water-based cleanse using pine needles.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-7"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Soak Pine",
+          "content": "Soak pine needles in warm water until the water is infused."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Asperge",
+          "content": "Sprinkle the infused water throughout your home as needed."
+        }
+      ]
+    },
+    {
+      "id": "rit-5",
+      "slug": "yarrow-juniper-cleanser",
+      "title": "Yarrow Juniper Cleanser",
+      "summary": "A potent liquid formula used for space and altar cleansing.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-8", "mat-9", "mat-10"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Blend Hydrosols",
+          "content": "Blend equal parts of juniper berry hydrosol and yarrow hydrosol."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Add Berries",
+          "content": "Add a small handful of slightly bruised dried juniper berries to the liquid."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Cleanse",
+          "content": "Sprinkle or wipe your altar, aura, or crystals with the liquid."
+        }
+      ]
+    },
+    {
+      "id": "rit-6",
+      "slug": "broom-cleansing-spell",
+      "title": "Broom Cleansing Spell",
+      "summary": "Sweep away spiritual dust and negativity from your home.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Waning Moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-11"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Sweep",
+          "content": "Use a broom to sweep the dust of your home from the west to the east."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Dispose",
+          "content": "Collect the gathered dust, burn it, and toss the ashes outdoors."
+        }
+      ]
+    },
+    {
+      "id": "rit-7",
+      "slug": "coconut-candle-cleanser",
+      "title": "Coconut Candle Cleanser",
+      "summary": "Burn coconut-scented candles for long-term spiritual purification.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 60,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-12"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Light Candle",
+          "content": "Light a coconut-scented candle in the space needing purification."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Purify",
+          "content": "Allow the scent of the coconut to permeate the air, releasing long-term spiritual purification in a relaxed manner."
+        }
+      ]
+    },
+    {
+      "id": "rit-8",
+      "slug": "exorcism-powder",
+      "title": "Exorcism Powder Spell",
+      "summary": "Eliminate negative emotions and low-level spirit emanations with herbal powder.",
+      "category": "Protection",
+      "difficulty": "Intermediate",
+      "moonPhase": "Waning Moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Protection",
+      "isPremium": false,
+      "materials": ["mat-13", "mat-14", "mat-15", "mat-16", "mat-17", "mat-18"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Grind Herbs",
+          "content": "Blend dried basil, frankincense, rosemary, rue, and yarrow, and grind into a fine powder."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Blend Base",
+          "content": "Blend the herbal powder into a base of arrowroot powder."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Sprinkle",
+          "content": "Sprinkle the powder lightly through the area to absorb malignancies in the air."
+        }
+      ]
+    },
+    {
+      "id": "rit-9",
+      "slug": "basic-botanic-fumigation",
+      "title": "Basic Botanic Fumigation Spell",
+      "summary": "Burn botanicals to release magical and spiritual antiseptic effects.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-14", "mat-23", "mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare Coals",
+          "content": "Light charcoal in a fireproof dish or censer."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Burn Botanicals",
+          "content": "Sprinkle frankincense, myrrh, or sage on the lit charcoal."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Waft Smoke",
+          "content": "Direct the cleansing smoke towards whatever needs cleansing."
+        }
+      ]
+    },
+    {
+      "id": "rit-10",
+      "slug": "betony-cleansing-incense",
+      "title": "Betony Cleansing Incense",
+      "summary": "Disperse negative energy and lurking entities using betony.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-19", "mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Burn",
+          "content": "Burn the dried herb betony on hot charcoals."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Fumigate",
+          "content": "Let the smoke disperse negative energy, especially if you fear the negativity emanates from yourself."
+        }
+      ]
+    },
+    {
+      "id": "rit-11",
+      "slug": "birch-cleansing-incense",
+      "title": "Birch Cleansing Incense",
+      "summary": "Burn birch to remove negative energy from your space.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-20", "mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Burn Birch",
+          "content": "Light birch bark and twigs on fire."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Cleanse",
+          "content": "Allow the smoke to permeate the area to remove negative energy."
+        }
+      ]
+    },
+    {
+      "id": "rit-12",
+      "slug": "cast-out-evil-incense",
+      "title": "Cast Out Evil Incense",
+      "summary": "A powerful formula to cleanse areas profaned by evil or violence.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Waning Moon",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-21", "mat-22", "mat-14", "mat-23", "mat-24", "mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Blend Ingredients",
+          "content": "Blend camphor, cinnamon, frankincense, myrrh, and sandalwood together."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Powder",
+          "content": "Grind the blended ingredients into a fine powder."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Burn",
+          "content": "Sprinkle the powder onto lit charcoal and burn."
+        }
+      ]
+    },
+    {
+      "id": "rit-13",
+      "slug": "dragons-blood-cleansing-incense",
+      "title": "Dragon's Blood Cleansing Incense",
+      "summary": "Use dragon's blood resin to neutralize negative energy.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-25", "mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Burn Resin",
+          "content": "Burn dragon's blood powder or resin on lit charcoals to provide a potent cleansing."
+        }
+      ]
+    },
+    {
+      "id": "rit-14",
+      "slug": "garlic-cleansing-spell",
+      "title": "Garlic Cleansing Spell",
+      "summary": "A potent spiritual formula using garlic peel to flush out negative entities.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Waning Moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-26", "mat-27", "mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Grind Peel",
+          "content": "Place reserved garlic peel in a mortar and pestle, add brown sugar, and pound them together."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Burn",
+          "content": "Sprinkle the mixture onto lit charcoal or a cast iron pan."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Waft Fumes",
+          "content": "Waft the fumes over the areas to be cleansed, allowing the aroma to settle."
+        }
+      ]
+    },
+    {
+      "id": "rit-15",
+      "slug": "liquidambar-cleansing-incense",
+      "title": "Liquidambar Cleansing Incense",
+      "summary": "Enhance cleansing power by blending liquidambar with other botanicals.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-14", "mat-28", "mat-29", "mat-24", "mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Blend",
+          "content": "Blend frankincense, liquidambar, mastic, and sandalwood."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Burn",
+          "content": "Burn the mixture on lit charcoals and waft the smoke as desired."
+        }
+      ]
+    },
+    {
+      "id": "rit-16",
+      "slug": "sacred-purification-incense",
+      "title": "Sacred Purification Incense",
+      "summary": "Remove the negative and tainted, leaving an aura of holiness behind.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": [
+        "mat-62",
+        "mat-25",
+        "mat-14",
+        "mat-23",
+        "mat-24",
+        "mat-3",
+        "mat-33"
+      ],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Grind Ingredients",
+          "content": "Blend and grind benzoin, dragon's blood, frankincense, myrrh, sandalwood, and sea salt into a fine powder."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Burn",
+          "content": "Sprinkle the powder onto a lit charcoal and burn."
+        }
+      ]
+    },
+    {
+      "id": "rit-17",
+      "slug": "cleansed-by-the-bell",
+      "title": "Cleansed by the Bell",
+      "summary": "Use the sound of bells to provide an extremely powerful space cleansing.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-30"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Ring Bell",
+          "content": "Ring a silver, iron, or brass bell loudly throughout the space to disperse malevolent entities and negative debris."
+        }
+      ]
+    },
+    {
+      "id": "rit-18",
+      "slug": "singing-bowls-cleansing",
+      "title": "Singing Bowls Cleansing",
+      "summary": "Wash the space using the serene harmonies of singing bowls.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-31"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Play Bowl",
+          "content": "Play a Himalayan singing bowl to wash the space and balance yin and yang energies before ritual."
+        }
+      ]
+    },
+    {
+      "id": "rit-19",
+      "slug": "chinese-vinegar-steam-cleanser",
+      "title": "Chinese Vinegar Steam Cleanser",
+      "summary": "A weekly standard cleansing using the merged powers of water and fire.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-32"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Boil Vinegar",
+          "content": "Boil rice vinegar in a shallow pan until it is steaming."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Carry Steam",
+          "content": "Very carefully carry the steaming pan through all the rooms, letting the vapors cleanse corners and closets."
+        }
+      ]
+    },
+    {
+      "id": "rit-20",
+      "slug": "glittering-coals-vapor-cleanser",
+      "title": "Glittering Coals Vapor Cleanser",
+      "summary": "A quick burst of purification using coals and water.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Toss Coals",
+          "content": "Toss burning coals into a bowl of water to create a sizzling steam for quick purification."
+        }
+      ]
+    },
+    {
+      "id": "rit-21",
+      "slug": "aura-cleansing-floorwash",
+      "title": "Aura Cleansing Floorwash",
+      "summary": "Repel hexes and aggressive cleanse your space with a powerful floorwash.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-34", "mat-35", "mat-50"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Make Infusion",
+          "content": "Make a strong infusion from dried agrimony and peppermint using boiling water."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Prepare Bucket",
+          "content": "Strain out the herbs and add the infusion liquid to a bucket of water, along with white vinegar."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Wash Floors",
+          "content": "Cleanse the floors and surfaces with the wash."
+        }
+      ]
+    },
+    {
+      "id": "rit-22",
+      "slug": "dragons-tears-floorwash",
+      "title": "Dragon's Tears Floorwash",
+      "summary": "A protective floorwash made from annatto seeds.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-36", "mat-50"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Make Infusion",
+          "content": "Pour boiling water over dragon's tears (annatto seeds) to make a strong infusion."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Wash Floors",
+          "content": "Add the infusion to a bucket of rinse water with vinegar and scrub the floors."
+        }
+      ]
+    },
+    {
+      "id": "rit-23",
+      "slug": "ocean-floorwash",
+      "title": "Ocean Water Floorwash",
+      "summary": "Use ocean water and cascarilla for a deep magical space cleansing.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-6", "mat-37", "mat-38"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare Water",
+          "content": "Fill a bucket with ocean water. Add Cascarilla Powder, agar-agar, and powdered kelp."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Wash Floors",
+          "content": "Use this water to wash your space and magically cleanse the area."
+        }
+      ]
+    },
+    {
+      "id": "rit-24",
+      "slug": "coconut-house-cleansing",
+      "title": "Coconut House Cleansing Spell",
+      "summary": "Roll a coconut through the house to absorb negativity.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Waning Moon",
+      "durationMinutes": 45,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-39", "mat-37", "mat-40"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare Coconut",
+          "content": "Take a mouthful of rum and spray it over a whole coconut. Sprinkle Cascarilla Powder on the coconut."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Roll Through House",
+          "content": "Roll the coconut from the back corner of your home out through the main entrance."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Dispose at Crossroads",
+          "content": "Take the coconut to a remote four-way crossroads, throw it hard to crack it open, and walk away without looking back."
+        }
+      ]
+    },
+    {
+      "id": "rit-25",
+      "slug": "jessamine-flowers-cleansing",
+      "title": "Jessamine Flowers House Cleansing",
+      "summary": "Spread jessamine to remove residues of malevolent spells.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-41"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Spread Petals",
+          "content": "Spread day Jessamine petals throughout the house for spiritual cleansing and to remove malevolent magic."
+        }
+      ]
+    },
+    {
+      "id": "rit-26",
+      "slug": "lodestone-cleansing",
+      "title": "Lodestone Cleansing",
+      "summary": "Use lodestones to magnetically absorb negativity from an area.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-42"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Hold Lodestones",
+          "content": "Hold two matched pairs of lodestones (four total) in your hands."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Absorb Negativity",
+          "content": "Slowly move through the area in a sunwise direction, encouraging the lodestones to absorb all negativity."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Cleanse Lodestones",
+          "content": "Cleanse the lodestones intensively or bury them in the earth afterward."
+        }
+      ]
+    },
+    {
+      "id": "rit-27",
+      "slug": "mother-holles-cleansing",
+      "title": "Mother Holles Cleansing Spell",
+      "summary": "Burn a blend of herbs associated with Mother Holle for intensive winter cleansing.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-43", "mat-44", "mat-45", "mat-46", "mat-17"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Grind Herbs",
+          "content": "Grind chamomile, elder, mint, mugwort, yarrow, and other herbs into a powder."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Burn",
+          "content": "Burn the powder and waft the smoke into all corners and crevices of the home."
+        }
+      ]
+    },
+    {
+      "id": "rit-28",
+      "slug": "salt-cleansing-spell",
+      "title": "Salt Cleansing Spell",
+      "summary": "Sprinkle empowered salt around the home to absorb negativity.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-47", "mat-3"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Infuse",
+          "content": "Make an infusion by pouring boiling water over High John the Conqueror roots."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Moisten Salt",
+          "content": "Sprinkle the infusion lightly on salt to moisten it, and let it dry out."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Scatter",
+          "content": "Sprinkle the salt around your home to absorb negativity."
+        }
+      ]
+    },
+    {
+      "id": "rit-29",
+      "slug": "florida-water-stationary",
+      "title": "Florida Water Stationary Cleanser",
+      "summary": "A stationary liquid trap to absorb negativity.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-2", "mat-21"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare Pan",
+          "content": "Fill a pan with equal parts Florida Water and Holy Water. Add one camphor square."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Position",
+          "content": "Keep the pan under the bed or in a strategic location to absorb negativity."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Replace",
+          "content": "Change the water once a week or if it starts to smell off."
+        }
+      ]
+    },
+    {
+      "id": "rit-30",
+      "slug": "onion-space-cleansing",
+      "title": "Onion Space Cleansing Spell",
+      "summary": "Use onions to vacuum up spiritual dirt from a room.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-48"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Chop Onion",
+          "content": "Chop one unpeeled onion into quarters by hand."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Place",
+          "content": "Place one piece in each corner of a room overnight."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Bury",
+          "content": "Bury them outside the following day. Repeat for five consecutive nights."
+        }
+      ]
+    },
+    {
+      "id": "rit-31",
+      "slug": "rice-cleansing-spell",
+      "title": "Rice Cleansing Spell",
+      "summary": "Use raw white rice to absorb spiritual debris.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-49"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Place Rice",
+          "content": "Place an uncovered bowl of raw white rice out to absorb negative energy."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Discard",
+          "content": "Replace with fresh rice weekly, discarding the old rice outside the house."
+        }
+      ]
+    },
+    {
+      "id": "rit-32",
+      "slug": "vinegar-cleanser",
+      "title": "Vinegar Cleanser",
+      "summary": "Use plain vinegar as a cheap and strong cleansing agent.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-50"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Place Vinegar",
+          "content": "Place plain vinegar in shallow uncovered pans throughout an area."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Replace",
+          "content": "Replace weekly or when the liquid looks odd to maintain the absorbent cleansing effect."
+        }
+      ]
+    },
+    {
+      "id": "rit-33",
+      "slug": "desert-sage-bath",
+      "title": "Desert Sage Bath",
+      "summary": "Bathe with desert sage to purify and alleviate feeling psychically unclean.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 25,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-51"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Infuse",
+          "content": "Make an infusion of desert sage."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Add it to your bath to cleanse and purify yourself."
+        }
+      ]
+    },
+    {
+      "id": "rit-34",
+      "slug": "earth-smoke-bath",
+      "title": "Earth Smoke Bath",
+      "summary": "Use fumitory to take a spiritually cleansing bath.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 25,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-52"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Infuse",
+          "content": "Make a strong infusion by pouring boiling water over Earth Smoke (Fumitory)."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Strain and add the liquid to your bath."
+        }
+      ]
+    },
+    {
+      "id": "rit-35",
+      "slug": "florida-water-personal-cleanser",
+      "title": "Florida Water Personal Cleansing Spell",
+      "summary": "A fast, spontaneous personal cleansing without a tub.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-2"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Apply",
+          "content": "Undress completely and rub or sprinkle Florida Water all over yourself, including the soles of the feet and top of the head."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Dry",
+          "content": "Allow yourself to air-dry before getting dressed."
+        }
+      ]
+    },
+    {
+      "id": "rit-36",
+      "slug": "indigo-cleansing-bath",
+      "title": "Indigo Cleansing Bath",
+      "summary": "A powerful blue bath to remove negativity.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-53", "mat-54"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare Indigo Water",
+          "content": "Place Turkish blue eye beads into a bottle of Indigo Water to boost power."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Strain the Indigo Water into your bathwater and soak."
+        }
+      ]
+    },
+    {
+      "id": "rit-37",
+      "slug": "lavender-bath",
+      "title": "Lavender Bath",
+      "summary": "A soothing bath dedicated to Hecate for spiritual washing.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-55"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Add Lavender",
+          "content": "Add essential oil of lavender, lavender hydrosol, or an infusion to the bath."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Soak in the water for spiritual and physical cleansing."
+        }
+      ]
+    },
+    {
+      "id": "rit-38",
+      "slug": "lovage-bath",
+      "title": "Lovage Bath",
+      "summary": "Cleanse off degrading traces of failed relationships.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Waning Moon",
+      "durationMinutes": 25,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-56"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Grind Root",
+          "content": "Grind and powder a dried lovage root."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Sprinkle the powder onto your bathwater, distribute well, and soak."
+        }
+      ]
+    },
+    {
+      "id": "rit-39",
+      "slug": "mandrake-bath",
+      "title": "Mandrake Bath",
+      "summary": "An emergency, heavy-duty spiritual cleansing bath.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-57"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Soak Mandrake",
+          "content": "Soak a true mandrake root in warm water overnight or for three days. Remove the root."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Add the soaking liquid to a tub filled with water and bathe."
+        }
+      ]
+    },
+    {
+      "id": "rit-40",
+      "slug": "mate-cleansing-bath",
+      "title": "Maté Cleansing Bath",
+      "summary": "Remove minor hexes and the lesser Evil Eye with maté tea.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-58"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Infuse Tea",
+          "content": "Create a strong infusion by pouring boiling water over dried maté tea."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Strain the cooled liquid and add it to your bath, or sponge it over yourself. Air dry."
+        }
+      ]
+    },
+    {
+      "id": "rit-41",
+      "slug": "oak-leaf-bath",
+      "title": "Oak Leaf Bath",
+      "summary": "A grounding bath to remove negativity.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-59"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare Faucet Bag",
+          "content": "Crumble five oak leaves into a muslin bag and attach it to the tub's faucet so water runs through it."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Float Leaves",
+          "content": "Float five whole oak leaves in the bath water."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Bathe",
+          "content": "Enter the bath and rub your body with the floating leaves."
+        }
+      ]
+    },
+    {
+      "id": "rit-42",
+      "slug": "parsley-bath",
+      "title": "Parsley Bath",
+      "summary": "A cleansing bath (not for use during pregnancy) using parsley.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 25,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-60"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Infuse",
+          "content": "Make an infusion by pouring boiling water over an entire bunch of parsley and one sliced parsley root."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Add the infusion to bathwater and soak."
+        }
+      ]
+    },
+    {
+      "id": "rit-43",
+      "slug": "pine-bay-bath",
+      "title": "Pine-Bay Bath",
+      "summary": "A protective and cleansing bath combining pine, bay, vinegar, and lemon.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-7", "mat-61", "mat-50"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Infuse",
+          "content": "Make a strong infusion by pouring boiling water over combined pine needles and bay leaves."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Add the strained water to your bath, together with a splash of vinegar and slices of lemon."
+        }
+      ]
+    },
+    {
+      "id": "rit-44",
+      "slug": "yucca-bath",
+      "title": "Yucca Bath",
+      "summary": "Create cleansing suds from yucca roots to physically and magically clean the body.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-62"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Pound Roots",
+          "content": "Pound dry yucca roots."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Make Suds",
+          "content": "Whisk them into cold water to create suds."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Cleanse",
+          "content": "Use to cleanse yourself, especially your head and hair."
+        }
+      ]
+    },
+    {
+      "id": "rit-45",
+      "slug": "sacred-cleansing-incense",
+      "title": "Sacred Cleansing Incense",
+      "summary": "A personal fumigation spell using sacred resins to leave an aura of holiness.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-63", "mat-25", "mat-24", "mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Blend",
+          "content": "Blend benzoin, dragon's blood, and sandalwood."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Fumigate",
+          "content": "Burn the blend on hot charcoals and pass yourself through the smoke."
+        }
+      ]
+    },
+    {
+      "id": "rit-46",
+      "slug": "purification-bath",
+      "title": "Purification Bath",
+      "summary": "Bathe with bay leaves and anise for thorough aura purification.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-61", "mat-64"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Infuse",
+          "content": "Make a strong infusion by pouring boiling water over nine bay laurel leaves and two tablespoons of anise seeds."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Let it cool, strain out the botanicals, and add the liquid to your tub of water."
+        }
+      ]
+    },
+    {
+      "id": "rit-47",
+      "slug": "quick-fix-aura-cleanser",
+      "title": "Quick Fix Aura Cleanser",
+      "summary": "A fast bath recipe when you need immediate cleansing.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-3", "mat-50"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare Bath",
+          "content": "Add one cup of salt and one cup of vinegar (lemon, apple cider, or rice) to a bath."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Soak in the water to remove psychic debris quickly."
+        }
+      ]
+    },
+    {
+      "id": "rit-48",
+      "slug": "sage-cleansing-spell",
+      "title": "Sage Cleansing Spell",
+      "summary": "Use powdered garden sage for a profound spiritual fumigation.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-33"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Powder",
+          "content": "Dry garden sage and grind it into a fine powder with a mortar and pestle."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Fumigate",
+          "content": "Sprinkle the powder onto a charcoal and use it to fumigate the body."
+        }
+      ]
+    },
+    {
+      "id": "rit-49",
+      "slug": "salt-cleansing-bath",
+      "title": "Salt Cleansing Bath",
+      "summary": "A simple salt bath that creates a powerful psychic shield.",
+      "category": "Cleansing",
+      "difficulty": "Beginner",
+      "moonPhase": "Any",
+      "durationMinutes": 25,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-3", "mat-65"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Blend Salts",
+          "content": "Blend two cups of sea salt with one-half cup of baking soda."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Add the mixture to the bath to simultaneously provide spiritual cleansing and create a psychic shield."
+        }
+      ]
+    },
+    {
+      "id": "rit-50",
+      "slug": "seven-roses-bath",
+      "title": "Seven Roses Bath",
+      "summary": "A rejuvenating bath to regain innocence and optimism after hardship.",
+      "category": "Cleansing",
+      "difficulty": "Intermediate",
+      "moonPhase": "Any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "focus": "Cleansing",
+      "isPremium": false,
+      "materials": ["mat-66", "mat-3", "mat-50", "mat-67"],
+      "steps": [
+        {
+          "stepOrder": 1,
+          "title": "Prepare Tub",
+          "content": "Fill the tub with water and throw in seven red roses, a handful of sea salt, a splash of vinegar, and a squeeze of lemon juice."
+        },
+        {
+          "stepOrder": 2,
+          "title": "Bathe",
+          "content": "Spend exactly seven minutes in the bath, rubbing yourself with the roses and submerging periodically."
+        },
+        {
+          "stepOrder": 3,
+          "title": "Dry",
+          "content": "Dry off with a clean towel and leave the tub uncleaned for at least an hour while your aura stabilizes."
+        }
+      ]
+    }
+  ]
+}
