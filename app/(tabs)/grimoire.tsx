@@ -323,12 +323,19 @@ export default function GrimoireScreen() {
         <View>
           <Text style={styles.overline}>{t("grimoire.currentFocus")}</Text>
           {featuredRitual ? (
-            <ImageBackground imageStyle={styles.featuredImage} source={{ uri: getCoverImage(featuredRitual.coverImage, featuredRitual.category) }} style={styles.featuredCard}>
-              <View style={styles.featuredOverlay} />
-              <Text style={styles.featuredTag}>{getMoonPhaseLabel(featuredRitual.moonPhase, t)}</Text>
-              <Text style={styles.featuredTitle}>{featuredRitual.title}</Text>
-              <Text style={styles.featuredDescription}>{featuredRitual.summary}</Text>
-            </ImageBackground>
+            <Pressable onPress={() => router.push(`/ritual/${featuredRitual.slug}` as never)}>
+              <ImageBackground imageStyle={styles.featuredImage} source={{ uri: getCoverImage(featuredRitual.coverImage, featuredRitual.category) }} style={styles.featuredCard}>
+                <View style={styles.featuredOverlay} />
+                <View style={styles.featuredBottomFade} />
+                <View style={styles.featuredContent}>
+                  <View style={styles.featuredTagBadge}>
+                    <Text style={styles.featuredTag}>{getMoonPhaseLabel(featuredRitual.moonPhase, t)}</Text>
+                  </View>
+                  <Text style={styles.featuredTitle}>{featuredRitual.title}</Text>
+                  <Text style={styles.featuredDescription}>{featuredRitual.summary}</Text>
+                </View>
+              </ImageBackground>
+            </Pressable>
           ) : null}
         </View>
 
@@ -512,38 +519,60 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       fontWeight: "700",
     },
     featuredCard: {
-      height: 132,
-      borderRadius: 14,
+      height: 188,
+      borderRadius: 16,
       overflow: "hidden",
       borderWidth: 1,
       borderColor: `${theme.colors.primary}40`,
-      justifyContent: "center",
-      paddingHorizontal: 16,
+      justifyContent: "flex-end",
     },
     featuredImage: {
       resizeMode: "cover",
     },
     featuredOverlay: {
       ...StyleSheet.absoluteFillObject,
-      backgroundColor: "rgba(24,22,17,0.65)",
+      backgroundColor: "rgba(10,8,5,0.30)",
+    },
+    featuredBottomFade: {
+      position: "absolute",
+      left: 0,
+      right: 0,
+      bottom: 0,
+      height: 120,
+      backgroundColor: "rgba(10,8,5,0.72)",
+    },
+    featuredContent: {
+      paddingHorizontal: 16,
+      paddingBottom: 16,
+      gap: 4,
+    },
+    featuredTagBadge: {
+      alignSelf: "flex-start",
+      backgroundColor: `${theme.colors.primary}33`,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}66`,
+      borderRadius: 999,
+      paddingHorizontal: 10,
+      paddingVertical: 3,
+      marginBottom: 4,
     },
     featuredTag: {
       color: theme.colors.primary,
-      fontSize: 11,
-      fontWeight: "600",
+      fontSize: 10,
+      fontWeight: "700",
+      letterSpacing: 0.5,
+      textTransform: "uppercase",
     },
     featuredTitle: {
-      marginTop: 2,
       color: "white",
-      fontSize: 24,
+      fontSize: 22,
       fontFamily: typefaces.display,
       fontWeight: "700",
+      lineHeight: 26,
     },
     featuredDescription: {
-      marginTop: 3,
-      color: "#D8D2C4",
-      maxWidth: 220,
-      lineHeight: 19,
+      color: "rgba(220,214,200,0.85)",
+      lineHeight: 18,
       fontSize: 12,
     },
     grid: {
