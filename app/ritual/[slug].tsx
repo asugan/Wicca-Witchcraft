@@ -117,9 +117,15 @@ export default function RitualDetailScreen() {
         <Text style={styles.description}>{detail.ritual.summary}</Text>
 
         <View style={styles.metadataWrap}>
-          <Text style={styles.metadataText}>{t("ritual.difficulty", { value: detail.ritual.difficulty })}</Text>
-          <Text style={styles.metadataText}>{t("ritual.moon", { value: detail.ritual.moonPhase.replaceAll("-", " ") })}</Text>
-          <Text style={styles.metadataText}>{t("home.duration", { durationMinutes: detail.ritual.durationMinutes })}</Text>
+          <View style={styles.metadataBadge}>
+            <Text style={styles.metadataText}>{t("ritual.difficulty", { value: detail.ritual.difficulty })}</Text>
+          </View>
+          <View style={styles.metadataBadge}>
+            <Text style={styles.metadataText}>{t("ritual.moon", { value: detail.ritual.moonPhase.replaceAll("-", " ") })}</Text>
+          </View>
+          <View style={styles.metadataBadge}>
+            <Text style={styles.metadataText}>{t("home.duration", { durationMinutes: detail.ritual.durationMinutes })}</Text>
+          </View>
         </View>
 
         <View style={styles.sectionTitleWrap}>
@@ -340,13 +346,17 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       flexWrap: "wrap",
       gap: 8,
     },
-    metadataText: {
-      color: theme.colors.primary,
+    metadataBadge: {
       borderWidth: 1,
       borderColor: `${theme.colors.primary}4D`,
       borderRadius: 999,
-      paddingHorizontal: 10,
+      paddingHorizontal: 12,
       paddingVertical: 4,
+      minWidth: 65,
+      alignItems: "center",
+    },
+    metadataText: {
+      color: theme.colors.primary,
       textTransform: "capitalize",
       fontSize: 11,
     },
