@@ -26,6 +26,7 @@ import {
   getNotificationsEnabled,
   setLanguagePreference,
   setNotificationsEnabled,
+  setOnboardingCompleted,
 } from "@/db/repositories/settings-repository";
 import i18n from "@/i18n";
 import type { AppLanguage } from "@/i18n/config";
@@ -186,6 +187,11 @@ export default function ProfileScreen() {
     showToast(fixedT("settings.languageSavedMessage" as string, { language: languageName }), "success");
   };
 
+  const handleResetOnboarding = () => {
+    setOnboardingCompleted(LOCAL_USER_ID, false);
+    router.replace("/onboarding");
+  };
+
   const handleThemeSelect = (mode: ThemeMode) => {
     setThemeMode(mode);
     setThemeModalVisible(false);
@@ -288,6 +294,19 @@ export default function ProfileScreen() {
             )}
           </View>
         </View>
+
+        {__DEV__ && (
+          <View style={[styles.panel, styles.devPanel]}>
+            <View style={styles.panelHeader}>
+              <Text style={styles.panelTitle}>🛠 Dev Tools</Text>
+              <Text style={styles.panelMeta}>Development only</Text>
+            </View>
+            <Pressable onPress={handleResetOnboarding} style={styles.devButton}>
+              <MaterialCommunityIcons color="#fff" name="refresh" size={16} />
+              <Text style={styles.devButtonText}>Reset Onboarding</Text>
+            </Pressable>
+          </View>
+        )}
 
         <View style={styles.panel}>
           <View style={styles.panelHeader}>
@@ -839,5 +858,25 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     buttonDisabled: {
       backgroundColor: theme.colors.onSurfaceMuted,
+    },
+    devPanel: {
+      borderColor: "#f59e0b",
+      borderWidth: 1,
+    },
+    devButton: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 8,
+      backgroundColor: "#b45309",
+      borderRadius: 10,
+      paddingVertical: 10,
+      paddingHorizontal: 16,
+      alignSelf: "flex-start",
+    },
+    devButtonText: {
+      color: "#fff",
+      fontSize: 14,
+      fontFamily: typefaces.body,
+      fontWeight: "600",
     },
   });
