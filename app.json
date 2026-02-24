@@ -10,20 +10,40 @@
     "newArchEnabled": true,
     "owner": "asugan",
     "locales": {
-      "en": "./locales/native/en.json",
+      "en-US": "./locales/native/en-US.json",
+      "en-GB": "./locales/native/en-GB.json",
       "tr": "./locales/native/tr.json",
-      "de": "./locales/native/de.json",
-      "es": "./locales/native/es.json",
-      "fr": "./locales/native/fr.json",
+      "de-DE": "./locales/native/de-DE.json",
+      "es-ES": "./locales/native/es-ES.json",
+      "es-MX": "./locales/native/es-MX.json",
+      "fr-FR": "./locales/native/fr-FR.json",
+      "fr-CA": "./locales/native/fr-CA.json",
       "it": "./locales/native/it.json",
-      "pt": "./locales/native/pt.json"
+      "pt-BR": "./locales/native/pt-BR.json",
+      "pt-PT": "./locales/native/pt-PT.json",
+      "en-AU": "./locales/native/en-AU.json",
+      "en-CA": "./locales/native/en-CA.json"
     },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.asugan.wiccawitchcraft",
       "usesNonExemptEncryption": false,
       "infoPlist": {
-        "CFBundleLocalizations": ["en", "tr", "de", "es", "fr", "it", "pt"]
+        "CFBundleLocalizations": [
+          "en-US",
+          "en-GB",
+          "tr",
+          "de-DE",
+          "es-ES",
+          "es-MX",
+          "fr-FR",
+          "fr-CA",
+          "it",
+          "pt-BR",
+          "pt-PT",
+          "en-AU",
+          "en-CA"
+        ]
       }
     },
     "android": {
