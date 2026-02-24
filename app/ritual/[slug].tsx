@@ -3,7 +3,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
 import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Button, Dialog, Portal, Text } from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
 import { IncantationBlock } from "@/components/mystic/IncantationBlock";
@@ -33,7 +33,6 @@ export default function RitualDetailScreen() {
 
   const [bookmarked, setBookmarked] = useState(false);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
-  const [selectedEntryId, setSelectedEntryId] = useState<string | null>(null);
 
   useEffect(() => {
     if (!detail) {
@@ -55,14 +54,6 @@ export default function RitualDetailScreen() {
 
     setBookmarked(isRitualFavorited(LOCAL_USER_ID, detail.ritual.id));
   }, [detail]);
-
-  const selectedEntry = useMemo(() => {
-    if (!selectedEntryId) {
-      return null;
-    }
-
-    return detail?.materials.find((material) => material.linkedEntryId === selectedEntryId) ?? null;
-  }, [detail?.materials, selectedEntryId]);
 
   const checkedCount = useMemo(() => Object.values(checked).filter(Boolean).length, [checked]);
 
@@ -153,17 +144,17 @@ export default function RitualDetailScreen() {
 
                 <Pressable
                   onPress={() => {
-                    if (!isLinked || !material.linkedEntryId) {
+                    if (!isLinked || !material.linkedEntrySlug) {
                       return;
                     }
 
-                    setSelectedEntryId(material.linkedEntryId);
                     trackEvent("material_link_clicked", {
                       user_id: "local-user",
                       tab_name: "grimoire",
                       entity_id: material.id,
                       source: detail.ritual.id,
                     });
+                    router.push(`/library/${material.linkedEntrySlug}`);
                   }}
                   style={styles.materialLabelWrap}
                 >
@@ -264,41 +255,6 @@ export default function RitualDetailScreen() {
         )}
       </View>
 
-      <Portal>
-        <Dialog
-          onDismiss={() => setSelectedEntryId(null)}
-          visible={Boolean(selectedEntry)}
-          style={styles.previewDialog}
-        >
-          <Dialog.Title style={styles.previewTitle}>{selectedEntry?.linkedEntryTitle}</Dialog.Title>
-          <Dialog.Content style={styles.previewContent}>
-            <Text style={styles.previewSummary}>{selectedEntry?.linkedEntrySummary}</Text>
-            <Text style={styles.previewMeta}>{selectedEntry?.linkedEntryProperties}</Text>
-            <Text style={styles.previewMeta}>{selectedEntry?.linkedEntryCorrespondences}</Text>
-            <Text style={styles.previewMeta}>{t("ritual.cleansing", { value: selectedEntry?.linkedEntryCleansingMethod })}</Text>
-            <Text style={styles.previewMeta}>{t("ritual.care", { value: selectedEntry?.linkedEntryCareNote })}</Text>
-          </Dialog.Content>
-          <Dialog.Actions style={styles.previewActions}>
-            <Button
-              onPress={() => {
-                if (selectedEntry?.linkedEntryId) {
-                  trackEvent("library_entry_viewed", {
-                    user_id: "local-user",
-                    tab_name: "library",
-                    entity_id: selectedEntry.linkedEntryId,
-                    source: detail.ritual.id,
-                  });
-                }
-
-                setSelectedEntryId(null);
-              }}
-              textColor={theme.colors.primary}
-            >
-              {t("ritual.close")}
-            </Button>
-          </Dialog.Actions>
-        </Dialog>
-      </Portal>
     </SafeAreaView>
   );
 }
@@ -554,35 +510,6 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     beginButtonContent: {
       height: 54,
-    },
-    previewDialog: {
-      backgroundColor: theme.colors.surface1,
-      borderRadius: 28,
-      marginHorizontal: 20,
-      maxHeight: "78%",
-    },
-    previewTitle: {
-      color: theme.colors.onSurface,
-      marginBottom: 6,
-    },
-    previewContent: {
-      paddingTop: 4,
-      paddingBottom: 12,
-    },
-    previewActions: {
-      flexGrow: 0,
-      paddingTop: 0,
-      paddingBottom: 16,
-    },
-    previewSummary: {
-      color: theme.colors.onSurface,
-      lineHeight: 20,
-      marginBottom: 8,
-    },
-    previewMeta: {
-      color: theme.colors.onSurfaceMuted,
-      lineHeight: 19,
-      marginBottom: 4,
     },
     notFoundWrap: {
       flex: 1,
