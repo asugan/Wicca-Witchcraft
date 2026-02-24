@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { IncantationBlock } from "@/components/mystic/IncantationBlock";
 import { isRitualFavorited, toggleRitualFavorite } from "@/db/repositories/my-space-repository";
 import { getRitualDetailBySlug } from "@/db/repositories/ritual-repository";
+import { getCoverImage } from "@/utils/ritual-image";
 import { usePremiumGate } from "@/hooks/use-premium-gate";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
@@ -108,7 +109,7 @@ export default function RitualDetailScreen() {
       </View>
 
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-        <ImageBackground imageStyle={styles.heroImage} source={{ uri: detail.ritual.coverImage }} style={styles.hero}>
+        <ImageBackground imageStyle={styles.heroImage} source={{ uri: getCoverImage(detail.ritual.coverImage, detail.ritual.category) }} style={styles.hero}>
           <View style={styles.heroOverlay} />
           <Text style={styles.heroTag}>{detail.ritual.category}</Text>
           <Text style={styles.heroTitle}>{detail.ritual.title}</Text>

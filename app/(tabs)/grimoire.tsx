@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { useDeferredValue, useMemo, useState } from "react";
-import { ImageBackground, LayoutAnimation, Platform, Pressable, ScrollView, StyleSheet, UIManager, View } from "react-native";
+import { ImageBackground, LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Searchbar, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -11,6 +11,7 @@ import { listRituals } from "@/db/repositories/ritual-repository";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
+import { getCoverImage } from "@/utils/ritual-image";
 
 const categoryIcons: Record<string, keyof typeof MaterialCommunityIcons.glyphMap> = {
   love: "heart",
@@ -51,10 +52,6 @@ const moonPhaseOrder: Record<string, number> = {
   "waning-moon": 8,
   "waning-crescent": 9,
 };
-
-if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental) {
-  UIManager.setLayoutAnimationEnabledExperimental(true);
-}
 
 
 function getRitualSearchScore(
@@ -326,7 +323,7 @@ export default function GrimoireScreen() {
         <View>
           <Text style={styles.overline}>{t("grimoire.currentFocus")}</Text>
           {featuredRitual ? (
-            <ImageBackground imageStyle={styles.featuredImage} source={{ uri: featuredRitual.coverImage }} style={styles.featuredCard}>
+            <ImageBackground imageStyle={styles.featuredImage} source={{ uri: getCoverImage(featuredRitual.coverImage, featuredRitual.category) }} style={styles.featuredCard}>
               <View style={styles.featuredOverlay} />
               <Text style={styles.featuredTag}>{getMoonPhaseLabel(featuredRitual.moonPhase, t)}</Text>
               <Text style={styles.featuredTitle}>{featuredRitual.title}</Text>
@@ -341,7 +338,7 @@ export default function GrimoireScreen() {
             {filteredRituals.map((ritual) => (
               <RitualCard
                 icon={categoryIcons[ritual.category] ?? "book-open-page-variant"}
-                image={ritual.coverImage}
+                image={getCoverImage(ritual.coverImage, ritual.category)}
                 isPremium={ritual.isPremium}
                 premiumLabel={t("grimoire.premiumBadge" as string)}
                 key={ritual.id}
