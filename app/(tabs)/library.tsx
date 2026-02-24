@@ -111,6 +111,11 @@ export default function LibraryScreen() {
                   </View>
                   <Text style={[styles.rowSubtext, isLocked && styles.rowSubtextLocked]}>{displaySummary}</Text>
                 </View>
+                <MaterialCommunityIcons
+                  color={isLocked ? theme.colors.onSurfaceMuted : `${theme.colors.primary}99`}
+                  name="chevron-right"
+                  size={18}
+                />
               </Pressable>
             );
           })}
@@ -157,7 +162,7 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     row: {
       flexDirection: "row",
-      alignItems: "flex-start",
+      alignItems: "center",
       gap: 10,
     },
     rowTextWrap: {
