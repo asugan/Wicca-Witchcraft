@@ -46,6 +46,28 @@ export function getLanguagePreference(userId: string): AppLanguage {
   return getDeviceAppLanguage();
 }
 
+export function getProfileSettings(userId: string): {
+  notificationsEnabled: boolean;
+  language: AppLanguage;
+} {
+  ensureDatabaseInitialized();
+
+  const row = db
+    .select({
+      notificationsEnabled: appSettings.notificationsEnabled,
+      language: appSettings.language,
+    })
+    .from(appSettings)
+    .where(eq(appSettings.userId, userId))
+    .limit(1)
+    .get();
+
+  return {
+    notificationsEnabled: row?.notificationsEnabled ?? false,
+    language: (row?.language as AppLanguage) || getDeviceAppLanguage(),
+  };
+}
+
 export function setLanguagePreference(userId: string, language: AppLanguage): void {
   ensureDatabaseInitialized();
 

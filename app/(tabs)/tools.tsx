@@ -6,7 +6,7 @@ import { Button, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
 import type { SpreadType } from "@/config/premium";
-import { listAstroTimeline, listMoonCalendarSections } from "@/db/repositories/tools-repository";
+import { getMoonData } from "@/db/repositories/tools-repository";
 import {
   drawSpread,
   drawThreeCardSpread,
@@ -61,8 +61,7 @@ export default function ToolsScreen() {
   const [selectedSpread, setSelectedSpread] = useState<SpreadType>("three_card");
   const [revealed, setRevealed] = useState<boolean[]>([]);
   const [currentReading, setCurrentReading] = useState<TarotReadingResult | null>(null);
-  const moonCalendarSections = useMemo(() => listMoonCalendarSections(), []);
-  const astroTimeline = useMemo(() => listAstroTimeline(), []);
+  const moonData = useMemo(() => getMoonData(), []);
   const availableSpreads = useMemo(() => getAvailableSpreads(), []);
 
   const handleSelectSpread = useCallback(
@@ -110,14 +109,14 @@ export default function ToolsScreen() {
   const todayIso = useMemo(() => new Date().toISOString().slice(0, 10), []);
 
   const visibleTimeline = useMemo(() => {
-    const upcoming = astroTimeline.filter((entry) => entry.rawDate >= todayIso);
+    const upcoming = moonData.timeline.filter((entry) => entry.rawDate >= todayIso);
 
     if (upcoming.length) {
       return upcoming.slice(0, 8);
     }
 
-    return astroTimeline.slice(0, 8);
-  }, [astroTimeline, todayIso]);
+    return moonData.timeline.slice(0, 8);
+  }, [moonData.timeline, todayIso]);
 
   const toggleOne = (index: number) => {
     setRevealed((prev) => prev.map((item, cardIndex) => (cardIndex === index ? !item : item)));
@@ -295,7 +294,7 @@ export default function ToolsScreen() {
             <MaterialCommunityIcons color={theme.colors.primary} name="moon-waning-gibbous" size={18} />
           </View>
 
-          {moonCalendarSections.map((section) => (
+          {moonData.sections.map((section) => (
             <View key={section.key} style={styles.monthBlock}>
               <Text style={styles.monthLabel}>{section.label}</Text>
               {section.events.map((event) => (

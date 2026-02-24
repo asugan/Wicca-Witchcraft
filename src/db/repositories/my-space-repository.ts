@@ -201,13 +201,13 @@ export function getJournalEntryCount(userId: string): number {
   return result?.value ?? 0;
 }
 
-export function canCreateJournalEntry(userId: string, isPremium: boolean): boolean {
+export function canCreateJournalEntry(userId: string, isPremium: boolean, currentCount?: number): boolean {
   if (isPremium) {
     return true;
   }
 
-  const currentCount = getJournalEntryCount(userId);
-  return currentCount < FREE_JOURNAL_LIMIT;
+  const c = currentCount ?? getJournalEntryCount(userId);
+  return c < FREE_JOURNAL_LIMIT;
 }
 
 export function getJournalRemainingCount(userId: string, isPremium: boolean): number {

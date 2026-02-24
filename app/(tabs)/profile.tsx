@@ -11,10 +11,8 @@ import { FREE_JOURNAL_LIMIT } from "@/config/premium";
 import { useThemeContext, type ThemeMode } from "@/context/theme-context";
 import { useToast } from "@/context/toast-context";
 import {
-  canCreateJournalEntry,
   createJournalEntry,
   deleteJournalEntry,
-  getJournalEntryCount,
   listFavoriteRituals,
   listJournalEntries,
   removeRitualFavorite,
@@ -22,8 +20,7 @@ import {
 } from "@/db/repositories/my-space-repository";
 import { hasProAccess } from "@/db/repositories/subscription-repository";
 import {
-  getLanguagePreference,
-  getNotificationsEnabled,
+  getProfileSettings,
   setLanguagePreference,
   setNotificationsEnabled,
   setOnboardingCompleted,
@@ -84,16 +81,14 @@ export default function ProfileScreen() {
 
   const refreshData = useCallback(() => {
     setFavorites(listFavoriteRituals(LOCAL_USER_ID));
-    setJournalEntries(listJournalEntries(LOCAL_USER_ID));
-    setJournalEntryCount(getJournalEntryCount(LOCAL_USER_ID));
+    const entries = listJournalEntries(LOCAL_USER_ID);
+    setJournalEntries(entries);
+    setJournalEntryCount(entries.length);
     setIsProActive(hasProAccess());
-    setNotificationsEnabledState(getNotificationsEnabled(LOCAL_USER_ID));
-    setSelectedLanguage(getLanguagePreference(LOCAL_USER_ID));
+    const settings = getProfileSettings(LOCAL_USER_ID);
+    setNotificationsEnabledState(settings.notificationsEnabled);
+    setSelectedLanguage(settings.language);
   }, []);
-
-  useEffect(() => {
-    refreshData();
-  }, [refreshData]);
 
   useEffect(() => {
     if (!isFocused) {
@@ -104,7 +99,7 @@ export default function ProfileScreen() {
   }, [isFocused, refreshData]);
 
   const isEditing = useMemo(() => Boolean(editingEntryId), [editingEntryId]);
-  const canAddEntry = useMemo(() => canCreateJournalEntry(LOCAL_USER_ID, isProActive), [isProActive]);
+  const canAddEntry = useMemo(() => isProActive || journalEntryCount < FREE_JOURNAL_LIMIT, [isProActive, journalEntryCount]);
   const journalLimitReached = useMemo(() => !isProActive && journalEntryCount >= FREE_JOURNAL_LIMIT, [isProActive, journalEntryCount]);
   const remainingEntries = useMemo(() => isProActive ? -1 : Math.max(0, FREE_JOURNAL_LIMIT - journalEntryCount), [isProActive, journalEntryCount]);
 

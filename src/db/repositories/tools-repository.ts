@@ -40,8 +40,7 @@ export function listMoonEvents() {
   return generateMoonEvents(start, end);
 }
 
-export function listMoonCalendarSections() {
-  const events = listMoonEvents();
+function buildMoonCalendarSections(events: ReturnType<typeof listMoonEvents>) {
   const sections = new Map<string, { key: string; label: string; events: typeof events }>();
 
   for (const event of events) {
@@ -64,9 +63,7 @@ export function listMoonCalendarSections() {
   return Array.from(sections.values());
 }
 
-export function listAstroTimeline() {
-  const events = listMoonEvents();
-
+function buildAstroTimeline(events: ReturnType<typeof listMoonEvents>) {
   return events.flatMap((event) => {
     const peakDate = toEventDate(event.eventDate);
     const dayBefore = new Date(peakDate);
@@ -102,4 +99,20 @@ export function listAstroTimeline() {
       },
     ];
   });
+}
+
+export function listMoonCalendarSections() {
+  return buildMoonCalendarSections(listMoonEvents());
+}
+
+export function listAstroTimeline() {
+  return buildAstroTimeline(listMoonEvents());
+}
+
+export function getMoonData() {
+  const events = listMoonEvents();
+  return {
+    sections: buildMoonCalendarSections(events),
+    timeline: buildAstroTimeline(events),
+  };
 }
