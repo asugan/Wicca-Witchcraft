@@ -236,6 +236,10 @@ const migrations: Migration[] = [
       CREATE INDEX IF NOT EXISTS materials_linked_entry_id_idx ON materials(linked_entry_id);
     `,
   },
+  {
+    id: "0009_add_tarot_readings_created_at_index",
+    sql: `CREATE INDEX IF NOT EXISTS tarot_readings_user_created_at_idx ON tarot_readings(user_id, created_at);`,
+  },
 ];
 
 export function runMigrations(database: SQLiteDatabase) {

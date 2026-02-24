@@ -1,4 +1,4 @@
-import { and, eq, sql } from "drizzle-orm";
+import { and, eq, inArray, sql } from "drizzle-orm";
 
 import { PREMIUM_SPREAD_TYPES, SPREAD_CONFIGS, type SpreadType } from "@/config/premium";
 import { db, ensureDatabaseInitialized } from "@/db/client";
@@ -100,6 +100,7 @@ export function getDailyCard(userId: string, date = new Date()): TarotReadingRes
   ];
 
   const readingId = `daily-${todayIso}-${generateId()}`;
+  const now = Date.now();
 
   db.insert(tarotReadings)
     .values({
@@ -107,14 +108,12 @@ export function getDailyCard(userId: string, date = new Date()): TarotReadingRes
       userId,
       spreadType: "daily",
       cardsJson: JSON.stringify(drawnCards),
-      createdAt: Date.now(),
+      createdAt: now,
       readingDate: todayIso,
     })
     .run();
 
-  return hydrateReading(
-    db.select().from(tarotReadings).where(eq(tarotReadings.id, readingId)).get()!
-  );
+  return buildReadingResult(readingId, "daily", todayIso, now, drawnCards, allCards);
 }
 
 /**
@@ -135,6 +134,7 @@ export function drawThreeCardSpread(userId: string): TarotReadingResult {
 
   const readingId = `spread-${generateId()}`;
   const todayIso = toIsoDate(new Date());
+  const now = Date.now();
 
   db.insert(tarotReadings)
     .values({
@@ -142,14 +142,12 @@ export function drawThreeCardSpread(userId: string): TarotReadingResult {
       userId,
       spreadType: "three_card",
       cardsJson: JSON.stringify(drawnCards),
-      createdAt: Date.now(),
+      createdAt: now,
       readingDate: todayIso,
     })
     .run();
 
-  return hydrateReading(
-    db.select().from(tarotReadings).where(eq(tarotReadings.id, readingId)).get()!
-  );
+  return buildReadingResult(readingId, "three_card", todayIso, now, drawnCards, allCards);
 }
 
 /**
@@ -171,26 +169,53 @@ export function getReadingHistory(userId: string, limit = 20): TarotReadingResul
 
 // --- Internal helpers ---
 
+/**
+ * Build a TarotReadingResult from in-memory data, avoiding any DB re-query.
+ * Used immediately after an insert when we already hold the drawn cards and full deck.
+ */
+function buildReadingResult(
+  id: string,
+  spreadType: string,
+  readingDate: string,
+  createdAt: number,
+  drawnCards: DrawnCard[],
+  allCards: TarotCardRecord[]
+): TarotReadingResult {
+  const cardMap = new Map(allCards.map((c) => [c.id, c]));
+
+  const cards = drawnCards
+    .map((drawn) => {
+      const card = cardMap.get(drawn.cardId);
+      if (!card) return null;
+      return { ...card, position: drawn.position, isReversed: drawn.isReversed };
+    })
+    .filter(Boolean) as TarotReadingResult["cards"];
+
+  return { id, spreadType, readingDate, createdAt, cards };
+}
+
+/**
+ * Hydrate a persisted reading row by fetching all referenced cards in a single query.
+ * Used for cache-hit reads and reading history.
+ */
 function hydrateReading(
   reading: typeof tarotReadings.$inferSelect
 ): TarotReadingResult {
   const drawnCards: DrawnCard[] = JSON.parse(reading.cardsJson);
 
+  const cardIds = drawnCards.map((d) => d.cardId);
+  const cardRows =
+    cardIds.length > 0
+      ? db.select().from(tarotCards).where(inArray(tarotCards.id, cardIds)).all()
+      : [];
+
+  const cardMap = new Map(cardRows.map((c) => [c.id, c]));
+
   const cards = drawnCards
     .map((drawn) => {
-      const card = db
-        .select()
-        .from(tarotCards)
-        .where(eq(tarotCards.id, drawn.cardId))
-        .get();
-
+      const card = cardMap.get(drawn.cardId);
       if (!card) return null;
-
-      return {
-        ...card,
-        position: drawn.position,
-        isReversed: drawn.isReversed,
-      };
+      return { ...card, position: drawn.position, isReversed: drawn.isReversed };
     })
     .filter(Boolean) as TarotReadingResult["cards"];
 
@@ -246,6 +271,7 @@ export function drawSpread(userId: string, spreadType: SpreadType): TarotReading
 
   const readingId = `${spreadType}-${generateId()}`;
   const todayIso = toIsoDate(new Date());
+  const now = Date.now();
 
   db.insert(tarotReadings)
     .values({
@@ -253,14 +279,12 @@ export function drawSpread(userId: string, spreadType: SpreadType): TarotReading
       userId,
       spreadType,
       cardsJson: JSON.stringify(drawnCards),
-      createdAt: Date.now(),
+      createdAt: now,
       readingDate: todayIso,
     })
     .run();
 
-  return hydrateReading(
-    db.select().from(tarotReadings).where(eq(tarotReadings.id, readingId)).get()!
-  );
+  return buildReadingResult(readingId, spreadType, todayIso, now, drawnCards, allCards);
 }
 
 /**

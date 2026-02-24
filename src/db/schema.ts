@@ -162,6 +162,7 @@ export const tarotReadings = sqliteTable(
   },
   (table) => ({
     userDateIndex: index("tarot_readings_user_date_idx").on(table.userId, table.readingDate),
+    userCreatedAtIndex: index("tarot_readings_user_created_at_idx").on(table.userId, table.createdAt),
   })
 );
 

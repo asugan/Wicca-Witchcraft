@@ -1,4 +1,4 @@
-import { asc, eq } from "drizzle-orm";
+import { asc, eq, inArray } from "drizzle-orm";
 
 import { db, ensureDatabaseInitialized } from "@/db/client";
 import { libraryEntries, materials, ritualMaterials, rituals, ritualSteps } from "@/db/schema";
@@ -20,7 +20,7 @@ export type RitualListItem = {
 export function listRituals(limit?: number): RitualListItem[] {
   ensureDatabaseInitialized();
 
-  const ritualRows = db
+  const baseQuery = db
     .select({
       id: rituals.id,
       slug: rituals.slug,
@@ -34,42 +34,41 @@ export function listRituals(limit?: number): RitualListItem[] {
       isPremium: rituals.isPremium,
     })
     .from(rituals)
-    .orderBy(asc(rituals.createdAt))
-    .all();
+    .orderBy(asc(rituals.createdAt));
 
-  const ritualMaterialRows = db
-    .select({
-      ritualId: ritualMaterials.ritualId,
-      materialName: materials.name,
-    })
-    .from(ritualMaterials)
-    .innerJoin(materials, eq(ritualMaterials.materialId, materials.id))
-    .all();
+  const ritualRows = limit ? baseQuery.limit(limit).all() : baseQuery.all();
+
+  const ritualIds = ritualRows.map((r) => r.id);
+
+  const ritualMaterialRows =
+    ritualIds.length > 0
+      ? db
+          .select({
+            ritualId: ritualMaterials.ritualId,
+            materialName: materials.name,
+          })
+          .from(ritualMaterials)
+          .innerJoin(materials, eq(ritualMaterials.materialId, materials.id))
+          .where(inArray(ritualMaterials.ritualId, ritualIds))
+          .all()
+      : [];
 
   const materialsByRitual = new Map<string, string[]>();
 
   for (const row of ritualMaterialRows) {
-    const existingMaterials = materialsByRitual.get(row.ritualId);
-
-    if (existingMaterials) {
-      existingMaterials.push(row.materialName);
-      continue;
+    const existing = materialsByRitual.get(row.ritualId);
+    if (existing) {
+      existing.push(row.materialName);
+    } else {
+      materialsByRitual.set(row.ritualId, [row.materialName]);
     }
-
-    materialsByRitual.set(row.ritualId, [row.materialName]);
   }
 
-  const rows = ritualRows.map((row) => ({
+  return ritualRows.map((row) => ({
     ...row,
     isPremium: row.isPremium ?? false,
     materials: materialsByRitual.get(row.id) ?? [],
   }));
-
-  if (!limit) {
-    return rows;
-  }
-
-  return rows.slice(0, limit);
 }
 
 export function getRitualBySlug(slug: string) {
