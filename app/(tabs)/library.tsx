@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useMemo, useState } from "react";
-import { LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useCallback, useMemo, useState } from "react";
+import { FlatList, LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -30,6 +30,8 @@ const ENTITY_TYPE_KEYS: Record<string, string> = {
   deity: "library.typeDeity",
 };
 
+type LibraryEntry = ReturnType<typeof listLibraryEntries>[number];
+
 export default function LibraryScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
@@ -57,110 +59,127 @@ export default function LibraryScreen() {
     return entries.filter((entry) => entry.entityType === selectedType);
   }, [entries, selectedType]);
 
-  return (
-    <SafeAreaView edges={["top"]} style={styles.safe}>
-      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
-        <Text style={styles.title}>{t("library.title")}</Text>
-        <Text style={styles.subtitle}>{t("library.subtitle")}</Text>
+  const keyExtractor = useCallback((item: LibraryEntry) => item.id, []);
 
-        <View style={styles.filtersCard}>
-          <Pressable onPress={toggleFilters} style={styles.filtersHeader}>
-            <View style={styles.filtersHeaderLeft}>
-              <MaterialCommunityIcons color={theme.colors.primary} name="filter-variant" size={20} />
-              <Text style={styles.filtersHeaderTitle}>{t("library.filters")}</Text>
-              {activeFilterCount > 0 && (
-                <View style={styles.filterBadge}>
-                  <Text style={styles.filterBadgeText}>{activeFilterCount}</Text>
+  const renderEntryItem = useCallback(
+    ({ item: entry }: { item: LibraryEntry }) => {
+      const isLocked = entry.isPremium && !isPremium;
+      const displaySummary = isLocked
+        ? entry.summary.slice(0, 60) + (entry.summary.length > 60 ? "..." : "")
+        : entry.summary;
+
+      return (
+        <Pressable
+          onPress={() => {
+            if (isLocked) {
+              showUpgradePrompt("library_premium");
+              return;
+            }
+            trackEvent("library_entry_viewed", {
+              user_id: "local-user",
+              tab_name: "library",
+              entity_id: entry.id,
+              source: selectedType,
+            });
+            router.push({ pathname: "/library/[slug]", params: { slug: entry.slug } });
+          }}
+          style={styles.row}
+        >
+          <MaterialCommunityIcons color={theme.colors.primary} name={categoryIcons[entry.entityType] ?? "star-four-points"} size={16} />
+          <View style={styles.rowTextWrap}>
+            <View style={styles.rowTitleWrap}>
+              <Text style={styles.rowText}>{entry.title}</Text>
+              {entry.isPremium && (
+                <View style={[styles.premiumTag, isLocked && styles.premiumTagLocked]}>
+                  <MaterialCommunityIcons
+                    color={isLocked ? theme.colors.onSurfaceMuted : theme.colors.primary}
+                    name={isLocked ? "lock" : "star-four-points"}
+                    size={10}
+                  />
                 </View>
               )}
             </View>
-            <MaterialCommunityIcons
-              color={theme.colors.onSurfaceMuted}
-              name={filtersExpanded ? "chevron-up" : "chevron-down"}
-              size={24}
-            />
-          </Pressable>
+            <Text style={[styles.rowSubtext, isLocked && styles.rowSubtextLocked]}>{displaySummary}</Text>
+          </View>
+          <MaterialCommunityIcons
+            color={isLocked ? theme.colors.onSurfaceMuted : `${theme.colors.primary}99`}
+            name="chevron-right"
+            size={18}
+          />
+        </Pressable>
+      );
+    },
+    [isPremium, showUpgradePrompt, selectedType, router, theme, styles]
+  );
 
-          {filtersExpanded && (
-            <View style={styles.filtersContent}>
-              <View style={styles.filterGroup}>
-                <Text style={styles.filterTitle}>{t("library.filterCategory")}</Text>
-                <ScrollView contentContainerStyle={styles.chipsContent} horizontal showsHorizontalScrollIndicator={false}>
-                  <LibraryChip active={selectedType === "all"} icon="shape-outline" label={t("library.filterAll")} onPress={() => setSelectedType("all")} />
-                  {categoryCounts.map((category) => {
-                    const typeKey = ENTITY_TYPE_KEYS[category.entityType];
-                    const typeLabel = typeKey ? t(typeKey as string) : category.entityType;
-                    return (
-                      <LibraryChip
-                        active={selectedType === category.entityType}
-                        icon={categoryIcons[category.entityType] ?? "book-open-page-variant"}
-                        key={category.entityType}
-                        label={`${typeLabel} (${category.count})`}
-                        onPress={() => setSelectedType(category.entityType)}
-                      />
-                    );
-                  })}
-                </ScrollView>
+  const filtersCard = useMemo(
+    () => (
+      <View style={styles.filtersCard}>
+        <Pressable onPress={toggleFilters} style={styles.filtersHeader}>
+          <View style={styles.filtersHeaderLeft}>
+            <MaterialCommunityIcons color={theme.colors.primary} name="filter-variant" size={20} />
+            <Text style={styles.filtersHeaderTitle}>{t("library.filters")}</Text>
+            {activeFilterCount > 0 && (
+              <View style={styles.filterBadge}>
+                <Text style={styles.filterBadgeText}>{activeFilterCount}</Text>
               </View>
+            )}
+          </View>
+          <MaterialCommunityIcons
+            color={theme.colors.onSurfaceMuted}
+            name={filtersExpanded ? "chevron-up" : "chevron-down"}
+            size={24}
+          />
+        </Pressable>
+
+        {filtersExpanded && (
+          <View style={styles.filtersContent}>
+            <View style={styles.filterGroup}>
+              <Text style={styles.filterTitle}>{t("library.filterCategory")}</Text>
+              <ScrollView contentContainerStyle={styles.chipsContent} horizontal showsHorizontalScrollIndicator={false}>
+                <LibraryChip active={selectedType === "all"} icon="shape-outline" label={t("library.filterAll")} onPress={() => setSelectedType("all")} />
+                {categoryCounts.map((category) => {
+                  const typeKey = ENTITY_TYPE_KEYS[category.entityType];
+                  const typeLabel = typeKey ? t(typeKey as string) : category.entityType;
+                  return (
+                    <LibraryChip
+                      active={selectedType === category.entityType}
+                      icon={categoryIcons[category.entityType] ?? "book-open-page-variant"}
+                      key={category.entityType}
+                      label={`${typeLabel} (${category.count})`}
+                      onPress={() => setSelectedType(category.entityType)}
+                    />
+                  );
+                })}
+              </ScrollView>
             </View>
-          )}
+          </View>
+        )}
 
-          <Text style={[styles.resultMeta, filtersExpanded && styles.resultMetaExpanded]}>
-            {t("library.entriesFound", { count: filteredEntries.length })}
-          </Text>
-        </View>
+        <Text style={[styles.resultMeta, filtersExpanded && styles.resultMetaExpanded]}>
+          {t("library.entriesFound", { count: filteredEntries.length })}
+        </Text>
+      </View>
+    ),
+    [activeFilterCount, filtersExpanded, categoryCounts, selectedType, filteredEntries.length, t, theme, styles]
+  );
 
-        <View style={styles.card}>
-          {filteredEntries.map((entry) => {
-            const isLocked = entry.isPremium && !isPremium;
-            const displaySummary = isLocked
-              ? entry.summary.slice(0, 60) + (entry.summary.length > 60 ? "..." : "")
-              : entry.summary;
-
-            return (
-              <Pressable
-                key={entry.id}
-                onPress={() => {
-                  if (isLocked) {
-                    showUpgradePrompt("library_premium");
-                    return;
-                  }
-                  trackEvent("library_entry_viewed", {
-                    user_id: "local-user",
-                    tab_name: "library",
-                    entity_id: entry.id,
-                    source: selectedType,
-                  });
-                  router.push({ pathname: "/library/[slug]", params: { slug: entry.slug } });
-                }}
-                style={styles.row}
-              >
-                <MaterialCommunityIcons color={theme.colors.primary} name={categoryIcons[entry.entityType] ?? "star-four-points"} size={16} />
-                <View style={styles.rowTextWrap}>
-                  <View style={styles.rowTitleWrap}>
-                    <Text style={styles.rowText}>{entry.title}</Text>
-                    {entry.isPremium && (
-                      <View style={[styles.premiumTag, isLocked && styles.premiumTagLocked]}>
-                        <MaterialCommunityIcons
-                          color={isLocked ? theme.colors.onSurfaceMuted : theme.colors.primary}
-                          name={isLocked ? "lock" : "star-four-points"}
-                          size={10}
-                        />
-                      </View>
-                    )}
-                  </View>
-                  <Text style={[styles.rowSubtext, isLocked && styles.rowSubtextLocked]}>{displaySummary}</Text>
-                </View>
-                <MaterialCommunityIcons
-                  color={isLocked ? theme.colors.onSurfaceMuted : `${theme.colors.primary}99`}
-                  name="chevron-right"
-                  size={18}
-                />
-              </Pressable>
-            );
-          })}
-        </View>
-      </ScrollView>
+  return (
+    <SafeAreaView edges={["top"]} style={styles.safe}>
+      <View style={styles.topSection}>
+        <Text style={styles.title}>{t("library.title")}</Text>
+        <Text style={styles.subtitle}>{t("library.subtitle")}</Text>
+        {filtersCard}
+      </View>
+      <FlatList
+        data={filteredEntries}
+        renderItem={renderEntryItem}
+        keyExtractor={keyExtractor}
+        ItemSeparatorComponent={() => <View style={styles.rowSeparator} />}
+        style={styles.card}
+        contentContainerStyle={styles.cardContent}
+        showsVerticalScrollIndicator={false}
+      />
     </SafeAreaView>
   );
 }
@@ -171,9 +190,9 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       flex: 1,
       backgroundColor: theme.colors.background,
     },
-    container: {
-      padding: 20,
-      paddingBottom: 124,
+    topSection: {
+      paddingHorizontal: 20,
+      paddingTop: 20,
       gap: 12,
     },
     title: {
@@ -259,8 +278,15 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderWidth: 1,
       borderColor: `${theme.colors.primary}38`,
       backgroundColor: theme.colors.surface1,
+      marginHorizontal: 20,
+      marginBottom: 12,
+    },
+    cardContent: {
       padding: 16,
-      gap: 12,
+      paddingBottom: 124,
+    },
+    rowSeparator: {
+      height: 12,
     },
     row: {
       flexDirection: "row",

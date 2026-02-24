@@ -76,6 +76,7 @@ export const materials = sqliteTable(
   },
   (table) => ({
     slugUnique: uniqueIndex("materials_slug_unique").on(table.slug),
+    linkedEntryIndex: index("materials_linked_entry_id_idx").on(table.linkedEntryId),
   })
 );
 
@@ -94,6 +95,7 @@ export const ritualMaterials = sqliteTable(
   (table) => ({
     pk: primaryKey({ columns: [table.ritualId, table.materialId] }),
     ritualSortIndex: index("ritual_materials_ritual_sort_idx").on(table.ritualId, table.sortOrder),
+    materialIdIndex: index("ritual_materials_material_id_idx").on(table.materialId),
   })
 );
 

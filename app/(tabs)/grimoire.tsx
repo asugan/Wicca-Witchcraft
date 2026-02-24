@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useDeferredValue, useMemo, useState } from "react";
-import { ImageBackground, LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useCallback, useDeferredValue, useMemo, useState } from "react";
+import { FlatList, ImageBackground, LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Searchbar, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -102,6 +102,8 @@ function getRitualSearchScore(
   return score;
 }
 
+type Ritual = ReturnType<typeof listRituals>[number];
+
 export default function GrimoireScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
@@ -199,19 +201,35 @@ export default function GrimoireScreen() {
 
   const featuredRitual = filteredRituals[0] ?? rituals[0];
 
-  return (
-    <SafeAreaView edges={["top"]} style={styles.safe}>
-      <View pointerEvents="none" style={styles.texture} />
+  const keyExtractor = useCallback((item: Ritual) => item.id, []);
 
-      <View style={styles.header}>
-        <View style={styles.headerTitleWrap}>
-          <MaterialCommunityIcons color={theme.colors.primary} name="book-open-page-variant" size={30} />
-          <Text style={styles.headerTitle}>{t("grimoire.title")}</Text>
-        </View>
-        <MaterialCommunityIcons color={theme.colors.onSurfaceMuted} name="account-circle-outline" size={26} />
-      </View>
+  const renderRitualItem = useCallback(
+    ({ item: ritual }: { item: Ritual }) => (
+      <RitualCard
+        icon={categoryIcons[ritual.category] ?? "book-open-page-variant"}
+        image={getCoverImage(ritual.coverImage, ritual.category)}
+        isPremium={ritual.isPremium}
+        premiumLabel={t("grimoire.premiumBadge" as string)}
+        onPress={() => {
+          trackEvent("ritual_opened", {
+            user_id: "local-user",
+            tab_name: "grimoire",
+            entity_id: ritual.id,
+            source: "ritual_grid",
+          });
 
-      <ScrollView contentContainerStyle={styles.content} removeClippedSubviews showsVerticalScrollIndicator={false}>
+          router.push(`/ritual/${ritual.slug}` as never);
+        }}
+        subtitle={ritual.summary}
+        title={ritual.title}
+      />
+    ),
+    [router, t]
+  );
+
+  const listHeader = useMemo(
+    () => (
+      <View style={styles.headerContent}>
         <Searchbar
           onChangeText={setQuery}
           iconColor={`${theme.colors.primary}BF`}
@@ -339,34 +357,47 @@ export default function GrimoireScreen() {
           ) : null}
         </View>
 
-        <View>
-          <Text style={styles.overline}>{t("grimoire.chapters")}</Text>
-          <View style={styles.grid}>
-            {filteredRituals.map((ritual) => (
-              <RitualCard
-                icon={categoryIcons[ritual.category] ?? "book-open-page-variant"}
-                image={getCoverImage(ritual.coverImage, ritual.category)}
-                isPremium={ritual.isPremium}
-                premiumLabel={t("grimoire.premiumBadge" as string)}
-                key={ritual.id}
-                onPress={() => {
-                  trackEvent("ritual_opened", {
-                    user_id: "local-user",
-                    tab_name: "grimoire",
-                    entity_id: ritual.id,
-                    source: "ritual_grid",
-                  });
+        <Text style={styles.overline}>{t("grimoire.chapters")}</Text>
+      </View>
+    ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [
+      query, activeFilterCount, filtersExpanded, difficultyOptions, selectedDifficulty,
+      moonPhaseOptions, selectedMoonPhase, materialOptions, selectedMaterial,
+      filteredRituals.length, featuredRitual, t, theme, styles,
+    ]
+  );
 
-                  router.push(`/ritual/${ritual.slug}` as never);
-                }}
-                subtitle={ritual.summary}
-                title={ritual.title}
-              />
-            ))}
-            {!filteredRituals.length ? <Text style={styles.emptyLabel}>{t("grimoire.noRitualsMatch")}</Text> : null}
-          </View>
+  const emptyComponent = useMemo(
+    () => <Text style={styles.emptyLabel}>{t("grimoire.noRitualsMatch")}</Text>,
+    [t, styles]
+  );
+
+  return (
+    <SafeAreaView edges={["top"]} style={styles.safe}>
+      <View pointerEvents="none" style={styles.texture} />
+
+      <View style={styles.header}>
+        <View style={styles.headerTitleWrap}>
+          <MaterialCommunityIcons color={theme.colors.primary} name="book-open-page-variant" size={30} />
+          <Text style={styles.headerTitle}>{t("grimoire.title")}</Text>
         </View>
-      </ScrollView>
+        <MaterialCommunityIcons color={theme.colors.onSurfaceMuted} name="account-circle-outline" size={26} />
+      </View>
+
+      <FlatList
+        data={filteredRituals}
+        renderItem={renderRitualItem}
+        keyExtractor={keyExtractor}
+        numColumns={2}
+        ListHeaderComponent={listHeader}
+        ListEmptyComponent={emptyComponent}
+        ItemSeparatorComponent={() => <View style={styles.rowSeparator} />}
+        contentContainerStyle={styles.content}
+        columnWrapperStyle={styles.columnWrapper}
+        removeClippedSubviews
+        showsVerticalScrollIndicator={false}
+      />
     </SafeAreaView>
   );
 }
@@ -411,7 +442,13 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       paddingHorizontal: 16,
       paddingTop: 14,
       paddingBottom: 124,
+    },
+    headerContent: {
       gap: 20,
+      marginBottom: 12,
+    },
+    columnWrapper: {
+      gap: 12,
     },
     searchWrap: {
       borderWidth: 1,
@@ -525,6 +562,7 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderWidth: 1,
       borderColor: `${theme.colors.primary}40`,
       justifyContent: "flex-end",
+      marginBottom: 20,
     },
     featuredImage: {
       resizeMode: "cover",
@@ -575,10 +613,8 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       lineHeight: 18,
       fontSize: 12,
     },
-    grid: {
-      flexDirection: "row",
-      flexWrap: "wrap",
-      gap: 12,
+    rowSeparator: {
+      height: 12,
     },
     emptyLabel: {
       color: theme.colors.onSurfaceMuted,

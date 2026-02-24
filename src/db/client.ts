@@ -40,17 +40,18 @@ function seedIfNeeded() {
     return;
   }
 
-  db.insert(users).values(DEFAULT_USER_SEED).run();
-  db.insert(appSettings).values(DEFAULT_SETTINGS_SEED).run();
-
-  db.insert(libraryEntries).values(LIBRARY_ENTRY_SEEDS).run();
-  db.insert(materials).values([...MATERIAL_SEEDS]).run();
-  db.insert(rituals).values(RITUAL_SEEDS).run();
-  db.insert(ritualSteps).values(RITUAL_STEP_SEEDS).run();
-  db.insert(ritualMaterials).values(RITUAL_MATERIAL_SEEDS).run();
-  db.insert(entityLinks).values(ENTITY_LINK_SEEDS).run();
-  db.insert(dailyCards).values(DAILY_CARD_SEEDS).run();
-  db.insert(tarotCards).values(TAROT_CARD_SEEDS).run();
+  db.transaction((tx) => {
+    tx.insert(users).values(DEFAULT_USER_SEED).run();
+    tx.insert(appSettings).values(DEFAULT_SETTINGS_SEED).run();
+    tx.insert(libraryEntries).values(LIBRARY_ENTRY_SEEDS).run();
+    tx.insert(materials).values([...MATERIAL_SEEDS]).run();
+    tx.insert(rituals).values(RITUAL_SEEDS).run();
+    tx.insert(ritualSteps).values(RITUAL_STEP_SEEDS).run();
+    tx.insert(ritualMaterials).values(RITUAL_MATERIAL_SEEDS).run();
+    tx.insert(entityLinks).values(ENTITY_LINK_SEEDS).run();
+    tx.insert(dailyCards).values(DAILY_CARD_SEEDS).run();
+    tx.insert(tarotCards).values(TAROT_CARD_SEEDS).run();
+  });
 }
 
 export function ensureDatabaseInitialized() {

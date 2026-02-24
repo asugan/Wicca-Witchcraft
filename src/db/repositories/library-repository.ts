@@ -1,4 +1,4 @@
-import { asc, eq } from "drizzle-orm";
+import { asc, count, eq } from "drizzle-orm";
 
 import { db, ensureDatabaseInitialized } from "@/db/client";
 import { libraryEntries } from "@/db/schema";
@@ -19,7 +19,6 @@ export function listLibraryEntries() {
       title: libraryEntries.title,
       entityType: libraryEntries.entityType,
       summary: libraryEntries.summary,
-      correspondences: libraryEntries.correspondences,
       isPremium: libraryEntries.isPremium,
     })
     .from(libraryEntries)
@@ -28,12 +27,14 @@ export function listLibraryEntries() {
 }
 
 export function listLibraryCategoryCounts() {
-  const entries = listLibraryEntries();
-  const grouped = new Map<string, number>();
+  ensureDatabaseInitialized();
 
-  for (const entry of entries) {
-    grouped.set(entry.entityType, (grouped.get(entry.entityType) ?? 0) + 1);
-  }
-
-  return Array.from(grouped.entries()).map(([entityType, count]) => ({ entityType, count }));
+  return db
+    .select({
+      entityType: libraryEntries.entityType,
+      count: count(),
+    })
+    .from(libraryEntries)
+    .groupBy(libraryEntries.entityType)
+    .all();
 }

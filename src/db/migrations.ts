@@ -229,6 +229,13 @@ const migrations: Migration[] = [
     id: "0007_add_onboarding_completed",
     sql: `ALTER TABLE app_settings ADD COLUMN onboarding_completed INTEGER NOT NULL DEFAULT 0;`,
   },
+  {
+    id: "0008_add_missing_indexes",
+    sql: `
+      CREATE INDEX IF NOT EXISTS ritual_materials_material_id_idx ON ritual_materials(material_id);
+      CREATE INDEX IF NOT EXISTS materials_linked_entry_id_idx ON materials(linked_entry_id);
+    `,
+  },
 ];
 
 export function runMigrations(database: SQLiteDatabase) {
