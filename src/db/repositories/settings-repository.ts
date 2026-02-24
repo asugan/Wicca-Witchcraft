@@ -6,7 +6,7 @@ import { type AppLanguage, getDeviceAppLanguage } from "@/i18n/config";
 
 export type ThemeMode = "system" | "light" | "dark";
 
-const DEFAULT_THEME_MODE: ThemeMode = "system";
+const DEFAULT_THEME_MODE: ThemeMode = "dark";
 
 function createSettingsId(userId: string) {
   return `${userId}-settings`;

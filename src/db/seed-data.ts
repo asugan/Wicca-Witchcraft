@@ -771,7 +771,7 @@ export const DEFAULT_USER_SEED = {
 export const DEFAULT_SETTINGS_SEED = {
   id: "local-user-settings",
   userId: "local-user",
-  themeMode: "system",
+  themeMode: "dark",
   notificationsEnabled: false,
   premiumActive: false,
   language: "",
