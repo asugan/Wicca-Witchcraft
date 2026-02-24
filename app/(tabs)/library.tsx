@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { useMemo, useState } from "react";
-import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { LayoutAnimation, Platform, Pressable, ScrollView, StyleSheet, UIManager, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -12,6 +12,10 @@ import { usePremiumGate } from "@/hooks/use-premium-gate";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
+
+if (Platform.OS === "android" && UIManager.setLayoutAnimationEnabledExperimental) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 const categoryIcons: Record<string, keyof typeof MaterialCommunityIcons.glyphMap> = {
   crystal: "diamond-stone",
@@ -37,8 +41,16 @@ export default function LibraryScreen() {
   const { isPremium, showUpgradePrompt } = usePremiumGate();
 
   const [selectedType, setSelectedType] = useState<string>("all");
+  const [filtersExpanded, setFiltersExpanded] = useState(false);
   const entries = useMemo(() => listLibraryEntries(), []);
   const categoryCounts = useMemo(() => listLibraryCategoryCounts(), []);
+
+  const activeFilterCount = selectedType !== "all" ? 1 : 0;
+
+  const toggleFilters = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    setFiltersExpanded((prev) => !prev);
+  };
 
   const filteredEntries = useMemo(() => {
     if (selectedType === "all") {
@@ -54,20 +66,51 @@ export default function LibraryScreen() {
         <Text style={styles.title}>{t("library.title")}</Text>
         <Text style={styles.subtitle}>{t("library.subtitle")}</Text>
 
-        <View style={styles.chipsWrap}>
-          <LibraryChip icon="shape-outline" label={t("library.filterAll")} onPress={() => setSelectedType("all")} />
-          {categoryCounts.map((category) => {
-            const typeKey = ENTITY_TYPE_KEYS[category.entityType];
-            const typeLabel = typeKey ? t(typeKey as string) : category.entityType;
-            return (
-            <LibraryChip
-              icon={categoryIcons[category.entityType] ?? "book-open-page-variant"}
-              key={category.entityType}
-              label={`${typeLabel} (${category.count})`}
-              onPress={() => setSelectedType(category.entityType)}
+        <View style={styles.filtersCard}>
+          <Pressable onPress={toggleFilters} style={styles.filtersHeader}>
+            <View style={styles.filtersHeaderLeft}>
+              <MaterialCommunityIcons color={theme.colors.primary} name="filter-variant" size={20} />
+              <Text style={styles.filtersHeaderTitle}>{t("library.filters")}</Text>
+              {activeFilterCount > 0 && (
+                <View style={styles.filterBadge}>
+                  <Text style={styles.filterBadgeText}>{activeFilterCount}</Text>
+                </View>
+              )}
+            </View>
+            <MaterialCommunityIcons
+              color={theme.colors.onSurfaceMuted}
+              name={filtersExpanded ? "chevron-up" : "chevron-down"}
+              size={24}
             />
-          );
-          })}
+          </Pressable>
+
+          {filtersExpanded && (
+            <View style={styles.filtersContent}>
+              <View style={styles.filterGroup}>
+                <Text style={styles.filterTitle}>{t("library.filterCategory")}</Text>
+                <ScrollView contentContainerStyle={styles.chipsContent} horizontal showsHorizontalScrollIndicator={false}>
+                  <LibraryChip active={selectedType === "all"} icon="shape-outline" label={t("library.filterAll")} onPress={() => setSelectedType("all")} />
+                  {categoryCounts.map((category) => {
+                    const typeKey = ENTITY_TYPE_KEYS[category.entityType];
+                    const typeLabel = typeKey ? t(typeKey as string) : category.entityType;
+                    return (
+                      <LibraryChip
+                        active={selectedType === category.entityType}
+                        icon={categoryIcons[category.entityType] ?? "book-open-page-variant"}
+                        key={category.entityType}
+                        label={`${typeLabel} (${category.count})`}
+                        onPress={() => setSelectedType(category.entityType)}
+                      />
+                    );
+                  })}
+                </ScrollView>
+              </View>
+            </View>
+          )}
+
+          <Text style={[styles.resultMeta, filtersExpanded && styles.resultMetaExpanded]}>
+            {t("library.entriesFound", { count: filteredEntries.length })}
+          </Text>
         </View>
 
         <View style={styles.card}>
@@ -146,10 +189,72 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       color: theme.colors.onSurfaceMuted,
       lineHeight: 20,
     },
-    chipsWrap: {
-      marginTop: 6,
+    filtersCard: {
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}2E`,
+      borderRadius: 14,
+      backgroundColor: theme.colors.surface1,
+      paddingHorizontal: 12,
+      paddingVertical: 10,
+      overflow: "hidden",
+    },
+    filtersHeader: {
       flexDirection: "row",
-      flexWrap: "wrap",
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
+    filtersHeaderLeft: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 8,
+    },
+    filtersHeaderTitle: {
+      color: theme.colors.onSurface,
+      fontSize: 14,
+      fontWeight: "600",
+    },
+    filterBadge: {
+      backgroundColor: theme.colors.primary,
+      borderRadius: 10,
+      minWidth: 20,
+      height: 20,
+      alignItems: "center",
+      justifyContent: "center",
+      paddingHorizontal: 6,
+    },
+    filterBadgeText: {
+      color: theme.colors.onPrimary,
+      fontSize: 11,
+      fontWeight: "700",
+    },
+    filtersContent: {
+      marginTop: 12,
+      gap: 10,
+    },
+    filterGroup: {
+      gap: 8,
+    },
+    filterTitle: {
+      color: theme.colors.onSurface,
+      fontSize: 12,
+      fontWeight: "700",
+      textTransform: "uppercase",
+      letterSpacing: 0.8,
+    },
+    chipsContent: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 8,
+      paddingRight: 8,
+    },
+    resultMeta: {
+      color: theme.colors.onSurfaceMuted,
+      fontSize: 12,
+      fontWeight: "600",
+      marginTop: 8,
+    },
+    resultMetaExpanded: {
+      marginTop: 12,
     },
     card: {
       marginTop: 12,

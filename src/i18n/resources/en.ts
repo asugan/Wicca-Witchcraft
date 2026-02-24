@@ -79,6 +79,9 @@ export type Translations = {
     typeCandle: string;
     typeSymbol: string;
     typeDeity: string;
+    filters: string;
+    filterCategory: string;
+    entriesFound: string;
   };
   libraryDetail: {
     notFound: string;
@@ -362,6 +365,9 @@ export const enTranslations: Translations = {
     typeCandle: "Candle",
     typeSymbol: "Symbol",
     typeDeity: "Deity",
+    filters: "Filters",
+    filterCategory: "Category",
+    entriesFound: "{{count}} entries found",
   },
   libraryDetail: {
     notFound: "Entry not found",

@@ -81,6 +81,9 @@ export const frTranslations: Translations = {
     typeCandle: "Bougie",
     typeSymbol: "Symbole",
     typeDeity: "Divinité",
+    filters: "Filtres",
+    filterCategory: "Catégorie",
+    entriesFound: "{{count}} entrées trouvées",
   },
   libraryDetail: {
     notFound: "Entrée non trouvée",

@@ -81,6 +81,9 @@ export const itTranslations: Translations = {
     typeCandle: "Candela",
     typeSymbol: "Simbolo",
     typeDeity: "Divinità",
+    filters: "Filtri",
+    filterCategory: "Categoria",
+    entriesFound: "{{count}} voci trovate",
   },
   libraryDetail: {
     notFound: "Voce non trovata",

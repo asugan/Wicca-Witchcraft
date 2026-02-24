@@ -186,7 +186,7 @@ export default function HomeScreen() {
           <ImageBackground
             imageStyle={styles.insightImage}
             source={{
-              uri: "https://images.unsplash.com/photo-1575035229855-0f7f828f4116?q=80&w=1964&auto=format&fit=crop",
+              uri: "https://lh3.googleusercontent.com/aida-public/AB6AXuDt07f96J2Pv360nA1Rd2jlDdSuXLX7yLT9RNqruIiKzBEJ7wPJyRMJvxg6iyFrJAtWJxK-V5asXiwQiiTKGTyjgeTGWjfMNXcEdv-qyVJOaLdmiCWCBflfo-V5W5hM2KBxwtxxtntatgXcOvdM8bfwfNoA1KEkT5FmEJbZmV2E3XmQwZK-EfqeYXFKw7MsKdHgJvUETLCzGCUnMLE7IU6TYdMEEnBHpqE3O94ndsWyrN1tgjUDsSNdMKN92Z0zmqgajKV9D5JGfo_R",
             }}
             style={styles.insightMedia}
           >

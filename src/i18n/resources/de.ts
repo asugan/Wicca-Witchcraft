@@ -81,6 +81,9 @@ export const deTranslations: Translations = {
     typeCandle: "Kerze",
     typeSymbol: "Symbol",
     typeDeity: "Gottheit",
+    filters: "Filter",
+    filterCategory: "Kategorie",
+    entriesFound: "{{count}} Einträge gefunden",
   },
   libraryDetail: {
     notFound: "Eintrag nicht gefunden",

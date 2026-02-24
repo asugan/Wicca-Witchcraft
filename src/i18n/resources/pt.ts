@@ -81,6 +81,9 @@ export const ptTranslations: Translations = {
     typeCandle: "Vela",
     typeSymbol: "Símbolo",
     typeDeity: "Divindade",
+    filters: "Filtros",
+    filterCategory: "Categoria",
+    entriesFound: "{{count}} entradas encontradas",
   },
   libraryDetail: {
     notFound: "Entrada não encontrada",

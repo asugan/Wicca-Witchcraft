@@ -7,17 +7,18 @@ import { useMysticTheme } from "@/theme/use-mystic-theme";
 type LibraryChipProps = {
   label: string;
   icon: keyof typeof MaterialCommunityIcons.glyphMap;
+  active?: boolean;
   onPress?: () => void;
 };
 
-export function LibraryChip({ label, icon, onPress }: LibraryChipProps) {
+export function LibraryChip({ label, icon, active, onPress }: LibraryChipProps) {
   const theme = useMysticTheme();
   const styles = makeStyles(theme);
 
   return (
-    <Pressable onPress={onPress} style={styles.chip}>
-      <MaterialCommunityIcons color={theme.colors.primary} name={icon} size={14} />
-      <Text style={styles.label}>{label}</Text>
+    <Pressable onPress={onPress} style={[styles.chip, active && styles.chipActive]}>
+      <MaterialCommunityIcons color={active ? theme.colors.onPrimary : theme.colors.primary} name={icon} size={14} />
+      <Text style={[styles.label, active && styles.labelActive]}>{label}</Text>
     </Pressable>
   );
 }
@@ -35,12 +36,18 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       paddingHorizontal: 11,
       paddingVertical: 6,
       marginRight: 8,
-      marginBottom: 8,
+    },
+    chipActive: {
+      backgroundColor: theme.colors.primary,
+      borderColor: theme.colors.primary,
     },
     label: {
       color: theme.colors.onSurface,
       fontSize: 12,
       fontWeight: "600",
       textTransform: "capitalize",
+    },
+    labelActive: {
+      color: theme.colors.onPrimary,
     },
   });

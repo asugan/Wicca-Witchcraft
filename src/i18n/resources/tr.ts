@@ -81,6 +81,9 @@ export const trTranslations: Translations = {
     typeCandle: "Mum",
     typeSymbol: "Sembol",
     typeDeity: "Tanrı/Tanrıça",
+    filters: "Filtreler",
+    filterCategory: "Kategori",
+    entriesFound: "{{count}} giriş bulundu",
   },
   libraryDetail: {
     notFound: "Giriş bulunamadı",
