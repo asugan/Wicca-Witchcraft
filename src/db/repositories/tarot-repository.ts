@@ -1,5 +1,7 @@
 import { and, eq, inArray, sql } from "drizzle-orm";
 
+import { toLocalIsoDate } from "@/lib/date-utils";
+
 import { PREMIUM_SPREAD_TYPES, SPREAD_CONFIGS, type SpreadType } from "@/config/premium";
 import { db, ensureDatabaseInitialized } from "@/db/client";
 import { tarotCards, tarotReadings } from "@/db/schema";
@@ -18,10 +20,6 @@ export type TarotReadingResult = {
   createdAt: number;
   cards: (TarotCardRecord & { position: string; isReversed: boolean })[];
 };
-
-function toIsoDate(date: Date) {
-  return date.toISOString().slice(0, 10);
-}
 
 function generateId() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
@@ -66,7 +64,7 @@ export function getTarotCardById(cardId: string): TarotCardRecord | undefined {
 export function getDailyCard(userId: string, date = new Date()): TarotReadingResult {
   ensureDatabaseInitialized();
 
-  const todayIso = toIsoDate(date);
+  const todayIso = toLocalIsoDate(date);
 
   const existing = db
     .select()
@@ -133,7 +131,7 @@ export function drawThreeCardSpread(userId: string): TarotReadingResult {
   }));
 
   const readingId = `spread-${generateId()}`;
-  const todayIso = toIsoDate(new Date());
+  const todayIso = toLocalIsoDate(new Date());
   const now = Date.now();
 
   db.insert(tarotReadings)
@@ -270,7 +268,7 @@ export function drawSpread(userId: string, spreadType: SpreadType): TarotReading
   }));
 
   const readingId = `${spreadType}-${generateId()}`;
-  const todayIso = toIsoDate(new Date());
+  const todayIso = toLocalIsoDate(new Date());
   const now = Date.now();
 
   db.insert(tarotReadings)

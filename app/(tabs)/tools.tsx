@@ -16,6 +16,7 @@ import {
 } from "@/db/repositories/tarot-repository";
 import { usePremiumGate } from "@/hooks/use-premium-gate";
 import { trackEvent } from "@/lib/analytics";
+import { toLocalIsoDate } from "@/lib/date-utils";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
@@ -106,7 +107,7 @@ export default function ToolsScreen() {
   const floatThree = useFloating(620);
 
   const allRevealed = useMemo(() => revealed.every(Boolean), [revealed]);
-  const todayIso = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const todayIso = useMemo(() => toLocalIsoDate(new Date()), []);
 
   const visibleTimeline = useMemo(() => {
     const upcoming = moonData.timeline.filter((entry) => entry.rawDate >= todayIso);

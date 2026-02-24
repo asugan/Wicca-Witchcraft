@@ -1,4 +1,5 @@
 import { generateMoonEvents } from "@/lib/moon";
+import { toLocalIsoDate } from "@/lib/date-utils";
 
 type TimelineKind = "preparation" | "peak" | "integration";
 
@@ -76,7 +77,7 @@ function buildAstroTimeline(events: ReturnType<typeof listMoonEvents>) {
       {
         id: `${event.id}-prep`,
         dateLabel: formatDayLabel(dayBefore),
-        rawDate: dayBefore.toISOString().slice(0, 10),
+        rawDate: toLocalIsoDate(dayBefore),
         title: `Prepare for ${event.phase}`,
         kind: "preparation" as const,
         summary: asTimelineSummary(event.phase, event.zodiacSign, "preparation"),
@@ -92,7 +93,7 @@ function buildAstroTimeline(events: ReturnType<typeof listMoonEvents>) {
       {
         id: `${event.id}-integrate`,
         dateLabel: formatDayLabel(dayAfter),
-        rawDate: dayAfter.toISOString().slice(0, 10),
+        rawDate: toLocalIsoDate(dayAfter),
         title: `${event.phase} Integration`,
         kind: "integration" as const,
         summary: asTimelineSummary(event.phase, event.zodiacSign, "integration"),

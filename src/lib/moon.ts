@@ -1,5 +1,7 @@
 import SunCalc from "suncalc";
 
+import { toLocalIsoDate } from "@/lib/date-utils";
+
 const ZODIAC_SIGNS = [
   "Aries",
   "Taurus",
@@ -206,10 +208,6 @@ export function getCurrentMoonInfo(date = new Date()): MoonInfo {
   };
 }
 
-function toIsoDate(date: Date): string {
-  return date.toISOString().slice(0, 10);
-}
-
 function makeMoonEventSummary(phaseName: string, zodiacSign: ZodiacSign): string {
   const theme = ZODIAC_THEMES[zodiacSign] ?? "aligned energy";
   return `${phaseName} in ${zodiacSign} supports ${theme}.`;
@@ -235,7 +233,7 @@ export function generateMoonEvents(
     if (phase.phaseKey !== prevPhaseKey && MAJOR_PHASE_KEYS.has(phase.phaseKey)) {
       if (!options?.majorOnly || phase.phaseKey === "new" || phase.phaseKey === "full") {
         const zodiacSign = getMoonZodiacSign(current);
-        const dateStr = toIsoDate(current);
+        const dateStr = toLocalIsoDate(current);
 
         events.push({
           id: `moon-${dateStr}-${phase.phaseKey}`,

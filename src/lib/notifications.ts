@@ -42,7 +42,7 @@ function asMoonTriggerDate(isoDate: string) {
     return null;
   }
 
-  if (date.getTime() <= Date.now()) {
+  if (date.getTime() < Date.now()) {
     return null;
   }
 
