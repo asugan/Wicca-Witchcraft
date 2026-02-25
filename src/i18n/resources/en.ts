@@ -177,6 +177,7 @@ export type Translations = {
     permissionNotGranted: string;
     remindersActive: string;
     remindersOff: string;
+    remindersAlreadyActive: string;
     activeReminder: string;
     inactiveReminder: string;
     languageLabel: string;
@@ -473,6 +474,7 @@ export const enTranslations: Translations = {
     permissionNotGranted: "Permission was not granted. You can enable reminders from device settings.",
     remindersActive: "Daily and moon event reminders are now active.",
     remindersOff: "Reminders are turned off.",
+    remindersAlreadyActive: "Mystic reminders are already active.",
     activeReminder: "Active: daily reminder at 20:30 and moon events at 09:00.",
     inactiveReminder: "Inactive: reminders are currently turned off.",
     languageLabel: "Language",

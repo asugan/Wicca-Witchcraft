@@ -179,6 +179,7 @@ export const ptTranslations: Translations = {
     permissionNotGranted: "Permissão não concedida. Você pode ativar lembretes nas configurações do dispositivo.",
     remindersActive: "Lembretes diários e de eventos lunares estão agora ativos.",
     remindersOff: "Lembretes estão desativados.",
+    remindersAlreadyActive: "Lembretes místicos já estão ativos.",
     activeReminder: "Ativo: lembrete diário às 20:30 e eventos lunares às 09:00.",
     inactiveReminder: "Inativo: lembretes estão atualmente desativados.",
     languageLabel: "Idioma",

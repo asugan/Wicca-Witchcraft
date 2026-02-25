@@ -179,6 +179,7 @@ export const trTranslations: Translations = {
     permissionNotGranted: "İzin verilmedi. Hatırlatıcıları cihaz ayarlarından etkinleştirebilirsiniz.",
     remindersActive: "Günlük ve ay olayı hatırlatıcıları artık etkin.",
     remindersOff: "Hatırlatıcılar kapatıldı.",
+    remindersAlreadyActive: "Mistik hatırlatmalar zaten aktif.",
     activeReminder: "Etkin: 20:30'da günlük hatırlatıcı ve 09:00'da ay olayları.",
     inactiveReminder: "Etkin değil: hatırlatıcılar şu anda kapalı.",
     languageLabel: "Dil",

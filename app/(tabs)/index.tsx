@@ -1,26 +1,32 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Easing, ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Surface, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
+import { NotificationPermissionModal } from "@/components/mystic/NotificationPermissionModal";
 import { MoonPhaseBadge } from "@/components/mystic/MoonPhaseBadge";
 import { getHomeDailySnapshot } from "@/db/repositories/home-repository";
+import { getNotificationsEnabled } from "@/db/repositories/settings-repository";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
+import { useToast } from "@/context/toast-context";
 
 export default function HomeScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
   const { t } = useTranslation();
+  const { showToast } = useToast();
   const styles = makeStyles(theme);
   const dailySnapshot = useMemo(() => getHomeDailySnapshot(), []);
   const recommendation = dailySnapshot.recommendation;
   const [cardRevealed, setCardRevealed] = useState(false);
   const card = dailySnapshot.card;
+  const [notificationsEnabled, setNotificationsEnabledState] = useState(() => getNotificationsEnabled("local-user"));
+  const [notificationModalVisible, setNotificationModalVisible] = useState(false);
 
   const pulseAnim = useRef(new Animated.Value(1)).current;
   const rotateAnim = useRef(new Animated.Value(0)).current;
@@ -98,6 +104,24 @@ export default function HomeScreen() {
     [t]
   );
 
+  const handleBellPress = useCallback(() => {
+    if (notificationsEnabled) {
+      showToast(t("settings.remindersAlreadyActive" as string), "info");
+    } else {
+      setNotificationModalVisible(true);
+    }
+  }, [notificationsEnabled, showToast, t]);
+
+  const handleNotificationEnabled = useCallback(() => {
+    setNotificationsEnabledState(true);
+    setNotificationModalVisible(false);
+    showToast(t("settings.remindersActive" as string), "success");
+  }, [showToast, t]);
+
+  const handleNotificationSkipped = useCallback(() => {
+    setNotificationModalVisible(false);
+  }, []);
+
   useEffect(() => {
     trackEvent("home_viewed", {
       user_id: "local-user",
@@ -120,9 +144,12 @@ export default function HomeScreen() {
               {dailySnapshot.dateLabel} • {dailySnapshot.cosmicLabel}
             </Text>
           </View>
-          <Pressable style={styles.iconButton}>
-            <MaterialCommunityIcons color={theme.colors.primary} name="bell-outline" size={22} />
-            <View style={styles.notifyDot} />
+          <Pressable style={styles.iconButton} onPress={handleBellPress}>
+            <MaterialCommunityIcons
+              color={notificationsEnabled ? theme.colors.primary : theme.colors.onSurfaceMuted}
+              name={notificationsEnabled ? "bell" : "bell-outline"}
+              size={22}
+            />
           </Pressable>
         </View>
 
@@ -270,6 +297,12 @@ export default function HomeScreen() {
           </Surface>
         ) : null}
       </ScrollView>
+
+      <NotificationPermissionModal
+        visible={notificationModalVisible}
+        onEnabled={handleNotificationEnabled}
+        onSkipped={handleNotificationSkipped}
+      />
     </SafeAreaView>
   );
 }
@@ -332,15 +365,6 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       justifyContent: "center",
       borderWidth: 1,
       borderColor: "rgba(255,255,255,0.08)",
-    },
-    notifyDot: {
-      position: "absolute",
-      top: 10,
-      right: 10,
-      width: 7,
-      height: 7,
-      borderRadius: 4,
-      backgroundColor: theme.colors.danger,
     },
     heroWrap: {
       alignItems: "center",

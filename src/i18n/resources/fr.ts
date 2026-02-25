@@ -179,6 +179,7 @@ export const frTranslations: Translations = {
     permissionNotGranted: "Permission non accordée. Vous pouvez activer les rappels dans les paramètres de l'appareil.",
     remindersActive: "Les rappels quotidiens et d'événements lunaires sont maintenant actifs.",
     remindersOff: "Les rappels sont désactivés.",
+    remindersAlreadyActive: "Les rappels mystiques sont déjà actifs.",
     activeReminder: "Actif : rappel quotidien à 20h30 et événements lunaires à 09h00.",
     inactiveReminder: "Inactif : les rappels sont actuellement désactivés.",
     languageLabel: "Langue",

@@ -179,6 +179,7 @@ export const deTranslations: Translations = {
     permissionNotGranted: "Berechtigung wurde nicht erteilt. Sie können Erinnerungen in den Geräteeinstellungen aktivieren.",
     remindersActive: "Tägliche und Mond-Ereignis-Erinnerungen sind jetzt aktiv.",
     remindersOff: "Erinnerungen sind ausgeschaltet.",
+    remindersAlreadyActive: "Mystische Erinnerungen sind bereits aktiv.",
     activeReminder: "Aktiv: tägliche Erinnerung um 20:30 und Mond-Ereignisse um 09:00.",
     inactiveReminder: "Inaktiv: Erinnerungen sind derzeit ausgeschaltet.",
     languageLabel: "Sprache",

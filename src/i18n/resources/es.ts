@@ -179,6 +179,7 @@ export const esTranslations: Translations = {
     permissionNotGranted: "Permiso no concedido. Puede activar recordatorios en la configuración del dispositivo.",
     remindersActive: "Los recordatorios diarios y de eventos lunares están activos.",
     remindersOff: "Los recordatorios están desactivados.",
+    remindersAlreadyActive: "Los recordatorios místicos ya están activos.",
     activeReminder: "Activo: recordatorio diario a las 20:30 y eventos lunares a las 09:00.",
     inactiveReminder: "Inactivo: los recordatorios están actualmente desactivados.",
     languageLabel: "Idioma",

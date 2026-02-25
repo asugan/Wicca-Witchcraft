@@ -179,6 +179,7 @@ export const itTranslations: Translations = {
     permissionNotGranted: "Permesso non concesso. Puoi abilitare i promemoria nelle impostazioni del dispositivo.",
     remindersActive: "I promemoria giornalieri e degli eventi lunari sono ora attivi.",
     remindersOff: "I promemoria sono disattivati.",
+    remindersAlreadyActive: "I promemoria mistici sono già attivi.",
     activeReminder: "Attivo: promemoria giornaliero alle 20:30 ed eventi lunari alle 09:00.",
     inactiveReminder: "Inattivo: i promemoria sono attualmente disattivati.",
     languageLabel: "Lingua",
