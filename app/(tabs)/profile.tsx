@@ -30,6 +30,7 @@ import type { AppLanguage } from "@/i18n/config";
 import { trackEvent } from "@/lib/analytics";
 import { disableMysticNotifications } from "@/lib/notifications";
 import { NotificationPermissionModal } from "@/components/mystic/NotificationPermissionModal";
+import { useNotificationSync } from "@/hooks/use-notification-sync";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
@@ -73,7 +74,7 @@ export default function ProfileScreen() {
   const [content, setContent] = useState("");
   const [mood, setMood] = useState("");
   const [isProActive, setIsProActive] = useState<boolean>(false);
-  const [notificationsEnabled, setNotificationsEnabledState] = useState<boolean>(true);
+  const { notificationsEnabled, setNotificationsEnabled: setNotificationsEnabledState } = useNotificationSync();
   const [isUpdatingNotifications, setIsUpdatingNotifications] = useState(false);
   const [notificationStatusText, setNotificationStatusText] = useState<string>("");
   const [notificationModalVisible, setNotificationModalVisible] = useState(false);
@@ -88,7 +89,6 @@ export default function ProfileScreen() {
     setJournalEntryCount(entries.length);
     setIsProActive(hasProAccess());
     const settings = getProfileSettings(LOCAL_USER_ID);
-    setNotificationsEnabledState(settings.notificationsEnabled);
     setSelectedLanguage(settings.language);
   }, []);
 

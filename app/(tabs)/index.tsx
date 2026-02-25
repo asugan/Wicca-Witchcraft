@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { NotificationPermissionModal } from "@/components/mystic/NotificationPermissionModal";
 import { MoonPhaseBadge } from "@/components/mystic/MoonPhaseBadge";
 import { getHomeDailySnapshot } from "@/db/repositories/home-repository";
-import { getNotificationsEnabled } from "@/db/repositories/settings-repository";
+import { useNotificationSync } from "@/hooks/use-notification-sync";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
@@ -25,7 +25,7 @@ export default function HomeScreen() {
   const recommendation = dailySnapshot.recommendation;
   const [cardRevealed, setCardRevealed] = useState(false);
   const card = dailySnapshot.card;
-  const [notificationsEnabled, setNotificationsEnabledState] = useState(() => getNotificationsEnabled("local-user"));
+  const { notificationsEnabled, setNotificationsEnabled: setNotificationsEnabledState } = useNotificationSync();
   const [notificationModalVisible, setNotificationModalVisible] = useState(false);
 
   const pulseAnim = useRef(new Animated.Value(1)).current;
