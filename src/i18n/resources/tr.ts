@@ -204,6 +204,8 @@ export const trTranslations: Translations = {
     premiumActiveHint: "Tüm premium özelliklere tam erişiminiz var",
     premiumActive: "Aktif",
     upgradeToPro: "Yükselt",
+    openSettings: "Ayarları Aç",
+    notificationsEnabledLater: "Bildirimleri daha sonra ayarlardan etkinleştirebilirsiniz.",
   },
   ritual: {
     notFound: "Ritüel bulunamadı",

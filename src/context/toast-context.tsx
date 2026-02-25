@@ -6,8 +6,10 @@ import { useMysticTheme } from "@/theme/use-mystic-theme";
 
 export type ToastType = "success" | "error" | "info";
 
+export type ToastAction = { label: string; onPress: () => void };
+
 export interface ToastContextType {
-  showToast: (message: string, type?: ToastType) => void;
+  showToast: (message: string, type?: ToastType, action?: ToastAction, duration?: number) => void;
   hideToast: () => void;
 }
 
@@ -29,13 +31,17 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
   const [type, setType] = useState<ToastType>("info");
+  const [customAction, setCustomAction] = useState<ToastAction | undefined>(undefined);
+  const [duration, setDuration] = useState<number>(3000);
 
   const { t } = useTranslation();
   const theme = useMysticTheme();
 
-  const showToast = useCallback((msg: string, toastType: ToastType = "info") => {
+  const showToast = useCallback((msg: string, toastType: ToastType = "info", action?: ToastAction, toastDuration?: number) => {
     setMessage(msg);
     setType(toastType);
+    setCustomAction(action);
+    setDuration(toastDuration ?? 3000);
     setVisible(true);
   }, []);
 
@@ -76,13 +82,13 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
         <Snackbar
           visible={visible}
           onDismiss={hideToast}
-          duration={3000}
+          duration={duration}
           style={styles.snackbar}
-          action={{
-            label: t("common.close"),
-            onPress: hideToast,
-            labelStyle: { color: theme.colors.onPrimary },
-          }}
+          action={
+            customAction
+              ? { label: customAction.label, onPress: customAction.onPress, labelStyle: { color: theme.colors.onPrimary } }
+              : { label: t("common.close"), onPress: hideToast, labelStyle: { color: theme.colors.onPrimary } }
+          }
         >
           <Text style={styles.text}>{message}</Text>
         </Snackbar>

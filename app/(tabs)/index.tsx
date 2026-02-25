@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Animated, Easing, ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { Animated, Easing, ImageBackground, Linking, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Surface, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -118,7 +118,12 @@ export default function HomeScreen() {
     if (enabled) {
       showToast(t("settings.remindersActive" as string), "success");
     } else {
-      showToast(t("settings.permissionNotGranted" as string), "error");
+      showToast(
+        t("settings.permissionNotGranted" as string),
+        "error",
+        { label: t("settings.openSettings" as string), onPress: () => void Linking.openSettings() },
+        5000,
+      );
     }
   }, [showToast, t]);
 

@@ -7,6 +7,7 @@ import {
   Easing,
   FlatList,
   Image,
+  Linking,
   Pressable,
   StyleSheet,
   View,
@@ -18,6 +19,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { setOnboardingCompleted } from "@/db/repositories/settings-repository";
 import { NotificationPermissionModal } from "@/components/mystic/NotificationPermissionModal";
+import { useToast } from "@/context/toast-context";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
@@ -334,6 +336,7 @@ export default function OnboardingScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
   const { t } = useTranslation();
+  const { showToast } = useToast();
   const insets = useSafeAreaInsets();
   const flatListRef = useRef<FlatList>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -479,8 +482,25 @@ export default function OnboardingScreen() {
 
       <NotificationPermissionModal
         visible={notificationModalVisible}
-        onEnabled={(_enabled: boolean) => completeOnboarding()}
-        onSkipped={completeOnboarding}
+        onEnabled={(enabled: boolean) => {
+          setNotificationModalVisible(false);
+          if (enabled) {
+            showToast(t("settings.remindersActive" as string), "success");
+          } else {
+            showToast(
+              t("settings.permissionNotGranted" as string),
+              "error",
+              { label: t("settings.openSettings" as string), onPress: () => void Linking.openSettings() },
+              5000,
+            );
+          }
+          completeOnboarding();
+        }}
+        onSkipped={() => {
+          setNotificationModalVisible(false);
+          showToast(t("settings.notificationsEnabledLater" as string), "info");
+          completeOnboarding();
+        }}
       />
     </View>
   );

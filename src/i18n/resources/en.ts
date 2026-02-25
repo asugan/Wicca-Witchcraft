@@ -202,6 +202,8 @@ export type Translations = {
     premiumActiveHint: string;
     premiumActive: string;
     upgradeToPro: string;
+    openSettings: string;
+    notificationsEnabledLater: string;
   };
   ritual: {
     notFound: string;
@@ -499,6 +501,8 @@ export const enTranslations: Translations = {
     premiumActiveHint: "You have full access to all premium features",
     premiumActive: "Active",
     upgradeToPro: "Upgrade",
+    openSettings: "Open Settings",
+    notificationsEnabledLater: "You can enable notifications later from settings.",
   },
   ritual: {
     notFound: "Ritual not found",

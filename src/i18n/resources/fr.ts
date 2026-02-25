@@ -204,6 +204,8 @@ export const frTranslations: Translations = {
     premiumActiveHint: "Vous avez un accès complet à toutes les fonctionnalités premium",
     premiumActive: "Actif",
     upgradeToPro: "Améliorer",
+    openSettings: "Ouvrir les paramètres",
+    notificationsEnabledLater: "Vous pouvez activer les notifications plus tard depuis les paramètres.",
   },
   ritual: {
     notFound: "Rituel non trouvé",

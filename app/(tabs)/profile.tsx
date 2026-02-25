@@ -2,7 +2,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useIsFocused } from "@react-navigation/native";
 import { useRouter } from "expo-router";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { Linking, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Modal, Portal, RadioButton, Text, TextInput } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -164,15 +164,21 @@ export default function ProfileScreen() {
     }
   };
 
-  const handleNotificationEnabled = (_enabled: boolean) => {
+  const handleNotificationEnabled = (enabled: boolean) => {
     setNotificationModalVisible(false);
-    const settings = getProfileSettings(LOCAL_USER_ID);
-    setNotificationsEnabledState(settings.notificationsEnabled);
-    setNotificationStatusText(
-      settings.notificationsEnabled
-        ? t("settings.remindersActive")
-        : t("settings.permissionNotGranted")
-    );
+    setNotificationsEnabledState(enabled);
+    if (enabled) {
+      setNotificationStatusText(t("settings.remindersActive"));
+      showToast(t("settings.remindersActive" as string), "success");
+    } else {
+      setNotificationStatusText(t("settings.permissionNotGranted"));
+      showToast(
+        t("settings.permissionNotGranted" as string),
+        "error",
+        { label: t("settings.openSettings" as string), onPress: () => void Linking.openSettings() },
+        5000,
+      );
+    }
   };
 
   const handleNotificationSkipped = () => {
