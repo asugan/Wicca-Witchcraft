@@ -12,6 +12,16 @@ export type Translations = {
     slide2Subtitle: string;
     slide3Title: string;
     slide3Subtitle: string;
+    notificationTitle: string;
+    notificationSubtitle: string;
+    notificationMoonTitle: string;
+    notificationMoonDescription: string;
+    notificationDailyTitle: string;
+    notificationDailyDescription: string;
+    notificationCelestialTitle: string;
+    notificationCelestialDescription: string;
+    notificationEnable: string;
+    notificationSkip: string;
   };
   nav: {
     moon: string;
@@ -298,6 +308,16 @@ export const enTranslations: Translations = {
     slide2Subtitle: "Discover a vast library of spells, rituals, and mystical knowledge curated for the modern witch.",
     slide3Title: "Cast Your Intentions",
     slide3Subtitle: "Use our interactive tools and personalized rituals to manifest your deepest desires.",
+    notificationTitle: "Mystic Reminders",
+    notificationSubtitle: "Stay aligned with the cosmos. We'll gently guide you at the right moments.",
+    notificationMoonTitle: "Moon Phase Notifications",
+    notificationMoonDescription: "Never miss a full moon or new moon ritual again.",
+    notificationDailyTitle: "Daily Ritual Reminders",
+    notificationDailyDescription: "A gentle nudge each evening for your daily practice.",
+    notificationCelestialTitle: "Celestial Alignments",
+    notificationCelestialDescription: "Planetary transits and astrological events, right on time.",
+    notificationEnable: "Enable",
+    notificationSkip: "Maybe Later",
   },
   nav: {
     moon: "Moon",
