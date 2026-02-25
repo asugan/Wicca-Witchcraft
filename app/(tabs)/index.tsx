@@ -179,9 +179,7 @@ export default function HomeScreen() {
             <View style={styles.moonOrb}>
               <ImageBackground
                 imageStyle={styles.moonImage}
-                source={{
-                  uri: "https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?q=80&w=1932&auto=format&fit=crop",
-                }}
+                source={require("../../assets/images/moon_orb_bg.jpg")}
                 style={styles.moonSurface}
               >
                 <View style={[styles.moonShade, moonShadowStyle]} />
@@ -221,9 +219,7 @@ export default function HomeScreen() {
         <Surface style={styles.insightCard}>
           <ImageBackground
             imageStyle={styles.insightImage}
-            source={{
-              uri: "https://lh3.googleusercontent.com/aida-public/AB6AXuDt07f96J2Pv360nA1Rd2jlDdSuXLX7yLT9RNqruIiKzBEJ7wPJyRMJvxg6iyFrJAtWJxK-V5asXiwQiiTKGTyjgeTGWjfMNXcEdv-qyVJOaLdmiCWCBflfo-V5W5hM2KBxwtxxtntatgXcOvdM8bfwfNoA1KEkT5FmEJbZmV2E3XmQwZK-EfqeYXFKw7MsKdHgJvUETLCzGCUnMLE7IU6TYdMEEnBHpqE3O94ndsWyrN1tgjUDsSNdMKN92Z0zmqgajKV9D5JGfo_R",
-            }}
+            source={require("../../assets/images/daily_tarot_bg.jpg")}
             style={styles.insightMedia}
           >
             <View style={styles.mediaOverlay} />

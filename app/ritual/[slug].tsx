@@ -109,7 +109,7 @@ export default function RitualDetailScreen() {
       </View>
 
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-        <ImageBackground imageStyle={styles.heroImage} source={{ uri: getCoverImage(detail.ritual.coverImage, detail.ritual.category) }} style={styles.hero}>
+        <ImageBackground imageStyle={styles.heroImage} source={getCoverImage(detail.ritual.coverImage, detail.ritual.category)} style={styles.hero}>
           <View style={styles.heroOverlay} />
           <Text style={styles.heroTag}>{detail.ritual.category}</Text>
           <Text style={styles.heroTitle}>{detail.ritual.title}</Text>

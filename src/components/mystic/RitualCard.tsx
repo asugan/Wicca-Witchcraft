@@ -1,6 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { memo } from "react";
-import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
+import { ImageBackground, ImageSourcePropType, Pressable, StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper";
 
 import { typefaces } from "@/theme/tokens";
@@ -9,7 +9,7 @@ import { useMysticTheme } from "@/theme/use-mystic-theme";
 type RitualCardProps = {
   title: string;
   subtitle: string;
-  image: string;
+  image: ImageSourcePropType;
   icon: keyof typeof MaterialCommunityIcons.glyphMap;
   isPremium?: boolean;
   premiumLabel?: string;
@@ -22,7 +22,7 @@ function RitualCardComponent({ title, subtitle, image, icon, isPremium, premiumL
 
   return (
     <Pressable onPress={onPress} style={styles.card}>
-      <ImageBackground imageStyle={styles.mediaImage} source={{ uri: image }} style={styles.media}>
+      <ImageBackground imageStyle={styles.mediaImage} source={image} style={styles.media}>
         <View style={styles.mediaOverlay} />
         {isPremium && (
           <View style={styles.premiumBadge}>

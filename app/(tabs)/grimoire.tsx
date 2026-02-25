@@ -342,7 +342,7 @@ export default function GrimoireScreen() {
           <Text style={styles.overline}>{t("grimoire.currentFocus")}</Text>
           {featuredRitual ? (
             <Pressable onPress={() => router.push(`/ritual/${featuredRitual.slug}` as never)}>
-              <ImageBackground imageStyle={styles.featuredImage} source={{ uri: getCoverImage(featuredRitual.coverImage, featuredRitual.category) }} style={styles.featuredCard}>
+              <ImageBackground imageStyle={styles.featuredImage} source={getCoverImage(featuredRitual.coverImage, featuredRitual.category)} style={styles.featuredCard}>
                 <View style={styles.featuredOverlay} />
                 <View style={styles.featuredBottomFade} />
                 <View style={styles.featuredContent}>
