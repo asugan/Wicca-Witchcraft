@@ -28,7 +28,8 @@ import {
 import i18n from "@/i18n";
 import type { AppLanguage } from "@/i18n/config";
 import { trackEvent } from "@/lib/analytics";
-import { disableMysticNotifications, enableMysticNotifications } from "@/lib/notifications";
+import { disableMysticNotifications } from "@/lib/notifications";
+import { NotificationPermissionModal } from "@/components/mystic/NotificationPermissionModal";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
@@ -75,6 +76,7 @@ export default function ProfileScreen() {
   const [notificationsEnabled, setNotificationsEnabledState] = useState<boolean>(true);
   const [isUpdatingNotifications, setIsUpdatingNotifications] = useState(false);
   const [notificationStatusText, setNotificationStatusText] = useState<string>("");
+  const [notificationModalVisible, setNotificationModalVisible] = useState(false);
   const [languageModalVisible, setLanguageModalVisible] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<AppLanguage>("en");
   const [themeModalVisible, setThemeModalVisible] = useState(false);
@@ -144,30 +146,37 @@ export default function ProfileScreen() {
 
     const nextValue = !notificationsEnabled;
 
+    if (nextValue) {
+      setNotificationModalVisible(true);
+      return;
+    }
+
     setIsUpdatingNotifications(true);
     setNotificationStatusText("");
 
     try {
-      if (nextValue) {
-        const result = await enableMysticNotifications();
-
-        setNotificationsEnabledState(result.enabled);
-        setNotificationsEnabled(LOCAL_USER_ID, result.enabled);
-
-        if (!result.enabled) {
-          setNotificationStatusText(t("settings.permissionNotGranted"));
-        } else {
-          setNotificationStatusText(t("settings.remindersActive"));
-        }
-      } else {
-        await disableMysticNotifications();
-        setNotificationsEnabledState(false);
-        setNotificationsEnabled(LOCAL_USER_ID, false);
-        setNotificationStatusText(t("settings.remindersOff"));
-      }
+      await disableMysticNotifications();
+      setNotificationsEnabledState(false);
+      setNotificationsEnabled(LOCAL_USER_ID, false);
+      setNotificationStatusText(t("settings.remindersOff"));
     } finally {
       setIsUpdatingNotifications(false);
     }
+  };
+
+  const handleNotificationEnabled = () => {
+    setNotificationModalVisible(false);
+    const settings = getProfileSettings(LOCAL_USER_ID);
+    setNotificationsEnabledState(settings.notificationsEnabled);
+    setNotificationStatusText(
+      settings.notificationsEnabled
+        ? t("settings.remindersActive")
+        : t("settings.permissionNotGranted")
+    );
+  };
+
+  const handleNotificationSkipped = () => {
+    setNotificationModalVisible(false);
   };
 
   const handleLanguageSelect = (language: AppLanguage) => {
@@ -197,6 +206,7 @@ export default function ProfileScreen() {
   };
 
   return (
+    <>
     <SafeAreaView edges={["top"]} style={styles.safe}>
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <Text style={styles.title}>{t("profile.title")}</Text>
@@ -529,6 +539,13 @@ export default function ProfileScreen() {
         </Modal>
       </Portal>
     </SafeAreaView>
+
+    <NotificationPermissionModal
+      visible={notificationModalVisible}
+      onEnabled={handleNotificationEnabled}
+      onSkipped={handleNotificationSkipped}
+    />
+    </>
   );
 }
 
