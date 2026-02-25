@@ -112,10 +112,14 @@ export default function HomeScreen() {
     }
   }, [notificationsEnabled, showToast, t]);
 
-  const handleNotificationEnabled = useCallback(() => {
-    setNotificationsEnabledState(true);
+  const handleNotificationEnabled = useCallback((enabled: boolean) => {
+    setNotificationsEnabledState(enabled);
     setNotificationModalVisible(false);
-    showToast(t("settings.remindersActive" as string), "success");
+    if (enabled) {
+      showToast(t("settings.remindersActive" as string), "success");
+    } else {
+      showToast(t("settings.permissionNotGranted" as string), "error");
+    }
   }, [showToast, t]);
 
   const handleNotificationSkipped = useCallback(() => {

@@ -164,7 +164,7 @@ export default function ProfileScreen() {
     }
   };
 
-  const handleNotificationEnabled = () => {
+  const handleNotificationEnabled = (_enabled: boolean) => {
     setNotificationModalVisible(false);
     const settings = getProfileSettings(LOCAL_USER_ID);
     setNotificationsEnabledState(settings.notificationsEnabled);

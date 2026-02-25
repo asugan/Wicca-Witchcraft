@@ -14,7 +14,7 @@ const DARK_BG = "#0c0b16";
 
 type NotificationPermissionModalProps = {
   visible: boolean;
-  onEnabled: () => void;
+  onEnabled: (enabled: boolean) => void;
   onSkipped: () => void;
 };
 
@@ -32,7 +32,7 @@ export function NotificationPermissionModal({
     const result = await enableMysticNotifications();
     setNotificationsEnabled(LOCAL_USER_ID, result.enabled);
     setIsEnabling(false);
-    onEnabled();
+    onEnabled(result.enabled);
   };
 
   const handleSkip = () => {

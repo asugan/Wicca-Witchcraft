@@ -479,7 +479,7 @@ export default function OnboardingScreen() {
 
       <NotificationPermissionModal
         visible={notificationModalVisible}
-        onEnabled={completeOnboarding}
+        onEnabled={(_enabled: boolean) => completeOnboarding()}
         onSkipped={completeOnboarding}
       />
     </View>
