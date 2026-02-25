@@ -17,7 +17,7 @@ import { Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { setOnboardingCompleted } from "@/db/repositories/settings-repository";
+import { getNotificationsEnabled, setOnboardingCompleted } from "@/db/repositories/settings-repository";
 import { NotificationPermissionModal } from "@/components/mystic/NotificationPermissionModal";
 import { useToast } from "@/context/toast-context";
 import { typefaces } from "@/theme/tokens";
@@ -366,9 +366,13 @@ export default function OnboardingScreen() {
         animated: true,
       });
     } else {
-      setNotificationModalVisible(true);
+      if (getNotificationsEnabled(LOCAL_USER_ID)) {
+        completeOnboarding();
+      } else {
+        setNotificationModalVisible(true);
+      }
     }
-  }, [currentIndex]);
+  }, [currentIndex, completeOnboarding]);
 
   const renderSlide = useCallback(
     ({ item, index }: { item: SlideData; index: number }) => {
