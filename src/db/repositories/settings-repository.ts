@@ -202,3 +202,38 @@ export function setOnboardingCompleted(userId: string, completed: boolean): void
     })
     .run();
 }
+
+export function getCdnVersion(userId: string): number {
+  const row = db
+    .select({ cdnVersion: appSettings.cdnVersion })
+    .from(appSettings)
+    .where(eq(appSettings.userId, userId))
+    .limit(1)
+    .get();
+  return row?.cdnVersion ?? 0;
+}
+
+export function setCdnVersion(userId: string, version: number): void {
+  const existing = db
+    .select({ id: appSettings.id })
+    .from(appSettings)
+    .where(eq(appSettings.userId, userId))
+    .limit(1)
+    .get();
+
+  if (existing) {
+    db.update(appSettings).set({ cdnVersion: version }).where(eq(appSettings.id, existing.id)).run();
+    return;
+  }
+
+  db.insert(appSettings)
+    .values({
+      id: createSettingsId(userId),
+      userId,
+      themeMode: DEFAULT_THEME_MODE,
+      notificationsEnabled: false,
+      premiumActive: false,
+      cdnVersion: version,
+    })
+    .run();
+}

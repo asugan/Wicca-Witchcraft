@@ -35,4 +35,5 @@ export const DEFAULT_SETTINGS_SEED = {
   premiumActive: false,
   language: "",
   onboardingCompleted: false,
+  cdnVersion: 0,
 };

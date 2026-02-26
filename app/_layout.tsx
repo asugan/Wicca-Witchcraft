@@ -11,6 +11,7 @@ import { getLanguagePreference, getNotificationsEnabled } from "@/db/repositorie
 import { initRevenueCat } from "@/features/subscription/revenuecat";
 import i18n from "@/i18n";
 import { initAnalytics, trackAppStarted } from "@/lib/analytics";
+import { syncCdnContent } from "@/lib/cdn-sync";
 import { syncMysticNotifications } from "@/lib/notifications";
 import { getPaperTheme } from "@/theme/paper-theme";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
@@ -34,6 +35,7 @@ function RootLayoutContent() {
     }
 
     void initRevenueCat();
+    void syncCdnContent(LOCAL_USER_ID);
   }, []);
 
   return (

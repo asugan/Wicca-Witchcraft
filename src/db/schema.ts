@@ -223,6 +223,7 @@ export const appSettings = sqliteTable(
     premiumActive: integer("premium_active", { mode: "boolean" }).notNull(),
     language: text("language").notNull().default(""),
     onboardingCompleted: integer("onboarding_completed", { mode: "boolean" }).notNull().default(false),
+    cdnVersion: integer("cdn_version").notNull().default(0),
   },
   (table) => ({
     userSettingIndex: uniqueIndex("app_settings_user_unique").on(table.userId),
