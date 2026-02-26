@@ -1,6 +1,6 @@
 import { asc } from "drizzle-orm";
 
-import { db, ensureDatabaseInitialized } from "@/db/client";
+import { db } from "@/db/client";
 import { rituals } from "@/db/schema";
 import { getDailyCard } from "@/db/repositories/tarot-repository";
 import { getCurrentMoonInfo } from "@/lib/moon";
@@ -112,7 +112,6 @@ function scoreRitual(
 }
 
 export function getHomeDailySnapshot(date = new Date()): HomeDailySnapshot {
-  ensureDatabaseInitialized();
 
   const moonInfo = getCurrentMoonInfo(date);
   const moonPhaseKey = normalizeMoonPhaseKey(moonInfo.phaseKey);

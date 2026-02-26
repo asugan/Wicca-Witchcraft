@@ -1,16 +1,14 @@
 import { asc, count, eq } from "drizzle-orm";
 
-import { db, ensureDatabaseInitialized } from "@/db/client";
+import { db } from "@/db/client";
 import { libraryEntries } from "@/db/schema";
 
 export function getLibraryEntryBySlug(slug: string) {
-  ensureDatabaseInitialized();
 
   return db.select().from(libraryEntries).where(eq(libraryEntries.slug, slug)).get();
 }
 
 export function listLibraryEntries() {
-  ensureDatabaseInitialized();
 
   return db
     .select({
@@ -27,7 +25,6 @@ export function listLibraryEntries() {
 }
 
 export function listLibraryCategoryCounts() {
-  ensureDatabaseInitialized();
 
   return db
     .select({

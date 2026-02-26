@@ -1,7 +1,8 @@
 import { drizzle } from "drizzle-orm/expo-sqlite";
+import { migrate } from "drizzle-orm/expo-sqlite/migrator";
 import * as SQLite from "expo-sqlite";
 
-import { runMigrations } from "@/db/migrations";
+import migrations from "../../drizzle/migrations";
 import {
   DAILY_CARD_SEEDS,
   DEFAULT_SETTINGS_SEED,
@@ -31,8 +32,6 @@ const sqlite = SQLite.openDatabaseSync("mystic.db");
 
 export const db = drizzle(sqlite);
 
-let initialized = false;
-
 function seedIfNeeded() {
   const firstRitual = db.select({ id: rituals.id }).from(rituals).limit(1).get();
 
@@ -54,13 +53,7 @@ function seedIfNeeded() {
   });
 }
 
-export function ensureDatabaseInitialized() {
-  if (initialized) {
-    return;
-  }
-
-  runMigrations(sqlite);
+export async function runMigrationsAndSeed() {
+  await migrate(db, migrations);
   seedIfNeeded();
-
-  initialized = true;
 }

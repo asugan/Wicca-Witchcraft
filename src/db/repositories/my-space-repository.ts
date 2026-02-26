@@ -1,7 +1,7 @@
 import { and, count, desc, eq } from "drizzle-orm";
 
 import { FREE_JOURNAL_LIMIT } from "@/config/premium";
-import { db, ensureDatabaseInitialized } from "@/db/client";
+import { db } from "@/db/client";
 import { favorites, journalEntries, rituals } from "@/db/schema";
 
 const RITUAL_ENTITY_TYPE = "ritual";
@@ -12,7 +12,6 @@ function createId(prefix: string) {
 }
 
 export function listFavoriteRituals(userId: string) {
-  ensureDatabaseInitialized();
 
   return db
     .select({
@@ -33,7 +32,6 @@ export function listFavoriteRituals(userId: string) {
 }
 
 export function isRitualFavorited(userId: string, ritualId: string) {
-  ensureDatabaseInitialized();
 
   const row = db
     .select({ id: favorites.id })
@@ -46,7 +44,6 @@ export function isRitualFavorited(userId: string, ritualId: string) {
 }
 
 export function toggleRitualFavorite(userId: string, ritualId: string) {
-  ensureDatabaseInitialized();
 
   const existing = db
     .select({ id: favorites.id })
@@ -67,7 +64,6 @@ export function toggleRitualFavorite(userId: string, ritualId: string) {
 }
 
 export function addRitualFavorite(userId: string, ritualId: string) {
-  ensureDatabaseInitialized();
 
   db.insert(favorites)
     .values({
@@ -81,7 +77,6 @@ export function addRitualFavorite(userId: string, ritualId: string) {
 }
 
 export function removeRitualFavorite(userId: string, ritualId: string) {
-  ensureDatabaseInitialized();
 
   db.delete(favorites)
     .where(and(eq(favorites.userId, userId), eq(favorites.entityType, RITUAL_ENTITY_TYPE), eq(favorites.entityId, ritualId)))
@@ -89,7 +84,6 @@ export function removeRitualFavorite(userId: string, ritualId: string) {
 }
 
 export function isLibraryEntryFavorited(userId: string, entryId: string) {
-  ensureDatabaseInitialized();
 
   const row = db
     .select({ id: favorites.id })
@@ -102,7 +96,6 @@ export function isLibraryEntryFavorited(userId: string, entryId: string) {
 }
 
 export function toggleLibraryEntryFavorite(userId: string, entryId: string) {
-  ensureDatabaseInitialized();
 
   const existing = db
     .select({ id: favorites.id })
@@ -133,7 +126,6 @@ export function toggleLibraryEntryFavorite(userId: string, entryId: string) {
 }
 
 export function listJournalEntries(userId: string) {
-  ensureDatabaseInitialized();
 
   return db
     .select({
@@ -150,7 +142,6 @@ export function listJournalEntries(userId: string) {
 }
 
 export function createJournalEntry(userId: string, title: string, content: string, mood?: string) {
-  ensureDatabaseInitialized();
 
   const id = createId("journal");
 
@@ -169,7 +160,6 @@ export function createJournalEntry(userId: string, title: string, content: strin
 }
 
 export function updateJournalEntry(userId: string, entryId: string, title: string, content: string, mood?: string) {
-  ensureDatabaseInitialized();
 
   db.update(journalEntries)
     .set({
@@ -182,7 +172,6 @@ export function updateJournalEntry(userId: string, entryId: string, title: strin
 }
 
 export function deleteJournalEntry(userId: string, entryId: string) {
-  ensureDatabaseInitialized();
 
   db.delete(journalEntries)
     .where(and(eq(journalEntries.userId, userId), eq(journalEntries.id, entryId)))
@@ -190,7 +179,6 @@ export function deleteJournalEntry(userId: string, entryId: string) {
 }
 
 export function getJournalEntryCount(userId: string): number {
-  ensureDatabaseInitialized();
 
   const result = db
     .select({ value: count() })

@@ -1,8 +1,10 @@
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
+import { ActivityIndicator, View } from "react-native";
 import { PaperProvider } from "react-native-paper";
 
+import { DatabaseProvider, useDatabaseReady } from "@/context/database-context";
 import { ThemeProvider } from "@/context/theme-context";
 import { ToastProvider } from "@/context/toast-context";
 import { getLanguagePreference, getNotificationsEnabled } from "@/db/repositories/settings-repository";
@@ -49,10 +51,28 @@ function RootLayoutContent() {
   );
 }
 
+function DatabaseGate({ children }: { children: React.ReactNode }) {
+  const { isReady } = useDatabaseReady();
+
+  if (!isReady) {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#181611" }}>
+        <ActivityIndicator color="#C4A46C" />
+      </View>
+    );
+  }
+
+  return <>{children}</>;
+}
+
 export default function RootLayout() {
   return (
-    <ThemeProvider>
-      <RootLayoutContent />
-    </ThemeProvider>
+    <DatabaseProvider>
+      <DatabaseGate>
+        <ThemeProvider>
+          <RootLayoutContent />
+        </ThemeProvider>
+      </DatabaseGate>
+    </DatabaseProvider>
   );
 }

@@ -1,6 +1,6 @@
 import { asc, eq, inArray } from "drizzle-orm";
 
-import { db, ensureDatabaseInitialized } from "@/db/client";
+import { db } from "@/db/client";
 import { libraryEntries, materials, ritualMaterials, rituals, ritualSteps } from "@/db/schema";
 
 export type RitualListItem = {
@@ -18,7 +18,6 @@ export type RitualListItem = {
 };
 
 export function listRituals(limit?: number): RitualListItem[] {
-  ensureDatabaseInitialized();
 
   const baseQuery = db
     .select({
@@ -72,13 +71,11 @@ export function listRituals(limit?: number): RitualListItem[] {
 }
 
 export function getRitualBySlug(slug: string) {
-  ensureDatabaseInitialized();
 
   return db.select().from(rituals).where(eq(rituals.slug, slug)).get() ?? null;
 }
 
 export function getRitualDetailBySlug(slug: string) {
-  ensureDatabaseInitialized();
 
   const ritual = getRitualBySlug(slug);
 

@@ -1,11 +1,10 @@
 import { eq } from "drizzle-orm";
 
 import { REVENUECAT_PRO_ENTITLEMENT_ID } from "@/config/revenuecat";
-import { db, ensureDatabaseInitialized } from "@/db/client";
+import { db } from "@/db/client";
 import { subscriptionCache } from "@/db/schema";
 
 export function hasProAccess(): boolean {
-  ensureDatabaseInitialized();
 
   const row = db
     .select({ isActive: subscriptionCache.isActive })
@@ -18,7 +17,6 @@ export function hasProAccess(): boolean {
 }
 
 export function updateProAccessCache(isActive: boolean, expiresAt: string | null = null): void {
-  ensureDatabaseInitialized();
 
   const now = new Date().toISOString();
 

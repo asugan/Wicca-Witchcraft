@@ -3,7 +3,7 @@ import { and, eq, inArray, sql } from "drizzle-orm";
 import { toLocalIsoDate } from "@/lib/date-utils";
 
 import { PREMIUM_SPREAD_TYPES, SPREAD_CONFIGS, type SpreadType } from "@/config/premium";
-import { db, ensureDatabaseInitialized } from "@/db/client";
+import { db } from "@/db/client";
 import { tarotCards, tarotReadings } from "@/db/schema";
 import type { TarotCardRecord } from "@/db/schema";
 
@@ -44,7 +44,6 @@ function pickRandomCards(allCards: TarotCardRecord[], count: number): DrawnCard[
  * Get all 78 tarot cards from the database.
  */
 export function getAllTarotCards(): TarotCardRecord[] {
-  ensureDatabaseInitialized();
   return db.select().from(tarotCards).all();
 }
 
@@ -52,7 +51,6 @@ export function getAllTarotCards(): TarotCardRecord[] {
  * Get a single tarot card by ID.
  */
 export function getTarotCardById(cardId: string): TarotCardRecord | undefined {
-  ensureDatabaseInitialized();
   return db.select().from(tarotCards).where(eq(tarotCards.id, cardId)).get();
 }
 
@@ -62,7 +60,6 @@ export function getTarotCardById(cardId: string): TarotCardRecord | undefined {
  * Otherwise draw a new card and persist it.
  */
 export function getDailyCard(userId: string, date = new Date()): TarotReadingResult {
-  ensureDatabaseInitialized();
 
   const todayIso = toLocalIsoDate(date);
 
@@ -119,7 +116,6 @@ export function getDailyCard(userId: string, date = new Date()): TarotReadingRes
  * Always creates a new reading (users can draw multiple spreads per day).
  */
 export function drawThreeCardSpread(userId: string): TarotReadingResult {
-  ensureDatabaseInitialized();
 
   const allCards = getAllTarotCards();
   const positions = ["past", "present", "future"];
@@ -152,7 +148,6 @@ export function drawThreeCardSpread(userId: string): TarotReadingResult {
  * Get reading history for a user, most recent first.
  */
 export function getReadingHistory(userId: string, limit = 20): TarotReadingResult[] {
-  ensureDatabaseInitialized();
 
   const readings = db
     .select()
@@ -256,7 +251,6 @@ export function getSpreadConfig(spreadType: SpreadType) {
  * Creates a new reading with the specified spread type.
  */
 export function drawSpread(userId: string, spreadType: SpreadType): TarotReadingResult {
-  ensureDatabaseInitialized();
 
   const config = SPREAD_CONFIGS[spreadType];
   const allCards = getAllTarotCards();

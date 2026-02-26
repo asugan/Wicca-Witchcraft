@@ -8,6 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run android` / `npm run ios` / `npm run web` — Run on platform
 - `npm run lint` — ESLint check (expo lint config)
 - `npm run reset-project` — Reset to clean state
+- `npm run db:generate` — Generate Drizzle migration from schema changes (`drizzle-kit generate`)
 
 No test runner is currently configured.
 
@@ -23,19 +24,21 @@ React Native / Expo app (SDK 54, React 19, New Architecture + React Compiler ena
 
 Expo Router with file-based routing in `app/`. Typed routes enabled via `typedRoutes` experiment.
 
-- `app/_layout.tsx` — Root layout (PaperProvider → ToastProvider → Stack)
+- `app/_layout.tsx` — Root layout (DatabaseProvider → DatabaseGate → ThemeProvider → PaperProvider → ToastProvider → Stack)
 - `app/(tabs)/` — Bottom tab screens: index (home), grimoire, library, tools, profile
 - `app/ritual/[slug].tsx` — Ritual detail via slug lookup
 
 ### Database (`src/db/`)
 
-Drizzle ORM + expo-sqlite. Auto-migrates and seeds on first launch.
+Drizzle ORM + expo-sqlite. Auto-migrates and seeds on first launch via `DatabaseProvider` in root layout.
 
 - `schema.ts` — All table definitions (users, rituals, ritual_steps, materials, library_entries, favorites, journal_entries, app_settings, etc.)
-- `client.ts` — DB client init with `ensureDatabaseInitialized()` guard
-- `migrations.ts` — Ordered migration list
+- `client.ts` — DB client (`db`) + `runMigrationsAndSeed()` using drizzle's `migrate()`
 - `seed-data.ts` — Initial content data
 - `repositories/` — One file per entity (ritual, library, settings, etc.). All queries go through repositories.
+- `../../drizzle/` — Generated migration files (via `npm run db:generate`). **Never edit manually.**
+
+**Migration workflow:** Edit `schema.ts` → run `npm run db:generate` → commit the generated file in `drizzle/`.
 
 Default user ID is `"local-user"`.
 

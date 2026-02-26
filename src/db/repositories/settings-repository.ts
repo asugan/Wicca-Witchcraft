@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 
-import { db, ensureDatabaseInitialized } from "@/db/client";
+import { db } from "@/db/client";
 import { appSettings } from "@/db/schema";
 import { type AppLanguage, getDeviceAppLanguage } from "@/i18n/config";
 
@@ -13,7 +13,6 @@ function createSettingsId(userId: string) {
 }
 
 export function getNotificationsEnabled(userId: string) {
-  ensureDatabaseInitialized();
 
   const row = db
     .select({ notificationsEnabled: appSettings.notificationsEnabled })
@@ -30,7 +29,6 @@ export function getNotificationsEnabled(userId: string) {
 }
 
 export function getLanguagePreference(userId: string): AppLanguage {
-  ensureDatabaseInitialized();
 
   const row = db
     .select({ language: appSettings.language })
@@ -50,7 +48,6 @@ export function getProfileSettings(userId: string): {
   notificationsEnabled: boolean;
   language: AppLanguage;
 } {
-  ensureDatabaseInitialized();
 
   const row = db
     .select({
@@ -69,7 +66,6 @@ export function getProfileSettings(userId: string): {
 }
 
 export function setLanguagePreference(userId: string, language: AppLanguage): void {
-  ensureDatabaseInitialized();
 
   const existing = db
     .select({ id: appSettings.id })
@@ -97,7 +93,6 @@ export function setLanguagePreference(userId: string, language: AppLanguage): vo
 }
 
 export function setNotificationsEnabled(userId: string, notificationsEnabled: boolean) {
-  ensureDatabaseInitialized();
 
   const existing = db
     .select({ id: appSettings.id })
@@ -124,7 +119,6 @@ export function setNotificationsEnabled(userId: string, notificationsEnabled: bo
 }
 
 export function getThemeMode(userId: string): ThemeMode {
-  ensureDatabaseInitialized();
 
   const row = db
     .select({ themeMode: appSettings.themeMode })
@@ -141,7 +135,6 @@ export function getThemeMode(userId: string): ThemeMode {
 }
 
 export function setThemeMode(userId: string, themeMode: ThemeMode): void {
-  ensureDatabaseInitialized();
 
   const existing = db
     .select({ id: appSettings.id })
@@ -168,7 +161,6 @@ export function setThemeMode(userId: string, themeMode: ThemeMode): void {
 }
 
 export function getOnboardingCompleted(userId: string): boolean {
-  ensureDatabaseInitialized();
 
   const row = db
     .select({ onboardingCompleted: appSettings.onboardingCompleted })
@@ -185,7 +177,6 @@ export function getOnboardingCompleted(userId: string): boolean {
 }
 
 export function setOnboardingCompleted(userId: string, completed: boolean): void {
-  ensureDatabaseInitialized();
 
   const existing = db
     .select({ id: appSettings.id })
