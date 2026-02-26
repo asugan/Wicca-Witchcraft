@@ -62,6 +62,7 @@ export default function ToolsScreen() {
   const [selectedSpread, setSelectedSpread] = useState<SpreadType>("three_card");
   const [revealed, setRevealed] = useState<boolean[]>([]);
   const [currentReading, setCurrentReading] = useState<TarotReadingResult | null>(null);
+  const [isDrawing, setIsDrawing] = useState(false);
   const [moonData, setMoonData] = useState<ReturnType<typeof getMoonData> | null>(null);
 
   useEffect(() => {
@@ -92,16 +93,20 @@ export default function ToolsScreen() {
       return;
     }
 
-    const reading = selectedSpread === "three_card"
-      ? drawThreeCardSpread("local-user")
-      : drawSpread("local-user", selectedSpread);
-    setCurrentReading(reading);
-    setRevealed(new Array(reading.cards.length).fill(false));
-    trackEvent("tarot_spread_drawn", {
-      user_id: "local-user",
-      tab_name: "tools",
-      entity_id: reading.id,
-      source: selectedSpread,
+    setIsDrawing(true);
+    InteractionManager.runAfterInteractions(() => {
+      const reading = selectedSpread === "three_card"
+        ? drawThreeCardSpread("local-user")
+        : drawSpread("local-user", selectedSpread);
+      setCurrentReading(reading);
+      setRevealed(new Array(reading.cards.length).fill(false));
+      setIsDrawing(false);
+      trackEvent("tarot_spread_drawn", {
+        user_id: "local-user",
+        tab_name: "tools",
+        entity_id: reading.id,
+        source: selectedSpread,
+      });
     });
   }, [selectedSpread, isPremium, requirePremium]);
 
@@ -183,19 +188,25 @@ export default function ToolsScreen() {
               <View style={styles.cardsRow}>
                 {[floatOne, floatTwo, floatThree].map((floating, index) => (
                   <Animated.View key={cardSymbols[index]} style={[styles.cardAnimatedWrap, { transform: [{ translateY: floating }] }]}>
-                    <Pressable onPress={handleDrawSpread} style={styles.cardBack}>
+                    <Pressable disabled={isDrawing} onPress={handleDrawSpread} style={styles.cardBack}>
                       <View style={styles.cardInnerBorder} />
-                      <MaterialCommunityIcons
-                        color={`${theme.colors.primary}B5`}
-                        name={cardSymbols[index]}
-                        size={36}
-                      />
+                      {isDrawing ? (
+                        <ActivityIndicator color={`${theme.colors.primary}B5`} />
+                      ) : (
+                        <MaterialCommunityIcons
+                          color={`${theme.colors.primary}B5`}
+                          name={cardSymbols[index]}
+                          size={36}
+                        />
+                      )}
                       <Text style={styles.cardLabel}>{index === 0 ? t("tools.cardPast") : index === 1 ? t("tools.cardPresent") : t("tools.cardFuture")}</Text>
                     </Pressable>
                   </Animated.View>
                 ))}
               </View>
               <Button
+                disabled={isDrawing}
+                loading={isDrawing}
                 mode="outlined"
                 onPress={handleDrawSpread}
                 style={styles.secondaryButton}
