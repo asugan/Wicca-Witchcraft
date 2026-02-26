@@ -32,6 +32,11 @@ const ENTITY_TYPE_KEYS: Record<string, string> = {
 
 type LibraryEntry = ReturnType<typeof listLibraryEntries>[number];
 
+type LibraryData = {
+  entries: ReturnType<typeof listLibraryEntries>;
+  categoryCounts: ReturnType<typeof listLibraryCategoryCounts>;
+};
+
 export default function LibraryScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
@@ -42,10 +47,6 @@ export default function LibraryScreen() {
   const [selectedType, setSelectedType] = useState<string>("all");
   const [filtersExpanded, setFiltersExpanded] = useState(false);
 
-  type LibraryData = {
-    entries: ReturnType<typeof listLibraryEntries>;
-    categoryCounts: ReturnType<typeof listLibraryCategoryCounts>;
-  };
   const [libraryData, setLibraryData] = useState<LibraryData | null>(null);
 
   useEffect(() => {
@@ -168,9 +169,11 @@ export default function LibraryScreen() {
           </View>
         )}
 
-        <Text style={[styles.resultMeta, filtersExpanded && styles.resultMetaExpanded]}>
-          {t("library.entriesFound", { count: filteredEntries.length })}
-        </Text>
+        {libraryData && (
+          <Text style={[styles.resultMeta, filtersExpanded && styles.resultMetaExpanded]}>
+            {t("library.entriesFound", { count: filteredEntries.length })}
+          </Text>
+        )}
       </View>
     ),
     [activeFilterCount, filtersExpanded, libraryData, selectedType, filteredEntries.length, t, theme, styles]
