@@ -1,6 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Animated, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { ActivityIndicator, Animated, InteractionManager, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -62,7 +62,15 @@ export default function ToolsScreen() {
   const [selectedSpread, setSelectedSpread] = useState<SpreadType>("three_card");
   const [revealed, setRevealed] = useState<boolean[]>([]);
   const [currentReading, setCurrentReading] = useState<TarotReadingResult | null>(null);
-  const moonData = useMemo(() => getMoonData(), []);
+  const [moonData, setMoonData] = useState<ReturnType<typeof getMoonData> | null>(null);
+
+  useEffect(() => {
+    const task = InteractionManager.runAfterInteractions(() => {
+      setMoonData(getMoonData());
+    });
+    return () => task.cancel();
+  }, []);
+
   const availableSpreads = useMemo(() => getAvailableSpreads(), []);
 
   const handleSelectSpread = useCallback(
@@ -110,14 +118,10 @@ export default function ToolsScreen() {
   const todayIso = useMemo(() => toLocalIsoDate(new Date()), []);
 
   const visibleTimeline = useMemo(() => {
+    if (!moonData) return null;
     const upcoming = moonData.timeline.filter((entry) => entry.rawDate >= todayIso);
-
-    if (upcoming.length) {
-      return upcoming.slice(0, 8);
-    }
-
-    return moonData.timeline.slice(0, 8);
-  }, [moonData.timeline, todayIso]);
+    return upcoming.length ? upcoming.slice(0, 8) : moonData.timeline.slice(0, 8);
+  }, [moonData, todayIso]);
 
   const toggleOne = (index: number) => {
     setRevealed((prev) => prev.map((item, cardIndex) => (cardIndex === index ? !item : item)));
@@ -295,7 +299,9 @@ export default function ToolsScreen() {
             <MaterialCommunityIcons color={theme.colors.primary} name="moon-waning-gibbous" size={18} />
           </View>
 
-          {moonData.sections.map((section) => (
+          {!moonData ? (
+            <ActivityIndicator color={theme.colors.primary} style={styles.sectionLoader} />
+          ) : moonData.sections.map((section) => (
             <View key={section.key} style={styles.monthBlock}>
               <Text style={styles.monthLabel}>{section.label}</Text>
               {section.events.map((event) => (
@@ -319,7 +325,9 @@ export default function ToolsScreen() {
             <MaterialCommunityIcons color={theme.colors.primary} name="timeline-clock-outline" size={18} />
           </View>
 
-          {visibleTimeline.map((entry) => (
+          {!visibleTimeline ? (
+            <ActivityIndicator color={theme.colors.primary} style={styles.sectionLoader} />
+          ) : visibleTimeline.map((entry) => (
             <View key={entry.id} style={styles.timelineRow}>
               <View
                 style={[
@@ -716,5 +724,8 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     spreadChipCountSelected: {
       color: `${theme.colors.onPrimary}CC`,
+    },
+    sectionLoader: {
+      paddingVertical: 24,
     },
   });

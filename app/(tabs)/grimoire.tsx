@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useCallback, useDeferredValue, useMemo, useState } from "react";
-import { FlatList, ImageBackground, LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from "react";
+import { ActivityIndicator, FlatList, ImageBackground, InteractionManager, LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Searchbar, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -137,9 +137,17 @@ export default function GrimoireScreen() {
     [t]
   );
 
-  const rituals = useMemo(() => listRituals(), []);
+  const [rituals, setRituals] = useState<ReturnType<typeof listRituals> | null>(null);
+
+  useEffect(() => {
+    const task = InteractionManager.runAfterInteractions(() => {
+      setRituals(listRituals());
+    });
+    return () => task.cancel();
+  }, []);
 
   const moonPhaseOptions = useMemo(() => {
+    if (!rituals) return [];
     const uniquePhases = Array.from(new Set(rituals.map((ritual) => ritual.moonPhase)));
 
     return uniquePhases.sort((first, second) => {
@@ -155,12 +163,14 @@ export default function GrimoireScreen() {
   }, [rituals]);
 
   const materialOptions = useMemo(() => {
+    if (!rituals) return [];
     return Array.from(new Set(rituals.flatMap((ritual) => ritual.materials))).sort((first, second) =>
       first.localeCompare(second)
     );
   }, [rituals]);
 
   const filteredRituals = useMemo(() => {
+    if (!rituals) return [];
     const normalizedQuery = deferredQuery.trim().toLowerCase();
     const queryTokens = normalizedQuery.split(/\s+/).filter(Boolean);
     const baseFilteredRituals = rituals.filter((ritual) => {
@@ -199,7 +209,7 @@ export default function GrimoireScreen() {
       .map((result) => result.ritual);
   }, [deferredQuery, rituals, selectedDifficulty, selectedMoonPhase, selectedMaterial]);
 
-  const featuredRitual = filteredRituals[0] ?? rituals[0];
+  const featuredRitual = filteredRituals[0] ?? rituals?.[0];
 
   const keyExtractor = useCallback((item: Ritual) => item.id, []);
 
@@ -387,19 +397,25 @@ export default function GrimoireScreen() {
         </Pressable>
       </View>
 
-      <FlatList
-        data={filteredRituals}
-        renderItem={renderRitualItem}
-        keyExtractor={keyExtractor}
-        numColumns={2}
-        ListHeaderComponent={listHeader}
-        ListEmptyComponent={emptyComponent}
-        ItemSeparatorComponent={() => <View style={styles.rowSeparator} />}
-        contentContainerStyle={styles.content}
-        columnWrapperStyle={styles.columnWrapper}
-        removeClippedSubviews
-        showsVerticalScrollIndicator={false}
-      />
+      {!rituals ? (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingVertical: 80 }}>
+          <ActivityIndicator color={theme.colors.primary} />
+        </View>
+      ) : (
+        <FlatList
+          data={filteredRituals}
+          renderItem={renderRitualItem}
+          keyExtractor={keyExtractor}
+          numColumns={2}
+          ListHeaderComponent={listHeader}
+          ListEmptyComponent={emptyComponent}
+          ItemSeparatorComponent={() => <View style={styles.rowSeparator} />}
+          contentContainerStyle={styles.content}
+          columnWrapperStyle={styles.columnWrapper}
+          removeClippedSubviews
+          showsVerticalScrollIndicator={false}
+        />
+      )}
     </SafeAreaView>
   );
 }

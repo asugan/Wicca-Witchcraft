@@ -125,7 +125,7 @@ export default function HomeScreen() {
         5000,
       );
     }
-  }, [showToast, t]);
+  }, [showToast, t, setNotificationsEnabledState]);
 
   const handleNotificationSkipped = useCallback(() => {
     setNotificationModalVisible(false);

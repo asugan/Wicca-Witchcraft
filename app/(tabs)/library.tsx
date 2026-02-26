@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useCallback, useMemo, useState } from "react";
-import { FlatList, LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { ActivityIndicator, FlatList, InteractionManager, LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -41,8 +41,22 @@ export default function LibraryScreen() {
 
   const [selectedType, setSelectedType] = useState<string>("all");
   const [filtersExpanded, setFiltersExpanded] = useState(false);
-  const entries = useMemo(() => listLibraryEntries(), []);
-  const categoryCounts = useMemo(() => listLibraryCategoryCounts(), []);
+
+  type LibraryData = {
+    entries: ReturnType<typeof listLibraryEntries>;
+    categoryCounts: ReturnType<typeof listLibraryCategoryCounts>;
+  };
+  const [libraryData, setLibraryData] = useState<LibraryData | null>(null);
+
+  useEffect(() => {
+    const task = InteractionManager.runAfterInteractions(() => {
+      setLibraryData({
+        entries: listLibraryEntries(),
+        categoryCounts: listLibraryCategoryCounts(),
+      });
+    });
+    return () => task.cancel();
+  }, []);
 
   const activeFilterCount = selectedType !== "all" ? 1 : 0;
 
@@ -52,12 +66,10 @@ export default function LibraryScreen() {
   };
 
   const filteredEntries = useMemo(() => {
-    if (selectedType === "all") {
-      return entries;
-    }
-
-    return entries.filter((entry) => entry.entityType === selectedType);
-  }, [entries, selectedType]);
+    if (!libraryData) return [];
+    if (selectedType === "all") return libraryData.entries;
+    return libraryData.entries.filter((entry) => entry.entityType === selectedType);
+  }, [libraryData, selectedType]);
 
   const keyExtractor = useCallback((item: LibraryEntry) => item.id, []);
 
@@ -138,7 +150,7 @@ export default function LibraryScreen() {
               <Text style={styles.filterTitle}>{t("library.filterCategory")}</Text>
               <ScrollView contentContainerStyle={styles.chipsContent} horizontal showsHorizontalScrollIndicator={false}>
                 <LibraryChip active={selectedType === "all"} icon="shape-outline" label={t("library.filterAll")} onPress={() => setSelectedType("all")} />
-                {categoryCounts.map((category) => {
+                {(libraryData?.categoryCounts ?? []).map((category) => {
                   const typeKey = ENTITY_TYPE_KEYS[category.entityType];
                   const typeLabel = typeKey ? t(typeKey as string) : category.entityType;
                   return (
@@ -161,7 +173,7 @@ export default function LibraryScreen() {
         </Text>
       </View>
     ),
-    [activeFilterCount, filtersExpanded, categoryCounts, selectedType, filteredEntries.length, t, theme, styles]
+    [activeFilterCount, filtersExpanded, libraryData, selectedType, filteredEntries.length, t, theme, styles]
   );
 
   return (
@@ -171,15 +183,19 @@ export default function LibraryScreen() {
         <Text style={styles.subtitle}>{t("library.subtitle")}</Text>
         {filtersCard}
       </View>
-      <FlatList
-        data={filteredEntries}
-        renderItem={renderEntryItem}
-        keyExtractor={keyExtractor}
-        ItemSeparatorComponent={() => <View style={styles.rowSeparator} />}
-        style={styles.card}
-        contentContainerStyle={styles.cardContent}
-        showsVerticalScrollIndicator={false}
-      />
+      {!libraryData ? (
+        <ActivityIndicator color={theme.colors.primary} style={{ paddingVertical: 48 }} />
+      ) : (
+        <FlatList
+          data={filteredEntries}
+          renderItem={renderEntryItem}
+          keyExtractor={keyExtractor}
+          ItemSeparatorComponent={() => <View style={styles.rowSeparator} />}
+          style={styles.card}
+          contentContainerStyle={styles.cardContent}
+          showsVerticalScrollIndicator={false}
+        />
+      )}
     </SafeAreaView>
   );
 }
