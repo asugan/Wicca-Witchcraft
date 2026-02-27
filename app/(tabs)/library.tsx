@@ -21,6 +21,20 @@ const categoryIcons: Record<string, keyof typeof MaterialCommunityIcons.glyphMap
   candle: "candle",
   symbol: "star-four-points",
   deity: "account-star",
+  charm: "star-circle-outline",
+  mineral: "hexagon-outline",
+  stone: "circle-outline",
+  metal: "ring",
+  earth: "earth",
+  water: "water",
+  liquid: "cup-water",
+  organic: "sprout",
+  tool: "tools",
+  amulet: "shield-star",
+  material: "cube-outline",
+  "animal-product": "paw",
+  resin: "fire",
+  offering: "hand-heart",
 };
 
 const ENTITY_TYPE_KEYS: Record<string, string> = {
@@ -29,6 +43,20 @@ const ENTITY_TYPE_KEYS: Record<string, string> = {
   candle: "library.typeCandle",
   symbol: "library.typeSymbol",
   deity: "library.typeDeity",
+  charm: "library.typeCharm",
+  mineral: "library.typeMineral",
+  stone: "library.typeStone",
+  metal: "library.typeMetal",
+  earth: "library.typeEarth",
+  water: "library.typeWater",
+  liquid: "library.typeLiquid",
+  organic: "library.typeOrganic",
+  tool: "library.typeTool",
+  amulet: "library.typeAmulet",
+  material: "library.typeMaterial",
+  "animal-product": "library.typeAnimalProduct",
+  resin: "library.typeResin",
+  offering: "library.typeOffering",
 };
 
 type LibraryEntry = ReturnType<typeof listLibraryEntries>[number];

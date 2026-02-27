@@ -14,6 +14,20 @@ const categoryIcons: Record<string, keyof typeof MaterialCommunityIcons.glyphMap
   candle: "candle",
   symbol: "star-four-points",
   deity: "account-star",
+  charm: "star-circle-outline",
+  mineral: "hexagon-outline",
+  stone: "circle-outline",
+  metal: "ring",
+  earth: "earth",
+  water: "water",
+  liquid: "cup-water",
+  organic: "sprout",
+  tool: "tools",
+  amulet: "shield-star",
+  material: "cube-outline",
+  "animal-product": "paw",
+  resin: "fire",
+  offering: "hand-heart",
 };
 
 type LibraryEntryItemProps = {

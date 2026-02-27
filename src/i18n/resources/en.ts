@@ -90,6 +90,20 @@ export type Translations = {
     typeCandle: string;
     typeSymbol: string;
     typeDeity: string;
+    typeCharm: string;
+    typeMineral: string;
+    typeStone: string;
+    typeMetal: string;
+    typeEarth: string;
+    typeWater: string;
+    typeLiquid: string;
+    typeOrganic: string;
+    typeTool: string;
+    typeAmulet: string;
+    typeMaterial: string;
+    typeAnimalProduct: string;
+    typeResin: string;
+    typeOffering: string;
     filters: string;
     filterCategory: string;
     entriesFound: string;
@@ -143,6 +157,11 @@ export type Translations = {
     usageAcknowledge: string;
     usageAcknowledgeContent: string;
     usageIncorporate: string;
+    usagePrepareResin: string;
+    usagePrepareResinContent: string;
+    usageBurnResinContent: string;
+    usagePresentOffering: string;
+    usagePresentOfferingContent: string;
   };
   tools: {
     overline: string;
@@ -406,6 +425,20 @@ export const enTranslations: Translations = {
     typeCandle: "Candle",
     typeSymbol: "Symbol",
     typeDeity: "Deity",
+    typeCharm: "Charm",
+    typeMineral: "Mineral",
+    typeStone: "Stone",
+    typeMetal: "Metal",
+    typeEarth: "Earth",
+    typeWater: "Water",
+    typeLiquid: "Liquid",
+    typeOrganic: "Organic",
+    typeTool: "Tool",
+    typeAmulet: "Amulet",
+    typeMaterial: "Material",
+    typeAnimalProduct: "Animal Product",
+    typeResin: "Resin",
+    typeOffering: "Offering",
     filters: "Filters",
     filterCategory: "Category",
     entriesFound: "{{count}} entries found",
@@ -459,6 +492,11 @@ export const enTranslations: Translations = {
     usageAcknowledge: "Acknowledge Its Origin",
     usageAcknowledgeContent: "Honor the source of this organic item and give thanks for its energy.",
     usageIncorporate: "Incorporate in Work",
+    usagePrepareResin: "Prepare the Resin",
+    usagePrepareResinContent: "Break or grind the resin into small pieces. Place on a heat-safe charcoal disk or in a ritual burner.",
+    usageBurnResinContent: "Ignite the charcoal, add the resin, and direct the fragrant smoke through the space or over yourself.",
+    usagePresentOffering: "Present with Reverence",
+    usagePresentOfferingContent: "Place the offering at the altar or sacred space. Speak your intention and gratitude aloud.",
   },
   tools: {
     overline: "Tools",

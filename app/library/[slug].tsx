@@ -21,6 +21,20 @@ const categoryIcons: Record<string, keyof typeof MaterialCommunityIcons.glyphMap
   candle: "candle",
   symbol: "star-four-points",
   deity: "account-star",
+  charm: "star-circle-outline",
+  mineral: "hexagon-outline",
+  stone: "circle-outline",
+  metal: "ring",
+  earth: "earth",
+  water: "water",
+  liquid: "cup-water",
+  organic: "sprout",
+  tool: "tools",
+  amulet: "shield-star",
+  material: "cube-outline",
+  "animal-product": "paw",
+  resin: "fire",
+  offering: "hand-heart",
 };
 
 export default function LibraryDetailScreen() {
@@ -138,6 +152,31 @@ export default function LibraryDetailScreen() {
         { title: t("libraryDetail.usageCleanse" as string), content: entry.cleansingMethod },
         { title: t("libraryDetail.usageAcknowledge" as string), content: t("libraryDetail.usageAcknowledgeContent" as string) },
         { title: t("libraryDetail.usageIncorporate" as string), content: entry.careNote },
+      ],
+      amulet: [
+        { title: t("libraryDetail.usageCleanse" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageProgram" as string), content: t("libraryDetail.usageProgramContent" as string) },
+        { title: t("libraryDetail.usageCarry" as string), content: entry.careNote },
+      ],
+      material: [
+        { title: t("libraryDetail.usagePrepare" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageChargeMoon" as string), content: t("libraryDetail.usageChargeMoonContent" as string) },
+        { title: t("libraryDetail.usageIncorporate" as string), content: entry.careNote },
+      ],
+      "animal-product": [
+        { title: t("libraryDetail.usageAcknowledge" as string), content: t("libraryDetail.usageAcknowledgeContent" as string) },
+        { title: t("libraryDetail.usageCleanse" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageIncorporate" as string), content: entry.careNote },
+      ],
+      resin: [
+        { title: t("libraryDetail.usagePrepareResin" as string), content: t("libraryDetail.usagePrepareResinContent" as string) },
+        { title: t("libraryDetail.usageBurn" as string), content: t("libraryDetail.usageBurnResinContent" as string) },
+        { title: t("libraryDetail.usageMeditate" as string), content: entry.careNote },
+      ],
+      offering: [
+        { title: t("libraryDetail.usageOffering" as string), content: t("libraryDetail.usageOfferingContent" as string) },
+        { title: t("libraryDetail.usagePresentOffering" as string), content: t("libraryDetail.usagePresentOfferingContent" as string) },
+        { title: t("libraryDetail.usageRelease" as string), content: entry.careNote },
       ],
     };
 
