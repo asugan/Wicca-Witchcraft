@@ -94,6 +94,51 @@ export default function LibraryDetailScreen() {
         { title: t("libraryDetail.usageOffering" as string), content: t("libraryDetail.usageOfferingContent" as string) },
         { title: t("libraryDetail.usageInvoke" as string), content: t("libraryDetail.usageInvokeContent" as string) },
       ],
+      charm: [
+        { title: t("libraryDetail.usageCleanse" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageProgram" as string), content: t("libraryDetail.usageProgramContent" as string) },
+        { title: t("libraryDetail.usageCarry" as string), content: entry.careNote },
+      ],
+      mineral: [
+        { title: t("libraryDetail.usageCleanse" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageProgram" as string), content: t("libraryDetail.usageProgramContent" as string) },
+        { title: t("libraryDetail.usageCarry" as string), content: entry.careNote },
+      ],
+      stone: [
+        { title: t("libraryDetail.usageCleanse" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageProgram" as string), content: t("libraryDetail.usageProgramContent" as string) },
+        { title: t("libraryDetail.usageCarry" as string), content: entry.careNote },
+      ],
+      metal: [
+        { title: t("libraryDetail.usageCleanse" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageProgram" as string), content: t("libraryDetail.usageProgramContent" as string) },
+        { title: t("libraryDetail.usageCarry" as string), content: entry.careNote },
+      ],
+      tool: [
+        { title: t("libraryDetail.usageCleanse" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageDedicateTool" as string), content: t("libraryDetail.usageDedicateToolContent" as string) },
+        { title: t("libraryDetail.usageStore" as string), content: entry.careNote },
+      ],
+      liquid: [
+        { title: t("libraryDetail.usagePrepareLiquid" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageChargeMoon" as string), content: t("libraryDetail.usageChargeMoonContent" as string) },
+        { title: t("libraryDetail.usageApplyLiquid" as string), content: entry.careNote },
+      ],
+      earth: [
+        { title: t("libraryDetail.usagePrepare" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageSetSpace" as string), content: t("libraryDetail.usageSetSpaceContent" as string) },
+        { title: t("libraryDetail.usageRelease" as string), content: entry.careNote },
+      ],
+      water: [
+        { title: t("libraryDetail.usageCollectWater" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageChargeIntent" as string), content: t("libraryDetail.usageChargeIntentContent" as string) },
+        { title: t("libraryDetail.usageUseRitual" as string), content: entry.careNote },
+      ],
+      organic: [
+        { title: t("libraryDetail.usageCleanse" as string), content: entry.cleansingMethod },
+        { title: t("libraryDetail.usageAcknowledge" as string), content: t("libraryDetail.usageAcknowledgeContent" as string) },
+        { title: t("libraryDetail.usageIncorporate" as string), content: entry.careNote },
+      ],
     };
 
     return entityUsage[entry.entityType] ?? [];
@@ -208,25 +253,29 @@ export default function LibraryDetailScreen() {
             </View>
           ) : (
             <>
-              <View style={styles.sectionHeader}>
-                <MaterialCommunityIcons color={theme.colors.primary} name="auto-fix" size={18} />
-                <Text style={styles.sectionTitle}>{t("libraryDetail.ritualUsage" as string)}</Text>
-              </View>
-              <View style={styles.sectionDivider} />
-
-              <View style={styles.stepsWrap}>
-                {usageSteps.map((step, index) => (
-                  <View key={index} style={styles.stepRow}>
-                    <View style={styles.stepNumber}>
-                      <Text style={styles.stepNumberText}>{index + 1}</Text>
-                    </View>
-                    <View style={styles.stepContent}>
-                      <Text style={styles.stepTitle}>{step.title}</Text>
-                      <Text style={styles.stepText}>{step.content}</Text>
-                    </View>
+              {usageSteps.length > 0 && (
+                <>
+                  <View style={styles.sectionHeader}>
+                    <MaterialCommunityIcons color={theme.colors.primary} name="auto-fix" size={18} />
+                    <Text style={styles.sectionTitle}>{t("libraryDetail.ritualUsage" as string)}</Text>
                   </View>
-                ))}
-              </View>
+                  <View style={styles.sectionDivider} />
+
+                  <View style={styles.stepsWrap}>
+                    {usageSteps.map((step, index) => (
+                      <View key={index} style={styles.stepRow}>
+                        <View style={styles.stepNumber}>
+                          <Text style={styles.stepNumberText}>{index + 1}</Text>
+                        </View>
+                        <View style={styles.stepContent}>
+                          <Text style={styles.stepTitle}>{step.title}</Text>
+                          <Text style={styles.stepText}>{step.content}</Text>
+                        </View>
+                      </View>
+                    ))}
+                  </View>
+                </>
+              )}
 
               <View style={styles.tagsSection}>
                 <Text style={styles.tagsLabel}>{t("libraryDetail.associatedWith" as string)}</Text>

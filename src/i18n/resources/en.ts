@@ -127,6 +127,22 @@ export type Translations = {
     usageOfferingContent: string;
     usageInvoke: string;
     usageInvokeContent: string;
+    usageDedicateTool: string;
+    usageDedicateToolContent: string;
+    usagePrepareLiquid: string;
+    usageChargeMoon: string;
+    usageChargeMoonContent: string;
+    usageApplyLiquid: string;
+    usageSetSpace: string;
+    usageSetSpaceContent: string;
+    usageRelease: string;
+    usageCollectWater: string;
+    usageChargeIntent: string;
+    usageChargeIntentContent: string;
+    usageUseRitual: string;
+    usageAcknowledge: string;
+    usageAcknowledgeContent: string;
+    usageIncorporate: string;
   };
   tools: {
     overline: string;
@@ -427,6 +443,22 @@ export const enTranslations: Translations = {
     usageOfferingContent: "Set up an altar with appropriate offerings and devotional items.",
     usageInvoke: "Invoke with Respect",
     usageInvokeContent: "Call upon the deity with reverence, stating your intention clearly.",
+    usageDedicateTool: "Dedicate to Purpose",
+    usageDedicateToolContent: "Hold the tool and declare its ritual purpose aloud. Welcome it as your magical partner.",
+    usagePrepareLiquid: "Prepare the Liquid",
+    usageChargeMoon: "Charge Under Moon",
+    usageChargeMoonContent: "Place the vessel under moonlight or sunlight to infuse it with celestial energy.",
+    usageApplyLiquid: "Apply with Intention",
+    usageSetSpace: "Set the Space",
+    usageSetSpaceContent: "Lay the earth element at the cardinal direction or altar space aligned with your intention.",
+    usageRelease: "Release When Done",
+    usageCollectWater: "Collect & Bless",
+    usageChargeIntent: "Charge with Intent",
+    usageChargeIntentContent: "Hold the vessel and speak your blessing or intention over the water.",
+    usageUseRitual: "Use in Ritual",
+    usageAcknowledge: "Acknowledge Its Origin",
+    usageAcknowledgeContent: "Honor the source of this organic item and give thanks for its energy.",
+    usageIncorporate: "Incorporate in Work",
   },
   tools: {
     overline: "Tools",
