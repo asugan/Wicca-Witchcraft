@@ -751,6 +751,756 @@
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
       "createdAt": 1704067200049,
       "isPremium": false
+    },
+    {
+      "id": "animal-candle-protection",
+      "slug": "animal-candle-protection",
+      "title": "Animal Candle Protection Spell",
+      "summary": "A candle spell to provide a magical shield for your companion animal.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200050,
+      "isPremium": false
+    },
+    {
+      "id": "animal-image-protection",
+      "slug": "animal-image-protection",
+      "title": "Animal Image Protection Spell",
+      "summary": "Protect your pet using their photograph and protective oils.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200051,
+      "isPremium": false
+    },
+    {
+      "id": "red-clover-protective-bath",
+      "slug": "red-clover-protective-bath",
+      "title": "Red Clover Protective Bath Spell",
+      "summary": "Bathe animals in a red clover infusion for health and protection.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200052,
+      "isPremium": false
+    },
+    {
+      "id": "anti-bewitchment-animal-wash",
+      "slug": "anti-bewitchment-animal-wash",
+      "title": "Anti-Bewitchment Animal Wash",
+      "summary": "Wash away negativity or bewitchment from an animal using mugwort.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200053,
+      "isPremium": false
+    },
+    {
+      "id": "pacify-threatening-dogs",
+      "slug": "pacify-threatening-dogs",
+      "title": "Pacify Threatening Dogs Spell",
+      "summary": "A quick spoken charm to pacify a threatening dog and provide protection.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200054,
+      "isPremium": false
+    },
+    {
+      "id": "fierce-creatures-spell",
+      "slug": "fierce-creatures-spell",
+      "title": "Fierce Creatures Protection Spell",
+      "summary": "Carry avens to protect against venomous and fierce creatures.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200055,
+      "isPremium": false
+    },
+    {
+      "id": "juniper-protection",
+      "slug": "juniper-protection",
+      "title": "Juniper Wild Animal Protection",
+      "summary": "Ward off wild animal attacks using a simple sprig of juniper.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200056,
+      "isPremium": false
+    },
+    {
+      "id": "banish-evil-spell",
+      "slug": "banish-evil-spell",
+      "title": "Banish Evil Nail Spell",
+      "summary": "Banish generalized evil using an iron hammer and a rusty nail.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "dark-moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200057,
+      "isPremium": false
+    },
+    {
+      "id": "banish-negative-energy",
+      "slug": "banish-negative-energy",
+      "title": "Banish Negative Energy with Chicory",
+      "summary": "Burn chicory to banish negative emotions and energy from your space.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200058,
+      "isPremium": false
+    },
+    {
+      "id": "exodus-powder",
+      "slug": "exodus-powder",
+      "title": "Exodus Banishing Powder",
+      "summary": "A concentrated powder to stimulate a sudden departure of unwanted guests.",
+      "category": "cleansing",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200059,
+      "isPremium": false
+    },
+    {
+      "id": "garlic-banishing",
+      "slug": "garlic-banishing",
+      "title": "Garlic Evil Eye Banishing",
+      "summary": "Banish jealous people and the Evil Eye with a braid of garlic.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200060,
+      "isPremium": false
+    },
+    {
+      "id": "nettle-banishing-spell",
+      "slug": "nettle-banishing-spell",
+      "title": "Nettle Banishing Spell",
+      "summary": "Burn nettles to accomplish strong banishing goals.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "waning-moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200061,
+      "isPremium": false
+    },
+    {
+      "id": "bad-habits-bath",
+      "slug": "bad-habits-bath",
+      "title": "Bad Habits Cleansing Bath",
+      "summary": "A soothing, aromatic bath to banish dangerous addictions and bad habits.",
+      "category": "cleansing",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200062,
+      "isPremium": false
+    },
+    {
+      "id": "crystal-bad-habit-breaking",
+      "slug": "crystal-bad-habit-breaking",
+      "title": "Crystal Habit Breaking Spell",
+      "summary": "Use crystals to break old habits and destructive patterns.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200063,
+      "isPremium": false
+    },
+    {
+      "id": "eucalyptus-bad-habits-bath",
+      "slug": "eucalyptus-bad-habits-bath",
+      "title": "Eucalyptus Habit Banishment Bath",
+      "summary": "Destroy evil ties that bind using a eucalyptus infused bath.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 25,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200064,
+      "isPremium": false
+    },
+    {
+      "id": "bamboo-banishing-spell",
+      "slug": "bamboo-banishing-spell",
+      "title": "Bamboo Demon Banishing Spell",
+      "summary": "Banish unwanted house spirits using popping bamboo sticks.",
+      "category": "cleansing",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200065,
+      "isPremium": false
+    },
+    {
+      "id": "dragons-blood-double-action",
+      "slug": "dragons-blood-double-action",
+      "title": "Dragon's Blood Double Action Banishing",
+      "summary": "Burn a dressed candle to keep an area free from malevolent spirits.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 60,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200066,
+      "isPremium": false
+    },
+    {
+      "id": "disperse-evil-incense-1",
+      "slug": "disperse-evil-incense-1",
+      "title": "Triple Threat Disperse Evil Incense",
+      "summary": "A triple threat incense blend to drive away evil spirits.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200067,
+      "isPremium": false
+    },
+    {
+      "id": "disperse-evil-incense-2",
+      "slug": "disperse-evil-incense-2",
+      "title": "Patchouli Spirit Dispersal Incense",
+      "summary": "Banish and disperse malicious spirits using a patchouli and resin blend.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200068,
+      "isPremium": false
+    },
+    {
+      "id": "elf-banishing-spell",
+      "slug": "elf-banishing-spell",
+      "title": "Elf Banishing Spell",
+      "summary": "Repel unwanted elven folk using iron or steel tools.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200069,
+      "isPremium": false
+    },
+    {
+      "id": "fenugreek-head-wash",
+      "slug": "fenugreek-head-wash",
+      "title": "Fenugreek Anti-Possession Head Wash",
+      "summary": "Protect against demonic possession by washing the head with fenugreek.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200070,
+      "isPremium": false
+    },
+    {
+      "id": "jet-banishing-spell",
+      "slug": "jet-banishing-spell",
+      "title": "Jet Banishing Spell",
+      "summary": "Exorcise malevolent spirits using the smoke of burning true jet.",
+      "category": "cleansing",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200071,
+      "isPremium": false
+    },
+    {
+      "id": "fumitory-poltergeist-banishing",
+      "slug": "fumitory-poltergeist-banishing",
+      "title": "Fumitory Poltergeist Banishing",
+      "summary": "Banish poltergeists and demons using the smoke of Fumitory (Earth smoke).",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200072,
+      "isPremium": false
+    },
+    {
+      "id": "sage-banishing-spell",
+      "slug": "sage-banishing-spell",
+      "title": "White Sage Banishing Spell",
+      "summary": "Rid an area of negative entities using the smoke of white sage.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200073,
+      "isPremium": false
+    },
+    {
+      "id": "sweet-spirit-oil-protection",
+      "slug": "sweet-spirit-oil-protection",
+      "title": "Sweet Spirit Oil Protection",
+      "summary": "Create a personal protective aura to keep malicious spirits away using a sweet oil blend.",
+      "category": "protection",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200074,
+      "isPremium": false
+    },
+    {
+      "id": "sweet-spirit-powder",
+      "slug": "sweet-spirit-powder",
+      "title": "Sweet Spirit Powder Spell",
+      "summary": "Repel evil spirits while beckoning protective ones using a floral powder.",
+      "category": "protection",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200075,
+      "isPremium": false
+    },
+    {
+      "id": "turmeric-banishing",
+      "slug": "turmeric-banishing",
+      "title": "Turmeric Banishing Spell",
+      "summary": "Repel malicious spirits using the strong fragrance of burning turmeric.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200076,
+      "isPremium": false
+    },
+    {
+      "id": "witch-balls-protection",
+      "slug": "witch-balls-protection",
+      "title": "Witch Balls Protection",
+      "summary": "Disperse malicious spirits and absorb incoming curses using iridescent glass balls.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200077,
+      "isPremium": false
+    },
+    {
+      "id": "woodlands-banishing",
+      "slug": "woodlands-banishing",
+      "title": "Woodlands Banishing Spell",
+      "summary": "Repel undesirable spirit guests using woodland botanicals.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200078,
+      "isPremium": false
+    },
+    {
+      "id": "magic-chalk-circles",
+      "slug": "magic-chalk-circles",
+      "title": "Magic Chalk Boundary Spell",
+      "summary": "Draw boundary lines to magically repel vermin and negative energy.",
+      "category": "protection",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in protection. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200079,
+      "isPremium": false
+    },
+    {
+      "id": "animal-altar-cleansing",
+      "slug": "animal-altar-cleansing",
+      "title": "Animal Altar Cleansing Spell",
+      "summary": "Generate a low-level constant cleansing action using scavenger animal imagery and crystals.",
+      "category": "cleansing",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200080,
+      "isPremium": false
+    },
+    {
+      "id": "vulture-visualization-cleansing",
+      "slug": "vulture-visualization-cleansing",
+      "title": "Vulture Visualization Cleansing",
+      "summary": "A profound visualization cleansing spell invoking the protective imagery of the vulture.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200081,
+      "isPremium": false
+    },
+    {
+      "id": "black-cohosh-cleansing",
+      "slug": "black-cohosh-cleansing",
+      "title": "Black Cohosh Cleansing Asperge",
+      "summary": "Erase evil influences by asperging with a black snake root infusion.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200082,
+      "isPremium": false
+    },
+    {
+      "id": "ocean-water-asperge",
+      "slug": "ocean-water-asperge",
+      "title": "Ocean Water Asperging Spell",
+      "summary": "Asperge with ocean water for deep spiritual cleansing.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200083,
+      "isPremium": false
+    },
+    {
+      "id": "peony-root-cleansing",
+      "slug": "peony-root-cleansing",
+      "title": "Peony Root Cleansing",
+      "summary": "Cleanse an area with a strong infusion of peony roots.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200084,
+      "isPremium": false
+    },
+    {
+      "id": "pine-needle-asperging-spell",
+      "slug": "pine-needle-asperging-spell",
+      "title": "Pine Needle Asperging Spell",
+      "summary": "Cleanse and asperge using soaked pine needles.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200085,
+      "isPremium": false
+    },
+    {
+      "id": "traditional-broom-cleansing",
+      "slug": "traditional-broom-cleansing",
+      "title": "Traditional Broom Cleansing Spell",
+      "summary": "A traditional sweeping spell to spiritually clean a room.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200086,
+      "isPremium": false
+    },
+    {
+      "id": "blessing-oil-purification",
+      "slug": "blessing-oil-purification",
+      "title": "Blessing Oil Purification",
+      "summary": "Create an oil to purify the atmosphere with candles.",
+      "category": "cleansing",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 25,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200087,
+      "isPremium": false
+    },
+    {
+      "id": "exorcism-purifying-powder",
+      "slug": "exorcism-purifying-powder",
+      "title": "Exorcism Purifying Powder",
+      "summary": "Eliminate negative emotions and low-level spirit emanations with a powdered blend.",
+      "category": "cleansing",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200088,
+      "isPremium": false
+    },
+    {
+      "id": "botanic-fumigation-spell",
+      "slug": "botanic-fumigation-spell",
+      "title": "Basic Botanic Fumigation",
+      "summary": "Burn specific botanicals for magical antiseptic and cleansing effects.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200089,
+      "isPremium": false
+    },
+    {
+      "id": "betony-herb-cleansing",
+      "slug": "betony-herb-cleansing",
+      "title": "Betony Cleansing Incense",
+      "summary": "Burn betony to magically disperse negative energy.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200090,
+      "isPremium": false
+    },
+    {
+      "id": "birch-tree-cleansing",
+      "slug": "birch-tree-cleansing",
+      "title": "Birch Cleansing Incense",
+      "summary": "Remove negative energy using the bark and twigs of the birch tree.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200091,
+      "isPremium": false
+    },
+    {
+      "id": "cedarwood-cleansing-incense",
+      "slug": "cedarwood-cleansing-incense",
+      "title": "Cedarwood Cleansing Incense",
+      "summary": "Purify the atmosphere with burning cedarwood chips.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200092,
+      "isPremium": false
+    },
+    {
+      "id": "dragons-blood-cleansing",
+      "slug": "dragons-blood-cleansing",
+      "title": "Dragon's Blood Cleansing Incense",
+      "summary": "Neutralize negative energy with the powerful smoke of dragon's blood.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200093,
+      "isPremium": false
+    },
+    {
+      "id": "sacred-resin-cleansing",
+      "slug": "sacred-resin-cleansing",
+      "title": "Sacred Resin Cleansing Incense",
+      "summary": "A simple but profound blend to cleanse space of evil.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200094,
+      "isPremium": false
+    },
+    {
+      "id": "bell-vibration-cleansing",
+      "slug": "bell-vibration-cleansing",
+      "title": "Cleansed by the Bell",
+      "summary": "Use the vibrations of bells to powerfully cleanse space of negative debris.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200095,
+      "isPremium": false
+    },
+    {
+      "id": "coal-steam-purification",
+      "slug": "coal-steam-purification",
+      "title": "Glittering Coals Vapor Cleanser",
+      "summary": "Merge water and fire for a quick burst of purification.",
+      "category": "cleansing",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200096,
+      "isPremium": false
+    },
+    {
+      "id": "agrimony-aura-floorwash",
+      "slug": "agrimony-aura-floorwash",
+      "title": "Aura Cleansing Floorwash",
+      "summary": "Repel hexes and beckon benevolent spirits by washing the floors.",
+      "category": "cleansing",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200097,
+      "isPremium": false
+    },
+    {
+      "id": "amethyst-crystal-cleanser",
+      "slug": "amethyst-crystal-cleanser",
+      "title": "Amethyst Crystal Space Cleanser",
+      "summary": "Use large amethysts as stationary spiritual vacuum cleaners.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200098,
+      "isPremium": false
+    },
+    {
+      "id": "onion-quarter-space-cleansing",
+      "slug": "onion-quarter-space-cleansing",
+      "title": "Onion Space Cleansing Spell",
+      "summary": "Absorb negativity from a room using chopped onions.",
+      "category": "cleansing",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in cleansing. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200099,
+      "isPremium": false
     }
   ],
   "ritualSteps": [
@@ -1530,6 +2280,853 @@
       "stepOrder": 3,
       "title": "Dry",
       "content": "Dry off with a clean towel and leave the tub uncleaned for at least an hour while your aura stabilizes."
+    },
+    {
+      "id": "animal-candle-protection-step-1",
+      "ritualId": "animal-candle-protection",
+      "stepOrder": 1,
+      "title": "Prepare the candle",
+      "content": "Find or create a candle shaped to resemble your companion animal."
+    },
+    {
+      "id": "animal-candle-protection-step-2",
+      "ritualId": "animal-candle-protection",
+      "stepOrder": 2,
+      "title": "Carve information",
+      "content": "Carve the animal's identifying information or protective runes onto the candle."
+    },
+    {
+      "id": "animal-candle-protection-step-3",
+      "ritualId": "animal-candle-protection",
+      "stepOrder": 3,
+      "title": "Anoint and burn",
+      "content": "Anoint the candle with Protection Oil and burn it to cast the shield."
+    },
+    {
+      "id": "animal-image-protection-step-1",
+      "ritualId": "animal-image-protection",
+      "stepOrder": 1,
+      "title": "Prepare the image",
+      "content": "Take a photograph of your pet. Paint protective runes or hieroglyphs on the image."
+    },
+    {
+      "id": "animal-image-protection-step-2",
+      "ritualId": "animal-image-protection",
+      "stepOrder": 2,
+      "title": "Anoint",
+      "content": "Anoint the image carefully with Protection Oil."
+    },
+    {
+      "id": "animal-image-protection-step-3",
+      "ritualId": "animal-image-protection",
+      "stepOrder": 3,
+      "title": "Store safely",
+      "content": "Keep the image in a safe, discreet spot, touching it up periodically with oil to maintain the spell."
+    },
+    {
+      "id": "red-clover-protective-bath-step-1",
+      "ritualId": "red-clover-protective-bath",
+      "stepOrder": 1,
+      "title": "Create infusion",
+      "content": "Create an infusion by pouring boiling water over red clover."
+    },
+    {
+      "id": "red-clover-protective-bath-step-2",
+      "ritualId": "red-clover-protective-bath",
+      "stepOrder": 2,
+      "title": "Strain",
+      "content": "Allow the water to cool and strain out the solid botanicals."
+    },
+    {
+      "id": "red-clover-protective-bath-step-3",
+      "ritualId": "red-clover-protective-bath",
+      "stepOrder": 3,
+      "title": "Bathe",
+      "content": "Use the infused liquid to bathe your animals to keep them protected and thriving."
+    },
+    {
+      "id": "anti-bewitchment-animal-wash-step-1",
+      "ritualId": "anti-bewitchment-animal-wash",
+      "stepOrder": 1,
+      "title": "Brew the wash",
+      "content": "Pour boiling water over mugwort and allow it to steep until cool."
+    },
+    {
+      "id": "anti-bewitchment-animal-wash-step-2",
+      "ritualId": "anti-bewitchment-animal-wash",
+      "stepOrder": 2,
+      "title": "Strain",
+      "content": "Strain out the botanical materials to prepare the wash."
+    },
+    {
+      "id": "anti-bewitchment-animal-wash-step-3",
+      "ritualId": "anti-bewitchment-animal-wash",
+      "stepOrder": 3,
+      "title": "Wash",
+      "content": "Wash the animal with the infusion to break any spells cast upon them."
+    },
+    {
+      "id": "pacify-threatening-dogs-step-1",
+      "ritualId": "pacify-threatening-dogs",
+      "stepOrder": 1,
+      "title": "Hold your ground",
+      "content": "When faced with a threatening dog, hold your ground calmly."
+    },
+    {
+      "id": "pacify-threatening-dogs-step-2",
+      "ritualId": "pacify-threatening-dogs",
+      "stepOrder": 2,
+      "title": "Recite the charm",
+      "content": "Recite three times: 'Dog, hold your nose to the ground! Creator made you, me and hound. In the name of the triple goddess, Selene, Artemis and Hecate.'"
+    },
+    {
+      "id": "pacify-threatening-dogs-step-3",
+      "ritualId": "pacify-threatening-dogs",
+      "stepOrder": 3,
+      "title": "Draw symbol",
+      "content": "Form a protective cross or pentacle symbol in the air."
+    },
+    {
+      "id": "fierce-creatures-spell-step-1",
+      "ritualId": "fierce-creatures-spell",
+      "stepOrder": 1,
+      "title": "Prepare the bag",
+      "content": "Place dried avens inside a medicine or mojo bag."
+    },
+    {
+      "id": "fierce-creatures-spell-step-2",
+      "ritualId": "fierce-creatures-spell",
+      "stepOrder": 2,
+      "title": "Carry for safety",
+      "content": "Carry the bag with you when entering territories where fierce creatures reside."
+    },
+    {
+      "id": "juniper-protection-step-1",
+      "ritualId": "juniper-protection",
+      "stepOrder": 1,
+      "title": "Harvest juniper",
+      "content": "Harvest a sprig of fresh or dried juniper."
+    },
+    {
+      "id": "juniper-protection-step-2",
+      "ritualId": "juniper-protection",
+      "stepOrder": 2,
+      "title": "Carry",
+      "content": "Carry the sprig with you to magically protect against attacks by fierce animals."
+    },
+    {
+      "id": "banish-evil-spell-step-1",
+      "ritualId": "banish-evil-spell",
+      "stepOrder": 1,
+      "title": "Strike the rock",
+      "content": "Hammer a rusty or coffin nail against a flat rock. Do not pierce it, just score it three times."
+    },
+    {
+      "id": "banish-evil-spell-step-2",
+      "ritualId": "banish-evil-spell",
+      "stepOrder": 2,
+      "title": "Visualize",
+      "content": "Visualize what you are dispelling while you hammer the nail."
+    },
+    {
+      "id": "banish-evil-spell-step-3",
+      "ritualId": "banish-evil-spell",
+      "stepOrder": 3,
+      "title": "Bury the stone",
+      "content": "Bury the stone far away from your home."
+    },
+    {
+      "id": "banish-evil-spell-step-4",
+      "ritualId": "banish-evil-spell",
+      "stepOrder": 4,
+      "title": "Carry the nail",
+      "content": "Carry the nail in a red mojo bag, optionally with crossroads dirt."
+    },
+    {
+      "id": "banish-negative-energy-step-1",
+      "ritualId": "banish-negative-energy",
+      "stepOrder": 1,
+      "title": "Prepare chicory",
+      "content": "Gather dried chicory."
+    },
+    {
+      "id": "banish-negative-energy-step-2",
+      "ritualId": "banish-negative-energy",
+      "stepOrder": 2,
+      "title": "Burn",
+      "content": "Burn the chicory on a lit charcoal disc in a fire-safe container."
+    },
+    {
+      "id": "banish-negative-energy-step-3",
+      "ritualId": "banish-negative-energy",
+      "stepOrder": 3,
+      "title": "Clear the space",
+      "content": "Allow the smoke to clear negative emotions and energy from the premises."
+    },
+    {
+      "id": "exodus-powder-step-1",
+      "ritualId": "exodus-powder",
+      "stepOrder": 1,
+      "title": "Grind ingredients",
+      "content": "Grind asafetida, cayenne pepper, and sulfur into a fine powder."
+    },
+    {
+      "id": "exodus-powder-step-2",
+      "ritualId": "exodus-powder",
+      "stepOrder": 2,
+      "title": "Sprinkle",
+      "content": "Sprinkle this powder on and around the target's front doorstep or path."
+    },
+    {
+      "id": "garlic-banishing-step-1",
+      "ritualId": "garlic-banishing",
+      "stepOrder": 1,
+      "title": "Prepare garlic",
+      "content": "Gather a braid of twelve whole garlic heads."
+    },
+    {
+      "id": "garlic-banishing-step-2",
+      "ritualId": "garlic-banishing",
+      "stepOrder": 2,
+      "title": "Hang",
+      "content": "Hang the braid over the main door of your home to banish jealousy and the Evil Eye."
+    },
+    {
+      "id": "nettle-banishing-spell-step-1",
+      "ritualId": "nettle-banishing-spell",
+      "stepOrder": 1,
+      "title": "Prepare nettles",
+      "content": "Gather dried nettles safely using gloves."
+    },
+    {
+      "id": "nettle-banishing-spell-step-2",
+      "ritualId": "nettle-banishing-spell",
+      "stepOrder": 2,
+      "title": "Burn and focus",
+      "content": "Burn them on a charcoal disc in a fire-safe dish while focusing heavily on your banishing desires."
+    },
+    {
+      "id": "bad-habits-bath-step-1",
+      "ritualId": "bad-habits-bath",
+      "stepOrder": 1,
+      "title": "Prepare the bath",
+      "content": "Run a tub filled with warm water."
+    },
+    {
+      "id": "bad-habits-bath-step-2",
+      "ritualId": "bad-habits-bath",
+      "stepOrder": 2,
+      "title": "Add oils",
+      "content": "Add essential oils of clary sage, frankincense, lavender, lemongrass, and rosemary to the water."
+    },
+    {
+      "id": "bad-habits-bath-step-3",
+      "ritualId": "bad-habits-bath",
+      "stepOrder": 3,
+      "title": "Bathe and affirm",
+      "content": "Enter the bath, inhale the fragrance deeply, and accompany the soak with affirmations and positive visualizations."
+    },
+    {
+      "id": "crystal-bad-habit-breaking-step-1",
+      "ritualId": "crystal-bad-habit-breaking",
+      "stepOrder": 1,
+      "title": "Hold the crystal",
+      "content": "Hold a double-terminated crystal or amethyst in your hands."
+    },
+    {
+      "id": "crystal-bad-habit-breaking-step-2",
+      "ritualId": "crystal-bad-habit-breaking",
+      "stepOrder": 2,
+      "title": "Focus",
+      "content": "Focus your intent deeply on breaking your destructive pattern."
+    },
+    {
+      "id": "crystal-bad-habit-breaking-step-3",
+      "ritualId": "crystal-bad-habit-breaking",
+      "stepOrder": 3,
+      "title": "Carry",
+      "content": "Carry the crystal with you, cleansing it regularly."
+    },
+    {
+      "id": "eucalyptus-bad-habits-bath-step-1",
+      "ritualId": "eucalyptus-bad-habits-bath",
+      "stepOrder": 1,
+      "title": "Brew infusion",
+      "content": "Pour boiling water over dried eucalyptus leaves to create an infusion. Let it steep."
+    },
+    {
+      "id": "eucalyptus-bad-habits-bath-step-2",
+      "ritualId": "eucalyptus-bad-habits-bath",
+      "stepOrder": 2,
+      "title": "Strain",
+      "content": "Strain the botanical material from the liquid."
+    },
+    {
+      "id": "eucalyptus-bad-habits-bath-step-3",
+      "ritualId": "eucalyptus-bad-habits-bath",
+      "stepOrder": 3,
+      "title": "Bathe",
+      "content": "Add the infusion to your bathwater and soak to destroy the ties of bad habits."
+    },
+    {
+      "id": "bamboo-banishing-spell-step-1",
+      "ritualId": "bamboo-banishing-spell",
+      "stepOrder": 1,
+      "title": "Obtain bamboo",
+      "content": "Obtain dry bamboo sticks with distinct knots."
+    },
+    {
+      "id": "bamboo-banishing-spell-step-2",
+      "ritualId": "bamboo-banishing-spell",
+      "stepOrder": 2,
+      "title": "Burn to pop",
+      "content": "Burn the bamboo sticks in a fire so that the popping sound of the knots scares the house demons away."
+    },
+    {
+      "id": "dragons-blood-double-action-step-1",
+      "ritualId": "dragons-blood-double-action",
+      "stepOrder": 1,
+      "title": "Dress candle",
+      "content": "Dress a Double Action candle with Dragon's Blood Oil."
+    },
+    {
+      "id": "dragons-blood-double-action-step-2",
+      "ritualId": "dragons-blood-double-action",
+      "stepOrder": 2,
+      "title": "Burn completely",
+      "content": "Burn the candle down completely in the room to keep the area free from malevolent spirits."
+    },
+    {
+      "id": "disperse-evil-incense-1-step-1",
+      "ritualId": "disperse-evil-incense-1",
+      "stepOrder": 1,
+      "title": "Blend ingredients",
+      "content": "Blend together benzoin, frankincense, and juniper."
+    },
+    {
+      "id": "disperse-evil-incense-1-step-2",
+      "ritualId": "disperse-evil-incense-1",
+      "stepOrder": 2,
+      "title": "Burn",
+      "content": "Burn the mixture on lit charcoal to disperse evil from the atmosphere."
+    },
+    {
+      "id": "disperse-evil-incense-2-step-1",
+      "ritualId": "disperse-evil-incense-2",
+      "stepOrder": 1,
+      "title": "Blend",
+      "content": "Blend together benzoin, patchouli, and sandalwood."
+    },
+    {
+      "id": "disperse-evil-incense-2-step-2",
+      "ritualId": "disperse-evil-incense-2",
+      "stepOrder": 2,
+      "title": "Fumigate",
+      "content": "Burn the incense on lit charcoal to banish malicious entities."
+    },
+    {
+      "id": "elf-banishing-spell-step-1",
+      "ritualId": "elf-banishing-spell",
+      "stepOrder": 1,
+      "title": "Gather tools",
+      "content": "Gather household iron or steel tools and implements."
+    },
+    {
+      "id": "elf-banishing-spell-step-2",
+      "ritualId": "elf-banishing-spell",
+      "stepOrder": 2,
+      "title": "Place strategically",
+      "content": "Place them strategically around the area to repel the elven folk."
+    },
+    {
+      "id": "fenugreek-head-wash-step-1",
+      "ritualId": "fenugreek-head-wash",
+      "stepOrder": 1,
+      "title": "Prepare infusion",
+      "content": "Prepare an infusion using fenugreek seeds and boiling water."
+    },
+    {
+      "id": "fenugreek-head-wash-step-2",
+      "ritualId": "fenugreek-head-wash",
+      "stepOrder": 2,
+      "title": "Cool and apply",
+      "content": "Let the liquid cool to a safe temperature. Wash your head with the infusion for protection."
+    },
+    {
+      "id": "jet-banishing-spell-step-1",
+      "ritualId": "jet-banishing-spell",
+      "stepOrder": 1,
+      "title": "Obtain true jet",
+      "content": "Obtain a piece of true jet (synthetic jet will not burn)."
+    },
+    {
+      "id": "jet-banishing-spell-step-2",
+      "ritualId": "jet-banishing-spell",
+      "stepOrder": 2,
+      "title": "Powder and burn",
+      "content": "Powder the jet and burn it on a charcoal disc to exorcise malevolent spirits."
+    },
+    {
+      "id": "fumitory-poltergeist-banishing-step-1",
+      "ritualId": "fumitory-poltergeist-banishing",
+      "stepOrder": 1,
+      "title": "Prepare fumitory",
+      "content": "Gather dried fumitory, also known as Earth smoke."
+    },
+    {
+      "id": "fumitory-poltergeist-banishing-step-2",
+      "ritualId": "fumitory-poltergeist-banishing",
+      "stepOrder": 2,
+      "title": "Burn",
+      "content": "Burn the fumitory in a fire-safe container, allowing the smoke to fill the area and banish the entities."
+    },
+    {
+      "id": "sage-banishing-spell-step-1",
+      "ritualId": "sage-banishing-spell",
+      "stepOrder": 1,
+      "title": "Light the sage",
+      "content": "Light a bundle or loose leaves of white sage in a fire-safe dish."
+    },
+    {
+      "id": "sage-banishing-spell-step-2",
+      "ritualId": "sage-banishing-spell",
+      "stepOrder": 2,
+      "title": "Smudge the area",
+      "content": "Waft the smoke around the area to banish evil spirits and negative entities."
+    },
+    {
+      "id": "sweet-spirit-oil-protection-step-1",
+      "ritualId": "sweet-spirit-oil-protection",
+      "stepOrder": 1,
+      "title": "Blend oils",
+      "content": "Blend frankincense, vetiver, honeysuckle absolute, and rose attar into a base of sweet almond oil."
+    },
+    {
+      "id": "sweet-spirit-oil-protection-step-2",
+      "ritualId": "sweet-spirit-oil-protection",
+      "stepOrder": 2,
+      "title": "Apply to body",
+      "content": "Massage the oil onto your body before sleep, or add it to bathwater, to keep malicious spirits far away."
+    },
+    {
+      "id": "sweet-spirit-powder-step-1",
+      "ritualId": "sweet-spirit-powder",
+      "stepOrder": 1,
+      "title": "Grind botanicals",
+      "content": "Grind frankincense, honeysuckle blossoms, roses, and vetiver roots into a fine powder."
+    },
+    {
+      "id": "sweet-spirit-powder-step-2",
+      "ritualId": "sweet-spirit-powder",
+      "stepOrder": 2,
+      "title": "Burn the powder",
+      "content": "Sprinkle the powder onto lit charcoal and burn incessantly until the perceived danger is over."
+    },
+    {
+      "id": "turmeric-banishing-step-1",
+      "ritualId": "turmeric-banishing",
+      "stepOrder": 1,
+      "title": "Light charcoal",
+      "content": "Light a charcoal disc in a fire-safe container."
+    },
+    {
+      "id": "turmeric-banishing-step-2",
+      "ritualId": "turmeric-banishing",
+      "stepOrder": 2,
+      "title": "Sprinkle turmeric",
+      "content": "Sprinkle ground turmeric onto the lit charcoal, allowing the fragrance to repel malicious spirits."
+    },
+    {
+      "id": "witch-balls-protection-step-1",
+      "ritualId": "witch-balls-protection",
+      "stepOrder": 1,
+      "title": "Obtain witch balls",
+      "content": "Obtain iridescent colored glass witch balls."
+    },
+    {
+      "id": "witch-balls-protection-step-2",
+      "ritualId": "witch-balls-protection",
+      "stepOrder": 2,
+      "title": "Place strategically",
+      "content": "Place them strategically around your home, property, or windows to disperse evil."
+    },
+    {
+      "id": "woodlands-banishing-step-1",
+      "ritualId": "woodlands-banishing",
+      "stepOrder": 1,
+      "title": "Gather botanicals",
+      "content": "Gather acorns, mistletoe, and oak bark."
+    },
+    {
+      "id": "woodlands-banishing-step-2",
+      "ritualId": "woodlands-banishing",
+      "stepOrder": 2,
+      "title": "Burn and murmur",
+      "content": "Burn them together on a charcoal disc while murmuring your desire for the spirits to leave."
+    },
+    {
+      "id": "magic-chalk-circles-step-1",
+      "ritualId": "magic-chalk-circles",
+      "stepOrder": 1,
+      "title": "Obtain chalk",
+      "content": "Obtain plain white chalk."
+    },
+    {
+      "id": "magic-chalk-circles-step-2",
+      "ritualId": "magic-chalk-circles",
+      "stepOrder": 2,
+      "title": "Draw boundaries",
+      "content": "Draw boundary lines and protective circles around your home to prevent entry."
+    },
+    {
+      "id": "animal-altar-cleansing-step-1",
+      "ritualId": "animal-altar-cleansing",
+      "stepOrder": 1,
+      "title": "Set up the altar",
+      "content": "Set up an altar space with images or rubber toys of cleansing scavenger animals like vultures or crows."
+    },
+    {
+      "id": "animal-altar-cleansing-step-2",
+      "ritualId": "animal-altar-cleansing",
+      "stepOrder": 2,
+      "title": "Ring with crystals",
+      "content": "Ring the animals with amethyst, malachite, and quartz crystals."
+    },
+    {
+      "id": "animal-altar-cleansing-step-3",
+      "ritualId": "animal-altar-cleansing",
+      "stepOrder": 3,
+      "title": "Light the candle",
+      "content": "Place a charged white candle in the center and light it, visualizing the flame sucking all negativity into the fire to be purified."
+    },
+    {
+      "id": "vulture-visualization-cleansing-step-1",
+      "ritualId": "vulture-visualization-cleansing",
+      "stepOrder": 1,
+      "title": "Focus on the image",
+      "content": "Look directly into the eyes of a realistic image of a vulture with outstretched wings."
+    },
+    {
+      "id": "vulture-visualization-cleansing-step-2",
+      "ritualId": "vulture-visualization-cleansing",
+      "stepOrder": 2,
+      "title": "Request cleansing",
+      "content": "Request that she come and cleanse you of all spiritual debris."
+    },
+    {
+      "id": "vulture-visualization-cleansing-step-3",
+      "ritualId": "vulture-visualization-cleansing",
+      "stepOrder": 3,
+      "title": "Visualize",
+      "content": "Visualize the vulture enfolding you with her wings. When she releases you and departs, you are cleansed."
+    },
+    {
+      "id": "black-cohosh-cleansing-step-1",
+      "ritualId": "black-cohosh-cleansing",
+      "stepOrder": 1,
+      "title": "Brew the infusion",
+      "content": "Make an infusion by pouring boiling water over black cohosh (black snake root)."
+    },
+    {
+      "id": "black-cohosh-cleansing-step-2",
+      "ritualId": "black-cohosh-cleansing",
+      "stepOrder": 2,
+      "title": "Prepare the wand",
+      "content": "Gather a fresh rosemary wand."
+    },
+    {
+      "id": "black-cohosh-cleansing-step-3",
+      "ritualId": "black-cohosh-cleansing",
+      "stepOrder": 3,
+      "title": "Asperge",
+      "content": "Use the rosemary wand to asperge the area with the cooled liquid to erase evil influences."
+    },
+    {
+      "id": "ocean-water-asperge-step-1",
+      "ritualId": "ocean-water-asperge",
+      "stepOrder": 1,
+      "title": "Gather water",
+      "content": "Carry ocean water to the area to be cleansed in a glass or metal flask. Request permission and offer thanks to the Spirits of the Sea."
+    },
+    {
+      "id": "ocean-water-asperge-step-2",
+      "ritualId": "ocean-water-asperge",
+      "stepOrder": 2,
+      "title": "Asperge the space",
+      "content": "Asperge the room as needed, ideally with a rosemary or sea lavender wand."
+    },
+    {
+      "id": "peony-root-cleansing-step-1",
+      "ritualId": "peony-root-cleansing",
+      "stepOrder": 1,
+      "title": "Brew the root",
+      "content": "Make a strong infusion by pouring boiling water over peony roots."
+    },
+    {
+      "id": "peony-root-cleansing-step-2",
+      "ritualId": "peony-root-cleansing",
+      "stepOrder": 2,
+      "title": "Asperge",
+      "content": "Let the liquid cool, then asperge the infusion around the area as desired."
+    },
+    {
+      "id": "pine-needle-asperging-spell-step-1",
+      "ritualId": "pine-needle-asperging-spell",
+      "stepOrder": 1,
+      "title": "Soak the needles",
+      "content": "Soak pine needles in warm water until the water is fragrant."
+    },
+    {
+      "id": "pine-needle-asperging-spell-step-2",
+      "ritualId": "pine-needle-asperging-spell",
+      "stepOrder": 2,
+      "title": "Asperge",
+      "content": "Use the liquid to asperge the space as needed."
+    },
+    {
+      "id": "traditional-broom-cleansing-step-1",
+      "ritualId": "traditional-broom-cleansing",
+      "stepOrder": 1,
+      "title": "Sweep the dust",
+      "content": "Use any broom to sweep the dust from the west to the east of the room."
+    },
+    {
+      "id": "traditional-broom-cleansing-step-2",
+      "ritualId": "traditional-broom-cleansing",
+      "stepOrder": 2,
+      "title": "Burn and discard",
+      "content": "Burn this dust and toss the ashes outdoors."
+    },
+    {
+      "id": "traditional-broom-cleansing-step-3",
+      "ritualId": "traditional-broom-cleansing",
+      "stepOrder": 3,
+      "title": "Mop and protect",
+      "content": "Complete the ritual by mopping the floors with a magical floorwash."
+    },
+    {
+      "id": "blessing-oil-purification-step-1",
+      "ritualId": "blessing-oil-purification",
+      "stepOrder": 1,
+      "title": "Blend the oil",
+      "content": "Create Blessing Oil by adding frankincense and benzoin to a blend of olive and jojoba oils."
+    },
+    {
+      "id": "blessing-oil-purification-step-2",
+      "ritualId": "blessing-oil-purification",
+      "stepOrder": 2,
+      "title": "Dress the candle",
+      "content": "Dress white or blue candles with the oil."
+    },
+    {
+      "id": "blessing-oil-purification-step-3",
+      "ritualId": "blessing-oil-purification",
+      "stepOrder": 3,
+      "title": "Burn",
+      "content": "Burn the candle to purify the atmosphere."
+    },
+    {
+      "id": "exorcism-purifying-powder-step-1",
+      "ritualId": "exorcism-purifying-powder",
+      "stepOrder": 1,
+      "title": "Grind botanicals",
+      "content": "Blend dried basil, frankincense, rosemary, and yarrow, and grind them into a fine powder."
+    },
+    {
+      "id": "exorcism-purifying-powder-step-2",
+      "ritualId": "exorcism-purifying-powder",
+      "stepOrder": 2,
+      "title": "Mix with base",
+      "content": "Blend this powder into an arrowroot powder base."
+    },
+    {
+      "id": "exorcism-purifying-powder-step-3",
+      "ritualId": "exorcism-purifying-powder",
+      "stepOrder": 3,
+      "title": "Sprinkle",
+      "content": "Sprinkle the powder as needed to clear out negative vibrations."
+    },
+    {
+      "id": "botanic-fumigation-spell-step-1",
+      "ritualId": "botanic-fumigation-spell",
+      "stepOrder": 1,
+      "title": "Select botanicals",
+      "content": "Select protective and purifying botanicals like frankincense or white sage."
+    },
+    {
+      "id": "botanic-fumigation-spell-step-2",
+      "ritualId": "botanic-fumigation-spell",
+      "stepOrder": 2,
+      "title": "Ignite charcoal",
+      "content": "Ignite a charcoal disc in a fire-safe dish."
+    },
+    {
+      "id": "botanic-fumigation-spell-step-3",
+      "ritualId": "botanic-fumigation-spell",
+      "stepOrder": 3,
+      "title": "Fumigate",
+      "content": "Sprinkle the botanicals on the charcoal and waft the smoke to cleanse the area."
+    },
+    {
+      "id": "betony-herb-cleansing-step-1",
+      "ritualId": "betony-herb-cleansing",
+      "stepOrder": 1,
+      "title": "Gather betony",
+      "content": "Gather dried betony herb."
+    },
+    {
+      "id": "betony-herb-cleansing-step-2",
+      "ritualId": "betony-herb-cleansing",
+      "stepOrder": 2,
+      "title": "Burn",
+      "content": "Burn the herb on a charcoal disc to magically disperse negative energy and lurking entities."
+    },
+    {
+      "id": "birch-tree-cleansing-step-1",
+      "ritualId": "birch-tree-cleansing",
+      "stepOrder": 1,
+      "title": "Gather birch",
+      "content": "Gather birch bark and small twigs."
+    },
+    {
+      "id": "birch-tree-cleansing-step-2",
+      "ritualId": "birch-tree-cleansing",
+      "stepOrder": 2,
+      "title": "Burn",
+      "content": "Burn them safely in a fire-safe cauldron to remove negative energy from the space."
+    },
+    {
+      "id": "cedarwood-cleansing-incense-step-1",
+      "ritualId": "cedarwood-cleansing-incense",
+      "stepOrder": 1,
+      "title": "Obtain cedarwood",
+      "content": "Obtain cedarwood chips or needles."
+    },
+    {
+      "id": "cedarwood-cleansing-incense-step-2",
+      "ritualId": "cedarwood-cleansing-incense",
+      "stepOrder": 2,
+      "title": "Burn",
+      "content": "Burn them in an incense burner to purify the atmosphere."
+    },
+    {
+      "id": "dragons-blood-cleansing-step-1",
+      "ritualId": "dragons-blood-cleansing",
+      "stepOrder": 1,
+      "title": "Prepare resin",
+      "content": "Obtain dragon's blood resin or powder."
+    },
+    {
+      "id": "dragons-blood-cleansing-step-2",
+      "ritualId": "dragons-blood-cleansing",
+      "stepOrder": 2,
+      "title": "Burn and cleanse",
+      "content": "Burn it on a charcoal disc to provide potent space cleansing and neutralize negative energy."
+    },
+    {
+      "id": "sacred-resin-cleansing-step-1",
+      "ritualId": "sacred-resin-cleansing",
+      "stepOrder": 1,
+      "title": "Blend resins",
+      "content": "Blend dragon's blood powder and frankincense."
+    },
+    {
+      "id": "sacred-resin-cleansing-step-2",
+      "ritualId": "sacred-resin-cleansing",
+      "stepOrder": 2,
+      "title": "Burn",
+      "content": "Burn the mixture on a charcoal disc to provide a powerful and sacred cleansing."
+    },
+    {
+      "id": "bell-vibration-cleansing-step-1",
+      "ritualId": "bell-vibration-cleansing",
+      "stepOrder": 1,
+      "title": "Obtain a bell",
+      "content": "Obtain a silver, iron, or brass bell."
+    },
+    {
+      "id": "bell-vibration-cleansing-step-2",
+      "ritualId": "bell-vibration-cleansing",
+      "stepOrder": 2,
+      "title": "Ring vigorously",
+      "content": "Ring the bell loudly and vigorously throughout the space to disturb and repel malicious spirits."
+    },
+    {
+      "id": "coal-steam-purification-step-1",
+      "ritualId": "coal-steam-purification",
+      "stepOrder": 1,
+      "title": "Heat coals",
+      "content": "Light charcoal coals until they are burning hot."
+    },
+    {
+      "id": "coal-steam-purification-step-2",
+      "ritualId": "coal-steam-purification",
+      "stepOrder": 2,
+      "title": "Create steam",
+      "content": "Carefully toss the burning coals into a bowl of water to create a sudden burst of purifying steam."
+    },
+    {
+      "id": "agrimony-aura-floorwash-step-1",
+      "ritualId": "agrimony-aura-floorwash",
+      "stepOrder": 1,
+      "title": "Create infusion",
+      "content": "Make a strong infusion of dried agrimony and peppermint in boiling water."
+    },
+    {
+      "id": "agrimony-aura-floorwash-step-2",
+      "ritualId": "agrimony-aura-floorwash",
+      "stepOrder": 2,
+      "title": "Prepare the wash",
+      "content": "Strain the herbs and add the liquid to a bucket of water with white vinegar."
+    },
+    {
+      "id": "agrimony-aura-floorwash-step-3",
+      "ritualId": "agrimony-aura-floorwash",
+      "stepOrder": 3,
+      "title": "Cleanse the floors",
+      "content": "Cleanse the floors and surfaces with the wash to repel hexes."
+    },
+    {
+      "id": "amethyst-crystal-cleanser-step-1",
+      "ritualId": "amethyst-crystal-cleanser",
+      "stepOrder": 1,
+      "title": "Place the crystals",
+      "content": "Place large amethysts in the corners of the room."
+    },
+    {
+      "id": "amethyst-crystal-cleanser-step-2",
+      "ritualId": "amethyst-crystal-cleanser",
+      "stepOrder": 2,
+      "title": "Let them absorb",
+      "content": "Allow them to sit and absorb negative energy from the atmosphere."
+    },
+    {
+      "id": "amethyst-crystal-cleanser-step-3",
+      "ritualId": "amethyst-crystal-cleanser",
+      "stepOrder": 3,
+      "title": "Cleanse the stones",
+      "content": "When they begin to look dull, spiritually cleanse and recharge them."
+    },
+    {
+      "id": "onion-quarter-space-cleansing-step-1",
+      "ritualId": "onion-quarter-space-cleansing",
+      "stepOrder": 1,
+      "title": "Chop the onion",
+      "content": "Chop one unpeeled onion into quarters by hand (do not use a food processor)."
+    },
+    {
+      "id": "onion-quarter-space-cleansing-step-2",
+      "ritualId": "onion-quarter-space-cleansing",
+      "stepOrder": 2,
+      "title": "Place in corners",
+      "content": "Place one piece in each corner of the room and leave overnight."
+    },
+    {
+      "id": "onion-quarter-space-cleansing-step-3",
+      "ritualId": "onion-quarter-space-cleansing",
+      "stepOrder": 3,
+      "title": "Dispose",
+      "content": "Bury the pieces outside the following day. Repeat for five consecutive nights if necessary."
     }
   ],
   "materials": [
@@ -1934,6 +3531,390 @@
       "slug": "lemon-juice",
       "name": "Lemon Juice",
       "linkedEntryId": null
+    },
+    {
+      "id": "candle",
+      "slug": "candle",
+      "name": "Candle",
+      "linkedEntryId": null
+    },
+    {
+      "id": "protection-oil",
+      "slug": "protection-oil",
+      "name": "Protection Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "photograph",
+      "slug": "photograph",
+      "name": "Photograph",
+      "linkedEntryId": null
+    },
+    {
+      "id": "red-clover",
+      "slug": "red-clover",
+      "name": "Red Clover",
+      "linkedEntryId": "clover"
+    },
+    {
+      "id": "flat-rock",
+      "slug": "flat-rock",
+      "name": "Flat Rock",
+      "linkedEntryId": null
+    },
+    {
+      "id": "rusty-nail",
+      "slug": "rusty-nail",
+      "name": "Rusty Nail",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mojo-bag",
+      "slug": "mojo-bag",
+      "name": "Mojo Bag",
+      "linkedEntryId": "mojo-bag"
+    },
+    {
+      "id": "chicory",
+      "slug": "chicory",
+      "name": "Chicory",
+      "linkedEntryId": "chicory"
+    },
+    {
+      "id": "asafetida",
+      "slug": "asafetida",
+      "name": "Asafetida",
+      "linkedEntryId": "asafoetida"
+    },
+    {
+      "id": "cayenne-pepper",
+      "slug": "cayenne-pepper",
+      "name": "Cayenne Pepper",
+      "linkedEntryId": null
+    },
+    {
+      "id": "sulfur",
+      "slug": "sulfur",
+      "name": "Sulfur",
+      "linkedEntryId": "sulfur"
+    },
+    {
+      "id": "garlic",
+      "slug": "garlic",
+      "name": "Garlic",
+      "linkedEntryId": null
+    },
+    {
+      "id": "nettles",
+      "slug": "nettles",
+      "name": "Nettles",
+      "linkedEntryId": null
+    },
+    {
+      "id": "clary-sage-eo",
+      "slug": "clary-sage-eo",
+      "name": "Clary Sage Essential Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "frankincense-eo",
+      "slug": "frankincense-eo",
+      "name": "Frankincense Essential Oil",
+      "linkedEntryId": "frankincense"
+    },
+    {
+      "id": "lavender-eo",
+      "slug": "lavender-eo",
+      "name": "Lavender Essential Oil",
+      "linkedEntryId": "lavender"
+    },
+    {
+      "id": "lemongrass-eo",
+      "slug": "lemongrass-eo",
+      "name": "Lemongrass Essential Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "rosemary-eo",
+      "slug": "rosemary-eo",
+      "name": "Rosemary Essential Oil",
+      "linkedEntryId": "rosemary"
+    },
+    {
+      "id": "double-term-crystal",
+      "slug": "double-term-crystal",
+      "name": "Double-terminated Crystal",
+      "linkedEntryId": "clear-quartz-crystal"
+    },
+    {
+      "id": "eucalyptus-leaves",
+      "slug": "eucalyptus-leaves",
+      "name": "Eucalyptus Leaves",
+      "linkedEntryId": "eucalyptus"
+    },
+    {
+      "id": "bamboo-sticks",
+      "slug": "bamboo-sticks",
+      "name": "Bamboo Sticks",
+      "linkedEntryId": null
+    },
+    {
+      "id": "dragons-blood-oil",
+      "slug": "dragons-blood-oil",
+      "name": "Dragon's Blood Oil",
+      "linkedEntryId": "dragons-blood"
+    },
+    {
+      "id": "double-action-candle",
+      "slug": "double-action-candle",
+      "name": "Double Action Candle",
+      "linkedEntryId": null
+    },
+    {
+      "id": "juniper",
+      "slug": "juniper",
+      "name": "Juniper",
+      "linkedEntryId": null
+    },
+    {
+      "id": "patchouli",
+      "slug": "patchouli",
+      "name": "Patchouli",
+      "linkedEntryId": null
+    },
+    {
+      "id": "iron-tools",
+      "slug": "iron-tools",
+      "name": "Iron Tools",
+      "linkedEntryId": "iron"
+    },
+    {
+      "id": "fenugreek",
+      "slug": "fenugreek",
+      "name": "Fenugreek",
+      "linkedEntryId": null
+    },
+    {
+      "id": "jet",
+      "slug": "jet",
+      "name": "Jet",
+      "linkedEntryId": "jet"
+    },
+    {
+      "id": "white-sage",
+      "slug": "white-sage",
+      "name": "White Sage",
+      "linkedEntryId": "sage"
+    },
+    {
+      "id": "sweet-almond-oil",
+      "slug": "sweet-almond-oil",
+      "name": "Sweet Almond Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "vetiver-eo",
+      "slug": "vetiver-eo",
+      "name": "Vetiver Essential Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "honeysuckle-eo",
+      "slug": "honeysuckle-eo",
+      "name": "Honeysuckle Essential Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "rose-attar",
+      "slug": "rose-attar",
+      "name": "Rose Attar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "honeysuckle",
+      "slug": "honeysuckle",
+      "name": "Honeysuckle",
+      "linkedEntryId": null
+    },
+    {
+      "id": "roses",
+      "slug": "roses",
+      "name": "Roses",
+      "linkedEntryId": null
+    },
+    {
+      "id": "vetiver",
+      "slug": "vetiver",
+      "name": "Vetiver",
+      "linkedEntryId": null
+    },
+    {
+      "id": "turmeric",
+      "slug": "turmeric",
+      "name": "Turmeric",
+      "linkedEntryId": null
+    },
+    {
+      "id": "witch-balls",
+      "slug": "witch-balls",
+      "name": "Witch Balls",
+      "linkedEntryId": null
+    },
+    {
+      "id": "acorns",
+      "slug": "acorns",
+      "name": "Acorns",
+      "linkedEntryId": null
+    },
+    {
+      "id": "mistletoe",
+      "slug": "mistletoe",
+      "name": "Mistletoe",
+      "linkedEntryId": null
+    },
+    {
+      "id": "oak-bark",
+      "slug": "oak-bark",
+      "name": "Oak Bark",
+      "linkedEntryId": null
+    },
+    {
+      "id": "white-chalk",
+      "slug": "white-chalk",
+      "name": "White Chalk",
+      "linkedEntryId": null
+    },
+    {
+      "id": "amethyst",
+      "slug": "amethyst",
+      "name": "Amethyst",
+      "linkedEntryId": "amethyst"
+    },
+    {
+      "id": "malachite",
+      "slug": "malachite",
+      "name": "Malachite",
+      "linkedEntryId": "malachite"
+    },
+    {
+      "id": "quartz-crystal",
+      "slug": "quartz-crystal",
+      "name": "Quartz Crystal",
+      "linkedEntryId": "clear-quartz-crystal"
+    },
+    {
+      "id": "black-cohosh",
+      "slug": "black-cohosh",
+      "name": "Black Cohosh",
+      "linkedEntryId": null
+    },
+    {
+      "id": "peony-roots",
+      "slug": "peony-roots",
+      "name": "Peony Roots",
+      "linkedEntryId": null
+    },
+    {
+      "id": "olive-oil",
+      "slug": "olive-oil",
+      "name": "Olive Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "jojoba-oil",
+      "slug": "jojoba-oil",
+      "name": "Jojoba Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "basil",
+      "slug": "basil",
+      "name": "Basil",
+      "linkedEntryId": "basil"
+    },
+    {
+      "id": "cedarwood",
+      "slug": "cedarwood",
+      "name": "Cedarwood",
+      "linkedEntryId": "cedar"
+    },
+    {
+      "id": "dragons-blood",
+      "slug": "dragons-blood",
+      "name": "Dragon's Blood",
+      "linkedEntryId": "dragons-blood"
+    },
+    {
+      "id": "coals",
+      "slug": "coals",
+      "name": "Coals",
+      "linkedEntryId": "charcoal"
+    },
+    {
+      "id": "agrimony",
+      "slug": "agrimony",
+      "name": "Agrimony",
+      "linkedEntryId": "agrimony"
+    },
+    {
+      "id": "onion",
+      "slug": "onion",
+      "name": "Onion",
+      "linkedEntryId": null
+    },
+    {
+      "id": "white-candle",
+      "slug": "white-candle",
+      "name": "White Candle",
+      "linkedEntryId": "altar-candle"
+    },
+    {
+      "id": "spring-water",
+      "slug": "spring-water",
+      "name": "Spring Water",
+      "linkedEntryId": "spring-water"
+    },
+    {
+      "id": "bowl",
+      "slug": "bowl",
+      "name": "Bowl",
+      "linkedEntryId": null
+    },
+    {
+      "id": "cup",
+      "slug": "cup",
+      "name": "Cup",
+      "linkedEntryId": null
+    },
+    {
+      "id": "vinegar",
+      "slug": "vinegar",
+      "name": "Vinegar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "avens",
+      "slug": "avens",
+      "name": "Avens",
+      "linkedEntryId": "avens"
+    },
+    {
+      "id": "charcoal-disc",
+      "slug": "charcoal-disc",
+      "name": "Charcoal Disc",
+      "linkedEntryId": "charcoal"
+    },
+    {
+      "id": "betony",
+      "slug": "betony",
+      "name": "Betony",
+      "linkedEntryId": "wood-betony"
+    },
+    {
+      "id": "birch",
+      "slug": "birch",
+      "name": "Birch",
+      "linkedEntryId": "birch"
     }
   ],
   "ritualMaterials": [
@@ -2584,6 +4565,870 @@
       "materialId": "lemon-juice",
       "quantityLabel": null,
       "sortOrder": 4
+    },
+    {
+      "ritualId": "animal-candle-protection",
+      "materialId": "candle",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "animal-candle-protection",
+      "materialId": "protection-oil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "animal-image-protection",
+      "materialId": "photograph",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "animal-image-protection",
+      "materialId": "protection-oil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "red-clover-protective-bath",
+      "materialId": "red-clover",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "red-clover-protective-bath",
+      "materialId": "sea-salt",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "red-clover-protective-bath",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "red-clover-protective-bath",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "anti-bewitchment-animal-wash",
+      "materialId": "mugwort",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "anti-bewitchment-animal-wash",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "anti-bewitchment-animal-wash",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "fierce-creatures-spell",
+      "materialId": "avens",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "fierce-creatures-spell",
+      "materialId": "mojo-bag",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "juniper-protection",
+      "materialId": "juniper",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "banish-evil-spell",
+      "materialId": "iron-tools",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "banish-evil-spell",
+      "materialId": "rusty-nail",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "banish-evil-spell",
+      "materialId": "flat-rock",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "banish-evil-spell",
+      "materialId": "mojo-bag",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "banish-negative-energy",
+      "materialId": "chicory",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "banish-negative-energy",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "banish-negative-energy",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "exodus-powder",
+      "materialId": "asafetida",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "exodus-powder",
+      "materialId": "cayenne-pepper",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "exodus-powder",
+      "materialId": "sulfur",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "garlic-banishing",
+      "materialId": "garlic",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "nettle-banishing-spell",
+      "materialId": "nettles",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "nettle-banishing-spell",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "nettle-banishing-spell",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "bad-habits-bath",
+      "materialId": "clary-sage-eo",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "bad-habits-bath",
+      "materialId": "frankincense-eo",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "bad-habits-bath",
+      "materialId": "lavender-eo",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "bad-habits-bath",
+      "materialId": "lemongrass-eo",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "bad-habits-bath",
+      "materialId": "rosemary-eo",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "bad-habits-bath",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 6
+    },
+    {
+      "ritualId": "crystal-bad-habit-breaking",
+      "materialId": "double-term-crystal",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "crystal-bad-habit-breaking",
+      "materialId": "amethyst",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "eucalyptus-bad-habits-bath",
+      "materialId": "eucalyptus-leaves",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "eucalyptus-bad-habits-bath",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "bamboo-banishing-spell",
+      "materialId": "bamboo-sticks",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "dragons-blood-double-action",
+      "materialId": "double-action-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "dragons-blood-double-action",
+      "materialId": "dragons-blood-oil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "disperse-evil-incense-1",
+      "materialId": "benzoin",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "disperse-evil-incense-1",
+      "materialId": "frankincense",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "disperse-evil-incense-1",
+      "materialId": "juniper",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "disperse-evil-incense-1",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "disperse-evil-incense-1",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "disperse-evil-incense-2",
+      "materialId": "benzoin",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "disperse-evil-incense-2",
+      "materialId": "patchouli",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "disperse-evil-incense-2",
+      "materialId": "sandalwood",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "disperse-evil-incense-2",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "disperse-evil-incense-2",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "elf-banishing-spell",
+      "materialId": "iron-tools",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "fenugreek-head-wash",
+      "materialId": "fenugreek",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "fenugreek-head-wash",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "fenugreek-head-wash",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "jet-banishing-spell",
+      "materialId": "jet",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "jet-banishing-spell",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "jet-banishing-spell",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "fumitory-poltergeist-banishing",
+      "materialId": "fumitory",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "fumitory-poltergeist-banishing",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "fumitory-poltergeist-banishing",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "sage-banishing-spell",
+      "materialId": "white-sage",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "sage-banishing-spell",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "sweet-spirit-oil-protection",
+      "materialId": "frankincense-eo",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "sweet-spirit-oil-protection",
+      "materialId": "vetiver-eo",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "sweet-spirit-oil-protection",
+      "materialId": "honeysuckle-eo",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "sweet-spirit-oil-protection",
+      "materialId": "rose-attar",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "sweet-spirit-oil-protection",
+      "materialId": "sweet-almond-oil",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "sweet-spirit-powder",
+      "materialId": "frankincense",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "sweet-spirit-powder",
+      "materialId": "honeysuckle",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "sweet-spirit-powder",
+      "materialId": "roses",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "sweet-spirit-powder",
+      "materialId": "vetiver",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "sweet-spirit-powder",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "sweet-spirit-powder",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 6
+    },
+    {
+      "ritualId": "turmeric-banishing",
+      "materialId": "turmeric",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "turmeric-banishing",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "turmeric-banishing",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "witch-balls-protection",
+      "materialId": "witch-balls",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "woodlands-banishing",
+      "materialId": "acorns",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "woodlands-banishing",
+      "materialId": "mistletoe",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "woodlands-banishing",
+      "materialId": "oak-bark",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "woodlands-banishing",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "woodlands-banishing",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "magic-chalk-circles",
+      "materialId": "white-chalk",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "animal-altar-cleansing",
+      "materialId": "amethyst",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "animal-altar-cleansing",
+      "materialId": "malachite",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "animal-altar-cleansing",
+      "materialId": "quartz-crystal",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "animal-altar-cleansing",
+      "materialId": "white-candle",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "vulture-visualization-cleansing",
+      "materialId": "photograph",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "black-cohosh-cleansing",
+      "materialId": "black-cohosh",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "black-cohosh-cleansing",
+      "materialId": "rosemary",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "black-cohosh-cleansing",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "black-cohosh-cleansing",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "ocean-water-asperge",
+      "materialId": "ocean-water",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "ocean-water-asperge",
+      "materialId": "rosemary",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "ocean-water-asperge",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "peony-root-cleansing",
+      "materialId": "peony-roots",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "peony-root-cleansing",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "peony-root-cleansing",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "pine-needle-asperging-spell",
+      "materialId": "pine-needles",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "pine-needle-asperging-spell",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "pine-needle-asperging-spell",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "traditional-broom-cleansing",
+      "materialId": "broom",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "blessing-oil-purification",
+      "materialId": "frankincense",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "blessing-oil-purification",
+      "materialId": "benzoin",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "blessing-oil-purification",
+      "materialId": "olive-oil",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "blessing-oil-purification",
+      "materialId": "jojoba-oil",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "blessing-oil-purification",
+      "materialId": "white-candle",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "exorcism-purifying-powder",
+      "materialId": "basil",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "exorcism-purifying-powder",
+      "materialId": "frankincense",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "exorcism-purifying-powder",
+      "materialId": "rosemary",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "exorcism-purifying-powder",
+      "materialId": "yarrow",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "exorcism-purifying-powder",
+      "materialId": "arrowroot-powder",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "exorcism-purifying-powder",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 6
+    },
+    {
+      "ritualId": "botanic-fumigation-spell",
+      "materialId": "frankincense",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "botanic-fumigation-spell",
+      "materialId": "white-sage",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "botanic-fumigation-spell",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "botanic-fumigation-spell",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "betony-herb-cleansing",
+      "materialId": "betony",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "betony-herb-cleansing",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "betony-herb-cleansing",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "birch-tree-cleansing",
+      "materialId": "birch",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "birch-tree-cleansing",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "cedarwood-cleansing-incense",
+      "materialId": "cedarwood",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "cedarwood-cleansing-incense",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "cedarwood-cleansing-incense",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "dragons-blood-cleansing",
+      "materialId": "dragons-blood",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "dragons-blood-cleansing",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "dragons-blood-cleansing",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "sacred-resin-cleansing",
+      "materialId": "dragons-blood",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "sacred-resin-cleansing",
+      "materialId": "frankincense",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "sacred-resin-cleansing",
+      "materialId": "charcoal-disc",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "sacred-resin-cleansing",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "bell-vibration-cleansing",
+      "materialId": "silver-bell",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "coal-steam-purification",
+      "materialId": "coals",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "coal-steam-purification",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "coal-steam-purification",
+      "materialId": "bowl",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "agrimony-aura-floorwash",
+      "materialId": "agrimony",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "agrimony-aura-floorwash",
+      "materialId": "peppermint",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "agrimony-aura-floorwash",
+      "materialId": "vinegar",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "agrimony-aura-floorwash",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "agrimony-aura-floorwash",
+      "materialId": "broom",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "amethyst-crystal-cleanser",
+      "materialId": "amethyst",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "onion-quarter-space-cleansing",
+      "materialId": "onion",
+      "quantityLabel": "1x",
+      "sortOrder": 1
     }
   ],
   "entityLinks": [
