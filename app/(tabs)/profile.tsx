@@ -428,6 +428,7 @@ export default function ProfileScreen() {
               placeholder={t("profile.contentPlaceholder")}
               placeholderTextColor={`${theme.colors.onSurfaceMuted}99`}
               style={styles.inputMultiline}
+              contentStyle={styles.inputMultilineContent}
               textColor={theme.colors.onSurface}
               value={content}
             />
@@ -663,6 +664,9 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     inputMultiline: {
       backgroundColor: `${theme.colors.surface2}66`,
       minHeight: 120,
+    },
+    inputMultilineContent: {
+      paddingTop: 12,
     },
     formActions: {
       flexDirection: "row",
