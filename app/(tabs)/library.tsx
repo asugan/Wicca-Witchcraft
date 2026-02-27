@@ -7,6 +7,7 @@ import { Searchbar, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
 import { LibraryChip } from "@/components/mystic/LibraryChip";
+import { LibraryEntryItem } from "@/components/mystic/LibraryEntryItem";
 import { listLibraryCategoryCounts, listLibraryEntries } from "@/db/repositories/library-repository";
 import { usePremiumGate } from "@/hooks/use-premium-gate";
 import { trackEvent } from "@/lib/analytics";
@@ -51,6 +52,12 @@ function getLibrarySearchScore(entry: LibraryEntry, tokens: string[]): number {
   }
   return score;
 }
+
+function LibraryItemSeparator() {
+  return <View style={librarySeparatorStyle} />;
+}
+
+const librarySeparatorStyle = { height: 12 };
 
 export default function LibraryScreen() {
   const router = useRouter();
@@ -109,13 +116,16 @@ export default function LibraryScreen() {
 
   const renderEntryItem = useCallback(
     ({ item: entry }: { item: LibraryEntry }) => {
-      const isLocked = entry.isPremium && !isPremium;
+      const isLocked = !!(entry.isPremium && !isPremium);
       const displaySummary = isLocked
         ? entry.summary.slice(0, 60) + (entry.summary.length > 60 ? "..." : "")
         : entry.summary;
 
       return (
-        <Pressable
+        <LibraryEntryItem
+          entry={entry}
+          isLocked={isLocked}
+          displaySummary={displaySummary}
           onPress={() => {
             if (isLocked) {
               showUpgradePrompt("library_premium");
@@ -129,33 +139,10 @@ export default function LibraryScreen() {
             });
             router.push({ pathname: "/library/[slug]", params: { slug: entry.slug } });
           }}
-          style={styles.row}
-        >
-          <MaterialCommunityIcons color={theme.colors.primary} name={categoryIcons[entry.entityType] ?? "star-four-points"} size={16} />
-          <View style={styles.rowTextWrap}>
-            <View style={styles.rowTitleWrap}>
-              <Text style={styles.rowText}>{entry.title}</Text>
-              {entry.isPremium && (
-                <View style={[styles.premiumTag, isLocked && styles.premiumTagLocked]}>
-                  <MaterialCommunityIcons
-                    color={isLocked ? theme.colors.onSurfaceMuted : theme.colors.primary}
-                    name={isLocked ? "lock" : "star-four-points"}
-                    size={10}
-                  />
-                </View>
-              )}
-            </View>
-            <Text style={[styles.rowSubtext, isLocked && styles.rowSubtextLocked]}>{displaySummary}</Text>
-          </View>
-          <MaterialCommunityIcons
-            color={isLocked ? theme.colors.onSurfaceMuted : `${theme.colors.primary}99`}
-            name="chevron-right"
-            size={18}
-          />
-        </Pressable>
+        />
       );
     },
-    [isPremium, showUpgradePrompt, selectedType, router, theme, styles]
+    [isPremium, showUpgradePrompt, selectedType, router]
   );
 
   const filtersCard = useMemo(
@@ -232,10 +219,14 @@ export default function LibraryScreen() {
           data={filteredEntries}
           renderItem={renderEntryItem}
           keyExtractor={keyExtractor}
-          ItemSeparatorComponent={() => <View style={styles.rowSeparator} />}
+          ItemSeparatorComponent={LibraryItemSeparator}
           style={styles.card}
           contentContainerStyle={styles.cardContent}
           showsVerticalScrollIndicator={false}
+          removeClippedSubviews
+          maxToRenderPerBatch={10}
+          updateCellsBatchingPeriod={50}
+          windowSize={10}
         />
       )}
     </SafeAreaView>
@@ -347,46 +338,5 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     cardContent: {
       padding: 16,
       paddingBottom: 124,
-    },
-    rowSeparator: {
-      height: 12,
-    },
-    row: {
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 10,
-    },
-    rowTextWrap: {
-      flex: 1,
-      gap: 2,
-    },
-    rowText: {
-      color: theme.colors.onSurface,
-      fontSize: 16,
-      fontWeight: "600",
-    },
-    rowSubtext: {
-      color: theme.colors.onSurfaceMuted,
-      fontSize: 12,
-      lineHeight: 18,
-    },
-    rowTitleWrap: {
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 6,
-    },
-    premiumTag: {
-      width: 16,
-      height: 16,
-      borderRadius: 8,
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: `${theme.colors.primary}26`,
-    },
-    premiumTagLocked: {
-      backgroundColor: `${theme.colors.onSurfaceMuted}26`,
-    },
-    rowSubtextLocked: {
-      fontStyle: "italic",
     },
   });

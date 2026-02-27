@@ -40,6 +40,12 @@ function getMoonPhaseLabel(phase: string, t: (key: string) => string): string {
   return key ? t(key) : phase.replace(/-/g, " ");
 }
 
+function RitualItemSeparator() {
+  return <View style={ritualSeparatorStyle} />;
+}
+
+const ritualSeparatorStyle = { height: 12 };
+
 const moonPhaseOrder: Record<string, number> = {
   any: 0,
   new: 1,
@@ -409,7 +415,7 @@ export default function GrimoireScreen() {
           numColumns={2}
           ListHeaderComponent={listHeader}
           ListEmptyComponent={emptyComponent}
-          ItemSeparatorComponent={() => <View style={styles.rowSeparator} />}
+          ItemSeparatorComponent={RitualItemSeparator}
           contentContainerStyle={styles.content}
           columnWrapperStyle={styles.columnWrapper}
           removeClippedSubviews

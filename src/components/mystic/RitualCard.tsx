@@ -48,7 +48,9 @@ export const RitualCard = memo(RitualCardComponent, (prevProps, nextProps) => {
     prevProps.subtitle === nextProps.subtitle &&
     prevProps.image === nextProps.image &&
     prevProps.icon === nextProps.icon &&
-    prevProps.isPremium === nextProps.isPremium
+    prevProps.isPremium === nextProps.isPremium &&
+    prevProps.premiumLabel === nextProps.premiumLabel &&
+    prevProps.onPress === nextProps.onPress
   );
 });
 
