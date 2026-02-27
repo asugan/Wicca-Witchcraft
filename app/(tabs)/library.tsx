@@ -189,25 +189,30 @@ export default function LibraryScreen() {
           </View>
         )}
 
-        {libraryData && (
-          <Text style={[styles.resultMeta, filtersExpanded && styles.resultMetaExpanded]}>
-            {t("library.entriesFound", { count: filteredEntries.length })}
-          </Text>
-        )}
+
       </View>
     ),
-    [activeFilterCount, filtersExpanded, libraryData, selectedType, filteredEntries.length, t, theme, styles]
+    [activeFilterCount, filtersExpanded, libraryData, selectedType, t, theme, styles]
   );
 
   return (
     <SafeAreaView edges={["top"]} style={styles.safe}>
+      <View pointerEvents="none" style={styles.texture} />
+      <View style={styles.header}>
+        <View style={styles.headerTitleWrap}>
+          <MaterialCommunityIcons color={theme.colors.primary} name="bookshelf" size={30} />
+          <Text style={styles.headerTitle}>{t("library.title")}</Text>
+        </View>
+
+      </View>
       <View style={styles.topSection}>
-        <Text style={styles.title}>{t("library.title")}</Text>
-        <Text style={styles.subtitle}>{t("library.subtitle")}</Text>
         <Searchbar
           placeholder={t("library.searchPlaceholder")}
           value={query}
           onChangeText={setQuery}
+          iconColor={`${theme.colors.primary}BF`}
+          inputStyle={styles.searchInputStyle}
+          placeholderTextColor={`${theme.colors.onSurfaceMuted}B3`}
           style={styles.searchBar}
         />
         {filtersCard}
@@ -239,25 +244,53 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       flex: 1,
       backgroundColor: theme.colors.background,
     },
-    topSection: {
-      paddingHorizontal: 20,
-      paddingTop: 20,
-      gap: 12,
+    texture: {
+      position: "absolute",
+      top: -80,
+      left: -40,
+      width: 300,
+      height: 300,
+      borderRadius: 150,
+      backgroundColor: `${theme.colors.primary}12`,
     },
-    title: {
+    header: {
+      borderBottomWidth: 1,
+      borderColor: `${theme.colors.primary}33`,
+      paddingHorizontal: 16,
+      paddingVertical: 10,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      backgroundColor: `${theme.colors.background}F2`,
+    },
+    headerTitleWrap: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 8,
+    },
+    headerTitle: {
+      fontSize: 32,
       color: theme.colors.onSurface,
-      fontSize: 34,
       fontFamily: typefaces.display,
       fontWeight: "700",
     },
-    subtitle: {
-      color: theme.colors.onSurfaceMuted,
-      lineHeight: 20,
+    topSection: {
+      paddingHorizontal: 16,
+      paddingTop: 14,
+      paddingBottom: 20,
+      gap: 20,
     },
     searchBar: {
-      borderRadius: 14,
-      elevation: 0,
+      borderWidth: 1,
+      borderColor: `${theme.colors.primary}33`,
       backgroundColor: theme.colors.surface1,
+      borderRadius: 12,
+      elevation: 0,
+    },
+    searchInputStyle: {
+      color: theme.colors.onSurface,
+      minHeight: 40,
+      fontSize: 14,
     },
     filtersCard: {
       borderWidth: 1,
@@ -327,12 +360,12 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       marginTop: 12,
     },
     card: {
-      marginTop: 12,
+      marginTop: 0,
       borderRadius: 16,
       borderWidth: 1,
       borderColor: `${theme.colors.primary}38`,
       backgroundColor: theme.colors.surface1,
-      marginHorizontal: 20,
+      marginHorizontal: 16,
       marginBottom: 12,
     },
     cardContent: {

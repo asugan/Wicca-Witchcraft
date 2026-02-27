@@ -214,9 +214,14 @@ export default function ProfileScreen() {
   return (
     <>
     <SafeAreaView edges={["top"]} style={styles.safe}>
+      <View pointerEvents="none" style={styles.texture} />
+      <View style={styles.header}>
+        <View style={styles.headerTitleWrap}>
+          <MaterialCommunityIcons color={theme.colors.primary} name="account-circle-outline" size={30} />
+          <Text style={styles.headerTitle}>{t("profile.title")}</Text>
+        </View>
+      </View>
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
-        <Text style={styles.title}>{t("profile.title")}</Text>
-        <Text style={styles.subtitle}>{t("profile.subtitle")}</Text>
 
         <View style={styles.panel}>
           <View style={styles.panelHeader}>
@@ -561,20 +566,41 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       flex: 1,
       backgroundColor: theme.colors.background,
     },
-    container: {
-      padding: 20,
-      paddingBottom: 124,
-      gap: 12,
+    texture: {
+      position: "absolute",
+      top: -80,
+      left: -40,
+      width: 300,
+      height: 300,
+      borderRadius: 150,
+      backgroundColor: `${theme.colors.primary}12`,
     },
-    title: {
+    header: {
+      borderBottomWidth: 1,
+      borderColor: `${theme.colors.primary}33`,
+      paddingHorizontal: 16,
+      paddingVertical: 10,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      backgroundColor: `${theme.colors.background}F2`,
+    },
+    headerTitleWrap: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 8,
+    },
+    headerTitle: {
+      fontSize: 32,
       color: theme.colors.onSurface,
-      fontSize: 34,
       fontFamily: typefaces.display,
       fontWeight: "700",
     },
-    subtitle: {
-      color: theme.colors.onSurfaceMuted,
-      lineHeight: 20,
+    container: {
+      padding: 16,
+      paddingTop: 12,
+      paddingBottom: 124,
+      gap: 12,
     },
     panel: {
       marginTop: 10,

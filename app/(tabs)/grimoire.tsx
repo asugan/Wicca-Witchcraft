@@ -349,9 +349,7 @@ export default function GrimoireScreen() {
             </View>
           )}
 
-          <Text style={[styles.resultMeta, filtersExpanded && styles.resultMetaExpanded]}>
-            {t("grimoire.ritualsFound", { count: filteredRituals.length })}
-          </Text>
+
         </View>
 
         <View>
@@ -398,9 +396,7 @@ export default function GrimoireScreen() {
           <MaterialCommunityIcons color={theme.colors.primary} name="book-open-page-variant" size={30} />
           <Text style={styles.headerTitle}>{t("grimoire.title")}</Text>
         </View>
-        <Pressable onPress={() => router.navigate("/(tabs)/profile")}>
-          <MaterialCommunityIcons color={theme.colors.onSurfaceMuted} name="account-circle-outline" size={26} />
-        </Pressable>
+
       </View>
 
       {!rituals ? (
