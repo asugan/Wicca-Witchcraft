@@ -1,13 +1,14 @@
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator, InteractionManager, View } from "react-native";
 import { PaperProvider } from "react-native-paper";
 
 import { DatabaseProvider, useDatabaseReady } from "@/context/database-context";
 import { ThemeProvider } from "@/context/theme-context";
 import { ToastProvider } from "@/context/toast-context";
 import { getLanguagePreference, getNotificationsEnabled } from "@/db/repositories/settings-repository";
+import { prewarmMoonData } from "@/db/repositories/tools-repository";
 import { initRevenueCat } from "@/features/subscription/revenuecat";
 import i18n from "@/i18n";
 import { initAnalytics, trackAppStarted } from "@/lib/analytics";
@@ -36,6 +37,13 @@ function RootLayoutContent() {
 
     void initRevenueCat();
     void syncCdnContent(LOCAL_USER_ID);
+
+    // Tools tab'ı ilk açıldığında donmaması için moon hesaplamasını arka planda
+    // önceden ısıt. UI animasyonları bittikten sonra çalışır.
+    const moonPrewarm = InteractionManager.runAfterInteractions(() => {
+      prewarmMoonData();
+    });
+    return () => moonPrewarm.cancel();
   }, []);
 
   return (

@@ -83,6 +83,7 @@ export type Translations = {
   library: {
     title: string;
     subtitle: string;
+    searchPlaceholder: string;
     filterAll: string;
     typeCrystal: string;
     typeHerb: string;
@@ -382,6 +383,7 @@ export const enTranslations: Translations = {
   library: {
     title: "Mystic Library",
     subtitle: "Explore cross-linked entries to deepen your ritual practice.",
+    searchPlaceholder: "Search crystals, herbs, deities...",
     filterAll: "All",
     typeCrystal: "Crystal",
     typeHerb: "Herb",

@@ -1,6 +1,16 @@
 import { generateMoonEvents } from "@/lib/moon";
 import { toLocalIsoDate } from "@/lib/date-utils";
 
+// Module-level cache: moon data hesaplaması ~210 günlük trigonometri döngüsü
+// içerdiğinden, aynı gün içinde sonucu yeniden hesaplamak yerine cache'den döndür.
+type MoonDataResult = {
+  sections: ReturnType<typeof buildMoonCalendarSections>;
+  timeline: ReturnType<typeof buildAstroTimeline>;
+};
+
+let _moonCacheDate: string | null = null;
+let _moonCacheData: MoonDataResult | null = null;
+
 type TimelineKind = "preparation" | "peak" | "integration";
 
 function toEventDate(date: string) {
@@ -110,10 +120,24 @@ export function listAstroTimeline() {
   return buildAstroTimeline(listMoonEvents());
 }
 
-export function getMoonData() {
+export function getMoonData(): MoonDataResult {
+  const today = toLocalIsoDate(new Date());
+  if (_moonCacheDate === today && _moonCacheData !== null) {
+    return _moonCacheData;
+  }
   const events = listMoonEvents();
-  return {
+  _moonCacheData = {
     sections: buildMoonCalendarSections(events),
     timeline: buildAstroTimeline(events),
   };
+  _moonCacheDate = today;
+  return _moonCacheData;
+}
+
+/**
+ * Uygulama başlangıcında arka planda çağırarak moon verisini cache'e ısıtır.
+ * Böylece Tools tab'ı ilk açıldığında hesaplama zaten tamamlanmış olur.
+ */
+export function prewarmMoonData(): void {
+  getMoonData();
 }

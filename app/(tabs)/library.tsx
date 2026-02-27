@@ -1,9 +1,9 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, FlatList, InteractionManager, LayoutAnimation, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text } from "react-native-paper";
+import { Searchbar, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
 import { LibraryChip } from "@/components/mystic/LibraryChip";
@@ -37,6 +37,21 @@ type LibraryData = {
   categoryCounts: ReturnType<typeof listLibraryCategoryCounts>;
 };
 
+function getLibrarySearchScore(entry: LibraryEntry, tokens: string[]): number {
+  let score = 0;
+  const title = entry.title.toLowerCase();
+  const summary = (entry.summary ?? "").toLowerCase();
+  const type = entry.entityType.toLowerCase();
+
+  for (const token of tokens) {
+    if (title.startsWith(token)) score += 8;
+    else if (title.includes(token)) score += 5;
+    if (summary.includes(token)) score += 3;
+    if (type.includes(token)) score += 2;
+  }
+  return score;
+}
+
 export default function LibraryScreen() {
   const router = useRouter();
   const theme = useMysticTheme();
@@ -46,6 +61,8 @@ export default function LibraryScreen() {
 
   const [selectedType, setSelectedType] = useState<string>("all");
   const [filtersExpanded, setFiltersExpanded] = useState(false);
+  const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
 
   const [libraryData, setLibraryData] = useState<LibraryData | null>(null);
 
@@ -68,9 +85,25 @@ export default function LibraryScreen() {
 
   const filteredEntries = useMemo(() => {
     if (!libraryData) return [];
-    if (selectedType === "all") return libraryData.entries;
-    return libraryData.entries.filter((entry) => entry.entityType === selectedType);
-  }, [libraryData, selectedType]);
+
+    const tokens = deferredQuery.toLowerCase().split(/\s+/).filter(Boolean);
+
+    let results = libraryData.entries;
+
+    if (selectedType !== "all") {
+      results = results.filter((e) => e.entityType === selectedType);
+    }
+
+    if (tokens.length > 0) {
+      results = results
+        .map((e) => ({ entry: e, score: getLibrarySearchScore(e, tokens) }))
+        .filter(({ score }) => score > 0)
+        .sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title))
+        .map(({ entry }) => entry);
+    }
+
+    return results;
+  }, [libraryData, selectedType, deferredQuery]);
 
   const keyExtractor = useCallback((item: LibraryEntry) => item.id, []);
 
@@ -184,6 +217,12 @@ export default function LibraryScreen() {
       <View style={styles.topSection}>
         <Text style={styles.title}>{t("library.title")}</Text>
         <Text style={styles.subtitle}>{t("library.subtitle")}</Text>
+        <Searchbar
+          placeholder={t("library.searchPlaceholder")}
+          value={query}
+          onChangeText={setQuery}
+          style={styles.searchBar}
+        />
         {filtersCard}
       </View>
       {!libraryData ? (
@@ -223,6 +262,11 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     subtitle: {
       color: theme.colors.onSurfaceMuted,
       lineHeight: 20,
+    },
+    searchBar: {
+      borderRadius: 14,
+      elevation: 0,
+      backgroundColor: theme.colors.surface1,
     },
     filtersCard: {
       borderWidth: 1,

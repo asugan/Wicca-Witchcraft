@@ -85,6 +85,7 @@ export const itTranslations: Translations = {
   library: {
     title: "Biblioteca Mistica",
     subtitle: "Esplora voci collegate per approfondire la tua pratica rituale.",
+    searchPlaceholder: "Cerca cristalli, erbe, divinità...",
     filterAll: "Tutto",
     typeCrystal: "Cristallo",
     typeHerb: "Erba",

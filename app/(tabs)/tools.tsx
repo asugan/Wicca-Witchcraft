@@ -56,7 +56,7 @@ const SPREAD_LABELS: Record<SpreadType, string> = {
 export default function ToolsScreen() {
   const theme = useMysticTheme();
   const { t } = useTranslation();
-  const styles = makeStyles(theme);
+  const styles = useMemo(() => makeStyles(theme), [theme]);
   const { isPremium, requirePremium } = usePremiumGate();
 
   const [selectedSpread, setSelectedSpread] = useState<SpreadType>("three_card");

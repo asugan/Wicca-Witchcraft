@@ -85,6 +85,7 @@ export const trTranslations: Translations = {
   library: {
     title: "Mistik Kütüphane",
     subtitle: "Ritüel pratiğinizi derinleştirmek için çapraz bağlantılı girişleri keşfedin.",
+    searchPlaceholder: "Kristal, bitki, tanrı ara...",
     filterAll: "Tümü",
     typeCrystal: "Kristal",
     typeHerb: "Bitki",
