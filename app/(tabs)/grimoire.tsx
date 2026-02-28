@@ -11,17 +11,7 @@ import { listRituals } from "@/db/repositories/ritual-repository";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
-import { getCoverImage } from "@/utils/ritual-image";
-
-const categoryIcons: Record<string, keyof typeof MaterialCommunityIcons.glyphMap> = {
-  love: "heart",
-  protection: "shield",
-  abundance: "cash",
-  healing: "leaf",
-  moon: "moon-waning-gibbous",
-  ritual: "book-open-page-variant",
-  beginner: "star-four-points",
-};
+import { getCategoryImage } from "@/utils/ritual-image";
 
 const MOON_PHASE_KEYS: Record<string, string> = {
   new: "grimoire.moonPhaseNew",
@@ -222,8 +212,7 @@ export default function GrimoireScreen() {
   const renderRitualItem = useCallback(
     ({ item: ritual }: { item: Ritual }) => (
       <RitualCard
-        icon={categoryIcons[ritual.category] ?? "book-open-page-variant"}
-        image={getCoverImage(ritual.coverImage, ritual.category)}
+        category={ritual.category}
         isPremium={ritual.isPremium}
         premiumLabel={t("grimoire.premiumBadge" as string)}
         onPress={() => {
@@ -356,8 +345,11 @@ export default function GrimoireScreen() {
           <Text style={styles.overline}>{t("grimoire.currentFocus")}</Text>
           {featuredRitual ? (
             <Pressable onPress={() => router.push(`/ritual/${featuredRitual.slug}` as never)}>
-              <ImageBackground imageStyle={styles.featuredImage} source={getCoverImage(featuredRitual.coverImage, featuredRitual.category)} style={styles.featuredCard}>
-                <View style={styles.featuredOverlay} />
+              <ImageBackground
+                imageStyle={styles.featuredImage}
+                source={getCategoryImage(featuredRitual.category)}
+                style={styles.featuredCard}
+              >
                 <View style={styles.featuredBottomFade} />
                 <View style={styles.featuredContent}>
                   <View style={styles.featuredTagBadge}>
@@ -580,24 +572,20 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderRadius: 16,
       overflow: "hidden",
       borderWidth: 1,
-      borderColor: `${theme.colors.primary}40`,
+      borderColor: `${theme.colors.outline}60`,
       justifyContent: "flex-end",
       marginBottom: 20,
     },
     featuredImage: {
       resizeMode: "cover",
     },
-    featuredOverlay: {
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: "rgba(10,8,5,0.30)",
-    },
     featuredBottomFade: {
       position: "absolute",
       left: 0,
       right: 0,
       bottom: 0,
-      height: 120,
-      backgroundColor: "rgba(10,8,5,0.72)",
+      height: 130,
+      backgroundColor: "rgba(6,4,2,0.80)",
     },
     featuredContent: {
       paddingHorizontal: 16,
@@ -606,9 +594,12 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     featuredTagBadge: {
       alignSelf: "flex-start",
-      backgroundColor: `${theme.colors.primary}33`,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 4,
       borderWidth: 1,
       borderColor: `${theme.colors.primary}66`,
+      backgroundColor: `${theme.colors.primary}22`,
       borderRadius: 999,
       paddingHorizontal: 10,
       paddingVertical: 3,

@@ -1,16 +1,29 @@
 import { ImageSourcePropType } from "react-native";
 
-const CATEGORY_DEFAULT_IMAGES: Record<string, ImageSourcePropType> = {
-  cleansing: require("../../assets/images/ritual_cleansing.jpg"),
-  protection: require("../../assets/images/ritual_protection.jpg"),
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+export const CATEGORY_ICONS: Record<string, keyof typeof MaterialCommunityIcons.glyphMap> = {
+  love: "heart",
+  protection: "shield",
+  abundance: "cash",
+  healing: "leaf",
+  moon: "moon-waning-gibbous",
+  ritual: "book-open-page-variant",
+  beginner: "star-four-points",
 };
 
-const FALLBACK_IMAGE: ImageSourcePropType = require("../../assets/images/ritual_cleansing.jpg");
+const CATEGORY_IMAGES: Record<string, ImageSourcePropType> = {
+  protection: require('../../assets/images/protection_bg.jpg'),
+  cleansing: require('../../assets/images/cleansing_bg.jpg'),
+  healing: require('../../assets/images/healing_bg.jpg'),
+  love: require('../../assets/images/love_bg.jpg'),
+  moon: require('../../assets/images/moon_bg.jpg'),
+  beginner: require('../../assets/images/beginner_bg.jpg'),
+  abundance: require('../../assets/images/abundance_bg.jpg'),
+};
 
-/**
- * Returns the ritual's cover image source, or a category-based default if empty.
- */
-export function getCoverImage(coverImage: string, category: string): ImageSourcePropType {
-  if (coverImage) return { uri: coverImage };
-  return CATEGORY_DEFAULT_IMAGES[category] ?? FALLBACK_IMAGE;
+const FALLBACK_IMAGE: ImageSourcePropType = require('../../assets/images/moon_bg.jpg');
+
+export function getCategoryImage(category: string): ImageSourcePropType {
+  return CATEGORY_IMAGES[category] ?? FALLBACK_IMAGE;
 }

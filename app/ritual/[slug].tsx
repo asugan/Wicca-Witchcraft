@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { IncantationBlock } from "@/components/mystic/IncantationBlock";
 import { isRitualFavorited, toggleRitualFavorite } from "@/db/repositories/my-space-repository";
 import { getRitualDetailBySlug } from "@/db/repositories/ritual-repository";
-import { getCoverImage } from "@/utils/ritual-image";
+import { getCategoryImage } from "@/utils/ritual-image";
 import { usePremiumGate } from "@/hooks/use-premium-gate";
 import { trackEvent } from "@/lib/analytics";
 import { typefaces } from "@/theme/tokens";
@@ -109,8 +109,12 @@ export default function RitualDetailScreen() {
       </View>
 
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-        <ImageBackground imageStyle={styles.heroImage} source={getCoverImage(detail.ritual.coverImage, detail.ritual.category)} style={styles.hero}>
-          <View style={styles.heroOverlay} />
+        <ImageBackground
+          imageStyle={styles.heroImage}
+          source={getCategoryImage(detail.ritual.category)}
+          style={styles.hero}
+        >
+          <View style={styles.heroBottomFade} />
           <Text style={styles.heroTag}>{detail.ritual.category}</Text>
           <Text style={styles.heroTitle}>{detail.ritual.title}</Text>
         </ImageBackground>
@@ -309,13 +313,18 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       height: 262,
       justifyContent: "flex-end",
       padding: 20,
+      overflow: "hidden",
     },
     heroImage: {
       resizeMode: "cover",
     },
-    heroOverlay: {
-      ...StyleSheet.absoluteFillObject,
-      backgroundColor: "rgba(13,10,6,0.45)",
+    heroBottomFade: {
+      position: "absolute",
+      left: 0,
+      right: 0,
+      bottom: 0,
+      height: 160,
+      backgroundColor: "rgba(6,4,2,0.78)",
     },
     heroTag: {
       color: `${theme.colors.primary}E0`,

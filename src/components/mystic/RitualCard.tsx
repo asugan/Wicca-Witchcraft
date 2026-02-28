@@ -1,39 +1,39 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { memo } from "react";
-import { ImageBackground, ImageSourcePropType, Pressable, StyleSheet, View } from "react-native";
+import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper";
 
+import { getCategoryImage } from "@/utils/ritual-image";
 import { typefaces } from "@/theme/tokens";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
 type RitualCardProps = {
   title: string;
   subtitle: string;
-  image: ImageSourcePropType;
-  icon: keyof typeof MaterialCommunityIcons.glyphMap;
+  category: string;
   isPremium?: boolean;
   premiumLabel?: string;
   onPress?: () => void;
 };
 
-function RitualCardComponent({ title, subtitle, image, icon, isPremium, premiumLabel, onPress }: RitualCardProps) {
+function RitualCardComponent({ title, subtitle, category, isPremium, premiumLabel, onPress }: RitualCardProps) {
   const theme = useMysticTheme();
   const styles = makeStyles(theme);
+  const image = getCategoryImage(category);
 
   return (
     <Pressable onPress={onPress} style={styles.card}>
       <ImageBackground imageStyle={styles.mediaImage} source={image} style={styles.media}>
         <View style={styles.mediaOverlay} />
+
         {isPremium && (
           <View style={styles.premiumBadge}>
             <MaterialCommunityIcons color={theme.colors.onPrimary} name="star-four-points" size={10} />
             <Text style={styles.premiumBadgeText}>{premiumLabel || "Premium"}</Text>
           </View>
         )}
-        <View style={styles.iconWrap}>
-          <MaterialCommunityIcons color={theme.colors.primary} name={icon} size={24} />
-        </View>
       </ImageBackground>
+
       <Text style={styles.title}>{title}</Text>
       <Text numberOfLines={2} style={styles.subtitle}>
         {subtitle}
@@ -46,8 +46,7 @@ export const RitualCard = memo(RitualCardComponent, (prevProps, nextProps) => {
   return (
     prevProps.title === nextProps.title &&
     prevProps.subtitle === nextProps.subtitle &&
-    prevProps.image === nextProps.image &&
-    prevProps.icon === nextProps.icon &&
+    prevProps.category === nextProps.category &&
     prevProps.isPremium === nextProps.isPremium &&
     prevProps.premiumLabel === nextProps.premiumLabel &&
     prevProps.onPress === nextProps.onPress
@@ -80,15 +79,7 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     mediaOverlay: {
       ...StyleSheet.absoluteFillObject,
-      backgroundColor: "rgba(24,22,17,0.58)",
-    },
-    iconWrap: {
-      width: 46,
-      height: 46,
-      borderRadius: 23,
-      backgroundColor: "rgba(0,0,0,0.35)",
-      alignItems: "center",
-      justifyContent: "center",
+      backgroundColor: "rgba(0,0,0,0.30)",
     },
     title: {
       color: theme.colors.onSurface,
@@ -112,6 +103,7 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
       borderRadius: 999,
       paddingHorizontal: 6,
       paddingVertical: 3,
+      zIndex: 1,
     },
     premiumBadgeText: {
       color: theme.colors.onPrimary,
