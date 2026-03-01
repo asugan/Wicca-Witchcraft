@@ -2,7 +2,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
 import { ImageBackground, Pressable, ScrollView, StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
@@ -24,6 +24,7 @@ export default function RitualDetailScreen() {
   const { t } = useTranslation();
   const styles = makeStyles(theme);
   const { isPremium, showUpgradePrompt } = usePremiumGate();
+  const insets = useSafeAreaInsets();
 
   const { slug } = useLocalSearchParams<{ slug?: string | string[] }>();
   const normalizedSlug = Array.isArray(slug) ? slug[0] : (slug ?? "full-moon-release");
@@ -232,7 +233,7 @@ export default function RitualDetailScreen() {
         <Text style={styles.quote}>{detail.ritual.safetyNote}</Text>
       </ScrollView>
 
-      <View style={styles.bottomBar}>
+      <View style={[styles.bottomBar, { bottom: 16 + insets.bottom }]}>
         {showPremiumGate ? (
           <Button
             contentStyle={styles.beginButtonContent}
