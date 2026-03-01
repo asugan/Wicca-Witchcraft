@@ -25,6 +25,22 @@ const MOON_PHASE_KEYS: Record<string, string> = {
   "waning-crescent": "grimoire.moonPhaseWaningCrescent",
 };
 
+function mulberry32(seed: number) {
+  return function () {
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function dailyShuffle<T>(arr: T[]): T[] {
+  const d = new Date();
+  const seed = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+  const rand = mulberry32(seed);
+  return [...arr].sort(() => rand() - 0.5);
+}
+
 function getMoonPhaseLabel(phase: string, t: (key: string) => string): string {
   const key = MOON_PHASE_KEYS[phase];
   return key ? t(key) : phase.replace(/-/g, " ");
@@ -137,7 +153,7 @@ export default function GrimoireScreen() {
 
   useEffect(() => {
     const task = InteractionManager.runAfterInteractions(() => {
-      setRituals(listRituals());
+      setRituals(dailyShuffle(listRituals()));
     });
     return () => task.cancel();
   }, []);

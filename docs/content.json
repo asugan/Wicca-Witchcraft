@@ -2086,6 +2086,756 @@
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
       "createdAt": 1704067200138,
       "isPremium": false
+    },
+    {
+      "id": "almond-tree-business",
+      "slug": "almond-tree-business",
+      "title": "Almond Tree Better Business Spell",
+      "summary": "Climb an almond tree after offering a libation to ensure success in business ventures.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200139,
+      "isPremium": false
+    },
+    {
+      "id": "arabka-soudagar-business",
+      "slug": "arabka-soudagar-business",
+      "title": "Arabka Soudagar Business Spell",
+      "summary": "Burn a specific blend of botanicals to break through business blockages and improve finances.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200140,
+      "isPremium": false
+    },
+    {
+      "id": "lakshmi-tulsi-spell",
+      "slug": "lakshmi-tulsi-spell",
+      "title": "Lakshmi's Tulsi Spell",
+      "summary": "Place a potted tulsi basil plant near your entrance to draw Lakshmi's luck and wealth.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200141,
+      "isPremium": false
+    },
+    {
+      "id": "honey-business-attraction",
+      "slug": "honey-business-attraction",
+      "title": "Honey Business Attraction",
+      "summary": "Bathe with honey while chanting to magnetically draw customers and contracts to you.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200142,
+      "isPremium": false
+    },
+    {
+      "id": "personal-business-magnet",
+      "slug": "personal-business-magnet",
+      "title": "Personal Business Magnet Bath",
+      "summary": "Bathe in a basil infusion to draw financial opportunity and personal magnetism.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 25,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200143,
+      "isPremium": false
+    },
+    {
+      "id": "artist-better-business",
+      "slug": "artist-better-business",
+      "title": "Artist's Better Business Spell",
+      "summary": "Use a Fool tarot card and candles to attract financial stability without sacrificing artistic principles.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200144,
+      "isPremium": false
+    },
+    {
+      "id": "astrologer-better-business",
+      "slug": "astrologer-better-business",
+      "title": "Astrologer's Better Business Spell",
+      "summary": "Invoke Tanit, Queen of the Stars, for increased business prospects and protection.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200145,
+      "isPremium": false
+    },
+    {
+      "id": "better-business-charm-bag",
+      "slug": "better-business-charm-bag",
+      "title": "Better Business Charm Bag",
+      "summary": "Create a mojo bag filled with cowrie shells and magnetic roots to draw continuous business.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200146,
+      "isPremium": false
+    },
+    {
+      "id": "nutmeg-business-spell",
+      "slug": "nutmeg-business-spell",
+      "title": "Nutmeg Better Business Spell",
+      "summary": "String powerful roots and a nutmeg together to hang over your business entrance.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200147,
+      "isPremium": false
+    },
+    {
+      "id": "dust-in-the-wind-business",
+      "slug": "dust-in-the-wind-business",
+      "title": "Dust in the Wind Business Spell",
+      "summary": "Combine anthill dust and written goals into a charm bag for continuous business growth.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200148,
+      "isPremium": false
+    },
+    {
+      "id": "drawing-powder-personal",
+      "slug": "drawing-powder-personal",
+      "title": "Drawing Powder Personal Dusting",
+      "summary": "Create a sweet, magical body powder to attract personal attention and open pockets.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200149,
+      "isPremium": false
+    },
+    {
+      "id": "eye-for-business",
+      "slug": "eye-for-business",
+      "title": "Eye for Business Spell",
+      "summary": "Place eye charms in the corners of your room to attract business and protect your enterprise.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200150,
+      "isPremium": false
+    },
+    {
+      "id": "financial-crisis-bath",
+      "slug": "financial-crisis-bath",
+      "title": "Financial Crisis Better Business Bath",
+      "summary": "An emergency bath spell used during the New Moon to break severe financial blockages.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "new-moon",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200151,
+      "isPremium": false
+    },
+    {
+      "id": "first-dollar-ashes",
+      "slug": "first-dollar-ashes",
+      "title": "First Dollar Ashes Spell",
+      "summary": "Burn the first dollar earned from a business with resins to create a powerful carrying charm.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200152,
+      "isPremium": false
+    },
+    {
+      "id": "first-dollar-candle",
+      "slug": "first-dollar-candle",
+      "title": "First Dollar Candle Spell",
+      "summary": "Burn a green candle over your first earned dollar to anchor prosperity to your property.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200153,
+      "isPremium": false
+    },
+    {
+      "id": "first-dollar-ginseng",
+      "slug": "first-dollar-ginseng",
+      "title": "First Dollar Ginseng Spell",
+      "summary": "Wrap the first dollar around a ginseng root to act as a cash register magnet.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200154,
+      "isPremium": false
+    },
+    {
+      "id": "first-dollar-san-martin",
+      "slug": "first-dollar-san-martin",
+      "title": "First Dollar San Martin Caballero",
+      "summary": "Dedicate the first dollar to San Martin Caballero to stabilize business fortunes.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200155,
+      "isPremium": false
+    },
+    {
+      "id": "magic-coin-business-packet",
+      "slug": "magic-coin-business-packet",
+      "title": "Magic Coin Better Business Packet",
+      "summary": "Wrap Chinese coins in yellow cloth with magnetic sand to create a cash register amulet.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200156,
+      "isPremium": false
+    },
+    {
+      "id": "glory-water-business",
+      "slug": "glory-water-business",
+      "title": "Glory Water Business Asperging",
+      "summary": "Create a fragrant holy water blend to sprinkle through the premises to attract customers.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200157,
+      "isPremium": false
+    },
+    {
+      "id": "oya-marketplace-spirit",
+      "slug": "oya-marketplace-spirit",
+      "title": "Oya Marketplace Spirit Spell",
+      "summary": "Create an altar for Oya, ruler of the marketplace, to gain her business advice and blessings.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200158,
+      "isPremium": false
+    },
+    {
+      "id": "mermaid-money-increase",
+      "slug": "mermaid-money-increase",
+      "title": "Mermaid Money Increase Spell",
+      "summary": "Draw a double-tailed mermaid to protect and grow the money in your cash box.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200159,
+      "isPremium": false
+    },
+    {
+      "id": "money-powder-cross",
+      "slug": "money-powder-cross",
+      "title": "Money Powder Cross Spell",
+      "summary": "Arrange coins in a cross over a bed of rice and sugar to generate a powerful business mojo.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200160,
+      "isPremium": false
+    },
+    {
+      "id": "orange-candle-job",
+      "slug": "orange-candle-job",
+      "title": "Orange Candle Job Spell",
+      "summary": "Burn a dressed orange candle over your CV to manifest your dream job.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "new-moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200161,
+      "isPremium": false
+    },
+    {
+      "id": "ten-of-diamonds-success",
+      "slug": "ten-of-diamonds-success",
+      "title": "Ten of Diamonds Professional Success",
+      "summary": "Use the ten of diamonds playing card as a base to burn candles for massive professional success.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200162,
+      "isPremium": false
+    },
+    {
+      "id": "alfalfa-money-spell",
+      "slug": "alfalfa-money-spell",
+      "title": "Alfalfa Money Spell",
+      "summary": "Burn alfalfa to draw money and protect against poverty.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200163,
+      "isPremium": false
+    },
+    {
+      "id": "chinese-frog-wealth",
+      "slug": "chinese-frog-wealth",
+      "title": "Chinese Frog Wealth Spell",
+      "summary": "Feed a money frog amulet under your bed to generate continuous abundance.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200164,
+      "isPremium": false
+    },
+    {
+      "id": "golden-spider-riches",
+      "slug": "golden-spider-riches",
+      "title": "Golden Spider Web of Riches",
+      "summary": "Draw a golden spider and offer it coins to weave a web of wealth for you.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200165,
+      "isPremium": false
+    },
+    {
+      "id": "avocado-money-magnet",
+      "slug": "avocado-money-magnet",
+      "title": "Avocado Money Magnet",
+      "summary": "Grow and eat from an avocado tree to create a powerful personal money charm.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 0,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200166,
+      "isPremium": false
+    },
+    {
+      "id": "exact-sum-basil",
+      "slug": "exact-sum-basil",
+      "title": "Exact Sum Basil Spell",
+      "summary": "Bury a written request for an exact sum of money under a money-drawing plant.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200167,
+      "isPremium": false
+    },
+    {
+      "id": "bayberry-silver-magnet",
+      "slug": "bayberry-silver-magnet",
+      "title": "Bayberry Silver Magnet",
+      "summary": "Anoint silver with bayberry oil to create a daily Third Eye abundance charger.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 35,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200168,
+      "isPremium": false
+    },
+    {
+      "id": "bryony-root-wallet",
+      "slug": "bryony-root-wallet",
+      "title": "Bryony Root Wallet Spell",
+      "summary": "Place a white bryony root over your stacked money at night to encourage growth.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200169,
+      "isPremium": false
+    },
+    {
+      "id": "buckeye-prosperity-charm",
+      "slug": "buckeye-prosperity-charm",
+      "title": "Buckeye Prosperity Charm",
+      "summary": "Wrap a buckeye in a cash bill and burn candles around it to activate a wealth charm.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 20,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200170,
+      "isPremium": false
+    },
+    {
+      "id": "past-cash-double-action",
+      "slug": "past-cash-double-action",
+      "title": "Past Cash Double Action Spell",
+      "summary": "Burn a black and green double-action candle horizontally to banish debt and manifest wealth.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 30,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200171,
+      "isPremium": false
+    },
+    {
+      "id": "money-growth-candle-chant",
+      "slug": "money-growth-candle-chant",
+      "title": "Money Growth Candle Chant",
+      "summary": "Burn a dressed green candle surrounded by coins while chanting to increase flow.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200172,
+      "isPremium": false
+    },
+    {
+      "id": "lucky-sevens-conjure-bag",
+      "slug": "lucky-sevens-conjure-bag",
+      "title": "Lucky Sevens Conjure Bag",
+      "summary": "Carry seven distinct types of money anointed with bergamot to multiply wealth.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200173,
+      "isPremium": false
+    },
+    {
+      "id": "creole-anti-poverty",
+      "slug": "creole-anti-poverty",
+      "title": "Creole Anti-Poverty Spell",
+      "summary": "Combine sugar, salt, rice, and an open safety pin in a bowl to ward off poverty.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200174,
+      "isPremium": false
+    },
+    {
+      "id": "fenugreek-jar-increase",
+      "slug": "fenugreek-jar-increase",
+      "title": "Fenugreek Jar of Increase",
+      "summary": "Continuously add fenugreek seeds to a jar, then bury it to ensure constant growth.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200175,
+      "isPremium": false
+    },
+    {
+      "id": "ginger-root-earth-magnet",
+      "slug": "ginger-root-earth-magnet",
+      "title": "Ginger Root Earth Magnet",
+      "summary": "Bury ginger roots in the earth to draw money toward you.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200176,
+      "isPremium": false
+    },
+    {
+      "id": "green-ribbon-invocation",
+      "slug": "green-ribbon-invocation",
+      "title": "Green Ribbon Invocation",
+      "summary": "Knot a green silk ribbon nine times with a specific verbalized financial desire.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200177,
+      "isPremium": false
+    },
+    {
+      "id": "gold-blood-growth",
+      "slug": "gold-blood-growth",
+      "title": "Gold and Blood Growth Spell",
+      "summary": "Bury a gold item with blood beneath a leafy plant to stimulate massive financial growth.",
+      "category": "abundance",
+      "difficulty": "advanced",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200178,
+      "isPremium": false
+    },
+    {
+      "id": "high-john-cash-wrap",
+      "slug": "high-john-cash-wrap",
+      "title": "High John Cash Wrap",
+      "summary": "Wrap a cash bill around a High John root and knot it to attract more cash.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200179,
+      "isPremium": false
+    },
+    {
+      "id": "horseshoe-wealth-wrap",
+      "slug": "horseshoe-wealth-wrap",
+      "title": "Horseshoe Wealth Wrap",
+      "summary": "Dip a horseshoe in magnetic materials and wrap it in green thread to pull in luck.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "any",
+      "durationMinutes": 15,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200180,
+      "isPremium": false
+    },
+    {
+      "id": "lodestone-box-wealth",
+      "slug": "lodestone-box-wealth",
+      "title": "Lodestone Box of Wealth",
+      "summary": "Feed a pair of lodestones in a box with coins and glitter to manifest a specific sum.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200181,
+      "isPremium": false
+    },
+    {
+      "id": "laughing-buddha-envelope",
+      "slug": "laughing-buddha-envelope",
+      "title": "Laughing Buddha Envelope Spell",
+      "summary": "Burn a Laughing Buddha candle over a red envelope containing your financial request.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 10,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200182,
+      "isPremium": false
+    },
+    {
+      "id": "lunar-window-money",
+      "slug": "lunar-window-money",
+      "title": "Lunar Window Money Growth",
+      "summary": "Expose money to the waxing moon by a window to magically stimulate its growth.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "new-moon",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200183,
+      "isPremium": false
+    },
+    {
+      "id": "magic-bean-triad",
+      "slug": "magic-bean-triad",
+      "title": "Magic Bean Triad",
+      "summary": "Charge three golden beans and carry them with a lodestone to draw sudden wealth.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "any",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200184,
+      "isPremium": false
+    },
+    {
+      "id": "bank-of-hell-check",
+      "slug": "bank-of-hell-check",
+      "title": "Bank of Hell Check Visualization",
+      "summary": "Write a check to yourself for future wealth and anoint it to ensure it manifests.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200185,
+      "isPremium": false
+    },
+    {
+      "id": "mandrake-coin-multiplier",
+      "slug": "mandrake-coin-multiplier",
+      "title": "Mandrake Coin Multiplier",
+      "summary": "Place silver coins beside a mandrake root in the moonlight to multiply your wealth.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "full-moon",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200186,
+      "isPremium": false
+    },
+    {
+      "id": "milk-honey-prosperity-bath",
+      "slug": "milk-honey-prosperity-bath",
+      "title": "Milk and Honey Prosperity Bath",
+      "summary": "Soak in a luxurious bath of four milks, honey, and holy water to draw lavish prosperity.",
+      "category": "abundance",
+      "difficulty": "intermediate",
+      "moonPhase": "waxing-moon",
+      "durationMinutes": 25,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200187,
+      "isPremium": false
+    },
+    {
+      "id": "rose-of-jericho-financial",
+      "slug": "rose-of-jericho-financial",
+      "title": "Rose of Jericho Financial Unfolding",
+      "summary": "Watch a Rose of Jericho unfold in spring water to mirror the resolution of your financial crisis.",
+      "category": "abundance",
+      "difficulty": "beginner",
+      "moonPhase": "new-moon",
+      "durationMinutes": 5,
+      "coverImage": "",
+      "incantation": "With focused breath and steady heart, I now call in abundance. As I will it, so mote it be.",
+      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
+      "createdAt": 1704067200188,
+      "isPremium": false
     }
   ],
   "ritualSteps": [
@@ -4804,6 +5554,1406 @@
       "stepOrder": 4,
       "title": "Replace Daily",
       "content": "Remove the old onion and replace it with a fresh one daily until the fever breaks completely."
+    },
+    {
+      "id": "almond-tree-business-step-1",
+      "ritualId": "almond-tree-business",
+      "stepOrder": 1,
+      "title": "Find the Tree",
+      "content": "Find an almond tree that you can safely climb."
+    },
+    {
+      "id": "almond-tree-business-step-2",
+      "ritualId": "almond-tree-business",
+      "stepOrder": 2,
+      "title": "Offer Libation",
+      "content": "Offer the tree a libation of water or wine and a gift."
+    },
+    {
+      "id": "almond-tree-business-step-3",
+      "ritualId": "almond-tree-business",
+      "stepOrder": 3,
+      "title": "State Goals",
+      "content": "Murmur your business desires and aspirations to the tree, then climb it."
+    },
+    {
+      "id": "almond-tree-business-step-4",
+      "ritualId": "almond-tree-business",
+      "stepOrder": 4,
+      "title": "Conclude Ritual",
+      "content": "Linger as long as you like. When you descend, offer the tree another libation."
+    },
+    {
+      "id": "arabka-soudagar-business-step-1",
+      "ritualId": "arabka-soudagar-business",
+      "stepOrder": 1,
+      "title": "Blend Ingredients",
+      "content": "Grind bay laurel leaves, cinnamon, frankincense, tonka beans, and vetiver roots together."
+    },
+    {
+      "id": "arabka-soudagar-business-step-2",
+      "ritualId": "arabka-soudagar-business",
+      "stepOrder": 2,
+      "title": "Ignite Powder",
+      "content": "Place the resulting powder onto lit charcoal to burn as incense."
+    },
+    {
+      "id": "arabka-soudagar-business-step-3",
+      "ritualId": "arabka-soudagar-business",
+      "stepOrder": 3,
+      "title": "Fumigate Premises",
+      "content": "Allow the aromatic smoke to permeate all areas of your business."
+    },
+    {
+      "id": "arabka-soudagar-business-step-4",
+      "ritualId": "arabka-soudagar-business",
+      "stepOrder": 4,
+      "title": "Visualize Success",
+      "content": "Visualize the blockages breaking and wealth flowing in."
+    },
+    {
+      "id": "lakshmi-tulsi-spell-step-1",
+      "ritualId": "lakshmi-tulsi-spell",
+      "stepOrder": 1,
+      "title": "Acquire Tulsi",
+      "content": "Obtain a healthy potted tulsi (holy) basil plant."
+    },
+    {
+      "id": "lakshmi-tulsi-spell-step-2",
+      "ritualId": "lakshmi-tulsi-spell",
+      "stepOrder": 2,
+      "title": "Place Strategically",
+      "content": "Place the pot near the front entrance of your home or business."
+    },
+    {
+      "id": "lakshmi-tulsi-spell-step-3",
+      "ritualId": "lakshmi-tulsi-spell",
+      "stepOrder": 3,
+      "title": "Invite Lakshmi",
+      "content": "Invite the presence of Lakshmi and her essence of luck and wealth."
+    },
+    {
+      "id": "lakshmi-tulsi-spell-step-4",
+      "ritualId": "lakshmi-tulsi-spell",
+      "stepOrder": 4,
+      "title": "Nurture Wealth",
+      "content": "Nurture the plant daily; as it thrives, so will your wealth and success."
+    },
+    {
+      "id": "honey-business-attraction-step-1",
+      "ritualId": "honey-business-attraction",
+      "stepOrder": 1,
+      "title": "Prepare Bath",
+      "content": "Run a warm bath for yourself."
+    },
+    {
+      "id": "honey-business-attraction-step-2",
+      "ritualId": "honey-business-attraction",
+      "stepOrder": 2,
+      "title": "Anoint with Honey",
+      "content": "Stand before a mirror, rub honey over your body, and recite the attraction chant."
+    },
+    {
+      "id": "honey-business-attraction-step-3",
+      "ritualId": "honey-business-attraction",
+      "stepOrder": 3,
+      "title": "Bathe and Soak",
+      "content": "Enter the bath, soak, and visualize customers and business flocking to you."
+    },
+    {
+      "id": "honey-business-attraction-step-4",
+      "ritualId": "honey-business-attraction",
+      "stepOrder": 4,
+      "title": "Disperse Water",
+      "content": "Reserve some used bathwater and toss it on the grounds of your business."
+    },
+    {
+      "id": "personal-business-magnet-step-1",
+      "ritualId": "personal-business-magnet",
+      "stepOrder": 1,
+      "title": "Prepare Infusion",
+      "content": "Add strong infusions of fresh basil, fresh basil leaves, and basil hydrosol to your bath."
+    },
+    {
+      "id": "personal-business-magnet-step-2",
+      "ritualId": "personal-business-magnet",
+      "stepOrder": 2,
+      "title": "Bathe",
+      "content": "Soak in the bath to absorb the money-drawing properties of the herb."
+    },
+    {
+      "id": "personal-business-magnet-step-3",
+      "ritualId": "personal-business-magnet",
+      "stepOrder": 3,
+      "title": "Air Dry",
+      "content": "Step out of the tub and allow yourself to air dry completely."
+    },
+    {
+      "id": "personal-business-magnet-step-4",
+      "ritualId": "personal-business-magnet",
+      "stepOrder": 4,
+      "title": "Dust Body",
+      "content": "Dust your body lightly with Lodestone Body Powder to complete the magnetic effect."
+    },
+    {
+      "id": "artist-better-business-step-1",
+      "ritualId": "artist-better-business",
+      "stepOrder": 1,
+      "title": "Draw Card",
+      "content": "Remove the Fool card from the tarot deck of your choice."
+    },
+    {
+      "id": "artist-better-business-step-2",
+      "ritualId": "artist-better-business",
+      "stepOrder": 2,
+      "title": "Prepare Candles",
+      "content": "Carve and dress one small purple and one small green candle to suit your circumstances."
+    },
+    {
+      "id": "artist-better-business-step-3",
+      "ritualId": "artist-better-business",
+      "stepOrder": 3,
+      "title": "Arrange Altar",
+      "content": "Place the candles on either side of the Fool card."
+    },
+    {
+      "id": "artist-better-business-step-4",
+      "ritualId": "artist-better-business",
+      "stepOrder": 4,
+      "title": "Burn and Trust",
+      "content": "Burn the candles and trust to your artistic and financial inspiration."
+    },
+    {
+      "id": "astrologer-better-business-step-1",
+      "ritualId": "astrologer-better-business",
+      "stepOrder": 1,
+      "title": "Dedicate Candle",
+      "content": "Dedicate a blue candle to the deity Tanit."
+    },
+    {
+      "id": "astrologer-better-business-step-2",
+      "ritualId": "astrologer-better-business",
+      "stepOrder": 2,
+      "title": "Decorate Altar",
+      "content": "Decorate her altar with charms of dolphins, fish, doves, snakes, moons, and stars."
+    },
+    {
+      "id": "astrologer-better-business-step-3",
+      "ritualId": "astrologer-better-business",
+      "stepOrder": 3,
+      "title": "Present Offerings",
+      "content": "Offer her figs, pomegranates, and stalks of wheat."
+    },
+    {
+      "id": "astrologer-better-business-step-4",
+      "ritualId": "astrologer-better-business",
+      "stepOrder": 4,
+      "title": "Make Petition",
+      "content": "Request her blessings for your astrological endeavors and increased business."
+    },
+    {
+      "id": "better-business-charm-bag-step-1",
+      "ritualId": "better-business-charm-bag",
+      "stepOrder": 1,
+      "title": "Select Oil",
+      "content": "Select one or more of your preferred Money Drawing oils."
+    },
+    {
+      "id": "better-business-charm-bag-step-2",
+      "ritualId": "better-business-charm-bag",
+      "stepOrder": 2,
+      "title": "Anoint Charms",
+      "content": "Use the oil to anoint five cowrie shells, a High John the Conqueror root, and a matched pair of lodestones."
+    },
+    {
+      "id": "better-business-charm-bag-step-3",
+      "ritualId": "better-business-charm-bag",
+      "stepOrder": 3,
+      "title": "Assemble Bag",
+      "content": "Place the anointed items into a small charm bag."
+    },
+    {
+      "id": "better-business-charm-bag-step-4",
+      "ritualId": "better-business-charm-bag",
+      "stepOrder": 4,
+      "title": "Carry Charm",
+      "content": "Carry the bag with you or keep it near your workspace to draw business."
+    },
+    {
+      "id": "nutmeg-business-spell-step-1",
+      "ritualId": "nutmeg-business-spell",
+      "stepOrder": 1,
+      "title": "Drill Nutmeg",
+      "content": "Carefully drill a hole through a whole nutmeg and string it onto green thread."
+    },
+    {
+      "id": "nutmeg-business-spell-step-2",
+      "ritualId": "nutmeg-business-spell",
+      "stepOrder": 2,
+      "title": "Add Roots",
+      "content": "Add one pierced Grain of Paradise, a Jezebel root, and a High John the Conqueror root."
+    },
+    {
+      "id": "nutmeg-business-spell-step-3",
+      "ritualId": "nutmeg-business-spell",
+      "stepOrder": 3,
+      "title": "Secure Thread",
+      "content": "Tie the ends of the green thread together securely."
+    },
+    {
+      "id": "nutmeg-business-spell-step-4",
+      "ritualId": "nutmeg-business-spell",
+      "stepOrder": 4,
+      "title": "Hang Charm",
+      "content": "Hang this charm directly over the front entrance to your business."
+    },
+    {
+      "id": "dust-in-the-wind-business-step-1",
+      "ritualId": "dust-in-the-wind-business",
+      "stepOrder": 1,
+      "title": "Collect Dust",
+      "content": "Collect a small amount of dust from an active anthill."
+    },
+    {
+      "id": "dust-in-the-wind-business-step-2",
+      "ritualId": "dust-in-the-wind-business",
+      "stepOrder": 2,
+      "title": "Write Goals",
+      "content": "On parchment paper, write your business goals in the present tense."
+    },
+    {
+      "id": "dust-in-the-wind-business-step-3",
+      "ritualId": "dust-in-the-wind-business",
+      "stepOrder": 3,
+      "title": "Fold Paper",
+      "content": "Fold the paper up into a very tight little square, always folding toward you."
+    },
+    {
+      "id": "dust-in-the-wind-business-step-4",
+      "ritualId": "dust-in-the-wind-business",
+      "stepOrder": 4,
+      "title": "Assemble and Hang",
+      "content": "Place the paper, dust, and a lodestone into a charm bag and hang it discreetly at work."
+    },
+    {
+      "id": "drawing-powder-personal-step-1",
+      "ritualId": "drawing-powder-personal",
+      "stepOrder": 1,
+      "title": "Blend Base",
+      "content": "Blend powdered confectioner's sugar into cornstarch."
+    },
+    {
+      "id": "drawing-powder-personal-step-2",
+      "ritualId": "drawing-powder-personal",
+      "stepOrder": 2,
+      "title": "Add Scent",
+      "content": "For added enhancement, sprinkle the blend with essential oil of bergamot."
+    },
+    {
+      "id": "drawing-powder-personal-step-3",
+      "ritualId": "drawing-powder-personal",
+      "stepOrder": 3,
+      "title": "Apply to Body",
+      "content": "Lightly dust this powder on your body with a powder puff."
+    },
+    {
+      "id": "drawing-powder-personal-step-4",
+      "ritualId": "drawing-powder-personal",
+      "stepOrder": 4,
+      "title": "Attract Business",
+      "content": "Go about your day radiating a magnetic draw for clients and cash."
+    },
+    {
+      "id": "eye-for-business-step-1",
+      "ritualId": "eye-for-business",
+      "stepOrder": 1,
+      "title": "Collect Eyes",
+      "content": "Assemble four eye charms, such as an Eye of Horus, cat's eye, or blue-eye bead."
+    },
+    {
+      "id": "eye-for-business-step-2",
+      "ritualId": "eye-for-business",
+      "stepOrder": 2,
+      "title": "Position Charms",
+      "content": "Place one eye in each of the four corners of your business room."
+    },
+    {
+      "id": "eye-for-business-step-3",
+      "ritualId": "eye-for-business",
+      "stepOrder": 3,
+      "title": "Direct Gaze",
+      "content": "Ensure all four eyes are facing inward, looking into the room."
+    },
+    {
+      "id": "eye-for-business-step-4",
+      "ritualId": "eye-for-business",
+      "stepOrder": 4,
+      "title": "Set Intention",
+      "content": "Leave them to provide protection and draw prosperous sights."
+    },
+    {
+      "id": "financial-crisis-bath-step-1",
+      "ritualId": "financial-crisis-bath",
+      "stepOrder": 1,
+      "title": "Make Infusion",
+      "content": "Pour boiling spring water over basil, coriander seeds, cinnamon, brown sugar, and orange zest."
+    },
+    {
+      "id": "financial-crisis-bath-step-2",
+      "ritualId": "financial-crisis-bath",
+      "stepOrder": 2,
+      "title": "Strain to Bath",
+      "content": "Allow the liquid to cool, strain out botanicals, and add to a half-filled bathtub."
+    },
+    {
+      "id": "financial-crisis-bath-step-3",
+      "ritualId": "financial-crisis-bath",
+      "stepOrder": 3,
+      "title": "Toss Water",
+      "content": "Stand naked in the tub and toss the infusion directly over yourself."
+    },
+    {
+      "id": "financial-crisis-bath-step-4",
+      "ritualId": "financial-crisis-bath",
+      "stepOrder": 4,
+      "title": "Soak and Pray",
+      "content": "Soak for exactly seven minutes while intensely visualizing prosperity and relief."
+    },
+    {
+      "id": "first-dollar-ashes-step-1",
+      "ritualId": "first-dollar-ashes",
+      "stepOrder": 1,
+      "title": "Reserve Dollar",
+      "content": "Reserve the very first dollar earned from a new business venture."
+    },
+    {
+      "id": "first-dollar-ashes-step-2",
+      "ritualId": "first-dollar-ashes",
+      "stepOrder": 2,
+      "title": "Grind and Blend",
+      "content": "Grind and pulverize it, then blend with frankincense and gold copal."
+    },
+    {
+      "id": "first-dollar-ashes-step-3",
+      "ritualId": "first-dollar-ashes",
+      "stepOrder": 3,
+      "title": "Burn Mixture",
+      "content": "Burn the mixture atop a lit charcoal."
+    },
+    {
+      "id": "first-dollar-ashes-step-4",
+      "ritualId": "first-dollar-ashes",
+      "stepOrder": 4,
+      "title": "Carry Ashes",
+      "content": "Reserve the ashes and carry them in a conjure bag to generate more wealth."
+    },
+    {
+      "id": "first-dollar-candle-step-1",
+      "ritualId": "first-dollar-candle",
+      "stepOrder": 1,
+      "title": "Prepare Dollar",
+      "content": "Sprinkle your first earned dollar with magnetic sand, sugar, and salt."
+    },
+    {
+      "id": "first-dollar-candle-step-2",
+      "ritualId": "first-dollar-candle",
+      "stepOrder": 2,
+      "title": "Burn Candle",
+      "content": "Place a green candle on top of the dollar and burn it completely."
+    },
+    {
+      "id": "first-dollar-candle-step-3",
+      "ritualId": "first-dollar-candle",
+      "stepOrder": 3,
+      "title": "Bury Remnants",
+      "content": "Bury most of the remnants in the earth on your business property."
+    },
+    {
+      "id": "first-dollar-candle-step-4",
+      "ritualId": "first-dollar-candle",
+      "stepOrder": 4,
+      "title": "Hang Charm",
+      "content": "Reserve a few pieces in a conjure bag and hang it near the entrance."
+    },
+    {
+      "id": "first-dollar-ginseng-step-1",
+      "ritualId": "first-dollar-ginseng",
+      "stepOrder": 1,
+      "title": "Wrap Root",
+      "content": "Wrap the first dollar earned around a ginseng root."
+    },
+    {
+      "id": "first-dollar-ginseng-step-2",
+      "ritualId": "first-dollar-ginseng",
+      "stepOrder": 2,
+      "title": "Tie Threads",
+      "content": "Secure it with both green and red threads."
+    },
+    {
+      "id": "first-dollar-ginseng-step-3",
+      "ritualId": "first-dollar-ginseng",
+      "stepOrder": 3,
+      "title": "Charge Charm",
+      "content": "Hold it in your hands and charge it with your financial hopes and desires."
+    },
+    {
+      "id": "first-dollar-ginseng-step-4",
+      "ritualId": "first-dollar-ginseng",
+      "stepOrder": 4,
+      "title": "Place in Register",
+      "content": "Place it in a conjure bag and keep it in or beneath the cash register."
+    },
+    {
+      "id": "first-dollar-san-martin-step-1",
+      "ritualId": "first-dollar-san-martin",
+      "stepOrder": 1,
+      "title": "Dedicate Dollar",
+      "content": "Upon initiation of a new business, dedicate the first dollar to San Martin."
+    },
+    {
+      "id": "first-dollar-san-martin-step-2",
+      "ritualId": "first-dollar-san-martin",
+      "stepOrder": 2,
+      "title": "Place Offering",
+      "content": "Place it beneath a statue or chromolithograph of the saint and sprinkle with magnetic sand."
+    },
+    {
+      "id": "first-dollar-san-martin-step-3",
+      "ritualId": "first-dollar-san-martin",
+      "stepOrder": 3,
+      "title": "Burn Candles",
+      "content": "Burn seven red candles in front of the image over time."
+    },
+    {
+      "id": "first-dollar-san-martin-step-4",
+      "ritualId": "first-dollar-san-martin",
+      "stepOrder": 4,
+      "title": "Maintain Charm",
+      "content": "Keep the dollar beneath or affixed to the image to encourage profits."
+    },
+    {
+      "id": "magic-coin-business-packet-step-1",
+      "ritualId": "magic-coin-business-packet",
+      "stepOrder": 1,
+      "title": "Arrange Coins",
+      "content": "Place three strung-together Chinese coins on top of a yellow or golden cloth."
+    },
+    {
+      "id": "magic-coin-business-packet-step-2",
+      "ritualId": "magic-coin-business-packet",
+      "stepOrder": 2,
+      "title": "Add Ingredients",
+      "content": "Sprinkle magnetic sand over the coins and anoint with essential oil of bergamot."
+    },
+    {
+      "id": "magic-coin-business-packet-step-3",
+      "ritualId": "magic-coin-business-packet",
+      "stepOrder": 3,
+      "title": "Form Packet",
+      "content": "Roll and fold the cloth toward you, forming a secure packet."
+    },
+    {
+      "id": "magic-coin-business-packet-step-4",
+      "ritualId": "magic-coin-business-packet",
+      "stepOrder": 4,
+      "title": "Tie and Place",
+      "content": "Tie securely with a red silk ribbon and place near your cash register."
+    },
+    {
+      "id": "glory-water-business-step-1",
+      "ritualId": "glory-water-business",
+      "stepOrder": 1,
+      "title": "Prepare Bottle",
+      "content": "Place frankincense tears inside a bottle."
+    },
+    {
+      "id": "glory-water-business-step-2",
+      "ritualId": "glory-water-business",
+      "stepOrder": 2,
+      "title": "Add Liquids",
+      "content": "Cover the resin with orange blossom water or hydrosol, and add bergamot oil."
+    },
+    {
+      "id": "glory-water-business-step-3",
+      "ritualId": "glory-water-business",
+      "stepOrder": 3,
+      "title": "Charge Blend",
+      "content": "Allow the blend to sit and infuse its powers."
+    },
+    {
+      "id": "glory-water-business-step-4",
+      "ritualId": "glory-water-business",
+      "stepOrder": 4,
+      "title": "Asperge Area",
+      "content": "Asperge (sprinkle) Glory Water through the premises to attract blessings and overcome challenges."
+    },
+    {
+      "id": "oya-marketplace-spirit-step-1",
+      "ritualId": "oya-marketplace-spirit",
+      "stepOrder": 1,
+      "title": "Create Altar",
+      "content": "Create an altar dedicated to the Yoruba orisha Oya."
+    },
+    {
+      "id": "oya-marketplace-spirit-step-2",
+      "ritualId": "oya-marketplace-spirit",
+      "stepOrder": 2,
+      "title": "Present Offerings",
+      "content": "Offer her red wine and nine purple plums."
+    },
+    {
+      "id": "oya-marketplace-spirit-step-3",
+      "ritualId": "oya-marketplace-spirit",
+      "stepOrder": 3,
+      "title": "Request Blessings",
+      "content": "Request her blessings and advice for your business ventures."
+    },
+    {
+      "id": "oya-marketplace-spirit-step-4",
+      "ritualId": "oya-marketplace-spirit",
+      "stepOrder": 4,
+      "title": "Maintain Offering",
+      "content": "Maintain this altar, replacing the plums every Thursday, her most easily contacted day."
+    },
+    {
+      "id": "mermaid-money-increase-step-1",
+      "ritualId": "mermaid-money-increase",
+      "stepOrder": 1,
+      "title": "Draw Image",
+      "content": "Draw the image of a double-tailed mermaid on a square of parchment paper."
+    },
+    {
+      "id": "mermaid-money-increase-step-2",
+      "ritualId": "mermaid-money-increase",
+      "stepOrder": 2,
+      "title": "Charge Image",
+      "content": "Focus your intention of financial reward and protection into the drawing."
+    },
+    {
+      "id": "mermaid-money-increase-step-3",
+      "ritualId": "mermaid-money-increase",
+      "stepOrder": 3,
+      "title": "Place in Box",
+      "content": "Place the paper directly into your cash box."
+    },
+    {
+      "id": "mermaid-money-increase-step-4",
+      "ritualId": "mermaid-money-increase",
+      "stepOrder": 4,
+      "title": "Allow Growth",
+      "content": "Leave it there permanently to help the money grow."
+    },
+    {
+      "id": "money-powder-cross-step-1",
+      "ritualId": "money-powder-cross",
+      "stepOrder": 1,
+      "title": "Prepare Base",
+      "content": "Spread raw white rice in a pan, cover with powdered sugar and shredded fresh basil."
+    },
+    {
+      "id": "money-powder-cross-step-2",
+      "ritualId": "money-powder-cross",
+      "stepOrder": 2,
+      "title": "Arrange Coins",
+      "content": "Lay seven equal-value coins on top of the powder in the form of a cross."
+    },
+    {
+      "id": "money-powder-cross-step-3",
+      "ritualId": "money-powder-cross",
+      "stepOrder": 3,
+      "title": "Place Candles",
+      "content": "Dress two red and two green candles with Money Drawing oil, placing one at each arm of the cross."
+    },
+    {
+      "id": "money-powder-cross-step-4",
+      "ritualId": "money-powder-cross",
+      "stepOrder": 4,
+      "title": "Burn and Gather",
+      "content": "Burn the candles completely, then gather the coins, some powder, and wax into a mojo bag."
+    },
+    {
+      "id": "orange-candle-job-step-1",
+      "ritualId": "orange-candle-job",
+      "stepOrder": 1,
+      "title": "Prepare CV",
+      "content": "Write your dream job description on the back of your CV."
+    },
+    {
+      "id": "orange-candle-job-step-2",
+      "ritualId": "orange-candle-job",
+      "stepOrder": 2,
+      "title": "Sweeten and Fold",
+      "content": "Brush the CV with honey, sprinkle magnetic sand, and fold it nine times."
+    },
+    {
+      "id": "orange-candle-job-step-3",
+      "ritualId": "orange-candle-job",
+      "stepOrder": 3,
+      "title": "Dress Candle",
+      "content": "Anoint an orange candle with Van Van Oil and roll it in gold sparkles."
+    },
+    {
+      "id": "orange-candle-job-step-4",
+      "ritualId": "orange-candle-job",
+      "stepOrder": 4,
+      "title": "Burn on CV",
+      "content": "Place the candle atop the folded CV and burn it, coinciding with the New Moon."
+    },
+    {
+      "id": "ten-of-diamonds-success-step-1",
+      "ritualId": "ten-of-diamonds-success",
+      "stepOrder": 1,
+      "title": "Prepare Card",
+      "content": "Remove the ten of diamonds from a new deck and lay it on a dish."
+    },
+    {
+      "id": "ten-of-diamonds-success-step-2",
+      "ritualId": "ten-of-diamonds-success",
+      "stepOrder": 2,
+      "title": "Add Wealth",
+      "content": "Sprinkle it with Crown of Success and Magnet oils, and add paper/spirit money or coins."
+    },
+    {
+      "id": "ten-of-diamonds-success-step-3",
+      "ritualId": "ten-of-diamonds-success",
+      "stepOrder": 3,
+      "title": "Dress Candle",
+      "content": "Carve a green candle with your information, dress with oils, and place atop the card."
+    },
+    {
+      "id": "ten-of-diamonds-success-step-4",
+      "ritualId": "ten-of-diamonds-success",
+      "stepOrder": 4,
+      "title": "Burn and Gather",
+      "content": "Burn the candle completely, then gather remnants into a red mojo hand to carry."
+    },
+    {
+      "id": "alfalfa-money-spell-step-1",
+      "ritualId": "alfalfa-money-spell",
+      "stepOrder": 1,
+      "title": "Prepare Herb",
+      "content": "Gather dried alfalfa."
+    },
+    {
+      "id": "alfalfa-money-spell-step-2",
+      "ritualId": "alfalfa-money-spell",
+      "stepOrder": 2,
+      "title": "Charge",
+      "content": "Murmur your financial desires directly over the alfalfa."
+    },
+    {
+      "id": "alfalfa-money-spell-step-3",
+      "ritualId": "alfalfa-money-spell",
+      "stepOrder": 3,
+      "title": "Burn",
+      "content": "Burn the alfalfa safely."
+    },
+    {
+      "id": "alfalfa-money-spell-step-4",
+      "ritualId": "alfalfa-money-spell",
+      "stepOrder": 4,
+      "title": "Scatter Ashes",
+      "content": "Scatter the resulting ashes around your property to draw wealth."
+    },
+    {
+      "id": "chinese-frog-wealth-step-1",
+      "ritualId": "chinese-frog-wealth",
+      "stepOrder": 1,
+      "title": "Prepare Base",
+      "content": "Place a money frog amulet on a plate on top of a bed of real coins."
+    },
+    {
+      "id": "chinese-frog-wealth-step-2",
+      "ritualId": "chinese-frog-wealth",
+      "stepOrder": 2,
+      "title": "Sprinkle Powders",
+      "content": "Sprinkle the frog and coins with mingled Money Drawing Powder and magnetic sand."
+    },
+    {
+      "id": "chinese-frog-wealth-step-3",
+      "ritualId": "chinese-frog-wealth",
+      "stepOrder": 3,
+      "title": "Position",
+      "content": "Place the plate under your bed, ensuring the frog looks toward the door."
+    },
+    {
+      "id": "chinese-frog-wealth-step-4",
+      "ritualId": "chinese-frog-wealth",
+      "stepOrder": 4,
+      "title": "Maintain",
+      "content": "Sprinkle with more powder periodically to feed the spell."
+    },
+    {
+      "id": "golden-spider-riches-step-1",
+      "ritualId": "golden-spider-riches",
+      "stepOrder": 1,
+      "title": "Draw Spider",
+      "content": "Draw a picture of a spider hidden in its web on red paper with gold ink."
+    },
+    {
+      "id": "golden-spider-riches-step-2",
+      "ritualId": "golden-spider-riches",
+      "stepOrder": 2,
+      "title": "Place Image",
+      "content": "Place the picture in a corner with a saucer underneath it."
+    },
+    {
+      "id": "golden-spider-riches-step-3",
+      "ritualId": "golden-spider-riches",
+      "stepOrder": 3,
+      "title": "Make Offering",
+      "content": "Toss a few coins onto the saucer and express your needs to the spider."
+    },
+    {
+      "id": "golden-spider-riches-step-4",
+      "ritualId": "golden-spider-riches",
+      "stepOrder": 4,
+      "title": "Replenish",
+      "content": "Once a week, or whenever the spider comes through for you, toss a few more coins onto the plate."
+    },
+    {
+      "id": "avocado-money-magnet-step-1",
+      "ritualId": "avocado-money-magnet",
+      "stepOrder": 1,
+      "title": "Transplant Tree",
+      "content": "Transplant an avocado tree to your property."
+    },
+    {
+      "id": "avocado-money-magnet-step-2",
+      "ritualId": "avocado-money-magnet",
+      "stepOrder": 2,
+      "title": "Harvest",
+      "content": "Eat the very first avocado that grows on this tree."
+    },
+    {
+      "id": "avocado-money-magnet-step-3",
+      "ritualId": "avocado-money-magnet",
+      "stepOrder": 3,
+      "title": "Clean Pit",
+      "content": "Carefully cleanse and dry the pit from this first fruit."
+    },
+    {
+      "id": "avocado-money-magnet-step-4",
+      "ritualId": "avocado-money-magnet",
+      "stepOrder": 4,
+      "title": "Carry Charm",
+      "content": "Carry the pit with you constantly as a money magnet charm."
+    },
+    {
+      "id": "exact-sum-basil-step-1",
+      "ritualId": "exact-sum-basil",
+      "stepOrder": 1,
+      "title": "Write Amount",
+      "content": "Write the precise sum of money you require on a square of brown paper."
+    },
+    {
+      "id": "exact-sum-basil-step-2",
+      "ritualId": "exact-sum-basil",
+      "stepOrder": 2,
+      "title": "Anoint",
+      "content": "Drip a little basil essential oil directly onto the paper."
+    },
+    {
+      "id": "exact-sum-basil-step-3",
+      "ritualId": "exact-sum-basil",
+      "stepOrder": 3,
+      "title": "Fold and Bury",
+      "content": "Fold it in half twice, then bury it in a flowerpot filled with earth."
+    },
+    {
+      "id": "exact-sum-basil-step-4",
+      "ritualId": "exact-sum-basil",
+      "stepOrder": 4,
+      "title": "Plant",
+      "content": "Plant a money-attracting plant (like basil, marigolds, or thyme) over it."
+    },
+    {
+      "id": "bayberry-silver-magnet-step-1",
+      "ritualId": "bayberry-silver-magnet",
+      "stepOrder": 1,
+      "title": "Anoint Silver",
+      "content": "Anoint a small piece of silver with infused oil of bayberry."
+    },
+    {
+      "id": "bayberry-silver-magnet-step-2",
+      "ritualId": "bayberry-silver-magnet",
+      "stepOrder": 2,
+      "title": "Charge",
+      "content": "Hold it in your left hand to charge it with your desire."
+    },
+    {
+      "id": "bayberry-silver-magnet-step-3",
+      "ritualId": "bayberry-silver-magnet",
+      "stepOrder": 3,
+      "title": "Apply to Third Eye",
+      "content": "Place it on your forehead over the Third Eye area for thirty minutes every day."
+    },
+    {
+      "id": "bayberry-silver-magnet-step-4",
+      "ritualId": "bayberry-silver-magnet",
+      "stepOrder": 4,
+      "title": "Maintain",
+      "content": "Carry it with you during the day and feed it with a drop of bayberry oil weekly."
+    },
+    {
+      "id": "bryony-root-wallet-step-1",
+      "ritualId": "bryony-root-wallet",
+      "stepOrder": 1,
+      "title": "Empty Wallet",
+      "content": "At night, take all the money out of your wallet."
+    },
+    {
+      "id": "bryony-root-wallet-step-2",
+      "ritualId": "bryony-root-wallet",
+      "stepOrder": 2,
+      "title": "Stack Money",
+      "content": "Stack it up neatly."
+    },
+    {
+      "id": "bryony-root-wallet-step-3",
+      "ritualId": "bryony-root-wallet",
+      "stepOrder": 3,
+      "title": "Place Root",
+      "content": "Place a white bryony root (or a piece of one) on top to encourage the money to grow."
+    },
+    {
+      "id": "bryony-root-wallet-step-4",
+      "ritualId": "bryony-root-wallet",
+      "stepOrder": 4,
+      "title": "Return Money",
+      "content": "Return the money to your wallet in the morning and repeat as needed."
+    },
+    {
+      "id": "buckeye-prosperity-charm-step-1",
+      "ritualId": "buckeye-prosperity-charm",
+      "stepOrder": 1,
+      "title": "Make Paste",
+      "content": "Make a paste from magnetic sand, Money Drawing Powder, Fast Luck Oil, and bergamot oil."
+    },
+    {
+      "id": "buckeye-prosperity-charm-step-2",
+      "ritualId": "buckeye-prosperity-charm",
+      "stepOrder": 2,
+      "title": "Wrap Buckeye",
+      "content": "Rub the paste on the buckeye, wrap it in a cash bill rolling toward you, and tie with red thread."
+    },
+    {
+      "id": "buckeye-prosperity-charm-step-3",
+      "ritualId": "buckeye-prosperity-charm",
+      "stepOrder": 3,
+      "title": "Arrange Candles",
+      "content": "Rub remaining paste on two small green candles. Place them on a dish covered with powder."
+    },
+    {
+      "id": "buckeye-prosperity-charm-step-4",
+      "ritualId": "buckeye-prosperity-charm",
+      "stepOrder": 4,
+      "title": "Activate",
+      "content": "Place the buckeye between the candles. Light them and let them burn completely to activate."
+    },
+    {
+      "id": "past-cash-double-action-step-1",
+      "ritualId": "past-cash-double-action",
+      "stepOrder": 1,
+      "title": "Carve Black Side",
+      "content": "Carve whatever you wish to lose (debt, poverty) specifically on the black side of the candle."
+    },
+    {
+      "id": "past-cash-double-action-step-2",
+      "ritualId": "past-cash-double-action",
+      "stepOrder": 2,
+      "title": "Carve Green Side",
+      "content": "Carve what you need to manifest on the green side as specifically as possible."
+    },
+    {
+      "id": "past-cash-double-action-step-3",
+      "ritualId": "past-cash-double-action",
+      "stepOrder": 3,
+      "title": "Expose Wick",
+      "content": "Trim the bottom of the candle if necessary, exposing the wick so both ends can be lit."
+    },
+    {
+      "id": "past-cash-double-action-step-4",
+      "ritualId": "past-cash-double-action",
+      "stepOrder": 4,
+      "title": "Burn Horizontally",
+      "content": "Impale the candle horizontally on a spiked candlestick and burn both ends simultaneously."
+    },
+    {
+      "id": "money-growth-candle-chant-step-1",
+      "ritualId": "money-growth-candle-chant",
+      "stepOrder": 1,
+      "title": "Prepare Candle",
+      "content": "Carve and dress a green candle to express your financial desires."
+    },
+    {
+      "id": "money-growth-candle-chant-step-2",
+      "ritualId": "money-growth-candle-chant",
+      "stepOrder": 2,
+      "title": "Arrange Setup",
+      "content": "Place the candle on a saucer and arrange coins around the base."
+    },
+    {
+      "id": "money-growth-candle-chant-step-3",
+      "ritualId": "money-growth-candle-chant",
+      "stepOrder": 3,
+      "title": "Light and Chant",
+      "content": "Light the candle and chant: 'Money grow, money flow / Candle burn, watch me earn / Money grow, money flow / Flame shine / What I want is mine!'"
+    },
+    {
+      "id": "money-growth-candle-chant-step-4",
+      "ritualId": "money-growth-candle-chant",
+      "stepOrder": 4,
+      "title": "Focus",
+      "content": "Focus on the flame and your intent while the candle burns."
+    },
+    {
+      "id": "lucky-sevens-conjure-bag-step-1",
+      "ritualId": "lucky-sevens-conjure-bag",
+      "stepOrder": 1,
+      "title": "Gather Money",
+      "content": "Fill a conjure bag with seven different pieces of money (e.g., penny, nickel, dime, quarter, bills)."
+    },
+    {
+      "id": "lucky-sevens-conjure-bag-step-2",
+      "ritualId": "lucky-sevens-conjure-bag",
+      "stepOrder": 2,
+      "title": "Anoint",
+      "content": "Sprinkle the money with essential oil of bergamot."
+    },
+    {
+      "id": "lucky-sevens-conjure-bag-step-3",
+      "ritualId": "lucky-sevens-conjure-bag",
+      "stepOrder": 3,
+      "title": "Carry",
+      "content": "Carry the bag closely on your person."
+    },
+    {
+      "id": "lucky-sevens-conjure-bag-step-4",
+      "ritualId": "lucky-sevens-conjure-bag",
+      "stepOrder": 4,
+      "title": "Wait for Multiplication",
+      "content": "Carry the bag for seven days to allegedly multiply the contents sevenfold."
+    },
+    {
+      "id": "creole-anti-poverty-step-1",
+      "ritualId": "creole-anti-poverty",
+      "stepOrder": 1,
+      "title": "Combine Ingredients",
+      "content": "Combine a cup of white sugar, a cup of salt, and a cup of raw white rice in a bowl."
+    },
+    {
+      "id": "creole-anti-poverty-step-2",
+      "ritualId": "creole-anti-poverty",
+      "stepOrder": 2,
+      "title": "Insert Pin",
+      "content": "Open a safety pin and stick it directly into the mixture in the bowl."
+    },
+    {
+      "id": "creole-anti-poverty-step-3",
+      "ritualId": "creole-anti-poverty",
+      "stepOrder": 3,
+      "title": "Place Bowl",
+      "content": "Leave the bowl out in full view in your home."
+    },
+    {
+      "id": "creole-anti-poverty-step-4",
+      "ritualId": "creole-anti-poverty",
+      "stepOrder": 4,
+      "title": "Maintain",
+      "content": "Leave the bowl undisturbed to continuously ward off poverty."
+    },
+    {
+      "id": "fenugreek-jar-increase-step-1",
+      "ritualId": "fenugreek-jar-increase",
+      "stepOrder": 1,
+      "title": "Start Jar",
+      "content": "Place some fenugreek seeds in a glass jar."
+    },
+    {
+      "id": "fenugreek-jar-increase-step-2",
+      "ritualId": "fenugreek-jar-increase",
+      "stepOrder": 2,
+      "title": "Add Daily",
+      "content": "Every day, add a few more fenugreek seeds to the jar."
+    },
+    {
+      "id": "fenugreek-jar-increase-step-3",
+      "ritualId": "fenugreek-jar-increase",
+      "stepOrder": 3,
+      "title": "Bury",
+      "content": "When the jar is completely full, bury it in the earth."
+    },
+    {
+      "id": "fenugreek-jar-increase-step-4",
+      "ritualId": "fenugreek-jar-increase",
+      "stepOrder": 4,
+      "title": "Repeat",
+      "content": "Start the process all over again with a new jar to ensure unbroken increase."
+    },
+    {
+      "id": "ginger-root-earth-magnet-step-1",
+      "ritualId": "ginger-root-earth-magnet",
+      "stepOrder": 1,
+      "title": "Acquire Roots",
+      "content": "Obtain whole, fresh ginger roots."
+    },
+    {
+      "id": "ginger-root-earth-magnet-step-2",
+      "ritualId": "ginger-root-earth-magnet",
+      "stepOrder": 2,
+      "title": "Set Intention",
+      "content": "Focus your intention on drawing money towards your home."
+    },
+    {
+      "id": "ginger-root-earth-magnet-step-3",
+      "ritualId": "ginger-root-earth-magnet",
+      "stepOrder": 3,
+      "title": "Bury Roots",
+      "content": "Bury the whole ginger roots in the earth on your property."
+    },
+    {
+      "id": "ginger-root-earth-magnet-step-4",
+      "ritualId": "ginger-root-earth-magnet",
+      "stepOrder": 4,
+      "title": "Enhance Arrangement",
+      "content": "For added intensification, arrange them in auspicious patterns, such as a pentacle or diamond shape when burying."
+    },
+    {
+      "id": "green-ribbon-invocation-step-1",
+      "ritualId": "green-ribbon-invocation",
+      "stepOrder": 1,
+      "title": "Visualize",
+      "content": "Visualize exactly what you need financially."
+    },
+    {
+      "id": "green-ribbon-invocation-step-2",
+      "ritualId": "green-ribbon-invocation",
+      "stepOrder": 2,
+      "title": "Verbalize",
+      "content": "Verbalize this aloud, in clear, precise, unambiguous language."
+    },
+    {
+      "id": "green-ribbon-invocation-step-3",
+      "ritualId": "green-ribbon-invocation",
+      "stepOrder": 3,
+      "title": "Knot the Ribbon",
+      "content": "Make nine knots in a green silk ribbon. As you form each knot, repeat your invocation."
+    },
+    {
+      "id": "green-ribbon-invocation-step-4",
+      "ritualId": "green-ribbon-invocation",
+      "stepOrder": 4,
+      "title": "Store Safely",
+      "content": "Keep the cord in a safe place, like a conjure bag, a magic money-box, or buried in earth."
+    },
+    {
+      "id": "gold-blood-growth-step-1",
+      "ritualId": "gold-blood-growth",
+      "stepOrder": 1,
+      "title": "Bury Gold",
+      "content": "Bury something golden, like fool's gold or replica gold ingots, in soil."
+    },
+    {
+      "id": "gold-blood-growth-step-2",
+      "ritualId": "gold-blood-growth",
+      "stepOrder": 2,
+      "title": "Add Blood",
+      "content": "Add three drops of menstrual blood, or prick your smallest finger and allow three drops to fall."
+    },
+    {
+      "id": "gold-blood-growth-step-3",
+      "ritualId": "gold-blood-growth",
+      "stepOrder": 3,
+      "title": "Plant Over",
+      "content": "Plant green leafy money plants (like basil, cabbage, or lettuce) directly on top."
+    },
+    {
+      "id": "gold-blood-growth-step-4",
+      "ritualId": "gold-blood-growth",
+      "stepOrder": 4,
+      "title": "Nurture",
+      "content": "Water and nurture the plant as a physical manifestation of your growing cash."
+    },
+    {
+      "id": "high-john-cash-wrap-step-1",
+      "ritualId": "high-john-cash-wrap",
+      "stepOrder": 1,
+      "title": "Anoint Bill",
+      "content": "Rub a cash bill with essential oil of basil and/or Magnet Oil."
+    },
+    {
+      "id": "high-john-cash-wrap-step-2",
+      "ritualId": "high-john-cash-wrap",
+      "stepOrder": 2,
+      "title": "Wrap Root",
+      "content": "Wrap the bill around a High John the Conqueror root, rolling toward you."
+    },
+    {
+      "id": "high-john-cash-wrap-step-3",
+      "ritualId": "high-john-cash-wrap",
+      "stepOrder": 3,
+      "title": "Knot Shut",
+      "content": "Knot it shut securely with green and/or red thread."
+    },
+    {
+      "id": "high-john-cash-wrap-step-4",
+      "ritualId": "high-john-cash-wrap",
+      "stepOrder": 4,
+      "title": "Carry or Place",
+      "content": "Carry it, or place it discreetly near an entrance or inside a cash register."
+    },
+    {
+      "id": "horseshoe-wealth-wrap-step-1",
+      "ritualId": "horseshoe-wealth-wrap",
+      "stepOrder": 1,
+      "title": "Coat Horseshoe",
+      "content": "Dip a horseshoe in Magnet Oil and then in magnetic sand so both sides are coated."
+    },
+    {
+      "id": "horseshoe-wealth-wrap-step-2",
+      "ritualId": "horseshoe-wealth-wrap",
+      "stepOrder": 2,
+      "title": "Shake and Dry",
+      "content": "Gently shake off the excess sand and let it dry."
+    },
+    {
+      "id": "horseshoe-wealth-wrap-step-3",
+      "ritualId": "horseshoe-wealth-wrap",
+      "stepOrder": 3,
+      "title": "Wrap with Thread",
+      "content": "Wrap the shoe completely with green or gold thread."
+    },
+    {
+      "id": "horseshoe-wealth-wrap-step-4",
+      "ritualId": "horseshoe-wealth-wrap",
+      "stepOrder": 4,
+      "title": "Decorate and Hang",
+      "content": "Decorate with lucky charms if desired, then hang it up to draw fortune."
+    },
+    {
+      "id": "lodestone-box-wealth-step-1",
+      "ritualId": "lodestone-box-wealth",
+      "stepOrder": 1,
+      "title": "Prepare Lodestones",
+      "content": "Place a male and female lodestone inside a covered, non-plastic container."
+    },
+    {
+      "id": "lodestone-box-wealth-step-2",
+      "ritualId": "lodestone-box-wealth",
+      "stepOrder": 2,
+      "title": "Add Wealth",
+      "content": "Cover the lodestones with magnetic sand, add various coins, and cover with gold, silver, and copper glitter."
+    },
+    {
+      "id": "lodestone-box-wealth-step-3",
+      "ritualId": "lodestone-box-wealth",
+      "stepOrder": 3,
+      "title": "Insert Request",
+      "content": "Write the quantity of money you desire on a small slip of paper and insert it into the pile."
+    },
+    {
+      "id": "lodestone-box-wealth-step-4",
+      "ritualId": "lodestone-box-wealth",
+      "stepOrder": 4,
+      "title": "Remove When Achieved",
+      "content": "Remove the paper when your goal is achieved, then clean and rest the lodestones."
+    },
+    {
+      "id": "laughing-buddha-envelope-step-1",
+      "ritualId": "laughing-buddha-envelope",
+      "stepOrder": 1,
+      "title": "Write Request",
+      "content": "Write your request or the quantity of money needed on a piece of paper."
+    },
+    {
+      "id": "laughing-buddha-envelope-step-2",
+      "ritualId": "laughing-buddha-envelope",
+      "stepOrder": 2,
+      "title": "Fill Envelope",
+      "content": "Slip the paper into a red Lucky Money envelope."
+    },
+    {
+      "id": "laughing-buddha-envelope-step-3",
+      "ritualId": "laughing-buddha-envelope",
+      "stepOrder": 3,
+      "title": "Place Candle",
+      "content": "Put the envelope beneath a green Laughing Buddha (Hotei) candle."
+    },
+    {
+      "id": "laughing-buddha-envelope-step-4",
+      "ritualId": "laughing-buddha-envelope",
+      "stepOrder": 4,
+      "title": "Burn",
+      "content": "Burn the candle to send the petition to the spirit of wealth."
+    },
+    {
+      "id": "lunar-window-money-step-1",
+      "ritualId": "lunar-window-money",
+      "stepOrder": 1,
+      "title": "Set Out Money",
+      "content": "At the New Moon, put some money on a table by a closed window."
+    },
+    {
+      "id": "lunar-window-money-step-2",
+      "ritualId": "lunar-window-money",
+      "stepOrder": 2,
+      "title": "Be Discreet",
+      "content": "Ensure it is discreet; you want to invite lunar growth, not theft."
+    },
+    {
+      "id": "lunar-window-money-step-3",
+      "ritualId": "lunar-window-money",
+      "stepOrder": 3,
+      "title": "Absorb Energy",
+      "content": "Leave the money there to grow alongside the waxing moon."
+    },
+    {
+      "id": "lunar-window-money-step-4",
+      "ritualId": "lunar-window-money",
+      "stepOrder": 4,
+      "title": "Remove at Full Moon",
+      "content": "At the Full Moon, remove the money and repeat as needed next cycle."
+    },
+    {
+      "id": "magic-bean-triad-step-1",
+      "ritualId": "magic-bean-triad",
+      "stepOrder": 1,
+      "title": "Obtain Beans",
+      "content": "Gather three yellow or golden beans."
+    },
+    {
+      "id": "magic-bean-triad-step-2",
+      "ritualId": "magic-bean-triad",
+      "stepOrder": 2,
+      "title": "Murmur Desires",
+      "content": "Murmur your financial desires directly over the beans."
+    },
+    {
+      "id": "magic-bean-triad-step-3",
+      "ritualId": "magic-bean-triad",
+      "stepOrder": 3,
+      "title": "Charge",
+      "content": "Hold them tightly to charge them with your goals."
+    },
+    {
+      "id": "magic-bean-triad-step-4",
+      "ritualId": "magic-bean-triad",
+      "stepOrder": 4,
+      "title": "Carry Charm",
+      "content": "Carry them in a charm bag with a lodestone."
+    },
+    {
+      "id": "bank-of-hell-check-step-1",
+      "ritualId": "bank-of-hell-check",
+      "stepOrder": 1,
+      "title": "Prepare Check",
+      "content": "Use a Bank of Hell checkbook or your own real checkbook."
+    },
+    {
+      "id": "bank-of-hell-check-step-2",
+      "ritualId": "bank-of-hell-check",
+      "stepOrder": 2,
+      "title": "Write Amount",
+      "content": "Write yourself a check as a concrete visualization of future success."
+    },
+    {
+      "id": "bank-of-hell-check-step-3",
+      "ritualId": "bank-of-hell-check",
+      "stepOrder": 3,
+      "title": "Anoint",
+      "content": "Dab Money Drawing Oil on the corners of the check."
+    },
+    {
+      "id": "bank-of-hell-check-step-4",
+      "ritualId": "bank-of-hell-check",
+      "stepOrder": 4,
+      "title": "Carry",
+      "content": "Carry it in your wallet or keep it safe in a magic money spell box."
+    },
+    {
+      "id": "mandrake-coin-multiplier-step-1",
+      "ritualId": "mandrake-coin-multiplier",
+      "stepOrder": 1,
+      "title": "Gather Items",
+      "content": "Obtain a true mandrake root and a symbolic number of silver coins."
+    },
+    {
+      "id": "mandrake-coin-multiplier-step-2",
+      "ritualId": "mandrake-coin-multiplier",
+      "stepOrder": 2,
+      "title": "Place Together",
+      "content": "Place the money directly beside the mandrake root."
+    },
+    {
+      "id": "mandrake-coin-multiplier-step-3",
+      "ritualId": "mandrake-coin-multiplier",
+      "stepOrder": 3,
+      "title": "Expose to Moon",
+      "content": "Leave the coins and root together overnight, ideally exposed to moonlight."
+    },
+    {
+      "id": "mandrake-coin-multiplier-step-4",
+      "ritualId": "mandrake-coin-multiplier",
+      "stepOrder": 4,
+      "title": "Expect Results",
+      "content": "Magic is accomplished metaphorically; expect a significant upturn in cash flow rather than literal coin duplication."
+    },
+    {
+      "id": "milk-honey-prosperity-bath-step-1",
+      "ritualId": "milk-honey-prosperity-bath",
+      "stepOrder": 1,
+      "title": "Draw Bath",
+      "content": "Fill a tub with warm water."
+    },
+    {
+      "id": "milk-honey-prosperity-bath-step-2",
+      "ritualId": "milk-honey-prosperity-bath",
+      "stepOrder": 2,
+      "title": "Add Ingredients",
+      "content": "Add one cup each of coconut, cow's, goat's, and sheep's milk, plus holy water and honey."
+    },
+    {
+      "id": "milk-honey-prosperity-bath-step-3",
+      "ritualId": "milk-honey-prosperity-bath",
+      "stepOrder": 3,
+      "title": "Float Basil",
+      "content": "Float five fresh basil leaves in the tub for extra enhancement."
+    },
+    {
+      "id": "milk-honey-prosperity-bath-step-4",
+      "ritualId": "milk-honey-prosperity-bath",
+      "stepOrder": 4,
+      "title": "Luxuriate",
+      "content": "Soak in the bath to absorb the rich, prosperity-drawing vibrations."
+    },
+    {
+      "id": "rose-of-jericho-financial-step-1",
+      "ritualId": "rose-of-jericho-financial",
+      "stepOrder": 1,
+      "title": "Place Rose",
+      "content": "Place a desiccated Rose of Jericho in spring water to coincide with the New Moon."
+    },
+    {
+      "id": "rose-of-jericho-financial-step-2",
+      "ritualId": "rose-of-jericho-financial",
+      "stepOrder": 2,
+      "title": "Pray and Watch",
+      "content": "Watch it unfold, accompanied by prayers, petitions, and money rituals."
+    },
+    {
+      "id": "rose-of-jericho-financial-step-3",
+      "ritualId": "rose-of-jericho-financial",
+      "stepOrder": 3,
+      "title": "Gauge Crisis",
+      "content": "The ease with which your rose blossoms may indicate the ease with which your financial crisis will be resolved."
+    },
+    {
+      "id": "rose-of-jericho-financial-step-4",
+      "ritualId": "rose-of-jericho-financial",
+      "stepOrder": 4,
+      "title": "Remove at Full Moon",
+      "content": "Remove the flower from the water at the Full Moon, let it dry out, and repeat as needed."
     }
   ],
   "materials": [
@@ -5867,6 +8017,528 @@
       "id": "bezoar-stone",
       "slug": "bezoar-stone",
       "name": "Bezoar Stone",
+      "linkedEntryId": null
+    },
+    {
+      "id": "almond-tree",
+      "slug": "almond-tree",
+      "name": "Almond Tree",
+      "linkedEntryId": null
+    },
+    {
+      "id": "libation",
+      "slug": "libation",
+      "name": "Libation (Water or Wine)",
+      "linkedEntryId": null
+    },
+    {
+      "id": "bay-laurel-leaves",
+      "slug": "bay-laurel-leaves",
+      "name": "Bay Laurel Leaves",
+      "linkedEntryId": null
+    },
+    {
+      "id": "tonka-beans",
+      "slug": "tonka-beans",
+      "name": "Tonka Beans",
+      "linkedEntryId": null
+    },
+    {
+      "id": "vetiver-roots",
+      "slug": "vetiver-roots",
+      "name": "Vetiver Roots",
+      "linkedEntryId": null
+    },
+    {
+      "id": "tulsi-basil",
+      "slug": "tulsi-basil",
+      "name": "Potted Tulsi Basil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "honey",
+      "slug": "honey",
+      "name": "Honey",
+      "linkedEntryId": null
+    },
+    {
+      "id": "basil-infusion",
+      "slug": "basil-infusion",
+      "name": "Basil Infusion or Hydrosol",
+      "linkedEntryId": null
+    },
+    {
+      "id": "lodestone-powder",
+      "slug": "lodestone-powder",
+      "name": "Lodestone Body Powder",
+      "linkedEntryId": null
+    },
+    {
+      "id": "purple-candle",
+      "slug": "purple-candle",
+      "name": "Purple Candle",
+      "linkedEntryId": null
+    },
+    {
+      "id": "green-candle",
+      "slug": "green-candle",
+      "name": "Green Candle",
+      "linkedEntryId": null
+    },
+    {
+      "id": "tarot-fool",
+      "slug": "tarot-fool",
+      "name": "Tarot Deck (Fool Card)",
+      "linkedEntryId": null
+    },
+    {
+      "id": "animal-charms",
+      "slug": "animal-charms",
+      "name": "Dolphin, Fish, Dove, or Snake Charms",
+      "linkedEntryId": null
+    },
+    {
+      "id": "figs",
+      "slug": "figs",
+      "name": "Figs",
+      "linkedEntryId": null
+    },
+    {
+      "id": "pomegranates",
+      "slug": "pomegranates",
+      "name": "Pomegranates",
+      "linkedEntryId": null
+    },
+    {
+      "id": "wheat-stalks",
+      "slug": "wheat-stalks",
+      "name": "Stalks of Wheat",
+      "linkedEntryId": null
+    },
+    {
+      "id": "money-drawing-oil",
+      "slug": "money-drawing-oil",
+      "name": "Money Drawing Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "cowrie-shells",
+      "slug": "cowrie-shells",
+      "name": "Cowrie Shells",
+      "linkedEntryId": null
+    },
+    {
+      "id": "nutmeg",
+      "slug": "nutmeg",
+      "name": "Nutmeg",
+      "linkedEntryId": null
+    },
+    {
+      "id": "green-thread",
+      "slug": "green-thread",
+      "name": "Green Thread",
+      "linkedEntryId": null
+    },
+    {
+      "id": "grain-of-paradise",
+      "slug": "grain-of-paradise",
+      "name": "Grain of Paradise",
+      "linkedEntryId": null
+    },
+    {
+      "id": "jezebel-root",
+      "slug": "jezebel-root",
+      "name": "Jezebel Root",
+      "linkedEntryId": null
+    },
+    {
+      "id": "anthill-dust",
+      "slug": "anthill-dust",
+      "name": "Anthill Dust",
+      "linkedEntryId": null
+    },
+    {
+      "id": "charm-bag",
+      "slug": "charm-bag",
+      "name": "Charm Bag",
+      "linkedEntryId": null
+    },
+    {
+      "id": "confectioners-sugar",
+      "slug": "confectioners-sugar",
+      "name": "Confectioner's Sugar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "cornstarch",
+      "slug": "cornstarch",
+      "name": "Cornstarch",
+      "linkedEntryId": null
+    },
+    {
+      "id": "bergamot-oil",
+      "slug": "bergamot-oil",
+      "name": "Bergamot Essential Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "eye-charms",
+      "slug": "eye-charms",
+      "name": "Eye Charms (Eye of Horus, Cat's Eye)",
+      "linkedEntryId": null
+    },
+    {
+      "id": "orange-zest",
+      "slug": "orange-zest",
+      "name": "Orange Zest",
+      "linkedEntryId": null
+    },
+    {
+      "id": "first-dollar",
+      "slug": "first-dollar",
+      "name": "First Dollar Earned",
+      "linkedEntryId": null
+    },
+    {
+      "id": "gold-copal",
+      "slug": "gold-copal",
+      "name": "Gold Copal",
+      "linkedEntryId": null
+    },
+    {
+      "id": "magnetic-sand",
+      "slug": "magnetic-sand",
+      "name": "Magnetic Sand",
+      "linkedEntryId": null
+    },
+    {
+      "id": "red-candle",
+      "slug": "red-candle",
+      "name": "Red Candle",
+      "linkedEntryId": null
+    },
+    {
+      "id": "ginseng-root",
+      "slug": "ginseng-root",
+      "name": "Ginseng Root",
+      "linkedEntryId": null
+    },
+    {
+      "id": "red-thread",
+      "slug": "red-thread",
+      "name": "Red Thread",
+      "linkedEntryId": null
+    },
+    {
+      "id": "san-martin-image",
+      "slug": "san-martin-image",
+      "name": "San Martin Caballero Image",
+      "linkedEntryId": null
+    },
+    {
+      "id": "chinese-coins",
+      "slug": "chinese-coins",
+      "name": "Chinese Coins (Strung)",
+      "linkedEntryId": null
+    },
+    {
+      "id": "yellow-cloth",
+      "slug": "yellow-cloth",
+      "name": "Yellow or Golden Cloth",
+      "linkedEntryId": null
+    },
+    {
+      "id": "red-silk-ribbon",
+      "slug": "red-silk-ribbon",
+      "name": "Red Silk Ribbon",
+      "linkedEntryId": null
+    },
+    {
+      "id": "orange-blossom-water",
+      "slug": "orange-blossom-water",
+      "name": "Orange Blossom Water",
+      "linkedEntryId": null
+    },
+    {
+      "id": "glass-bottle",
+      "slug": "glass-bottle",
+      "name": "Glass Bottle or Jar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "oya-altar",
+      "slug": "oya-altar",
+      "name": "Oya Altar Setup",
+      "linkedEntryId": null
+    },
+    {
+      "id": "red-wine",
+      "slug": "red-wine",
+      "name": "Red Wine",
+      "linkedEntryId": null
+    },
+    {
+      "id": "purple-plums",
+      "slug": "purple-plums",
+      "name": "Purple Plums",
+      "linkedEntryId": null
+    },
+    {
+      "id": "cash-box",
+      "slug": "cash-box",
+      "name": "Cash Box",
+      "linkedEntryId": null
+    },
+    {
+      "id": "nickels",
+      "slug": "nickels",
+      "name": "Nickels (or equal coins)",
+      "linkedEntryId": null
+    },
+    {
+      "id": "orange-candle",
+      "slug": "orange-candle",
+      "name": "Orange Candle",
+      "linkedEntryId": null
+    },
+    {
+      "id": "van-van-oil",
+      "slug": "van-van-oil",
+      "name": "Van Van Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "gold-sparkles",
+      "slug": "gold-sparkles",
+      "name": "Gold Sparkles",
+      "linkedEntryId": null
+    },
+    {
+      "id": "ten-of-diamonds",
+      "slug": "ten-of-diamonds",
+      "name": "Ten of Diamonds Card",
+      "linkedEntryId": null
+    },
+    {
+      "id": "crown-success-oil",
+      "slug": "crown-success-oil",
+      "name": "Crown of Success Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "magnet-oil",
+      "slug": "magnet-oil",
+      "name": "Magnet Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "paper-money",
+      "slug": "paper-money",
+      "name": "Paper Money or Spirit Money",
+      "linkedEntryId": null
+    },
+    {
+      "id": "alfalfa",
+      "slug": "alfalfa",
+      "name": "Alfalfa",
+      "linkedEntryId": null
+    },
+    {
+      "id": "money-frog",
+      "slug": "money-frog",
+      "name": "Money Frog Amulet",
+      "linkedEntryId": null
+    },
+    {
+      "id": "coins",
+      "slug": "coins",
+      "name": "Metal Coins",
+      "linkedEntryId": null
+    },
+    {
+      "id": "money-drawing-powder",
+      "slug": "money-drawing-powder",
+      "name": "Money Drawing Powder",
+      "linkedEntryId": null
+    },
+    {
+      "id": "red-paper",
+      "slug": "red-paper",
+      "name": "Red Paper",
+      "linkedEntryId": null
+    },
+    {
+      "id": "gold-ink",
+      "slug": "gold-ink",
+      "name": "Gold Ink",
+      "linkedEntryId": null
+    },
+    {
+      "id": "saucer",
+      "slug": "saucer",
+      "name": "Saucer",
+      "linkedEntryId": null
+    },
+    {
+      "id": "avocado",
+      "slug": "avocado",
+      "name": "Avocado",
+      "linkedEntryId": null
+    },
+    {
+      "id": "basil-oil",
+      "slug": "basil-oil",
+      "name": "Basil Essential Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "flowerpot",
+      "slug": "flowerpot",
+      "name": "Flowerpot with Earth",
+      "linkedEntryId": null
+    },
+    {
+      "id": "silver-piece",
+      "slug": "silver-piece",
+      "name": "Silver Piece",
+      "linkedEntryId": null
+    },
+    {
+      "id": "bayberry-oil",
+      "slug": "bayberry-oil",
+      "name": "Bayberry Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "white-bryony",
+      "slug": "white-bryony",
+      "name": "White Bryony Root",
+      "linkedEntryId": null
+    },
+    {
+      "id": "wallet",
+      "slug": "wallet",
+      "name": "Wallet",
+      "linkedEntryId": null
+    },
+    {
+      "id": "buckeye",
+      "slug": "buckeye",
+      "name": "Buckeye",
+      "linkedEntryId": null
+    },
+    {
+      "id": "fast-luck-oil",
+      "slug": "fast-luck-oil",
+      "name": "Fast Luck Oil",
+      "linkedEntryId": null
+    },
+    {
+      "id": "cash-bill",
+      "slug": "cash-bill",
+      "name": "Cash Bill",
+      "linkedEntryId": null
+    },
+    {
+      "id": "white-sugar",
+      "slug": "white-sugar",
+      "name": "White Sugar",
+      "linkedEntryId": null
+    },
+    {
+      "id": "safety-pin",
+      "slug": "safety-pin",
+      "name": "Safety Pin",
+      "linkedEntryId": null
+    },
+    {
+      "id": "glass-bowl",
+      "slug": "glass-bowl",
+      "name": "Glass Bowl",
+      "linkedEntryId": null
+    },
+    {
+      "id": "green-silk-ribbon",
+      "slug": "green-silk-ribbon",
+      "name": "Green Silk Ribbon",
+      "linkedEntryId": null
+    },
+    {
+      "id": "gold-coin",
+      "slug": "gold-coin",
+      "name": "Gold Coin or Fool's Gold",
+      "linkedEntryId": null
+    },
+    {
+      "id": "blood-drop",
+      "slug": "blood-drop",
+      "name": "Blood (Menstrual or Finger Prick)",
+      "linkedEntryId": null
+    },
+    {
+      "id": "horseshoe",
+      "slug": "horseshoe",
+      "name": "Horseshoe",
+      "linkedEntryId": null
+    },
+    {
+      "id": "glitter",
+      "slug": "glitter",
+      "name": "Gold and Silver Glitter",
+      "linkedEntryId": null
+    },
+    {
+      "id": "buddha-candle",
+      "slug": "buddha-candle",
+      "name": "Laughing Buddha Candle",
+      "linkedEntryId": null
+    },
+    {
+      "id": "red-envelope",
+      "slug": "red-envelope",
+      "name": "Red Lucky Money Envelope",
+      "linkedEntryId": null
+    },
+    {
+      "id": "yellow-beans",
+      "slug": "yellow-beans",
+      "name": "Three Yellow or Golden Beans",
+      "linkedEntryId": null
+    },
+    {
+      "id": "checkbook",
+      "slug": "checkbook",
+      "name": "Checkbook (Bank of Hell or Real)",
+      "linkedEntryId": null
+    },
+    {
+      "id": "coconut-milk",
+      "slug": "coconut-milk",
+      "name": "Coconut Milk",
+      "linkedEntryId": null
+    },
+    {
+      "id": "cows-milk",
+      "slug": "cows-milk",
+      "name": "Cow's Milk",
+      "linkedEntryId": null
+    },
+    {
+      "id": "goats-milk",
+      "slug": "goats-milk",
+      "name": "Goat's Milk",
+      "linkedEntryId": null
+    },
+    {
+      "id": "sheeps-milk",
+      "slug": "sheeps-milk",
+      "name": "Sheep's Milk",
+      "linkedEntryId": null
+    },
+    {
+      "id": "rose-of-jericho",
+      "slug": "rose-of-jericho",
+      "name": "Rose of Jericho",
       "linkedEntryId": null
     }
   ],
@@ -8042,6 +10714,1050 @@
       "materialId": "onion",
       "quantityLabel": "1x",
       "sortOrder": 1
+    },
+    {
+      "ritualId": "almond-tree-business",
+      "materialId": "almond-tree",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "almond-tree-business",
+      "materialId": "libation",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "arabka-soudagar-business",
+      "materialId": "bay-laurel-leaves",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "arabka-soudagar-business",
+      "materialId": "cinnamon",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "arabka-soudagar-business",
+      "materialId": "frankincense",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "arabka-soudagar-business",
+      "materialId": "tonka-beans",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "arabka-soudagar-business",
+      "materialId": "vetiver-roots",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "lakshmi-tulsi-spell",
+      "materialId": "tulsi-basil",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "honey-business-attraction",
+      "materialId": "honey",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "personal-business-magnet",
+      "materialId": "basil",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "personal-business-magnet",
+      "materialId": "basil-infusion",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "personal-business-magnet",
+      "materialId": "lodestone-powder",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "artist-better-business",
+      "materialId": "purple-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "artist-better-business",
+      "materialId": "green-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "artist-better-business",
+      "materialId": "tarot-fool",
+      "quantityLabel": "1x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "astrologer-better-business",
+      "materialId": "blue-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "astrologer-better-business",
+      "materialId": "animal-charms",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "astrologer-better-business",
+      "materialId": "figs",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "astrologer-better-business",
+      "materialId": "pomegranates",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "astrologer-better-business",
+      "materialId": "wheat-stalks",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "better-business-charm-bag",
+      "materialId": "money-drawing-oil",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "better-business-charm-bag",
+      "materialId": "cowrie-shells",
+      "quantityLabel": "5x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "better-business-charm-bag",
+      "materialId": "high-john-root",
+      "quantityLabel": "1x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "better-business-charm-bag",
+      "materialId": "lodestones",
+      "quantityLabel": "2x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "better-business-charm-bag",
+      "materialId": "charm-bag",
+      "quantityLabel": "1x",
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "nutmeg-business-spell",
+      "materialId": "nutmeg",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "nutmeg-business-spell",
+      "materialId": "green-thread",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "nutmeg-business-spell",
+      "materialId": "grain-of-paradise",
+      "quantityLabel": "1x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "nutmeg-business-spell",
+      "materialId": "jezebel-root",
+      "quantityLabel": "1x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "nutmeg-business-spell",
+      "materialId": "high-john-root",
+      "quantityLabel": "1x",
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "dust-in-the-wind-business",
+      "materialId": "anthill-dust",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "dust-in-the-wind-business",
+      "materialId": "parchment",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "dust-in-the-wind-business",
+      "materialId": "lodestones",
+      "quantityLabel": "1x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "dust-in-the-wind-business",
+      "materialId": "charm-bag",
+      "quantityLabel": "1x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "drawing-powder-personal",
+      "materialId": "confectioners-sugar",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "drawing-powder-personal",
+      "materialId": "cornstarch",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "drawing-powder-personal",
+      "materialId": "bergamot-oil",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "eye-for-business",
+      "materialId": "eye-charms",
+      "quantityLabel": "4x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "financial-crisis-bath",
+      "materialId": "spring-water",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "financial-crisis-bath",
+      "materialId": "basil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "financial-crisis-bath",
+      "materialId": "coriander-seeds",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "financial-crisis-bath",
+      "materialId": "cinnamon",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "financial-crisis-bath",
+      "materialId": "brown-sugar",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "financial-crisis-bath",
+      "materialId": "orange-zest",
+      "quantityLabel": null,
+      "sortOrder": 6
+    },
+    {
+      "ritualId": "first-dollar-ashes",
+      "materialId": "first-dollar",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "first-dollar-ashes",
+      "materialId": "frankincense",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "first-dollar-ashes",
+      "materialId": "gold-copal",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "first-dollar-ashes",
+      "materialId": "charm-bag",
+      "quantityLabel": "1x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "first-dollar-candle",
+      "materialId": "first-dollar",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "first-dollar-candle",
+      "materialId": "magnetic-sand",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "first-dollar-candle",
+      "materialId": "confectioners-sugar",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "first-dollar-candle",
+      "materialId": "sea-salt",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "first-dollar-candle",
+      "materialId": "green-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "first-dollar-ginseng",
+      "materialId": "first-dollar",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "first-dollar-ginseng",
+      "materialId": "ginseng-root",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "first-dollar-ginseng",
+      "materialId": "green-thread",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "first-dollar-ginseng",
+      "materialId": "red-thread",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "first-dollar-san-martin",
+      "materialId": "first-dollar",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "first-dollar-san-martin",
+      "materialId": "san-martin-image",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "first-dollar-san-martin",
+      "materialId": "magnetic-sand",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "first-dollar-san-martin",
+      "materialId": "red-candle",
+      "quantityLabel": "7x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "magic-coin-business-packet",
+      "materialId": "chinese-coins",
+      "quantityLabel": "3x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "magic-coin-business-packet",
+      "materialId": "yellow-cloth",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "magic-coin-business-packet",
+      "materialId": "magnetic-sand",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "magic-coin-business-packet",
+      "materialId": "bergamot-oil",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "magic-coin-business-packet",
+      "materialId": "red-silk-ribbon",
+      "quantityLabel": "1x",
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "glory-water-business",
+      "materialId": "frankincense",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "glory-water-business",
+      "materialId": "orange-blossom-water",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "glory-water-business",
+      "materialId": "bergamot-oil",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "glory-water-business",
+      "materialId": "glass-bottle",
+      "quantityLabel": "1x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "oya-marketplace-spirit",
+      "materialId": "oya-altar",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "oya-marketplace-spirit",
+      "materialId": "red-wine",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "oya-marketplace-spirit",
+      "materialId": "purple-plums",
+      "quantityLabel": "9x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "mermaid-money-increase",
+      "materialId": "parchment",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "mermaid-money-increase",
+      "materialId": "cash-box",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "money-powder-cross",
+      "materialId": "raw-white-rice",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "money-powder-cross",
+      "materialId": "confectioners-sugar",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "money-powder-cross",
+      "materialId": "basil",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "money-powder-cross",
+      "materialId": "nickels",
+      "quantityLabel": "7x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "money-powder-cross",
+      "materialId": "red-candle",
+      "quantityLabel": "2x",
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "money-powder-cross",
+      "materialId": "green-candle",
+      "quantityLabel": "2x",
+      "sortOrder": 6
+    },
+    {
+      "ritualId": "money-powder-cross",
+      "materialId": "money-drawing-oil",
+      "quantityLabel": null,
+      "sortOrder": 7
+    },
+    {
+      "ritualId": "orange-candle-job",
+      "materialId": "orange-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "orange-candle-job",
+      "materialId": "honey",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "orange-candle-job",
+      "materialId": "magnetic-sand",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "orange-candle-job",
+      "materialId": "van-van-oil",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "orange-candle-job",
+      "materialId": "gold-sparkles",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "ten-of-diamonds-success",
+      "materialId": "ten-of-diamonds",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "ten-of-diamonds-success",
+      "materialId": "crown-success-oil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "ten-of-diamonds-success",
+      "materialId": "magnet-oil",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "ten-of-diamonds-success",
+      "materialId": "paper-money",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "ten-of-diamonds-success",
+      "materialId": "green-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "alfalfa-money-spell",
+      "materialId": "alfalfa",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "chinese-frog-wealth",
+      "materialId": "money-frog",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "chinese-frog-wealth",
+      "materialId": "coins",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "chinese-frog-wealth",
+      "materialId": "money-drawing-powder",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "chinese-frog-wealth",
+      "materialId": "magnetic-sand",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "golden-spider-riches",
+      "materialId": "red-paper",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "golden-spider-riches",
+      "materialId": "gold-ink",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "golden-spider-riches",
+      "materialId": "saucer",
+      "quantityLabel": "1x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "golden-spider-riches",
+      "materialId": "coins",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "avocado-money-magnet",
+      "materialId": "avocado",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "exact-sum-basil",
+      "materialId": "white-bryony",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "exact-sum-basil",
+      "materialId": "basil-oil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "exact-sum-basil",
+      "materialId": "flowerpot",
+      "quantityLabel": "1x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "bayberry-silver-magnet",
+      "materialId": "silver-piece",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "bayberry-silver-magnet",
+      "materialId": "bayberry-oil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "bryony-root-wallet",
+      "materialId": "white-bryony",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "bryony-root-wallet",
+      "materialId": "wallet",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "bryony-root-wallet",
+      "materialId": "cash-bill",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "buckeye-prosperity-charm",
+      "materialId": "buckeye",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "buckeye-prosperity-charm",
+      "materialId": "magnetic-sand",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "buckeye-prosperity-charm",
+      "materialId": "money-drawing-powder",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "buckeye-prosperity-charm",
+      "materialId": "fast-luck-oil",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "buckeye-prosperity-charm",
+      "materialId": "bergamot-oil",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "buckeye-prosperity-charm",
+      "materialId": "cash-bill",
+      "quantityLabel": "1x",
+      "sortOrder": 6
+    },
+    {
+      "ritualId": "buckeye-prosperity-charm",
+      "materialId": "red-thread",
+      "quantityLabel": null,
+      "sortOrder": 7
+    },
+    {
+      "ritualId": "buckeye-prosperity-charm",
+      "materialId": "green-candle",
+      "quantityLabel": "2x",
+      "sortOrder": 8
+    },
+    {
+      "ritualId": "past-cash-double-action",
+      "materialId": "double-action-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "money-growth-candle-chant",
+      "materialId": "green-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "money-growth-candle-chant",
+      "materialId": "saucer",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "money-growth-candle-chant",
+      "materialId": "coins",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "lucky-sevens-conjure-bag",
+      "materialId": "paper-money",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "lucky-sevens-conjure-bag",
+      "materialId": "coins",
+      "quantityLabel": "7x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "lucky-sevens-conjure-bag",
+      "materialId": "bergamot-oil",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "lucky-sevens-conjure-bag",
+      "materialId": "charm-bag",
+      "quantityLabel": "1x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "creole-anti-poverty",
+      "materialId": "white-sugar",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "creole-anti-poverty",
+      "materialId": "sea-salt",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "creole-anti-poverty",
+      "materialId": "raw-white-rice",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "creole-anti-poverty",
+      "materialId": "safety-pin",
+      "quantityLabel": "1x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "creole-anti-poverty",
+      "materialId": "glass-bowl",
+      "quantityLabel": "1x",
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "fenugreek-jar-increase",
+      "materialId": "fenugreek-seeds",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "fenugreek-jar-increase",
+      "materialId": "glass-bottle",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "ginger-root-earth-magnet",
+      "materialId": "yellow-beans",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "green-ribbon-invocation",
+      "materialId": "green-silk-ribbon",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "gold-blood-growth",
+      "materialId": "gold-coin",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "gold-blood-growth",
+      "materialId": "blood-drop",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "gold-blood-growth",
+      "materialId": "flowerpot",
+      "quantityLabel": "1x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "high-john-cash-wrap",
+      "materialId": "cash-bill",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "high-john-cash-wrap",
+      "materialId": "basil-oil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "high-john-cash-wrap",
+      "materialId": "magnet-oil",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "high-john-cash-wrap",
+      "materialId": "high-john-root",
+      "quantityLabel": "1x",
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "high-john-cash-wrap",
+      "materialId": "green-thread",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "horseshoe-wealth-wrap",
+      "materialId": "horseshoe",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "horseshoe-wealth-wrap",
+      "materialId": "magnet-oil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "horseshoe-wealth-wrap",
+      "materialId": "magnetic-sand",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "horseshoe-wealth-wrap",
+      "materialId": "green-thread",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "lodestone-box-wealth",
+      "materialId": "lodestones",
+      "quantityLabel": "2x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "lodestone-box-wealth",
+      "materialId": "glass-bottle",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "lodestone-box-wealth",
+      "materialId": "magnetic-sand",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "lodestone-box-wealth",
+      "materialId": "coins",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "lodestone-box-wealth",
+      "materialId": "glitter",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "lodestone-box-wealth",
+      "materialId": "parchment",
+      "quantityLabel": "1x",
+      "sortOrder": 6
+    },
+    {
+      "ritualId": "laughing-buddha-envelope",
+      "materialId": "parchment",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "laughing-buddha-envelope",
+      "materialId": "red-envelope",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "laughing-buddha-envelope",
+      "materialId": "buddha-candle",
+      "quantityLabel": "1x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "lunar-window-money",
+      "materialId": "paper-money",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "lunar-window-money",
+      "materialId": "coins",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "magic-bean-triad",
+      "materialId": "yellow-beans",
+      "quantityLabel": "3x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "magic-bean-triad",
+      "materialId": "lodestones",
+      "quantityLabel": "1x",
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "magic-bean-triad",
+      "materialId": "charm-bag",
+      "quantityLabel": "1x",
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "bank-of-hell-check",
+      "materialId": "checkbook",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "bank-of-hell-check",
+      "materialId": "money-drawing-oil",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "mandrake-coin-multiplier",
+      "materialId": "mandrake-root",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "mandrake-coin-multiplier",
+      "materialId": "coins",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "milk-honey-prosperity-bath",
+      "materialId": "coconut-milk",
+      "quantityLabel": null,
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "milk-honey-prosperity-bath",
+      "materialId": "cows-milk",
+      "quantityLabel": null,
+      "sortOrder": 2
+    },
+    {
+      "ritualId": "milk-honey-prosperity-bath",
+      "materialId": "goats-milk",
+      "quantityLabel": null,
+      "sortOrder": 3
+    },
+    {
+      "ritualId": "milk-honey-prosperity-bath",
+      "materialId": "sheeps-milk",
+      "quantityLabel": null,
+      "sortOrder": 4
+    },
+    {
+      "ritualId": "milk-honey-prosperity-bath",
+      "materialId": "holy-water",
+      "quantityLabel": null,
+      "sortOrder": 5
+    },
+    {
+      "ritualId": "milk-honey-prosperity-bath",
+      "materialId": "honey",
+      "quantityLabel": null,
+      "sortOrder": 6
+    },
+    {
+      "ritualId": "milk-honey-prosperity-bath",
+      "materialId": "basil",
+      "quantityLabel": null,
+      "sortOrder": 7
+    },
+    {
+      "ritualId": "rose-of-jericho-financial",
+      "materialId": "rose-of-jericho",
+      "quantityLabel": "1x",
+      "sortOrder": 1
+    },
+    {
+      "ritualId": "rose-of-jericho-financial",
+      "materialId": "yellow-cloth",
+      "quantityLabel": null,
+      "sortOrder": 2
     }
   ],
   "entityLinks": [
