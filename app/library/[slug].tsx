@@ -2,7 +2,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
@@ -43,6 +43,7 @@ export default function LibraryDetailScreen() {
   const { t } = useTranslation();
   const styles = makeStyles(theme);
   const { isPremium, showUpgradePrompt } = usePremiumGate();
+  const insets = useSafeAreaInsets();
 
   const { slug } = useLocalSearchParams<{ slug?: string | string[] }>();
   const normalizedSlug = Array.isArray(slug) ? slug[0] : (slug ?? "");
@@ -235,7 +236,7 @@ export default function LibraryDetailScreen() {
         </View>
       </View>
 
-      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={[styles.content, { paddingBottom: 24 + insets.bottom }]} showsVerticalScrollIndicator={false}>
         <View style={styles.parchmentCard}>
           <View style={styles.tatteredEdgeTop} />
 
@@ -393,7 +394,6 @@ const makeStyles = (theme: ReturnType<typeof useMysticTheme>) =>
     },
     content: {
       paddingHorizontal: 16,
-      paddingBottom: 100,
     },
     parchmentCard: {
       backgroundColor: theme.mode === "dark" ? "#2D241E" : "#F3EAD3",
