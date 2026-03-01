@@ -6346,12 +6346,6 @@
       "sortOrder": 1
     },
     {
-      "ritualId": "earth-smoke-bath",
-      "materialId": "fumitory",
-      "quantityLabel": "1x",
-      "sortOrder": 1
-    },
-    {
       "ritualId": "florida-water-personal-cleanser",
       "materialId": "florida-water",
       "quantityLabel": "1x",
@@ -6384,12 +6378,6 @@
     {
       "ritualId": "mandrake-bath",
       "materialId": "mandrake-root",
-      "quantityLabel": "1x",
-      "sortOrder": 1
-    },
-    {
-      "ritualId": "mate-cleansing-bath",
-      "materialId": "mate-tea",
       "quantityLabel": "1x",
       "sortOrder": 1
     },
@@ -6503,21 +6491,9 @@
     },
     {
       "ritualId": "seven-roses-bath",
-      "materialId": "sea-salt",
-      "quantityLabel": null,
-      "sortOrder": 2
-    },
-    {
-      "ritualId": "seven-roses-bath",
       "materialId": "white-vinegar",
       "quantityLabel": null,
       "sortOrder": 3
-    },
-    {
-      "ritualId": "seven-roses-bath",
-      "materialId": "lemon-juice",
-      "quantityLabel": null,
-      "sortOrder": 4
     },
     {
       "ritualId": "animal-candle-protection",
@@ -6836,12 +6812,6 @@
       "materialId": "fenugreek",
       "quantityLabel": "1x",
       "sortOrder": 1
-    },
-    {
-      "ritualId": "fenugreek-head-wash",
-      "materialId": "spring-water",
-      "quantityLabel": null,
-      "sortOrder": 2
     },
     {
       "ritualId": "fenugreek-head-wash",
@@ -7670,12 +7640,6 @@
       "materialId": "anisette",
       "quantityLabel": null,
       "sortOrder": 2
-    },
-    {
-      "ritualId": "seven-roses-bath",
-      "materialId": "red-roses",
-      "quantityLabel": "7x",
-      "sortOrder": 1
     },
     {
       "ritualId": "seven-roses-bath",
