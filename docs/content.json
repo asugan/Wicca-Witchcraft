@@ -1548,21 +1548,6 @@
       "isPremium": false
     },
     {
-      "id": "fenugreek-head-wash",
-      "slug": "fenugreek-head-wash",
-      "title": "Fenugreek Head Wash",
-      "summary": "Cleanse the head with a fenugreek infusion to protect against illness and negative attachments.",
-      "category": "healing",
-      "difficulty": "beginner",
-      "moonPhase": "any",
-      "durationMinutes": 15,
-      "coverImage": "",
-      "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
-      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200103,
-      "isPremium": false
-    },
-    {
       "id": "energy-balancing-bath",
       "slug": "energy-balancing-bath",
       "title": "Energy Balancing Bath",
@@ -1574,22 +1559,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200104,
-      "isPremium": false
-    },
-    {
-      "id": "earth-smoke-bath",
-      "slug": "earth-smoke-bath",
-      "title": "Earth Smoke Bath",
-      "summary": "An intensive healing bath using fumitory (earth smoke) to cleanse the body.",
-      "category": "healing",
-      "difficulty": "beginner",
-      "moonPhase": "any",
-      "durationMinutes": 25,
-      "coverImage": "",
-      "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
-      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200105,
+      "createdAt": 1704067200103,
       "isPremium": false
     },
     {
@@ -1604,7 +1574,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200106,
+      "createdAt": 1704067200104,
       "isPremium": false
     },
     {
@@ -1619,7 +1589,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200107,
+      "createdAt": 1704067200105,
       "isPremium": false
     },
     {
@@ -1634,7 +1604,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200108,
+      "createdAt": 1704067200106,
       "isPremium": false
     },
     {
@@ -1649,22 +1619,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200109,
-      "isPremium": false
-    },
-    {
-      "id": "mate-cleansing-bath",
-      "slug": "mate-cleansing-bath",
-      "title": "Maté Cleansing Bath",
-      "summary": "Use maté tea to remove minor hexes and cleanse psychic garbage.",
-      "category": "healing",
-      "difficulty": "intermediate",
-      "moonPhase": "any",
-      "durationMinutes": 25,
-      "coverImage": "",
-      "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
-      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200110,
+      "createdAt": 1704067200107,
       "isPremium": false
     },
     {
@@ -1679,7 +1634,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200111,
+      "createdAt": 1704067200108,
       "isPremium": false
     },
     {
@@ -1694,7 +1649,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200112,
+      "createdAt": 1704067200109,
       "isPremium": false
     },
     {
@@ -1709,7 +1664,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200113,
+      "createdAt": 1704067200110,
       "isPremium": false
     },
     {
@@ -1724,7 +1679,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200114,
+      "createdAt": 1704067200111,
       "isPremium": false
     },
     {
@@ -1739,22 +1694,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200115,
-      "isPremium": false
-    },
-    {
-      "id": "seven-roses-bath",
-      "slug": "seven-roses-bath",
-      "title": "Seven Roses Bath",
-      "summary": "An intensive 7-minute bath utilizing 7 red roses and kitchen staples to remove impurities.",
-      "category": "healing",
-      "difficulty": "beginner",
-      "moonPhase": "any",
-      "durationMinutes": 15,
-      "coverImage": "",
-      "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
-      "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200116,
+      "createdAt": 1704067200112,
       "isPremium": false
     },
     {
@@ -1769,7 +1709,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200117,
+      "createdAt": 1704067200113,
       "isPremium": false
     },
     {
@@ -1784,7 +1724,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200118,
+      "createdAt": 1704067200114,
       "isPremium": false
     },
     {
@@ -1799,7 +1739,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200119,
+      "createdAt": 1704067200115,
       "isPremium": false
     },
     {
@@ -1814,7 +1754,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200120,
+      "createdAt": 1704067200116,
       "isPremium": false
     },
     {
@@ -1829,7 +1769,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200121,
+      "createdAt": 1704067200117,
       "isPremium": false
     },
     {
@@ -1844,7 +1784,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200122,
+      "createdAt": 1704067200118,
       "isPremium": false
     },
     {
@@ -1859,7 +1799,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200123,
+      "createdAt": 1704067200119,
       "isPremium": false
     },
     {
@@ -1874,7 +1814,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200124,
+      "createdAt": 1704067200120,
       "isPremium": false
     },
     {
@@ -1889,7 +1829,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200125,
+      "createdAt": 1704067200121,
       "isPremium": false
     },
     {
@@ -1904,7 +1844,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200126,
+      "createdAt": 1704067200122,
       "isPremium": false
     },
     {
@@ -1919,7 +1859,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200127,
+      "createdAt": 1704067200123,
       "isPremium": false
     },
     {
@@ -1934,7 +1874,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200128,
+      "createdAt": 1704067200124,
       "isPremium": false
     },
     {
@@ -1949,7 +1889,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200129,
+      "createdAt": 1704067200125,
       "isPremium": false
     },
     {
@@ -1964,7 +1904,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200130,
+      "createdAt": 1704067200126,
       "isPremium": false
     },
     {
@@ -1979,7 +1919,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200131,
+      "createdAt": 1704067200127,
       "isPremium": false
     },
     {
@@ -1994,7 +1934,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200132,
+      "createdAt": 1704067200128,
       "isPremium": false
     },
     {
@@ -2009,7 +1949,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200133,
+      "createdAt": 1704067200129,
       "isPremium": false
     },
     {
@@ -2024,7 +1964,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200134,
+      "createdAt": 1704067200130,
       "isPremium": false
     },
     {
@@ -2039,7 +1979,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200135,
+      "createdAt": 1704067200131,
       "isPremium": false
     },
     {
@@ -2054,7 +1994,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200136,
+      "createdAt": 1704067200132,
       "isPremium": false
     },
     {
@@ -2069,7 +2009,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200137,
+      "createdAt": 1704067200133,
       "isPremium": false
     },
     {
@@ -2084,7 +2024,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200138,
+      "createdAt": 1704067200134,
       "isPremium": false
     },
     {
@@ -2099,7 +2039,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200139,
+      "createdAt": 1704067200135,
       "isPremium": false
     },
     {
@@ -2114,7 +2054,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200140,
+      "createdAt": 1704067200136,
       "isPremium": false
     },
     {
@@ -2129,7 +2069,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200141,
+      "createdAt": 1704067200137,
       "isPremium": false
     },
     {
@@ -2144,7 +2084,7 @@
       "coverImage": "",
       "incantation": "With focused breath and steady heart, I now call in healing. As I will it, so mote it be.",
       "safetyNote": "Practice with consent, grounded intentions, and stop if you feel overwhelmed.",
-      "createdAt": 1704067200142,
+      "createdAt": 1704067200138,
       "isPremium": false
     }
   ],
@@ -3858,34 +3798,6 @@
       "content": "Alternatively, you can add this infused oil to your bath for full-body immersion."
     },
     {
-      "id": "fenugreek-head-wash-step-1",
-      "ritualId": "fenugreek-head-wash",
-      "stepOrder": 1,
-      "title": "Boil Water",
-      "content": "Boil fresh spring water."
-    },
-    {
-      "id": "fenugreek-head-wash-step-2",
-      "ritualId": "fenugreek-head-wash",
-      "stepOrder": 2,
-      "title": "Steep Fenugreek",
-      "content": "Make an infusion by steeping fenugreek seeds in the boiling water."
-    },
-    {
-      "id": "fenugreek-head-wash-step-3",
-      "ritualId": "fenugreek-head-wash",
-      "stepOrder": 3,
-      "title": "Cool and Strain",
-      "content": "Allow the infusion to cool to a comfortable temperature, then strain out the seeds."
-    },
-    {
-      "id": "fenugreek-head-wash-step-4",
-      "ritualId": "fenugreek-head-wash",
-      "stepOrder": 4,
-      "title": "Wash Head",
-      "content": "Wash the head with the infusion to protect against spiritual possession or illness."
-    },
-    {
       "id": "energy-balancing-bath-step-1",
       "ritualId": "energy-balancing-bath",
       "stepOrder": 1,
@@ -3912,34 +3824,6 @@
       "stepOrder": 4,
       "title": "Bathe and Balance",
       "content": "Add the mixture to a tub of running water, soak, and allow your yin and yang energies to balance."
-    },
-    {
-      "id": "earth-smoke-bath-step-1",
-      "ritualId": "earth-smoke-bath",
-      "stepOrder": 1,
-      "title": "Prepare the Herb",
-      "content": "Place Earth Smoke (Fumitory) into a heat-safe bowl."
-    },
-    {
-      "id": "earth-smoke-bath-step-2",
-      "ritualId": "earth-smoke-bath",
-      "stepOrder": 2,
-      "title": "Make Infusion",
-      "content": "Make a strong infusion by pouring boiling water over the Earth Smoke."
-    },
-    {
-      "id": "earth-smoke-bath-step-3",
-      "ritualId": "earth-smoke-bath",
-      "stepOrder": 3,
-      "title": "Strain and Draw Bath",
-      "content": "Strain the botanical material out once cooled."
-    },
-    {
-      "id": "earth-smoke-bath-step-4",
-      "ritualId": "earth-smoke-bath",
-      "stepOrder": 4,
-      "title": "Bathe",
-      "content": "Add the liquid to the bath and soak to absorb its healing properties."
     },
     {
       "id": "elder-cleansing-spell-step-1",
@@ -4052,34 +3936,6 @@
       "stepOrder": 4,
       "title": "Bathe",
       "content": "Soak in the water for deep spiritual as well as physical cleansing."
-    },
-    {
-      "id": "mate-cleansing-bath-step-1",
-      "ritualId": "mate-cleansing-bath",
-      "stepOrder": 1,
-      "title": "Steep Maté",
-      "content": "Create a strong infusion by pouring boiling water over dried maté herb."
-    },
-    {
-      "id": "mate-cleansing-bath-step-2",
-      "ritualId": "mate-cleansing-bath",
-      "stepOrder": 2,
-      "title": "Cool and Strain",
-      "content": "Let the water cool to room temperature and strain, reserving the liquid."
-    },
-    {
-      "id": "mate-cleansing-bath-step-3",
-      "ritualId": "mate-cleansing-bath",
-      "stepOrder": 3,
-      "title": "Apply Liquid",
-      "content": "Add this strong infusion to the bath, or sponge the infusion over yourself following a shower."
-    },
-    {
-      "id": "mate-cleansing-bath-step-4",
-      "ritualId": "mate-cleansing-bath",
-      "stepOrder": 4,
-      "title": "Air Dry",
-      "content": "Allow yourself to air dry completely."
     },
     {
       "id": "mother-holles-cleansing-bath-step-1",
@@ -4220,34 +4076,6 @@
       "stepOrder": 4,
       "title": "Wand Massage",
       "content": "Remove the rosemary wands from the liqueur, shake them gently, and use them to lightly massage the body while affirming safety."
-    },
-    {
-      "id": "seven-roses-bath-step-1",
-      "ritualId": "seven-roses-bath",
-      "stepOrder": 1,
-      "title": "Fill Tub",
-      "content": "Fill the tub with comfortably warm water."
-    },
-    {
-      "id": "seven-roses-bath-step-2",
-      "ritualId": "seven-roses-bath",
-      "stepOrder": 2,
-      "title": "Add Ingredients",
-      "content": "Throw seven red roses, sea salt, a splash of vinegar, lemon juice, and spring water into the tub."
-    },
-    {
-      "id": "seven-roses-bath-step-3",
-      "ritualId": "seven-roses-bath",
-      "stepOrder": 3,
-      "title": "Bathe and Rub",
-      "content": "Spend exactly seven minutes in the bath, rubbing yourself with the roses."
-    },
-    {
-      "id": "seven-roses-bath-step-4",
-      "ritualId": "seven-roses-bath",
-      "stepOrder": 4,
-      "title": "Dry and Rest",
-      "content": "Dry off with a clean white towel. Do not clean the tub out for at least an hour while your aura stabilizes."
     },
     {
       "id": "spirit-of-the-sea-healing-step-1",
