@@ -40,12 +40,12 @@ type LanguageOption = { code: AppLanguage; labelKey: string };
 
 const LANGUAGE_OPTIONS: LanguageOption[] = [
   { code: "en", labelKey: "settings.languageEnglish" },
-  { code: "tr", labelKey: "settings.languageTurkish" },
-  { code: "de", labelKey: "settings.languageGerman" },
-  { code: "es", labelKey: "settings.languageSpanish" },
-  { code: "fr", labelKey: "settings.languageFrench" },
-  { code: "it", labelKey: "settings.languageItalian" },
-  { code: "pt", labelKey: "settings.languagePortuguese" },
+  // { code: "tr", labelKey: "settings.languageTurkish" },
+  // { code: "de", labelKey: "settings.languageGerman" },
+  // { code: "es", labelKey: "settings.languageSpanish" },
+  // { code: "fr", labelKey: "settings.languageFrench" },
+  // { code: "it", labelKey: "settings.languageItalian" },
+  // { code: "pt", labelKey: "settings.languagePortuguese" },
 ];
 
 type ThemeOption = { code: ThemeMode; labelKey: string; icon: "theme-light-dark" | "weather-sunny" | "moon-waning-crescent" };
