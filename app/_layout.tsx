@@ -1,10 +1,12 @@
+import * as SplashScreen from 'expo-splash-screen';
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { ActivityIndicator, InteractionManager, View } from "react-native";
+import { InteractionManager } from "react-native";
 import { PaperProvider } from "react-native-paper";
 
-import { DatabaseProvider, useDatabaseReady } from "@/context/database-context";
+import { AnimatedSplashScreen } from "@/components/AnimatedSplashScreen";
+import { DatabaseProvider } from "@/context/database-context";
 import { ThemeProvider } from "@/context/theme-context";
 import { ToastProvider } from "@/context/toast-context";
 import { getLanguagePreference, getNotificationsEnabled } from "@/db/repositories/settings-repository";
@@ -18,6 +20,9 @@ import { getPaperTheme } from "@/theme/paper-theme";
 import { useMysticTheme } from "@/theme/use-mystic-theme";
 
 const LOCAL_USER_ID = "local-user";
+
+SplashScreen.preventAutoHideAsync();
+SplashScreen.setOptions({ duration: 1000, fade: true });
 
 initAnalytics();
 
@@ -61,28 +66,14 @@ function RootLayoutContent() {
   );
 }
 
-function DatabaseGate({ children }: { children: React.ReactNode }) {
-  const { isReady } = useDatabaseReady();
-
-  if (!isReady) {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#181611" }}>
-        <ActivityIndicator color="#C4A46C" />
-      </View>
-    );
-  }
-
-  return <>{children}</>;
-}
-
 export default function RootLayout() {
   return (
     <DatabaseProvider>
-      <DatabaseGate>
+      <AnimatedSplashScreen>
         <ThemeProvider>
           <RootLayoutContent />
         </ThemeProvider>
-      </DatabaseGate>
+      </AnimatedSplashScreen>
     </DatabaseProvider>
   );
 }
